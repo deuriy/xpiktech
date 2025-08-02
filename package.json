@@ -1,46 +1,99 @@
 {
-  "name": "underscores",
+  "name": "kontrabarista_app_builder",
   "version": "1.0.0",
-  "description": "Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.",
-  "author": "Automattic Theme Team",
-  "license": "GPL-2.0-or-later",
-  "keywords": [
-    "WordPress",
-    "Theme"
-  ],
-  "homepage": "https://github.com/Automattic/_s#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "dev": "nodemon --watch gulpfile.js --watch package.json --ext js,json,scss,pug --exec gulp dev"
+  },
+  "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Automattic/_s.git"
+    "url": "ssh://git@gitlab.com:khv2online/kontrabarista.git"
   },
-  "bugs": {
-    "url": "https://github.com/Automattic/_s/issues"
-  },
+  "author": "khv2online@gmail.com",
+  "license": "UNLICENSED",
   "devDependencies": {
-    "@wordpress/scripts": "^19.2.2",
-    "dir-archiver": "^1.1.1",
-    "node-sass": "^7.0.1",
-    "rtlcss": "^3.5.0"
+    "@prettier/plugin-pug": "^3.0.0",
+    "gulp-debug": "^5.0.0",
+    "jshint": "^2.13.5",
+    "prettier": "^3.2.4",
+    "stylelint-config-standard-scss": "^11.0.0"
   },
-  "rtlcssConfig": {
-    "options": {
-      "autoRename": false,
-      "autoRenameStrict": false,
-      "blacklist": {},
-      "clean": true,
-      "greedy": false,
-      "processUrls": false,
-      "stringMap": []
-    },
-    "plugins": [],
-    "map": false
+  "dependencies": {
+    "argv": "^0.0.3",
+    "autoprefixer": "^10.4.7",
+    "browser-sync": "^3.0.2",
+    "cssnano": "^6.0.1",
+    "cssnano-preset-advanced": "^6.0.1",
+    "fastdom": "^1.0.11",
+    "gulp": "^4.0.0",
+    "gulp-changed": "^5.0.0",
+    "gulp-esbuild": "^0.12.0",
+    "gulp-filter": "^9.0.0",
+    "gulp-if": "^3.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-progeny": "^0.4.1",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-touch-fd": "^2.0.0",
+    "lodash-es": "^4.17.21",
+    "nodemon": "^3.0.1",
+    "postcss": "^8.4.14",
+    "postcss-csso": "^6.0.1",
+    "postcss-inline-svg": "^6.0.0",
+    "sass": "^1.68.0",
+    "swiper": "^11.2.8",
+    "vanillajs-datepicker": "^1.3.4",
+    "yargs": "^17.5.1"
   },
-  "scripts": {
-    "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
-    "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
-    "compile:rtl": "rtlcss style.css style-rtl.css",
-    "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
-    "lint:js": "wp-scripts lint-js 'js/*.js'",
-    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
-  }
+  "stylelint": {
+    "extends": "stylelint-config-standard-scss",
+    "rules": {
+      "string-quotes": "double",
+      "max-nesting-depth": 999,
+      "scss/load-no-partial-leading-underscore": null,
+      "scss/at-import-partial-extension": null
+    }
+  },
+  "jshintConfig": {
+    "maxerr": 99,
+    "bitwise": true,
+    "curly": true,
+    "eqeqeq": true,
+    "forin": true,
+    "freeze": true,
+    "latedef": true,
+    "noarg": true,
+    "nonbsp": true,
+    "nonew": true,
+    "plusplus": true,
+    "undef": true,
+    "unused": true,
+    "strict": false,
+    "maxparams": 3,
+    "varstmt": true,
+    "esversion": 11,
+    "browser": true,
+    "devel": true,
+    "leanswitch": true,
+    "noreturnawait": true,
+    "regexpu": true,
+    "singleGroups": false,
+    "predef": [
+      "__DEBUG__"
+    ],
+    "globals": {}
+  },
+  "prettier": {
+    "printWidth": 99,
+    "endOfLine": "lf",
+    "tabWidth": 2
+  },
+  "browserslist": [
+    ">1%",
+    "not IE 11",
+    "not dead"
+  ]
 }
