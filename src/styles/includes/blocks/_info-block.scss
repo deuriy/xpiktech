@@ -1,0 +1,29 @@
+.info-block {
+  display: grid;
+  grid-template-columns: 1.42336fr 1fr;
+  gap: 32px;
+
+  &__text-wrapper {
+    padding: 56px;
+    border-radius: 32px;
+    background: #fff;
+    box-shadow: var(--shadow);
+  }
+
+  &__title {
+    margin-bottom: 48px;
+  }
+
+  &__text {
+    font-size: 24px;
+    line-height: 1.34;
+
+    &>p+p {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__img {
+    height: auto;
+  }
+}

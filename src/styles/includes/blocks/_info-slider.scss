@@ -1,0 +1,18 @@
+.info-slider {
+  position: relative;
+
+  &__prev-btn,
+  &__next-btn {
+    position: absolute;
+    bottom: 60px;
+    z-index: 10;
+  }
+
+  &__prev-btn {
+    left: 56px;
+  }
+
+  &__next-btn {
+    left: 116px;
+  }
+}

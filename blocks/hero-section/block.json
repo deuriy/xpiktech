@@ -1,0 +1,19 @@
+{
+  "name": "acf/hero-section",
+  "title": "Hero Section",
+  "description": "Hero Section block that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "hero",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

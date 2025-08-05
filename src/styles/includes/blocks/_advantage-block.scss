@@ -1,0 +1,55 @@
+.advantage-block {
+  position: relative;
+  max-height: 404px;
+  padding: 32px;
+  border: 1px solid transparent;
+  border-radius: 32px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  @extend .transition;
+
+  &__icon-wrapper {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 56px;
+
+    svg path {
+      @extend .transition;
+    }
+  }
+
+  &__title {
+    @extend .grad-text;
+    max-width: 280px;
+    margin-bottom: 16px;
+    font-size: 24px;
+    line-height: 1.29166667;
+  }
+
+  &__text {
+    color: #525252;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 2px rgba(45, 193, 167, 0.24);
+    border-color: var(--mintgreen);
+
+    .advantage-block__title {
+      background: none;
+      -webkit-background-clip: currentcolor;
+      -webkit-text-fill-color: inherit;
+      background-clip: currentcolor;
+      text-fill-color: inherit;
+      color: var(--mintgreen);
+    }
+
+    .advantage-block__icon-wrapper {
+      svg path {
+        stroke: var(--mintgreen);
+      }
+    }
+  }
+}

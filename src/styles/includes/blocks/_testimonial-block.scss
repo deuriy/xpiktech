@@ -1,0 +1,21 @@
+.testimonial-block {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+
+  &__wrapper {
+    padding: 56px;
+    border-radius: 32px;
+    background: var(--lightgrey);
+  }
+
+  &__rating {
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    margin-bottom: 48px;
+    font-size: 32px;
+    line-height: 1.375;
+  }
+}

@@ -184,6 +184,7 @@ function watchForChanges() {
   watch([CONFIG.stylesSrc], styles);
   watch(CONFIG.scriptsToWatchSrc, series(scripts, livereload));
   watch(CONFIG.assetsSrc, series(assets, livereload));
+  watch("./**/*.php", livereload);
 }
 
 const buildTask = parallel(templates, styles, scripts, assets);

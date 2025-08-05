@@ -1,0 +1,8 @@
+.company-review-block {
+  &__review-text {
+    grid-area: text;
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+  }
+}

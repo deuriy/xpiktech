@@ -11,3 +11,63 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: xpiktech
 */
+
+@import "node_modules/swiper/swiper.scss";
+
+@import "./includes/_fonts.scss";
+@import "./includes/_variables.scss";
+@import "./includes/_base.scss";
+
+@import "./includes/blocks/_ico.scss";
+@import "./includes/blocks/_btn-green.scss";
+@import "./includes/blocks/_btn-darkgreen.scss";
+@import "./includes/blocks/_btn-white.scss";
+@import "./includes/blocks/_btn-blue.scss";
+@import "./includes/blocks/_btn-lightblue.scss";
+@import "./includes/blocks/_wrapper.scss";
+@import "./includes/blocks/_main.scss";
+@import "./includes/blocks/_container.scss";
+@import "./includes/blocks/_header.scss";
+@import "./includes/blocks/_custom-logo-link.scss";
+@import "./includes/blocks/_main-navigation.scss";
+@import "./includes/blocks/_hero-block.scss";
+@import "./includes/blocks/_grad-text.scss";
+@import "./includes/blocks/_text-block.scss";
+@import "./includes/blocks/_buttons-list.scss";
+@import "./includes/blocks/_hero-slider-block.scss";
+@import "./includes/blocks/_hero-section.scss";
+@import "./includes/blocks/_rating.scss";
+@import "./includes/blocks/_rating-block.scss";
+@import "./includes/blocks/_company-block.scss";
+@import "./includes/blocks/_company-review-block.scss";
+@import "./includes/blocks/_company-review-slider-block.scss";
+@import "./includes/blocks/_service-block.scss";
+@import "./includes/blocks/_service-blocks.scss";
+@import "./includes/blocks/_list.scss";
+@import "./includes/blocks/_service-block-slider-wrapper.scss";
+@import "./includes/blocks/_service-block-slider.scss";
+@import "./includes/blocks/_darkgreen-text-block.scss";
+@import "./includes/blocks/_activity-block.scss";
+@import "./includes/blocks/_activity-blocks.scss";
+@import "./includes/blocks/_activity-section.scss";
+@import "./includes/blocks/_banner.scss";
+@import "./includes/blocks/_info-block.scss";
+@import "./includes/blocks/_info-slider.scss";
+@import "./includes/blocks/_info-slider-section.scss";
+@import "./includes/blocks/_banner-section.scss";
+@import "./includes/blocks/_person-card.scss";
+@import "./includes/blocks/_testimonial-block.scss";
+@import "./includes/blocks/_testimonial-slider.scss";
+@import "./includes/blocks/_testimonial-section.scss";
+@import "./includes/blocks/_success-block.scss";
+@import "./includes/blocks/_statistics-block.scss";
+@import "./includes/blocks/_statistics-blocks.scss";
+@import "./includes/blocks/_statistics-section.scss";
+@import "./includes/blocks/_advantage-block.scss";
+@import "./includes/blocks/_advantage-blocks.scss";
+@import "./includes/blocks/_advantages-section.scss";
+@import "./includes/blocks/_contact-block.scss";
+@import "./includes/blocks/_contact-blocks.scss";
+@import "./includes/blocks/_contacts-section.scss";
+@import "./includes/blocks/_social-buttons.scss";
+@import "./includes/blocks/_footer.scss";

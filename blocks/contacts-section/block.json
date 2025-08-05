@@ -1,0 +1,19 @@
+{
+  "name": "acf/contacts-section",
+  "title": "Contacts Section",
+  "description": "Contacts Section block that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "contact",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

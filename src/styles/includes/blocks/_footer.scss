@@ -1,0 +1,51 @@
+.footer {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 44px;
+    padding: 32px;
+    border-radius: 32px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 412' fill='none'%3E%3Cg filter='url(%23a)'%3E%3Cpath fill='%23005E59' d='M1348 20c17.67 0 32 14.327 32 32v308c0 17.673-14.33 32-32 32H52c-17.673 0-32-14.327-32-32V104c0-8.837 7.163-16 16-16h136c8.837 0 16-7.163 16-16V36c0-8.837 7.163-16 16-16h1144Z'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='a' width='1400' height='412' x='0' y='0' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' result='hardAlpha' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset/%3E%3CfeGaussianBlur stdDeviation='10'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.02 0'/%3E%3CfeBlend in2='BackgroundImageFix' result='effect1_dropShadow_771_910'/%3E%3CfeBlend in='SourceGraphic' in2='effect1_dropShadow_771_910' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E") -19px -19px / 1398px no-repeat;
+
+    // background: var(--darkgreen);
+    // clip-path: path("M0 0 H100% V100% Q0 100% 0 90% V0 Z");
+    // background: url('images/footer_bg.webp') center no-repeat;
+    // -webkit-mask-image: radial-gradient(circle 40px at bottom left, transparent 39px, black 40px);
+    // mask-image: radial-gradient(circle 40px at bottom left, transparent 39px, black 40px);
+
+    // -webkit-mask-composite: destination-out;
+    // mask-composite: exclude;
+    color: #fff;
+  }
+
+  &__logo {
+    grid-column: span 2;
+    display: grid;
+    place-content: center;
+    width: 156px;
+    height: 56px;
+    margin-top: -32px;
+    margin-left: -32px;
+    border-radius: 12px;
+    background: var(--darkgreen);
+  }
+
+  &__site-description {
+    max-width: 540px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.25;
+  }
+
+  &__social-buttons {
+    justify-self: end;
+  }
+
+  &__contacts-list {
+    list-style: none;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+}

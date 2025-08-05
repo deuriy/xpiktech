@@ -1,0 +1,17 @@
+.hero-slider-block {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas: "wrapper";
+  filter: var(--drop-shadow);
+
+  &__slider-wrapper,
+  &__buttons {
+    grid-area: wrapper;
+  }
+
+  &__buttons {
+    z-index: 1;
+    align-self: end;
+    justify-self: start;
+  }
+}

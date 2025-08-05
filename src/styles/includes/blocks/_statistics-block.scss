@@ -1,0 +1,32 @@
+.statistics-block {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "icon number"
+    "icon title";
+  column-gap: 18px;
+  padding: 17px;
+  border-radius: 18px;
+  background: #A6A6A652;
+  color: #fff;
+
+  &__icon-wrapper {
+    grid-area: icon;
+    display: grid;
+    place-content: center;
+    width: 35px;
+    height: 35px;
+    background: rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(11.5663px);
+    border-radius: 8.6747px;
+  }
+
+  &__number {
+    font-weight: 500;
+    font-size: 40.48px;
+  }
+
+  &__suffix {
+    color: var(--lightgreen);
+  }
+}

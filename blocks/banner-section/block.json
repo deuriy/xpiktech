@@ -1,0 +1,19 @@
+{
+  "name": "acf/banner-section",
+  "title": "Banner Section",
+  "description": "Banner Section block that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "banner",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

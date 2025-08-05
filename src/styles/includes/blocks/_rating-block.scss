@@ -1,0 +1,11 @@
+.rating-block {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 6px;
+  justify-content: start;
+  align-items: center;
+
+  &__reviews-number {
+    font-size: 13px;
+  }
+}

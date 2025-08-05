@@ -1,0 +1,21 @@
+:root {
+  --base-font: 'Lufga', Arial, sans-serif;
+
+  --green: #178B67;
+  --darkgreen: #005E59;
+  --mintgreen: #2DC1A7;
+  --turquoise: #D6F3ED;
+  --lightgreen: #D7FF00;
+  --grey: #CACACA;
+  --lightgrey: #F3F3F3;
+  --dark: #282828;
+  --yellow: #FC0;
+  --blue: #0077B4;
+  --lightblue: #24A1DE;
+
+  --shadow: 0 0 20px rgba(0, 0, 0, 0.02);
+  --drop-shadow: drop-shadow(var(--shadow));
+  --text-shadow: 0 0 2px rgba(0, 0, 0, 0.14);
+
+  --border-color: rgba(255, 255, 255, 0.8);
+}

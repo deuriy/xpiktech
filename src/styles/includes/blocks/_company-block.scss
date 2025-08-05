@@ -1,0 +1,36 @@
+.company-block {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "logo title"
+    "logo rating";
+  align-items: center;
+  gap: 4px 12px;
+
+  &__logo-img {
+    grid-area: logo;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__name {
+    align-self: end;
+    font-weight: normal;
+    font-size: 16px;
+  }
+
+  &__rating-block,
+  &__username {
+    align-self: start;
+  }
+
+  &--testimonial {
+    .company-block__logo-img {
+      width: 48px;
+      height: 48px;
+    }
+
+    .company-block__name {
+      font-weight: 600;
+    }
+  }
+}

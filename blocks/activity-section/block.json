@@ -1,0 +1,19 @@
+{
+  "name": "acf/activity-section",
+  "title": "Activity Section",
+  "description": "Activity Section block that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "activity",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

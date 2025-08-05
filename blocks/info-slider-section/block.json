@@ -1,0 +1,20 @@
+{
+  "name": "acf/info-slider-section",
+  "title": "Info Slider Section",
+  "description": "Info Slider Section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "info",
+    "slider",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

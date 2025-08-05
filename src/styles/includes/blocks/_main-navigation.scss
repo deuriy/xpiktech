@@ -1,0 +1,47 @@
+.main-navigation {
+  &__list {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    // gap: 20px;
+  }
+
+  .menu-item {
+    position: relative;
+
+    a {
+      display: block;
+      padding: 12px 16px;
+      color: var(--dark);
+      text-decoration: none;
+      @extend .transition;
+
+      &:hover {
+        color: var(--mintgreen);
+      }
+    }
+
+    &:hover {
+      .sub-menu {
+        top: calc(100% + 10px);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .sub-menu {
+    position: absolute;
+    z-index: 10;
+    top: calc(100% + 20px);
+    list-style: none;
+    min-width: 180px;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .02);
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    @extend .transition;
+  }
+}
