@@ -1,4 +1,9 @@
 .service-block {
+  display: grid;
+  grid-template-columns: 100%;
+  align-content: center;
+  justify-items: center;
+  gap: 16px;
   padding: 22px;
   border: 2px solid var(--border-color);
   border-radius: 24px;
@@ -6,6 +11,11 @@
   box-shadow: var(--shadow);
   text-align: center;
   transition: background .3s, border .3s;
+
+  @media (max-width: 767px) {
+    padding: 20px;
+    border-radius: 20px;
+  }
 
   &__img {
     width: auto;
@@ -15,7 +25,7 @@
 
   &__title {
     max-width: 128px;
-    margin: 16px auto 0;
+    margin: 0 auto;
     font-weight: normal;
     font-size: 16px;
     line-height: 1.25;
@@ -33,6 +43,7 @@
     display: grid;
     grid-template-areas: "wrapper";
     grid-template-columns: 100%;
+    align-content: stretch;
     padding: 0;
     border-radius: 24px;
     text-align: left;
@@ -73,6 +84,9 @@
 
     .service-block__front {
       position: relative;
+      display: grid;
+      grid-template-columns: 100%;
+      align-content: space-between;
       background: linear-gradient(121deg, #93DCC5 0%, #C2ECCF 100%);
       @extend .transition;
 

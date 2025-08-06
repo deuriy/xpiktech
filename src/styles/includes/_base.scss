@@ -27,8 +27,26 @@ body {
   transition: .3s;
 }
 
+@media (min-width: 1024px) {
+  .hidden-md-plus {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hidden-sm-minus {
+    display: none !important;
+  }
+}
+
 @media (min-width: 768px) {
   .hidden-sm-plus {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hidden-xs {
     display: none !important;
   }
 }

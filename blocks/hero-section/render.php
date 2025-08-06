@@ -59,20 +59,23 @@ if (! empty($block['className'])) {
                     </div>
 
                     <div class="buttons-list hero-slider-block__buttons">
-                        <a href="#" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10">
+                        <a href="#" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 hero-slider-block__btn">
                             <span class="ico ico--arrow-right2"></span>
                         </a>
-                        <a href="#" class="btn-darkgreen btn-darkgreen--radius-16">Request a Free Demo</a>
+                        <a href="#" class="btn-darkgreen btn-darkgreen--radius-16 hero-slider-block__btn">Request a Free Demo</a>
                     </div>
                 </div>
             <?php endif; ?>
 
             <?php if ($text_block['title'] || $text_block['text']): ?>
-                <div class="text-block">
+                <div class="text-block hero-section__text-block">
                     <?php if ($text_block['title']) : ?>
-                        <h3 class="grad-text text-block__title">
-                            <?php echo esc_html($text_block['title']); ?>
-                        </h3>
+                        <div class="text-block__header">
+                            <h3 class="grad-text text-block__title">
+                                <?php echo esc_html($text_block['title']); ?>
+                            </h3>
+                            <a href="#" class="green-link text-block__more-link">more</a>
+                        </div>
                     <?php endif; ?>
 
                     <?php if (($text_block['text'])) : ?>
@@ -86,9 +89,12 @@ if (! empty($block['className'])) {
             <?php if ($companies_slider['slides']): ?>
                 <div class="company-review-slider-block hero-section__company-review-slider-block">
                     <?php if ($companies_slider['title']) : ?>
-                        <h3 class="grad-text company-review-slider-block__title">
-                            <?php echo esc_html($companies_slider['title']); ?>
-                        </h3>
+                        <div class="company-review-slider-block__header">
+                            <h3 class="grad-text company-review-slider-block__title">
+                                <?php echo esc_html($companies_slider['title']); ?>
+                            </h3>
+                            <a href="#" class="green-link company-review-slider-block__more-link">more</a>
+                        </div>
                     <?php endif; ?>
 
                     <div class="swiper company-review-slider">
@@ -138,13 +144,21 @@ if (! empty($block['className'])) {
                             <?php endforeach; ?>
                         </div>
                     </div>
+
+                    <button type="button" class="btn-darkgreen btn-darkgreen--padding-10 btn-darkgreen--bordered-lightgrey company-review-slider-block__next-btn hidden-xs">
+                        <span class="ico ico--arrow-right"></span>
+                    </button>
+
+                    <button type="button" class="btn-darkgreen btn-darkgreen--padding-6 btn-darkgreen--bordered-lightgrey company-review-slider-block__next-btn hidden-sm-plus">
+                        <span class="ico ico--arrow-bottom"></span>
+                    </button>
                 </div>
             <?php endif; ?>
 
             <?php if ($service_blocks): ?>
                 <div class="service-blocks hero-section__service-blocks">
                     <?php foreach ($service_blocks as $service_block): ?>
-                        <div class="service-block">
+                        <div class="service-block service-blocks__item">
                             <?php if ($service_block['image']) : ?>
                                 <?php echo wp_get_attachment_image($service_block['image'], 'full', '', array('class' => 'service-block__img')); ?>
                             <?php endif; ?>
@@ -199,6 +213,10 @@ if (! empty($block['className'])) {
                             <?php endforeach; ?>
                         </div>
                     </div>
+
+                    <button type="button" class="btn-darkgreen btn-darkgreen--padding-10 btn-darkgreen--bordered-lightgrey service-block-slider-wrapper__next-btn hidden-xs">
+                        <span class="ico ico--arrow-right"></span>
+                    </button>
                 </div>
             <?php endif; ?>
         </div>

@@ -27,34 +27,45 @@
 	<div id="page" class="wrapper">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'xpiktech'); ?></a>
 
+		<div class="offcanvas" id="main-nav-sidebar">
+			<button class="offcanvas__close-btn" type="button" data-offcanvas-close>
+				<span class="ico ico--close ico--size-24"></span>
+			</button>
+
+			<div class="offcanvas__container">
+				<div class="offcanvas__header">
+					<?php the_custom_logo(); ?>
+				</div>
+
+				<nav id="site-navigation" class="main-navigation main-navigation--mobile">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+							'menu_class'      => 'main-navigation__list',
+						)
+					);
+					?>
+				</nav><!-- #site-navigation -->
+
+				<div class="offcanvas__footer">
+					<div class="buttons-list buttons-list--offcanvas offcanvas__buttons-list">
+						<a href="#" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 banner__btn">
+							<span class="ico ico--arrow-right2"></span>
+						</a>
+						<a href="#" class="btn-darkgreen btn-darkgreen--radius-16 banner__btn">Request a Free Demo</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<header id="masthead" class="header">
 			<div class="container">
 				<div class="header__container">
 					<?php the_custom_logo(); ?>
-					<?php if (false): ?>
-						<div class="site-branding">
-							<?php
-							the_custom_logo();
-							if (is_front_page() && is_home()) :
-							?>
-								<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-							<?php
-							else :
-							?>
-								<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
-							<?php
-							endif;
-							$xpiktech_description = get_bloginfo('description', 'display');
-							if ($xpiktech_description || is_customize_preview()) :
-							?>
-								<p class="site-description"><?php echo $xpiktech_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
-																						?></p>
-							<?php endif; ?>
-						</div><!-- .site-branding -->
-					<?php endif; ?>
 
-					<nav id="site-navigation" class="main-navigation">
-						<button class="menu-toggle hidden-sm-plus" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'xpiktech'); ?></button>
+					<nav id="site-navigation" class="main-navigation hidden-sm-minus">
 						<?php
 						wp_nav_menu(
 							array(
@@ -66,12 +77,14 @@
 						?>
 					</nav><!-- #site-navigation -->
 
-					<div class="header__buttons">
+					<div class="header__buttons hidden-sm-minus">
 						<a href="#" class="btn-darkgreen">Contact Us</a>
 						<a href="#" class="btn-darkgreen btn-darkgreen--padding-10">
 							<span class="ico ico--arrow-left"></span>
 						</a>
 					</div>
+
+					<button type="button" class="menu-toggle hidden-md-plus" data-offcanvas-toggle data-offcanvas-id="main-nav-sidebar"></button>
 				</div>
 			</div>
 		</header><!-- #masthead -->

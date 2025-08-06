@@ -4,13 +4,16 @@
   grid-template-columns: 100%;
   padding: 32px 0;
 
-  &__container,
+  .container,
   &::before {
     grid-area: wrapper;
   }
 
   &::before {
     content: '';
+    width: 100%;
+    height: calc(50% + 32px);
+    margin-top: -32px;
     background: #fff;
   }
 }

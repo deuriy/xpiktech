@@ -1,14 +1,54 @@
 .statistics-section {
   padding: 96px 0;
 
+  @media (max-width: 1199px) {
+    padding: 80px 0;
+  }
+
+  @media (max-width: 1023px) {
+    padding: 64px 0;
+  }
+
   &__container {
     display: grid;
     // grid-template-columns: 1fr 1.4fr;
     grid-template-columns: 1fr 1.285fr;
+    // align-items: start;
     gap: 56px;
     padding: 56px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='597' height='412' fill='none'%3E%3Cmask id='a' width='597' height='412' x='0' y='0' maskUnits='userSpaceOnUse' style='mask-type:alpha'%3E%3Cpath fill='%23D6F3ED' d='M0 0h597v412H0z'/%3E%3C/mask%3E%3Cg fill='%23fff' mask='url(%23a)'%3E%3Crect width='122.452' height='122.452' x='475.336' y='2.586' fill-opacity='.06' rx='4.337' transform='rotate(15 475.336 2.586)'/%3E%3Cpath fill-opacity='.04' d='M456.465 529.381 269.067-50.632a4.336 4.336 0 0 0-3.004-2.856l-108.3-29.02c-3.32-.889-6.306 2.253-5.25 5.523l92.836 287.337L21.283 412.774c-2.55 2.304-1.535 6.518 1.785 7.407l108.168 28.984a4.339 4.339 0 0 0 4.181-1.114l141.321-140.549 63.173 195.526a4.336 4.336 0 0 0 3.004 2.856l108.301 29.019c3.32.89 6.306-2.252 5.249-5.522Z'/%3E%3C/g%3E%3C/svg%3E") right top no-repeat, linear-gradient(0deg, #005E59 0%, #209E6D 140.41%), #005E59;
     border: 2px solid var(--border-color);
     border-radius: 32px;
+
+    @media (max-width: 1199px) {
+      padding: 32px;
+      gap: 32px;
+      border-radius: 28px;
+    }
+
+    @media (max-width: 1023px) {
+      grid-template-columns: 100%;
+      padding: 24px;
+      border-radius: 24px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 16px;
+      border-radius: 16px;
+    }
+  }
+
+  &__slider-block {
+    min-width: 0;
+  }
+
+  &__slider-block,
+  &__success-block {
+    @media (max-width: 767px) {
+      width: 380px;
+      max-width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+    }
   }
 }

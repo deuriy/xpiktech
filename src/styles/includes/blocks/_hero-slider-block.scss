@@ -4,14 +4,31 @@
   grid-template-areas: "wrapper";
   filter: var(--drop-shadow);
 
+  @media (max-width: 767px) {
+    gap: 20px;
+  }
+
   &__slider-wrapper,
   &__buttons {
-    grid-area: wrapper;
+    @media (min-width: 768px) {
+      grid-area: wrapper;
+    }
   }
 
   &__buttons {
     z-index: 1;
     align-self: end;
     justify-self: start;
+
+    @media (max-width: 767px) {
+      justify-self: center;
+    }
+  }
+
+  &:hover {
+    .hero-slider-block__btn {
+      background: var(--dark);
+      color: var(--lightgreen);
+    }
   }
 }

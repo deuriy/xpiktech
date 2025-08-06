@@ -1,3 +1,16 @@
 .info-slider-section {
+  position: relative;
   padding: 96px 0;
+
+  &__pagination {
+    --swiper-pagination-bottom: 34px;
+  }
+
+  @media (max-width: 1199px) {
+    padding: 80px 0;
+  }
+
+  @media (max-width: 1023px) {
+    padding: 64px 0;
+  }
 }

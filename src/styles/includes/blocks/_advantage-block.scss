@@ -1,6 +1,5 @@
 .advantage-block {
   position: relative;
-  max-height: 404px;
   padding: 32px;
   border: 1px solid transparent;
   border-radius: 32px;
@@ -8,11 +7,39 @@
   box-shadow: var(--shadow);
   @extend .transition;
 
+  @media (max-width: 1199px) {
+    padding: 28px;
+    border-radius: 28px;
+  }
+
+  @media (max-width: 1023px) {
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  @media (max-width: 767px) {
+    min-height: 368px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
   &__icon-wrapper {
     display: block;
     width: 64px;
     height: 64px;
     margin-bottom: 56px;
+
+    @media (max-width: 1199px) {
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 1023px) {
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 32px;
+    }
 
     svg path {
       @extend .transition;
@@ -25,6 +52,15 @@
     margin-bottom: 16px;
     font-size: 24px;
     line-height: 1.29166667;
+
+    @media (max-width: 1023px) {
+      font-size: 22px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 20px;
+      line-height: 1.2;
+    }
   }
 
   &__text {

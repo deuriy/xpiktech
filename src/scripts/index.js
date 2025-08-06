@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { EffectFade, Autoplay, Navigation } from 'swiper/modules';
+import { EffectFade, Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', function () {
   initSliders();
@@ -12,33 +12,59 @@ const initSliders = () => {
 
     effect: 'fade',
     fadeEffect: {
-      crossFade: false
+      crossFade: true
     },
 
     autoplay: {
-      delay: 1000,
+      delay: 5000
     },
   });
 
   new Swiper('.company-review-slider', {
+    modules: [Navigation],
     slidesPerView: 2,
     spaceBetween: 24,
     loop: true,
+    direction: 'vertical',
+
+    navigation: {
+      nextEl: '.company-review-slider-block__next-btn'
+    },
+
+    breakpoints: {
+      768: {
+        direction: 'horizontal'
+      }
+    }
   });
 
   new Swiper('.service-block-slider', {
-    modules: [Autoplay],
-    slidesPerView: 2,
+    modules: [Autoplay, Navigation],
+    slidesPerView: 'auto',
     spaceBetween: 20,
     loop: true,
+
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+      },
+
+      1200: {
+        slidesPerView: 2
+      }
+    },
 
     autoplay: {
       delay: 5000,
     },
+
+    navigation: {
+      nextEl: '.service-block-slider-wrapper__next-btn'
+    }
   });
 
   new Swiper('.info-slider', {
-    modules: [EffectFade, Navigation],
+    modules: [EffectFade, Navigation, Pagination],
     loop: true,
 
     // effect: 'fade',
@@ -47,13 +73,18 @@ const initSliders = () => {
     // },
 
     navigation: {
-      nextEl: '.info-slider__next-btn',
-      prevEl: '.info-slider__prev-btn',
+      nextEl: '.info-block__next-btn',
+      prevEl: '.info-block__prev-btn',
+    },
+
+    pagination: {
+      el: '.info-slider-section__pagination',
+      type: 'bullets',
     },
   });
 
   new Swiper('.testimonial-slider', {
-    modules: [EffectFade, Navigation],
+    modules: [EffectFade, Navigation, Pagination],
     loop: true,
 
     // effect: 'fade',
@@ -62,8 +93,31 @@ const initSliders = () => {
     // },
 
     navigation: {
-      nextEl: '.testimonial-slider__next-btn',
-      prevEl: '.testimonial-slider__prev-btn',
+      nextEl: '.testimonial-block__next-btn',
+      prevEl: '.testimonial-block__prev-btn',
+    },
+
+    pagination: {
+      el: '.testimonial-section__pagination',
+      type: 'bullets',
+    },
+  });
+
+  new Swiper('.statistics-slider', {
+    modules: [Pagination],
+    slidesPerView: 1,
+    spaceBetween: 24,
+    loop: true,
+
+    breakpoints: {
+      768: {
+        slidesPerView: 2
+      }
+    },
+
+    pagination: {
+      el: '.statistics-slider__pagination',
+      type: 'bullets',
     },
   });
 };

@@ -21,11 +21,13 @@ $copyright = get_field('copyright', 'option');
 <footer id="colophon" class="footer">
 	<div class="container">
 		<div class="footer__container">
-			<?php if ($footer_logo_id) : ?>
-				<a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="footer__logo">
-					<?php echo wp_get_attachment_image($footer_logo_id, 'full', '', array('class' => 'footer__logo-img')); ?>
-				</a>
-			<?php endif; ?>
+			<div class="footer__top">
+				<?php if ($footer_logo_id) : ?>
+					<a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="footer__logo">
+						<?php echo wp_get_attachment_image($footer_logo_id, 'full', '', array('class' => 'footer__logo-img')); ?>
+					</a>
+				<?php endif; ?>
+			</div>
 
 			<?php if ($site_description) : ?>
 				<div class="footer__site-description">
@@ -38,15 +40,15 @@ $copyright = get_field('copyright', 'option');
 					<?php foreach ($social_buttons as $social_btn): ?>
 						<li class="social-buttons__item">
 							<?php if ($social_btn['social_networks'] == 'email') : ?>
-								<a href="mailto:<?php echo esc_html($social_btn['value']) ?>" class="btn-white btn-white--padding-10">
+								<a href="mailto:<?php echo esc_html($social_btn['value']) ?>" class="btn-white btn-white--social">
 									<span class="ico ico--email"></span>
 								</a>
 							<?php elseif ($social_btn['social_networks'] == 'phone') : ?>
-								<a href="tel:<?php echo esc_html($social_btn['value']) ?>" class="btn-white btn-white--padding-10">
+								<a href="tel:<?php echo esc_html($social_btn['value']) ?>" class="btn-white btn-white--social">
 									<span class="ico ico--phone"></span>
 								</a>
 							<?php else: ?>
-								<a href="tel:<?php echo esc_html($social_btn['value']) ?>" class="btn-white btn-white--padding-10">
+								<a href="tel:<?php echo esc_html($social_btn['value']) ?>" class="btn-white btn-white--social">
 									<span class="ico ico--<?php echo $social_btn['social_networks'] ?>"></span>
 								</a>
 							<?php endif; ?>

@@ -1,11 +1,55 @@
 .company-review-slider-block {
+  position: relative;
   padding: 24px;
+  border: 1px solid transparent;
   background: #FFF;
-  border: 2px solid var(--border-color);
-  border-radius: 24px;
   box-shadow: var(--shadow);
+  border-radius: 24px;
+  // box-shadow: var(--shadow);
+  @extend .transition;
 
-  &__title {
+  &__header {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
     margin-bottom: 24px;
+  }
+
+  &__more-link {
+    opacity: 0;
+    visibility: hidden;
+    @extend .transition;
+  }
+
+  &__next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -50%);
+    right: 0;
+
+    @media (max-width: 767px) {
+      top: auto;
+      bottom: 0;
+      right: auto;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 2px rgba(45, 193, 167, 0.24);
+    border-color: var(--mintgreen);
+
+    .company-review-slider-block__more-link {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .company-review-slider-block__next-btn {
+      background: var(--dark);
+      color: var(--lightgreen);
+    }
   }
 }

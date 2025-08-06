@@ -5,7 +5,8 @@
   grid-template-areas: "icon number"
     "icon title";
   column-gap: 18px;
-  padding: 17px;
+  padding: 17px 19px 28px 17px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
   border-radius: 18px;
   background: #A6A6A652;
   color: #fff;
@@ -22,11 +23,17 @@
   }
 
   &__number {
+    margin-top: -6px;
     font-weight: 500;
     font-size: 40.48px;
   }
 
   &__suffix {
+    font-weight: 400;
     color: var(--lightgreen);
+  }
+
+  &__title {
+    font-size: 11.57px;
   }
 }

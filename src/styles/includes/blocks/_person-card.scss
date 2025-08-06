@@ -8,6 +8,22 @@
   border: 2px solid var(--border-color);
   background: #D9D9D9;
 
+  @media (max-width: 1199px) {
+    grid-template-rows: 400px;
+    width: 340px;
+    border-radius: 28px;
+  }
+
+  @media (max-width: 1023px) {
+    width: 320px;
+    border-radius: 24px;
+  }
+
+  @media (max-width: 767px) {
+    width: 343px;
+    border-radius: 20px;
+  }
+
   &__photo-img,
   &__info {
     grid-area: wrapper;
@@ -18,6 +34,10 @@
     border-radius: inherit;
     object-fit: cover;
     object-position: 83% center;
+
+    @media (max-width: 1199px) {
+      // object-position: 78% center;
+    }
   }
 
   &__info {
@@ -26,6 +46,7 @@
     grid-template-columns: 1fr 48px;
     grid-template-areas: "fullname company-logo"
       "post company-logo";
+    align-items: center;
     gap: 4px 20px;
     margin: 8px;
     padding: 24px;
@@ -35,6 +56,11 @@
     backdrop-filter: blur(25px);
     border-radius: 12px 12px 24px 24px;
     color: #fff;
+
+    @media (max-width: 1199px) {
+      grid-template-columns: 1fr 40px;
+      padding: 20px;
+    }
   }
 
   &__fullname {
@@ -42,11 +68,19 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 1.3;
+
+    @media (max-width: 1199px) {
+      font-size: 18px;
+    }
   }
 
   &__post {
     align-self: start;
     font-weight: 300;
+
+    @media (max-width: 1199px) {
+      font-size: 14px;
+    }
   }
 
   &__company-logo {

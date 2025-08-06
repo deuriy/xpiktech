@@ -1,21 +1,106 @@
 .testimonial-block {
   display: grid;
   grid-template-columns: auto 1fr;
+  // align-items: start;
+  border-radius: 32px;
   gap: 32px;
 
+  @media (max-width: 1199px) {
+    gap: 24px;
+    border-radius: 28px;
+  }
+
+  @media (max-width: 1023px) {
+    gap: 20px;
+    border-radius: 24px;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: 100%;
+    justify-items: center;
+    gap: 16px;
+    border-radius: 20px;
+  }
+
+  &__person-card {
+    align-self: start;
+  }
+
   &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "rating rating"
+      "text text"
+      "company buttons";
+    align-items: center;
+    column-gap: 24px;
     padding: 56px;
     border-radius: 32px;
     background: var(--lightgrey);
+
+    @media (max-width: 1199px) {
+      padding: 40px;
+      border-radius: 28px;
+    }
+
+    @media (max-width: 1023px) {
+      padding: 30px;
+      border-radius: 24px;
+    }
+
+    @media (max-width: 767px) {
+      width: 343px;
+      max-width: 100%;
+      padding: 20px;
+      border-radius: 20px;
+    }
   }
 
   &__rating {
+    grid-area: rating;
     margin-bottom: 40px;
+
+    @media (max-width: 1199px) {
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 1023px) {
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 20px;
+    }
   }
 
   &__text {
+    grid-area: text;
     margin-bottom: 48px;
     font-size: 32px;
     line-height: 1.375;
+
+    @media (max-width: 1199px) {
+      margin-bottom: 40px;
+      font-size: 24px;
+    }
+
+    @media (max-width: 1023px) {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  &__company {
+    grid-area: company;
+  }
+
+  &__buttons-list {
+    grid-area: buttons;
   }
 }

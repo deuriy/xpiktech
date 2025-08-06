@@ -1,10 +1,19 @@
 .service-block-slider {
+  @media (max-width: 767px) {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
   &__slides {
     align-items: stretch;
   }
 
   &__slide {
     height: auto;
+
+    @media (max-width: 767px) {
+      width: auto;
+    }
   }
 
   &__block {

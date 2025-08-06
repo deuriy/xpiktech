@@ -1,10 +1,26 @@
 .hero-section {
   padding: 32px 0 96px;
 
+  @media (max-width: 1199px) {
+    padding: 32px 0 80px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 0 0 64px;
+  }
+
   &__container {
     display: grid;
     grid-template-columns: 1.41443fr 1fr;
     gap: 20px;
+
+    @media (max-width: 1199px) {
+      max-width: 785px;
+      grid-template-columns: 100%;
+      justify-content: center;
+      margin-right: auto;
+      margin-left: auto;
+    }
   }
 
   &__slider-block,
@@ -14,5 +30,28 @@
 
   &__slider-block {
     grid-row: span 2;
+  }
+
+  &__slider-block,
+  &__service-blocks {
+    @media (max-width: 1199px) {
+      order: -1;
+    }
+  }
+
+  &__service-blocks,
+  &__text-block,
+  &__company-review-slider-block {
+    @media (max-width: 767px) {
+      margin-top: 20px;
+    }
+  }
+
+  &__service-block-slider-wrapper {
+    @media (max-width: 767px) {
+      margin-top: 36px;
+      margin-right: -16px;
+      margin-left: -15px;
+    }
   }
 }

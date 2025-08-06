@@ -8,6 +8,20 @@
   overflow: hidden;
   @extend .transition;
 
+  @media (max-width: 1199px) {
+    padding: 28px;
+  }
+
+  @media (max-width: 1023px) {
+    padding: 24px;
+  }
+
+  @media (max-width: 767px) {
+    min-height: 360px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+
   &__icon {
     display: block;
     width: 136px;
@@ -15,6 +29,23 @@
     margin-bottom: 32px;
     object-fit: cover;
     @extend .transition;
+
+    @media (max-width: 1199px) {
+      width: 112px;
+      height: 112px;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 1023px) {
+      width: 88px;
+      height: 88px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 767px) {
+      width: 64px;
+      height: 64px;
+    }
   }
 
   &__title {
@@ -23,17 +54,33 @@
     margin-bottom: 24px;
     font-size: 32px;
     line-height: 1.3125;
+
+    @media (max-width: 1199px) {
+      font-size: 28px;
+    }
+
+    @media (max-width: 1023px) {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 16px;
+      font-size: 20px;
+    }
   }
 
   &::after {
-    content: '';
-    position: absolute;
-    right: 32px;
-    bottom: 0;
-    left: 32px;
-    height: 56px;
-    background: linear-gradient(180deg, rgba(243, 243, 243, 0.56) 0%, var(--lightgrey) 55.62%);
-    @extend .transition;
+    @media (min-width: 768px) {
+      content: '';
+      position: absolute;
+      right: 32px;
+      bottom: 0;
+      left: 32px;
+      height: 56px;
+      background: linear-gradient(180deg, rgba(243, 243, 243, 0.56) 0%, var(--lightgrey) 55.62%);
+      transition: .3s;
+    }
   }
 
   &:hover {

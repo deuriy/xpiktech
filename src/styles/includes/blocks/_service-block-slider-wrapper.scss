@@ -1,3 +1,19 @@
 .service-block-slider-wrapper {
+  position: relative;
   min-width: 0;
+
+  &__next-btn {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translate(50%, -50%);
+    right: 0;
+  }
+
+  &:hover {
+    .service-block-slider-wrapper__next-btn {
+      background: var(--dark);
+      color: var(--lightgreen);
+    }
+  }
 }

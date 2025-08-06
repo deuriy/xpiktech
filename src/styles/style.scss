@@ -13,6 +13,9 @@ Text Domain: xpiktech
 */
 
 @import "node_modules/swiper/swiper.scss";
+@import "node_modules/swiper/modules/autoplay.scss";
+@import "node_modules/swiper/modules/effect-fade.scss";
+@import "node_modules/swiper/modules/pagination.scss";
 
 @import "./includes/_fonts.scss";
 @import "./includes/_variables.scss";
@@ -24,12 +27,15 @@ Text Domain: xpiktech
 @import "./includes/blocks/_btn-white.scss";
 @import "./includes/blocks/_btn-blue.scss";
 @import "./includes/blocks/_btn-lightblue.scss";
+@import "./includes/blocks/_green-link.scss";
 @import "./includes/blocks/_wrapper.scss";
 @import "./includes/blocks/_main.scss";
 @import "./includes/blocks/_container.scss";
 @import "./includes/blocks/_header.scss";
 @import "./includes/blocks/_custom-logo-link.scss";
 @import "./includes/blocks/_main-navigation.scss";
+@import "./includes/blocks/_menu-toggle.scss";
+@import "./includes/blocks/_offcanvas.scss";
 @import "./includes/blocks/_hero-block.scss";
 @import "./includes/blocks/_grad-text.scss";
 @import "./includes/blocks/_text-block.scss";
@@ -40,6 +46,7 @@ Text Domain: xpiktech
 @import "./includes/blocks/_rating-block.scss";
 @import "./includes/blocks/_company-block.scss";
 @import "./includes/blocks/_company-review-block.scss";
+@import "./includes/blocks/_company-review-slider.scss";
 @import "./includes/blocks/_company-review-slider-block.scss";
 @import "./includes/blocks/_service-block.scss";
 @import "./includes/blocks/_service-blocks.scss";
@@ -63,6 +70,7 @@ Text Domain: xpiktech
 @import "./includes/blocks/_statistics-block.scss";
 @import "./includes/blocks/_statistics-blocks.scss";
 @import "./includes/blocks/_statistics-section.scss";
+@import "./includes/blocks/_swiper-pagination.scss";
 @import "./includes/blocks/_advantage-block.scss";
 @import "./includes/blocks/_advantage-blocks.scss";
 @import "./includes/blocks/_advantages-section.scss";

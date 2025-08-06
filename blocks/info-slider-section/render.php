@@ -28,10 +28,10 @@ if (! empty($block['className'])) {
                     <div class="swiper-wrapper info-slider__slides">
                         <?php foreach ($info_slides as $info_slide): ?>
                             <div class="swiper-slide info-slider__slide">
-                                <div class="info-block">
+                                <div class="info-block info-slider__block">
                                     <div class="info-block__text-wrapper">
                                         <?php if ($info_slide['title']): ?>
-                                            <h3 class="grad-text grad-text--large info-block__title">
+                                            <h3 class="grad-text info-block__title">
                                                 <?php echo esc_html($info_slide['title']) ?>
                                             </h3>
                                         <?php endif; ?>
@@ -41,6 +41,15 @@ if (! empty($block['className'])) {
                                                 <?php echo wp_kses_post($info_slide['text']) ?>
                                             </div>
                                         <?php endif; ?>
+
+                                        <div class="buttons-list buttons-list--arrows info-block__buttons-list hidden-xs">
+                                            <button type="button" class="btn-darkgreen btn-darkgreen--padding-10 btn-darkgreen--bordered-lightgrey info-block__prev-btn">
+                                                <span class="ico ico--arrow-left2"></span>
+                                            </button>
+                                            <button type="button" class="btn-darkgreen btn-darkgreen--padding-10  btn-darkgreen--bordered-lightgrey info-block__next-btn">
+                                                <span class="ico ico--arrow-right"></span>
+                                            </button>
+                                        </div>
                                     </div>
 
                                     <?php if ($info_slide['image']) : ?>
@@ -52,14 +61,8 @@ if (! empty($block['className'])) {
                             </div>
                         <?php endforeach; ?>
                     </div>
-
-                    <button type="button" class="btn-darkgreen btn-darkgreen--padding-10 btn-darkgreen--bordered btn-darkgreen--bordered-lightgrey info-slider__prev-btn">
-                        <span class="ico ico--arrow-left2"></span>
-                    </button>
-                    <button type="button" class="btn-darkgreen btn-darkgreen--padding-10 btn-darkgreen--bordered btn-darkgreen--bordered-lightgrey info-slider__next-btn">
-                        <span class="ico ico--arrow-right"></span>
-                    </button>
                 </div>
+                <div class="swiper-pagination info-slider-section__pagination hidden-sm-plus"></div>
             </div>
         </div>
     </div>

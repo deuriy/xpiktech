@@ -29,7 +29,7 @@ if (! empty($block['className'])) {
                         <?php foreach ($testimonials as $testimonial): ?>
                             <div class="swiper-slide testimonial-slider__slide">
                                 <div class="testimonial-block">
-                                    <div class="person-card">
+                                    <div class="person-card testimonial-block__person-card">
                                         <?php if ($testimonial['author']['photo']): ?>
                                             <?php echo wp_get_attachment_image($testimonial['author']['photo'], 'full', '', array('class' => 'person-card__photo-img')); ?>
                                         <?php endif; ?>
@@ -57,7 +57,7 @@ if (! empty($block['className'])) {
                                         <?php if ($testimonial['rating']): ?>
                                             <div class="rating testimonial-block__rating">
                                                 <?php for ($i = 1; $i <= 5; $i++): ?>
-                                                    <span class="rating__star ico ico--star ico--size-24<?php echo $i <= $testimonial['rating'] ? ' ico--yellow' : ' ico--grey' ?>"></span>
+                                                    <span class="rating__star ico ico--star ico--testimonial-rating<?php echo $i <= $testimonial['rating'] ? ' ico--yellow' : ' ico--grey' ?>"></span>
                                                 <?php endfor; ?>
                                             </div>
                                         <?php endif; ?>
@@ -67,7 +67,7 @@ if (! empty($block['className'])) {
                                             </div>
                                         <?php endif; ?>
 
-                                        <div class="company-block company-block--testimonial">
+                                        <div class="company-block company-block--testimonial testimonial-block__company">
                                             <?php if ($testimonial['company']['logo']) : ?>
                                                 <?php echo wp_get_attachment_image($testimonial['company']['logo'], 'full', '', array('class' => 'company-block__logo-img')); ?>
                                             <?php endif; ?>
@@ -84,19 +84,22 @@ if (! empty($block['className'])) {
                                                 </div>
                                             <?php endif; ?>
                                         </div>
+
+                                        <div class="buttons-list buttons-list--arrows testimonial-block__buttons-list">
+                                            <button type="button" class="btn-darkgreen btn-darkgreen--padding-10 btn-darkgreen--bordered testimonial-block__prev-btn hidden-xs">
+                                                <span class="ico ico--arrow-left2"></span>
+                                            </button>
+                                            <button type="button" class="btn-darkgreen btn-darkgreen--padding-10 btn-darkgreen--bordered testimonial-block__next-btn hidden-xs">
+                                                <span class="ico ico--arrow-right"></span>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         <?php endforeach; ?>
                     </div>
-
-                    <button type="button" class="btn-darkgreen btn-darkgreen--padding-10 btn-darkgreen--bordered testimonial-slider__prev-btn">
-                        <span class="ico ico--arrow-left2"></span>
-                    </button>
-                    <button type="button" class="btn-darkgreen btn-darkgreen--padding-10 btn-darkgreen--bordered testimonial-slider__next-btn">
-                        <span class="ico ico--arrow-right"></span>
-                    </button>
                 </div>
+                <div class="swiper-pagination testimonial-section__pagination hidden-sm-plus"></div>
             </div>
         </div>
     </div>

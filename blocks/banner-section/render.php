@@ -26,7 +26,7 @@ if (! empty($block['className'])) {
     <div <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
         <div class="container">
             <div class="banner-section__container">
-                <div class="banner">
+                <div class="banner banner-section__banner">
                     <div class="banner__wrapper">
                         <?php if ($title): ?>
                             <h3 class="banner__title">
@@ -46,10 +46,10 @@ if (! empty($block['className'])) {
                     </div>
 
                     <div class="buttons-list banner__buttons-list">
-                        <a href="#" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10">
+                        <a href="#" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 banner__btn">
                             <span class="ico ico--arrow-right2"></span>
                         </a>
-                        <a href="#" class="btn-darkgreen btn-darkgreen--radius-16">Talk to an Expert</a>
+                        <a href="#" class="btn-darkgreen btn-darkgreen--radius-16 banner__btn">Talk to an Expert</a>
                     </div>
                 </div>
             </div>
