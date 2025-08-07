@@ -19,11 +19,18 @@
     padding-bottom: 16px;
   }
 
-  &:has(.offcanvas--opened)::after {
-    content: '';
-    position: fixed;
-    z-index: 10;
-    inset: 0;
-    background: rgba(0, 0, 0, .24);
+  &:has(.offcanvas--opened) {
+    &::after {
+      content: '';
+      position: fixed;
+      z-index: 10;
+      inset: 0;
+      background: rgba(0, 0, 0, .24);
+    }
+
+    .menu-toggle {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 }

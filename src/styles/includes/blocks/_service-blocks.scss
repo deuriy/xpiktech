@@ -16,6 +16,10 @@
     @media (max-width: 767px) {
       &:nth-child(1) {
         grid-column: span 2;
+
+        .service-block__title {
+          max-width: 100%;
+        }
       }
     }
   }

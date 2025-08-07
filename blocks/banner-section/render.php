@@ -9,6 +9,7 @@
 $title = get_field('title');
 $text = get_field('text');
 $image_id = get_field('image');
+$hover_image_id = get_field('hover_image');
 
 $anchor = '';
 if (! empty($block['anchor'])) {
@@ -40,9 +41,15 @@ if (! empty($block['className'])) {
                             </div>
                         <?php endif; ?>
 
-                        <?php if ($image_id) : ?>
-                            <?php echo wp_get_attachment_image($image_id, 'full', '', array('class' => 'banner__img')); ?>
-                        <?php endif; ?>
+                        <div class="banner__imgs">
+                            <?php if ($image_id) : ?>
+                                <?php echo wp_get_attachment_image($image_id, 'full', '', array('class' => 'banner__img')); ?>
+                            <?php endif; ?>
+
+                            <?php if ($hover_image_id) : ?>
+                                <?php echo wp_get_attachment_image($hover_image_id, 'full', '', array('class' => 'banner__hover-img')); ?>
+                            <?php endif; ?>
+                        </div>
                     </div>
 
                     <div class="buttons-list banner__buttons-list">
