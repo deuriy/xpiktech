@@ -1,0 +1,57 @@
+.contact-form {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 24px;
+
+  @media (max-width: 767px) {
+    gap: 20px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+
+    @media (max-width: 767px) {
+      grid-template-columns: 100%;
+    }
+  }
+
+  &__label {
+    margin-bottom: 8px;
+  }
+
+  &__actions {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+
+    @media (max-width: 767px) {
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .wpcf7-spinner {
+      position: absolute;
+      top: 15px;
+    }
+  }
+
+  .wpcf7-not-valid-tip {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+  padding: 1em;
+  border-color: var(--green);
+  border-radius: 16px;
+  color: var(--dark);
+}
+
+.wpcf7 form .wpcf7-response-output {
+  margin: 16px 0;
+}

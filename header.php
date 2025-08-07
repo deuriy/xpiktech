@@ -78,8 +78,8 @@
 					</nav><!-- #site-navigation -->
 
 					<div class="header__buttons hidden-sm-minus">
-						<a href="#" class="btn-darkgreen">Contact Us</a>
-						<a href="#" class="btn-darkgreen btn-darkgreen--padding-10">
+						<a href="#contact-form-popup" class="btn-darkgreen" data-fancybox>Contact Us</a>
+						<a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--padding-10" data-fancybox>
 							<span class="ico ico--arrow-left"></span>
 						</a>
 					</div>

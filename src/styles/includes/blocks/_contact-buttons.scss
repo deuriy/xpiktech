@@ -1,0 +1,16 @@
+.contact-buttons {
+  padding: 20px;
+  background: #fff;
+  border-radius: 24px;
+
+  @media (max-width: 767px) {
+    border-radius: 20px;
+  }
+
+  &__list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 12px;
+  }
+}

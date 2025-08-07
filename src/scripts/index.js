@@ -1,9 +1,18 @@
 import Swiper from 'swiper';
 import { EffectFade, Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
 
 document.addEventListener('DOMContentLoaded', function () {
   initSliders();
+  initFancybox();
 });
+
+const initFancybox = () => {
+  Fancybox.bind('[data-src="#contact-form-popup"], [href="#contact-form-popup"]', {
+    dragToClose: false,
+    // closeButton: false
+  });
+};
 
 const initSliders = () => {
   new Swiper('.hero-slider', {
@@ -54,9 +63,9 @@ const initSliders = () => {
       }
     },
 
-    autoplay: {
-      delay: 5000,
-    },
+    // autoplay: {
+    //   delay: 5000,
+    // },
 
     navigation: {
       nextEl: '.service-block-slider-wrapper__next-btn'

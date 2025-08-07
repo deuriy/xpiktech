@@ -219,3 +219,5 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/contacts-section');
 }
 add_action('init', 'xpiktech_register_blocks');
+
+add_filter('wpcf7_autop_or_not', '__return_false');

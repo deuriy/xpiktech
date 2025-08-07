@@ -90,10 +90,10 @@ if (! empty($block['className'])) {
                     <?php endif; ?>
 
                     <div class="buttons-list buttons-list--full-width success-block__buttons-list">
-                        <a href="#" class="btn-white btn-white--padding-10">
+                        <a href="#contact-form-popup" class="btn-white btn-white--padding-10" data-fancybox>
                             <span class="ico ico--arrow-right2"></span>
                         </a>
-                        <a href="#" class="btn-white">Contact Us</a>
+                        <a href="#contact-form-popup" class="btn-white" data-fancybox>Contact Us</a>
                     </div>
                 </div>
 

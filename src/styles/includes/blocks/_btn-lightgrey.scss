@@ -1,0 +1,39 @@
+.btn-lightgrey {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9.5px 20px;
+  border: none;
+  outline: none;
+  background: #F7F7F7;
+  color: #696969;
+  border-radius: 12px;
+  font-family: var(--base-font);
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  @extend .transition;
+
+  &:hover {
+    background: #eaeaea;
+    // color: #fff;
+  }
+
+  &--padding-6 {
+    padding: 6px;
+  }
+
+  &--padding-10 {
+    padding: 10px;
+  }
+
+  &--bordered {
+    box-shadow: 0 0 0 6px #fff;
+  }
+
+  &--bordered-lightgrey {
+    box-shadow: 0 0 0 6px var(--lightgrey);
+  }
+}

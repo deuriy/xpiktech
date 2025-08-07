@@ -16,6 +16,7 @@ Text Domain: xpiktech
 @import "node_modules/swiper/modules/autoplay.scss";
 @import "node_modules/swiper/modules/effect-fade.scss";
 @import "node_modules/swiper/modules/pagination.scss";
+@import "node_modules/@fancyapps/ui/dist/fancybox/fancybox.css";
 
 @import "./includes/_fonts.scss";
 @import "./includes/_variables.scss";
@@ -23,10 +24,12 @@ Text Domain: xpiktech
 
 @import "./includes/blocks/_ico.scss";
 @import "./includes/blocks/_btn-green.scss";
+@import "./includes/blocks/_btn-mintgreen.scss";
 @import "./includes/blocks/_btn-darkgreen.scss";
 @import "./includes/blocks/_btn-white.scss";
 @import "./includes/blocks/_btn-blue.scss";
 @import "./includes/blocks/_btn-lightblue.scss";
+@import "./includes/blocks/_btn-lightgrey.scss";
 @import "./includes/blocks/_green-link.scss";
 @import "./includes/blocks/_wrapper.scss";
 @import "./includes/blocks/_main.scss";
@@ -78,4 +81,12 @@ Text Domain: xpiktech
 @import "./includes/blocks/_contact-blocks.scss";
 @import "./includes/blocks/_contacts-section.scss";
 @import "./includes/blocks/_social-buttons.scss";
+@import "./includes/blocks/_fancybox.scss";
+@import "./includes/blocks/_form-label.scss";
+@import "./includes/blocks/_form-text.scss";
+@import "./includes/blocks/_form-textarea.scss";
+@import "./includes/blocks/_contact-btn.scss";
+@import "./includes/blocks/_contact-buttons.scss";
+@import "./includes/blocks/_contact-form.scss";
+@import "./includes/blocks/_contact-form-popup.scss";
 @import "./includes/blocks/_footer.scss";

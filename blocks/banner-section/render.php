@@ -46,10 +46,10 @@ if (! empty($block['className'])) {
                     </div>
 
                     <div class="buttons-list banner__buttons-list">
-                        <a href="#" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 banner__btn">
+                        <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 banner__btn" data-fancybox>
                             <span class="ico ico--arrow-right2"></span>
                         </a>
-                        <a href="#" class="btn-darkgreen btn-darkgreen--radius-16 banner__btn">Talk to an Expert</a>
+                        <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 banner__btn" data-fancybox>Talk to an Expert</a>
                     </div>
                 </div>
             </div>
