@@ -12,11 +12,11 @@ License URI: LICENSE
 Text Domain: xpiktech
 */
 
+@use "node_modules/@fancyapps/ui/dist/fancybox/fancybox.css";
 @import "node_modules/swiper/swiper.scss";
 @import "node_modules/swiper/modules/autoplay.scss";
 @import "node_modules/swiper/modules/effect-fade.scss";
 @import "node_modules/swiper/modules/pagination.scss";
-@import "node_modules/@fancyapps/ui/dist/fancybox/fancybox.css";
 
 @import "./includes/_fonts.scss";
 @import "./includes/_variables.scss";
