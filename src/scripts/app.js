@@ -42,8 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click', function (e) {
     if (e.target.closest('.offcanvas--opened') || e.target.closest('[data-offcanvas-toggle]')) return;
 
-    console.log('click!');
-
     const openedOffcanvas = document.querySelector('.offcanvas--opened');
 
     if (!openedOffcanvas) return;

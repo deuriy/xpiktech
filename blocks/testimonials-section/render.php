@@ -84,15 +84,6 @@ if (! empty($block['className'])) {
                                                 </div>
                                             <?php endif; ?>
                                         </div>
-
-                                        <div class="buttons-list buttons-list--arrows testimonial-block__buttons-list">
-                                            <button type="button" class="btn-darkgreen btn-darkgreen--padding-10 btn-darkgreen--bordered testimonial-block__prev-btn hidden-xs">
-                                                <span class="ico ico--arrow-left2"></span>
-                                            </button>
-                                            <button type="button" class="btn-darkgreen btn-darkgreen--padding-10 btn-darkgreen--bordered testimonial-block__next-btn hidden-xs">
-                                                <span class="ico ico--arrow-right"></span>
-                                            </button>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -100,6 +91,14 @@ if (! empty($block['className'])) {
                     </div>
                 </div>
                 <div class="swiper-pagination testimonial-section__pagination hidden-sm-plus"></div>
+                <div class="buttons-list buttons-list--arrows testimonial-section__buttons-list">
+                    <button type="button" class="btn-darkgreen btn-darkgreen--padding-10 btn-darkgreen--bordered testimonial-section__prev-btn hidden-xs">
+                        <span class="ico ico--arrow-left2"></span>
+                    </button>
+                    <button type="button" class="btn-darkgreen btn-darkgreen--padding-10 btn-darkgreen--bordered testimonial-section__next-btn hidden-xs">
+                        <span class="ico ico--arrow-right"></span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

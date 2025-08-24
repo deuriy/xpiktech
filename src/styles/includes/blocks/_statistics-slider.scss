@@ -1,0 +1,12 @@
+.statistics-slider {
+  @media (max-width: 767px) {
+    padding-bottom: 30px;
+
+    .swiper-pagination {
+      bottom: 0;
+      --swiper-pagination-color: #fff;
+      --swiper-pagination-bullet-inactive-color: rgba(255, 255, 255, 0.2);
+      --swiper-pagination-bullet-inactive-opacity: 1;
+    }
+  }
+}

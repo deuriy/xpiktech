@@ -20,4 +20,11 @@
     padding-right: 16px;
     padding-left: 16px;
   }
+
+  &--no-padding-xs {
+    @media (max-width: 767px) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
 }

@@ -2,8 +2,13 @@
   position: relative;
   padding: 96px 0;
 
-  &__pagination {
-    --swiper-pagination-bottom: 34px;
+  &__container {
+    position: relative;
+  }
+
+  .swiper-pagination {
+    bottom: -27px;
+    // --swiper-pagination-bottom: 34px;
   }
 
   @media (max-width: 1199px) {

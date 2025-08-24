@@ -24,6 +24,10 @@
   }
 
   &--testimonial {
+    @media (max-width: 767px) {
+      gap: 4px 16px;
+    }
+
     .company-block__logo-img {
       width: 48px;
       height: 48px;

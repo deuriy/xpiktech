@@ -14,6 +14,8 @@
       display: grid;
       grid-template: auto 1fr / 100%;
       height: 100%;
+      padding-right: 16px;
+      padding-left: 16px;
     }
   }
 
@@ -33,4 +35,15 @@
   // &__next-btn {
   //   left: 116px;
   // }
+
+  &__buttons-list {
+    position: absolute;
+    left: 56px;
+    bottom: 64px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
 }

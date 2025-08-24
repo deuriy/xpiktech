@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { EffectFade, Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { EffectFade, Autoplay, Navigation, Pagination, Thumbs } from 'swiper/modules';
 import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -24,9 +24,9 @@ const initSliders = () => {
       crossFade: true
     },
 
-    autoplay: {
-      delay: 5000
-    },
+    // autoplay: {
+    //   delay: 5000
+    // },
   });
 
   new Swiper('.company-review-slider', {
@@ -73,22 +73,46 @@ const initSliders = () => {
   });
 
   new Swiper('.info-slider', {
-    modules: [EffectFade, Navigation, Pagination],
+    modules: [EffectFade, Navigation],
     loop: true,
 
-    // effect: 'fade',
-    // fadeEffect: {
-    //   crossFade: true
-    // },
+    effect: 'fade',
+    speed: 600,
+    autoHeight: true,
+    fadeEffect: {
+      crossFade: true
+    },
 
     navigation: {
-      nextEl: '.info-block__next-btn',
-      prevEl: '.info-block__prev-btn',
-    },
+      nextEl: '.info-slider__next-btn',
+      prevEl: '.info-slider__prev-btn',
+    }
+  });
+
+  const infoImagesSlider = new Swiper('.info-images-slider', {
+    modules: [EffectFade],
+    loop: true,
+
+    effect: 'fade',
+    speed: 600,
+    autoHeight: true,
+    fadeEffect: {
+      crossFade: true
+    }
+  });
+
+  new Swiper('.info-text-slider', {
+    modules: [Pagination, Thumbs],
+    loop: true,
+    autoHeight: true,
 
     pagination: {
       el: '.info-slider-section__pagination',
       type: 'bullets',
+    },
+
+    thumbs: {
+      swiper: infoImagesSlider,
     },
   });
 
@@ -96,14 +120,16 @@ const initSliders = () => {
     modules: [EffectFade, Navigation, Pagination],
     loop: true,
 
-    // effect: 'fade',
-    // fadeEffect: {
-    //   crossFade: true
-    // },
+    effect: 'fade',
+    speed: 600,
+    autoHeight: true,
+    fadeEffect: {
+      crossFade: true
+    },
 
     navigation: {
-      nextEl: '.testimonial-block__next-btn',
-      prevEl: '.testimonial-block__prev-btn',
+      nextEl: '.testimonial-section__next-btn',
+      prevEl: '.testimonial-section__prev-btn',
     },
 
     pagination: {
@@ -117,6 +143,7 @@ const initSliders = () => {
     slidesPerView: 1,
     spaceBetween: 24,
     loop: true,
+    autoHeight: true,
 
     breakpoints: {
       768: {
@@ -130,3 +157,27 @@ const initSliders = () => {
     },
   });
 };
+
+let heroTimer;
+
+document.addEventListener('mouseover', function (e) {
+  const heroBlock = e.target.closest('.hero-block');
+
+  if (!heroBlock) return;
+
+  heroBlock.classList.remove('hero-block--animation-paused');
+
+  heroTimer = setTimeout(() => {
+    heroBlock.classList.add('hero-block--animation-paused');
+  }, 900);
+});
+
+document.addEventListener('mouseout', function (e) {
+  const heroBlock = e.target.closest('.hero-block');
+
+  if (!heroBlock) return;
+
+  heroBlock.classList.remove('hero-block--animation-paused');
+
+  clearTimeout(heroTimer);
+});

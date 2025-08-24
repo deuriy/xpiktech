@@ -28,10 +28,11 @@
 
   &__wrapper {
     display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-areas: "rating rating"
-      "text text"
-      "company buttons";
+    grid-template-columns: 100%;
+    // grid-template-columns: 1fr auto;
+    // grid-template-areas: "rating rating"
+    //   "text text"
+    //   "company buttons";
     align-items: center;
     column-gap: 24px;
     padding: 56px;
@@ -57,7 +58,7 @@
   }
 
   &__rating {
-    grid-area: rating;
+    // grid-area: rating;
     margin-bottom: 40px;
 
     @media (max-width: 1199px) {
@@ -69,12 +70,14 @@
     }
 
     @media (max-width: 767px) {
+      margin-top: -5px;
+      margin-left: -2px;
       margin-bottom: 20px;
     }
   }
 
   &__text {
-    grid-area: text;
+    // grid-area: text;
     margin-bottom: 48px;
     font-size: 32px;
     line-height: 1.375;
@@ -97,10 +100,11 @@
   }
 
   &__company {
-    grid-area: company;
+    // grid-area: company;
+    margin-right: 120px;
   }
 
-  &__buttons-list {
-    grid-area: buttons;
-  }
+  // &__buttons-list {
+  //   grid-area: buttons;
+  // }
 }
