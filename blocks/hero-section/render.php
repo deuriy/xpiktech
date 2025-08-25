@@ -29,9 +29,9 @@ if (! empty($block['className'])) {
             <?php if ($hero_slides): ?>
                 <div class="hero-slider-block hero-section__slider-block">
                     <div class="hero-slider-block__slider-wrapper">
-                        <div class="swiper hero-slider">
+                        <div class="swiper hero-slider hero-slider-block__slider">
                             <div class="swiper-wrapper hero-slider__slides">
-                                <?php foreach ($hero_slides as $hero_slide): ?>
+                                <?php foreach ($hero_slides as $hero_slide_key => $hero_slide): ?>
                                     <div class="swiper-slide hero-slider__slide">
                                         <div class="hero-block">
                                             <?php if ($hero_slide['title']): ?>
@@ -54,7 +54,7 @@ if (! empty($block['className'])) {
                                             <?php endif; ?>
 
                                             <svg width="785" height="424" viewBox="0 0 785 424" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-block__svg">
-                                                <g class="hero-block__glow" filter="url(#filter0_fn_1439_2118)">
+                                                <g class="hero-block__glow" filter="url(#filter0_fn_1439_2118_<?php echo $hero_slide_key ?>)">
                                                     <path d="M-27.2928 324.474C-11.7161 313.099 0.0771267 304.697 5.94843 300.496C20.3736 299.635 16.9571 291.208 20.7659 289.93C27.9152 286.981 35.558 284.451 43.5425 284.058C47.3512 284.501 52.0162 285.925 51.9319 289.158C51.5017 305.658 51.4365 325.87 58.2714 352.034C63.3455 371.457 63.3905 394.537 77.7074 405.129C81.1112 407.647 85.3083 408.894 89.5259 408.469C97.9406 407.621 133.259 358.089 168.396 346.454L168.55 346.403C172.356 345.142 177.423 343.463 178.911 346.087C182.265 351.996 180.296 370.63 193.691 376.025C209.369 382.339 234.116 394.644 245.571 383.137C256.542 372.115 268.821 359.629 282.684 324.866C291.112 303.735 298.201 283.68 302.057 267.533C306.296 249.78 310.326 229.592 322.758 222.435C336.715 214.4 349.895 202.161 363.68 197.558C378.877 192.484 395.803 185.887 413.03 187.89C416.838 188.333 420.179 190.004 420.989 192.56C421.799 195.116 419.872 198.34 418.433 201.847C412.536 216.222 406.168 233.513 410.879 254.17C415.118 272.759 421.26 291.117 423.532 313.238C426.05 337.748 429.562 359.911 425.607 376.911C420.989 396.765 395.535 455.341 362.301 459.527C345.826 461.602 322.633 449.661 297.325 450.226C277.496 450.669 259.693 451.09 244.204 457.844C227.691 465.044 173.702 549.882 124.792 552.734C110.468 553.569 95.7005 555.624 87.6785 547.584C64.9652 524.82 63.1465 504.298 51.0461 493.211C40.4676 483.518 29.1524 473.665 13.9076 469.612C-3.46591 464.993 -29.4669 477.531 -43.9197 465.765C-57.3959 454.794 -68.6947 444.072 -69.1385 431.081C-69.9736 406.635 -67.7432 388.392 -64.8868 381.428C-58.9902 367.054 -58.179 347.03 -27.2928 324.474Z" fill="#D7FF00" fill-opacity="0.32" />
                                                     <path d="M-27.2928 324.474C-11.7161 313.099 0.0771267 304.697 5.94843 300.496C20.3736 299.635 16.9571 291.208 20.7659 289.93C27.9152 286.981 35.558 284.451 43.5425 284.058C47.3512 284.501 52.0162 285.925 51.9319 289.158C51.5017 305.658 51.4365 325.87 58.2714 352.034C63.3455 371.457 63.3905 394.537 77.7074 405.129C81.1112 407.647 85.3083 408.894 89.5259 408.469C97.9406 407.621 133.259 358.089 168.396 346.454L168.55 346.403C172.356 345.142 177.423 343.463 178.911 346.087C182.265 351.996 180.296 370.63 193.691 376.025C209.369 382.339 234.116 394.644 245.571 383.137C256.542 372.115 268.821 359.629 282.684 324.866C291.112 303.735 298.201 283.68 302.057 267.533C306.296 249.78 310.326 229.592 322.758 222.435C336.715 214.4 349.895 202.161 363.68 197.558C378.877 192.484 395.803 185.887 413.03 187.89C416.838 188.333 420.179 190.004 420.989 192.56C421.799 195.116 419.872 198.34 418.433 201.847C412.536 216.222 406.168 233.513 410.879 254.17C415.118 272.759 421.26 291.117 423.532 313.238C426.05 337.748 429.562 359.911 425.607 376.911C420.989 396.765 395.535 455.341 362.301 459.527C345.826 461.602 322.633 449.661 297.325 450.226C277.496 450.669 259.693 451.09 244.204 457.844C227.691 465.044 173.702 549.882 124.792 552.734C110.468 553.569 95.7005 555.624 87.6785 547.584C64.9652 524.82 63.1465 504.298 51.0461 493.211C40.4676 483.518 29.1524 473.665 13.9076 469.612C-3.46591 464.993 -29.4669 477.531 -43.9197 465.765C-57.3959 454.794 -68.6947 444.072 -69.1385 431.081C-69.9736 406.635 -67.7432 388.392 -64.8868 381.428C-58.9902 367.054 -58.179 347.03 -27.2928 324.474Z" fill="#F0FCAB" />
                                                 </g>
@@ -65,7 +65,7 @@ if (! empty($block['className'])) {
                                                     <path d="M-85.7762 -236.29C-66.5986 -238.353 -52.1843 -239.733 -44.9991 -240.436C-32.0763 -233.968 -30.8214 -242.975 -26.8839 -242.177C-19.2183 -241.156 -11.334 -239.526 -4.22314 -235.874C-1.1461 -233.586 2.18175 -230.02 0.492568 -227.263C-8.13022 -213.188 -18.2928 -195.716 -25.4553 -169.641C-30.7727 -150.282 -42.2738 -130.272 -35.1706 -113.941C-33.4818 -110.059 -30.4708 -106.88 -26.6058 -105.139C-18.8945 -101.666 36.4582 -126.904 72.7058 -119.411L72.8645 -119.378C76.7904 -118.567 82.0182 -117.487 81.9957 -114.471C81.945 -107.677 70.9226 -92.5234 79.8258 -81.1538C90.2462 -67.8466 105.526 -44.8167 121.2 -49.0551C136.211 -53.1145 153.089 -57.7887 182.476 -80.962C200.34 -95.0488 216.507 -108.872 227.92 -120.928C240.467 -134.183 254.051 -149.651 268.397 -149.633C284.501 -149.613 302.035 -153.623 316.275 -150.716C331.973 -147.512 349.929 -144.762 363.846 -134.414C366.923 -132.126 368.981 -129.009 368.404 -126.391C367.828 -123.772 364.547 -121.944 361.547 -119.625C349.253 -110.125 335.092 -98.3348 328.843 -78.0894C323.22 -59.872 319.36 -40.9025 310.268 -20.6087C300.194 1.87674 292.154 22.8262 280.229 35.5715C266.302 50.456 214.97 88.4573 184.096 75.4658C168.79 69.0255 154.675 47.0877 132.475 34.9231C115.081 25.3925 99.453 16.8558 82.6624 14.96C64.7617 12.9388 -24.4136 59.4162 -68.197 37.4307C-81.0194 30.992 -94.8356 25.3878 -97.7629 14.414C-106.051 -16.6568 -97.3655 -35.3385 -102.301 -50.9904C-106.616 -64.6738 -111.488 -78.865 -122.664 -89.9971C-135.401 -102.684 -164.187 -104.826 -170.821 -122.242C-177.006 -138.481 -181.43 -153.416 -175.319 -164.888C-163.819 -186.478 -152.766 -201.161 -146.811 -205.763C-134.517 -215.264 -123.803 -232.199 -85.7762 -236.29Z" fill="#F0FCAB" fill-opacity="0.8" />
                                                 </g>
                                                 <defs>
-                                                    <filter id="filter0_fn_1439_2118" x="-269.312" y="-12.4766" width="896.703" height="766.07" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                    <filter id="filter0_fn_1439_2118_<?php echo $hero_slide_key ?>" x="-269.312" y="-12.4766" width="896.703" height="766.07" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                                                         <feFlood flood-opacity="0" result="BackgroundImageFix" />
                                                         <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
                                                         <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_1439_2118" />
@@ -123,6 +123,8 @@ if (! empty($block['className'])) {
                                 <?php endforeach; ?>
                             </div>
                         </div>
+
+                        <!-- <div class="swiper-thumbs-pagination hero-slider-block__swiper-thumbs-pagination"></div> -->
                     </div>
 
                     <div class="buttons-list hero-slider-block__buttons">
@@ -130,6 +132,22 @@ if (! empty($block['className'])) {
                             <span class="ico ico--arrow-right2"></span>
                         </a>
                         <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 hero-slider-block__btn" data-fancybox>Request a Free Demo</a>
+                    </div>
+
+                    <div class="hero-slider-block__thumbs-slider-wrapper">
+                        <div class="swiper hero-thumbs-slider">
+                            <div class="swiper-wrapper hero-thumbs-slider__slides">
+                                <?php foreach ($hero_slides as $hero_slide_key => $hero_slide): ?>
+                                    <div class="swiper-slide hero-thumbs-slider__slide">
+                                        <div class="hero-thumbs-slider__img-wrapper">
+                                            <?php if ($hero_slide['thumb_image']) : ?>
+                                                <?php echo wp_get_attachment_image($hero_slide['thumb_image'], 'full', '', array('class' => 'hero-thumbs-slider__img')); ?>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             <?php endif; ?>
@@ -253,11 +271,11 @@ if (! empty($block['className'])) {
                                                 <rect x="8.91605" y="20.2921" width="95" height="95" rx="23.5" transform="rotate(15 8.91605 20.2921)" stroke="white" stroke-opacity="0.24" class="rotate-ccw" />
                                                 <rect x="3.3125" y="55.8438" width="64" height="64" rx="20" transform="rotate(-15 3.3125 55.8438)" fill="white" fill-opacity="0.12" />
                                                 <rect x="3.92487" y="56.1973" width="63" height="63" rx="19.5" transform="rotate(-15 3.92487 56.1973)" stroke="white" stroke-opacity="0.24" />
-                                                <g clip-path="url(#clip0_1439_1908)" filter="url(#filter0_d_1439_1908)">
+                                                <g clip-path="url(#clip0_1439_1908_<?php echo $service_block_key ?>)" filter="url(#filter0_d_1439_1908_<?php echo $service_block_key ?>)">
                                                     <path d="M46.9184 86.9344H38.0618C37.4165 86.9344 36.7976 86.678 36.3413 86.2217C35.885 85.7654 35.6287 85.1465 35.6287 84.5012C35.6287 83.8559 35.885 83.2371 36.3413 82.7808C36.7976 82.3245 37.4165 82.0681 38.0618 82.0681H40.3368L32.2345 73.8563C31.808 73.4404 31.5488 72.8825 31.5062 72.2883C31.4636 71.6941 31.6405 71.1049 32.0033 70.6324C32.2209 70.37 32.4944 70.1595 32.8038 70.0163C33.1133 69.8732 33.4508 69.801 33.7917 69.8052C34.0966 69.7989 34.3995 69.8551 34.6819 69.9701C34.9644 70.0852 35.2203 70.2567 35.434 70.4743L40.3733 75.4135L45.3369 71.6908C45.785 71.3545 46.3396 71.1914 46.8985 71.2317C47.4574 71.2719 47.9829 71.5127 48.3783 71.9098C50.6764 74.2128 52.4052 77.0205 53.427 80.1094L53.5 80.3406" stroke="white" stroke-width="1.5" stroke-miterlimit="10" />
                                                 </g>
                                                 <defs>
-                                                    <filter id="filter0_d_1439_1908" x="28.5" y="64.3672" width="28" height="28" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                    <filter id="filter0_d_1439_1908_<?php echo $service_block_key ?>" x="28.5" y="64.3672" width="28" height="28" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                                                         <feFlood flood-opacity="0" result="BackgroundImageFix" />
                                                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                                                         <feOffset />
@@ -267,7 +285,7 @@ if (! empty($block['className'])) {
                                                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1439_1908" />
                                                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1439_1908" result="shape" />
                                                     </filter>
-                                                    <clipPath id="clip0_1439_1908">
+                                                    <clipPath id="clip0_1439_1908_<?php echo $service_block_key ?>">
                                                         <rect width="24" height="24" fill="white" transform="translate(30.5 66.3672)" />
                                                     </clipPath>
                                                 </defs>
@@ -283,50 +301,50 @@ if (! empty($block['className'])) {
                                             <?php endif; ?>
                                         </div>
                                         <div class="service-block__back">
-                                            <svg width="268" height="200" viewBox="0 0 268 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="service-block__back-svg">
-                                                <mask id="mask0_1439_1595" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="268" height="200">
-                                                    <rect width="267.5" height="200" rx="24" fill="white" />
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="268" height="200" fill="none" class="service-block__back-svg">
+                                                <mask id="a_<?php echo $service_block_key ?>" width="268" height="200" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha">
+                                                    <rect width="267.5" height="200" fill="#fff" rx="24" />
                                                 </mask>
-                                                <g mask="url(#mask0_1439_1595)">
-                                                    <g filter="url(#filter0_fn_1439_1595)" class="glow">
-                                                        <path d="M36.4536 70.0199C47.0965 71.6788 55.0711 73.0179 59.0485 73.6775C65.0845 79.0339 67.0631 74.357 69.0718 75.3563C73.0591 77.0152 77.0764 79.0339 80.3842 82.0319C81.7134 83.7108 82.9931 86.1152 81.6834 87.3583C74.9978 93.7041 66.9907 101.66 59.3583 114.69C53.6921 124.364 44.596 133.495 46.0672 143.331C46.4169 145.669 47.5817 147.819 49.4149 149.317C53.0725 152.305 86.5783 146.692 105.048 155.972L105.129 156.013C107.129 157.018 109.793 158.356 109.345 159.98C108.336 163.637 100.2 170.218 103.359 177.638C107.056 186.322 111.97 200.953 121.037 200.932C129.721 200.912 139.501 200.831 158.702 192.578C170.374 187.561 181.093 182.442 188.992 177.588C197.676 172.252 207.239 165.872 214.974 167.954C223.659 170.293 233.696 170.664 240.957 174.29C248.962 178.288 258.25 182.366 264.261 189.96C265.591 191.639 266.25 193.617 265.561 194.946C264.871 196.276 262.837 196.788 260.884 197.605C252.879 200.952 243.536 205.265 237.24 215.283C231.573 224.297 226.749 233.971 218.912 243.604C210.228 254.277 202.863 264.415 194.588 269.567C184.924 275.583 151.743 288.662 136.966 277.192C129.641 271.505 125.198 257.632 114.981 247.861C106.976 240.206 99.7802 233.343 90.9972 229.893C81.6334 226.216 26.8133 238.397 6.37367 220.21C0.387667 214.883 -6.25496 209.863 -6.2479 203.521C-6.22792 185.563 1.15751 176.741 0.75742 167.585C0.407652 159.58 -0.169497 151.221 -4.58901 143.601C-9.62565 134.917 -24.8437 129.6 -25.9048 119.247C-26.8941 109.593 -27.1219 100.898 -22.1673 95.5928C-12.8435 85.6095 -4.75905 79.2865 -0.881487 77.6648C7.12317 74.317 15.3503 66.7306 36.4536 70.0199Z" fill="#F0FCAB" fill-opacity="0.8" />
+                                                <g mask="url(#a_<?php echo $service_block_key ?>)">
+                                                    <g filter="url(#b_<?php echo $service_block_key ?>)" class="service-block__glow">
+                                                        <path fill="#F0FCAB" fill-opacity=".8" d="M36.454 70.02c10.642 1.659 18.617 2.998 22.594 3.657 6.037 5.357 8.015.68 10.024 1.68 3.987 1.658 8.004 3.677 11.312 6.675 1.33 1.679 2.61 4.083 1.3 5.326-6.686 6.346-14.693 14.302-22.326 27.332-5.666 9.674-14.762 18.805-13.29 28.641.349 2.338 1.514 4.488 3.347 5.986 3.657 2.988 37.163-2.625 55.633 6.655l.081.041c2 1.005 4.664 2.343 4.216 3.967-1.009 3.657-9.145 10.238-5.986 17.658 3.697 8.684 8.611 23.315 17.678 23.294 8.684-.02 18.464-.101 37.665-8.354 11.672-5.017 22.391-10.136 30.29-14.99 8.684-5.336 18.247-11.716 25.982-9.634 8.685 2.339 18.722 2.71 25.983 6.336 8.005 3.998 17.293 8.076 23.304 15.67 1.33 1.679 1.989 3.657 1.3 4.986-.69 1.33-2.724 1.842-4.677 2.659-8.005 3.347-17.348 7.66-23.644 17.678-5.667 9.014-10.491 18.688-18.328 28.321-8.684 10.673-16.049 20.811-24.324 25.963-9.664 6.016-42.845 19.095-57.622 7.625-7.325-5.687-11.768-19.56-21.985-29.331-8.005-7.655-15.2-14.518-23.984-17.968-9.364-3.677-64.184 8.504-84.623-9.683-5.986-5.327-12.629-10.347-12.622-16.689.02-17.958 7.406-26.78 7.005-35.936-.35-8.005-.926-16.364-5.346-23.984-5.037-8.684-20.255-14.001-21.316-24.354-.99-9.654-1.217-18.349 3.738-23.654C-12.843 85.609-4.76 79.287-.881 77.665 7.123 74.317 15.35 66.73 36.454 70.02Z" />
                                                     </g>
-                                                    <g filter="url(#filter1_fn_1439_1595)" class="glow">
-                                                        <path d="M199.054 82.0531C190.666 75.295 184.43 70.148 181.315 67.5881C178.766 59.9313 174.714 62.9923 173.474 61.1225C170.85 57.6922 168.38 53.9353 167.015 49.6851C166.703 47.5666 166.797 44.8444 168.553 44.4227C177.516 42.2699 188.428 39.3836 201.553 31.9152C211.297 26.3708 223.74 23.0107 227.384 13.7571C228.25 11.557 228.316 9.11281 227.477 6.89917C225.804 2.4827 193.981 -9.40906 182.626 -26.6811L182.576 -26.7568C181.346 -28.6273 179.708 -31.118 180.908 -32.3001C183.611 -34.963 193.947 -36.5943 194.921 -44.5996C196.061 -53.9691 199.122 -69.0967 191.259 -73.6123C183.728 -77.9371 175.218 -82.7559 154.463 -85.2096C141.846 -86.7011 130.003 -87.6269 120.736 -87.3727C110.547 -87.0933 99.0752 -86.3495 93.4176 -92.0212C87.0661 -98.3884 78.559 -103.729 74.0839 -110.499C69.1503 -117.964 63.1458 -126.14 61.7364 -135.722C61.4248 -137.84 61.8429 -139.884 63.1046 -140.69C64.3663 -141.496 66.3839 -140.923 68.484 -140.654C77.0901 -139.551 87.3375 -138.614 97.7996 -144.141C107.214 -149.115 116.228 -155.081 127.832 -159.504C140.69 -164.405 152.137 -169.503 161.879 -169.827C173.256 -170.205 208.532 -164.941 215.593 -147.619C219.094 -139.032 216.005 -124.796 219.968 -111.226C223.072 -100.594 225.873 -91.0518 231.754 -83.673C238.025 -75.8063 291.591 -58.9457 300.199 -32.9751C302.719 -25.3692 305.962 -17.7005 302.785 -12.2113C293.789 3.33081 282.982 7.27797 278.75 15.4075C275.051 22.5147 271.371 30.0425 271.388 38.8515C271.408 48.8906 281.929 61.1037 277.671 70.6003C273.701 79.4552 269.551 87.0997 262.607 89.2167C249.541 93.2007 239.378 94.6343 235.209 94.1C226.603 92.9969 215.685 95.4534 199.054 82.0531Z" fill="#F0FCAB" fill-opacity="0.8" />
+                                                    <g filter="url(#c_<?php echo $service_block_key ?>)" class="service-block__glow">
+                                                        <path fill="#F0FCAB" fill-opacity=".8" d="M199.054 82.053c-8.388-6.758-14.624-11.905-17.739-14.465-2.549-7.657-6.601-4.596-7.841-6.465-2.624-3.43-5.094-7.188-6.459-11.438-.312-2.118-.218-4.84 1.538-5.262 8.963-2.153 19.875-5.04 33-12.508 9.744-5.544 22.187-8.904 25.831-18.158.866-2.2.932-4.644.093-6.858-1.673-4.416-33.496-16.308-44.851-33.58l-.05-.076c-1.23-1.87-2.868-4.361-1.668-5.543 2.703-2.663 13.039-4.294 14.013-12.3 1.14-9.37 4.201-24.497-3.662-29.012-7.531-4.325-16.041-9.144-36.796-11.598-12.617-1.491-24.46-2.417-33.727-2.163-10.189.28-21.66 1.023-27.318-4.648-6.352-6.367-14.859-11.708-19.334-18.478-4.934-7.465-10.938-15.641-12.348-25.223-.311-2.118.107-4.162 1.369-4.968 1.261-.806 3.279-.233 5.379.036 8.606 1.103 18.854 2.04 29.316-3.487 9.414-4.974 18.428-10.94 30.032-15.363 12.858-4.901 24.305-9.999 34.047-10.323 11.377-.378 46.653 4.886 53.714 22.208 3.501 8.587.412 22.823 4.375 36.393 3.104 10.632 5.905 20.174 11.786 27.553 6.271 7.867 59.837 24.727 68.445 50.698 2.52 7.606 5.763 15.274 2.586 20.764-8.996 15.542-19.803 19.489-24.035 27.618-3.699 7.108-7.379 14.636-7.362 23.445.02 10.039 10.541 22.252 6.283 31.748-3.97 8.855-8.12 16.5-15.064 18.617-13.066 3.984-23.229 5.417-27.398 4.883-8.606-1.103-19.524 1.353-36.155-12.047Z" />
                                                     </g>
                                                 </g>
                                                 <defs>
-                                                    <filter id="filter0_fn_1439_1595" x="-126.996" y="-31.3087" width="493.352" height="413.578" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                    <filter id="b_<?php echo $service_block_key ?>" width="493.352" height="413.578" x="-126.996" y="-31.309" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
                                                         <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                                                        <feGaussianBlur stdDeviation="50.2598" result="effect1_foregroundBlur_1439_1595" />
-                                                        <feTurbulence type="fractalNoise" baseFrequency="10.834455490112305 10.834455490112305" stitchTiles="stitch" numOctaves="3" result="noise" seed="266" />
-                                                        <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+                                                        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                                        <feGaussianBlur result="effect1_foregroundBlur_1439_1387" stdDeviation="50.26" />
+                                                        <feTurbulence baseFrequency="10.834455490112305 10.834455490112305" numOctaves="3" result="noise" seed="266" stitchTiles="stitch" type="fractalNoise" />
+                                                        <feColorMatrix in="noise" result="alphaNoise" type="luminanceToAlpha" />
                                                         <feComponentTransfer in="alphaNoise" result="coloredNoise1">
-                                                            <feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 " />
+                                                            <feFuncA tableValues="0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" type="discrete" />
                                                         </feComponentTransfer>
-                                                        <feComposite operator="in" in2="effect1_foregroundBlur_1439_1595" in="coloredNoise1" result="noise1Clipped" />
+                                                        <feComposite in="coloredNoise1" in2="effect1_foregroundBlur_1439_1387" operator="in" result="noise1Clipped" />
                                                         <feFlood flood-color="rgba(255, 255, 255, 0.06)" result="color1Flood" />
-                                                        <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
-                                                        <feMerge result="effect2_noise_1439_1595">
-                                                            <feMergeNode in="effect1_foregroundBlur_1439_1595" />
+                                                        <feComposite in="color1Flood" in2="noise1Clipped" operator="in" result="color1" />
+                                                        <feMerge result="effect2_noise_1439_1387">
+                                                            <feMergeNode in="effect1_foregroundBlur_1439_1387" />
                                                             <feMergeNode in="color1" />
                                                         </feMerge>
                                                     </filter>
-                                                    <filter id="filter1_fn_1439_1595" x="-38.879" y="-270.363" width="443.5" height="465.094" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                    <filter id="c_<?php echo $service_block_key ?>" width="443.5" height="465.094" x="-38.879" y="-270.363" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
                                                         <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                                                        <feGaussianBlur stdDeviation="50.2598" result="effect1_foregroundBlur_1439_1595" />
-                                                        <feTurbulence type="fractalNoise" baseFrequency="10.834455490112305 10.834455490112305" stitchTiles="stitch" numOctaves="3" result="noise" seed="266" />
-                                                        <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+                                                        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                                        <feGaussianBlur result="effect1_foregroundBlur_1439_1387" stdDeviation="50.26" />
+                                                        <feTurbulence baseFrequency="10.834455490112305 10.834455490112305" numOctaves="3" result="noise" seed="266" stitchTiles="stitch" type="fractalNoise" />
+                                                        <feColorMatrix in="noise" result="alphaNoise" type="luminanceToAlpha" />
                                                         <feComponentTransfer in="alphaNoise" result="coloredNoise1">
-                                                            <feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 " />
+                                                            <feFuncA tableValues="0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" type="discrete" />
                                                         </feComponentTransfer>
-                                                        <feComposite operator="in" in2="effect1_foregroundBlur_1439_1595" in="coloredNoise1" result="noise1Clipped" />
+                                                        <feComposite in="coloredNoise1" in2="effect1_foregroundBlur_1439_1387" operator="in" result="noise1Clipped" />
                                                         <feFlood flood-color="rgba(255, 255, 255, 0.06)" result="color1Flood" />
-                                                        <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
-                                                        <feMerge result="effect2_noise_1439_1595">
-                                                            <feMergeNode in="effect1_foregroundBlur_1439_1595" />
+                                                        <feComposite in="color1Flood" in2="noise1Clipped" operator="in" result="color1" />
+                                                        <feMerge result="effect2_noise_1439_1387">
+                                                            <feMergeNode in="effect1_foregroundBlur_1439_1387" />
                                                             <feMergeNode in="color1" />
                                                         </feMerge>
                                                     </filter>

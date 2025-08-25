@@ -89,7 +89,7 @@ if (! empty($block['className'])) {
                         </div>
                     <?php endif; ?>
 
-                    <div class="buttons-list buttons-list--full-width success-block__buttons-list">
+                    <div class="buttons-list buttons-list--success-block success-block__buttons-list">
                         <a href="#contact-form-popup" class="btn-white btn-white--padding-10" data-fancybox>
                             <span class="ico ico--arrow-right2"></span>
                         </a>

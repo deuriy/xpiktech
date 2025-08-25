@@ -5,8 +5,13 @@
   justify-content: start;
   gap: 12px;
 
-  &--full-width {
+  &--success-block {
     grid-template-columns: 56px 1fr;
+
+    @media (max-width: 767px) {
+      grid-template-columns: 48px 1fr;
+      grid-auto-rows: 48px;
+    }
   }
 
   &--offcanvas {

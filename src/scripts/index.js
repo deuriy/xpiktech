@@ -15,13 +15,36 @@ const initFancybox = () => {
 };
 
 const initSliders = () => {
-  new Swiper('.hero-slider', {
+  const heroThumbsSlider = new Swiper('.hero-thumbs-slider', {
     modules: [EffectFade, Autoplay],
+    // loop: true,
+
+    slidesPerView: 'auto',
+    spaceBetween: 12,
+
+    breakpoints: {
+      768: {
+        slidesPerView: 5,
+      }
+    }
+
+    // effect: 'fade',
+    // fadeEffect: {
+    //   crossFade: true
+    // },
+  });
+
+  new Swiper('.hero-slider', {
+    modules: [EffectFade, Autoplay, Thumbs],
     loop: true,
 
     effect: 'fade',
     fadeEffect: {
       crossFade: true
+    },
+
+    thumbs: {
+      swiper: heroThumbsSlider,
     },
 
     // autoplay: {
@@ -158,7 +181,7 @@ const initSliders = () => {
   });
 };
 
-let heroTimer;
+let heroTimer, serviceTimer;
 
 document.addEventListener('mouseover', function (e) {
   const heroBlock = e.target.closest('.hero-block');
@@ -180,4 +203,27 @@ document.addEventListener('mouseout', function (e) {
   heroBlock.classList.remove('hero-block--animation-paused');
 
   clearTimeout(heroTimer);
+});
+
+
+document.addEventListener('mouseover', function (e) {
+  const serviceBlock = e.target.closest('.service-block');
+
+  if (!serviceBlock) return;
+
+  serviceBlock.classList.remove('service-block--animation-paused');
+
+  serviceTimer = setTimeout(() => {
+    serviceBlock.classList.add('service-block--animation-paused');
+  }, 900);
+});
+
+document.addEventListener('mouseout', function (e) {
+  const serviceBlock = e.target.closest('.service-block');
+
+  if (!serviceBlock) return;
+
+  serviceBlock.classList.remove('service-block--animation-paused');
+
+  clearTimeout(serviceTimer);
 });

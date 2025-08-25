@@ -13,3 +13,11 @@
     --swiper-pagination-bullet-border-radius: 3px;
   }
 }
+
+.swiper-thumbs-pagination {
+  .swiper-pagination-bullet {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+  }
+}
