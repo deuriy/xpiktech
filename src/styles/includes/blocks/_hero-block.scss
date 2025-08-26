@@ -136,8 +136,12 @@
     vertical-align: middle;
     @extend .transition;
 
-    @media (min-width: 1199px) {
+    @media (min-width: 1200px) {
       max-height: 22.2223vw;
+    }
+
+    @media (min-width: 1365px) {
+      max-height: 384px;
     }
 
     @media (min-width: 1024px) and (max-width: 1199px) {
