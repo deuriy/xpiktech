@@ -212,18 +212,19 @@ document.addEventListener('mouseover', function (e) {
   if (!serviceBlock) return;
 
   serviceBlock.classList.remove('service-block--animation-paused');
+  console.log('hover');
 
   serviceTimer = setTimeout(() => {
     serviceBlock.classList.add('service-block--animation-paused');
   }, 900);
 });
 
-document.addEventListener('mouseout', function (e) {
-  const serviceBlock = e.target.closest('.service-block');
+// document.addEventListener('mouseout', function (e) {
+//   const serviceBlock = e.target.closest('.service-block');
 
-  if (!serviceBlock) return;
+//   if (!serviceBlock) return;
 
-  serviceBlock.classList.remove('service-block--animation-paused');
+//   serviceBlock.classList.remove('service-block--animation-paused');
 
-  clearTimeout(serviceTimer);
-});
+//   clearTimeout(serviceTimer);
+// });

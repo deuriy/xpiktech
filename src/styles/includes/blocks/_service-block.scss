@@ -32,12 +32,12 @@
   }
 
   &__glow:nth-child(1) {
-    animation: move_glow1 6s linear infinite paused;
+    animation: move_glow1 2s linear infinite paused;
     will-change: transform;
   }
 
   &__glow:nth-child(2) {
-    animation: move_glow2 6s linear infinite paused;
+    animation: move_glow2 2s linear infinite paused;
     will-change: transform;
   }
 
