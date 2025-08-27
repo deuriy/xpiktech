@@ -117,4 +117,16 @@
       mask-image: url("images/icons/close.svg");
     }
   }
+
+  &--microphone {
+    &::before {
+      mask-image: url("images/icons/microphone.svg");
+    }
+  }
+
+  &--list {
+    &::before {
+      mask-image: url("images/icons/list.svg");
+    }
+  }
 }

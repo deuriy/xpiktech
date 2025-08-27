@@ -17,6 +17,19 @@
     }
   }
 
+  &__item {
+    &:has(.form-text.wpcf7-not-valid) {
+      .contact-form__label {
+        visibility: hidden;
+      }
+
+      .wpcf7-not-valid-tip {
+        position: absolute;
+        top: -42px;
+      }
+    }
+  }
+
   &__label {
     margin-bottom: 8px;
   }
@@ -40,7 +53,7 @@
   }
 
   .wpcf7-not-valid-tip {
-    margin-top: 8px;
+    // margin-top: 8px;
     font-size: 14px;
   }
 }

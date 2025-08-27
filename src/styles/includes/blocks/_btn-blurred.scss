@@ -1,0 +1,63 @@
+.btn-blurred {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px 12px;
+  padding: 10px 16px;
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0.24);
+  color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(25px);
+  border-radius: 16px;
+  font-family: var(--base-font);
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  @extend .transition;
+
+  &--contact-action {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "ico title"
+      "ico text";
+    // font-weight: 500;
+    text-align: left;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      // inset: -0.8px;
+      inset: 0;
+      padding: 0.8px;
+      border-radius: 16px;
+      background: linear-gradient(90.4deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%);
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    .btn-blurred__ico {
+      grid-area: ico;
+      color: #fff;
+    }
+
+    .btn-blurred__title {
+      grid-area: title;
+      font-size: 16px;
+      line-height: 1.1875;
+      color: var(--lightgreen);
+    }
+
+    .btn-blurred__text {
+      grid-area: text;
+      font-size: 12px;
+      line-height: 1.16666667;
+    }
+  }
+}

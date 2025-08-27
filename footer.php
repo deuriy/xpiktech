@@ -25,25 +25,50 @@ $contact_form_buttons = get_field('contact_form_buttons', 'option');
 
 <div id="contact-form-popup" class="contact-form-popup" style="display: none;" data-selectable>
 	<div class="contact-form-popup__form-wrapper">
-		<?php if ($contact_form_title): ?>
-			<h3 class="contact-form-popup__title">
-				<?php echo esc_html($contact_form_title) ?>
-			</h3>
-		<?php endif; ?>
+		<div class="contact-form-popup__form-wrapper-inner">
+			<?php if ($contact_form_title): ?>
+				<h3 class="contact-form-popup__title">
+					<?php echo esc_html($contact_form_title) ?>
+				</h3>
+			<?php endif; ?>
 
-		<?php if ($contact_form_description) : ?>
-			<div class="contact-form-popup__description">
-				<?php echo wp_kses_post($contact_form_description) ?>
-			</div>
-		<?php endif; ?>
+			<?php if ($contact_form_description) : ?>
+				<div class="contact-form-popup__description">
+					<?php echo wp_kses_post($contact_form_description) ?>
+				</div>
+			<?php endif; ?>
 
-		<?php echo do_shortcode('[contact-form-7 id="e348cfc" title="24/7 Contact Us" html_class="contact-form"]') ?>
+			<?php echo do_shortcode('[contact-form-7 id="e348cfc" title="24/7 Contact Us" html_class="contact-form"]') ?>
+		</div>
+
+		<div class="contact-form-popup__form-message-wrapper"></div>
 	</div>
 
 	<div class="contact-form-popup__img-wrapper">
 		<?php if ($contact_form_image_id) : ?>
 			<?php echo wp_get_attachment_image($contact_form_image_id, 'full', '', array('class' => 'contact-form-popup__img')); ?>
 		<?php endif; ?>
+		
+		<!-- <div class="contact-form-popup__action-btns">
+			<button type="button" class="btn-blurred btn-blurred--contact-action contact-form-popup__voice-control-btn">
+				<span class="ico ico--microphone ico--size-24 btn-blurred__ico"></span>
+				<span class="btn-blurred__title">Voice control</span>
+				<span class="btn-blurred__text">Activate</span>
+			</button>
+			<button type="button" class="btn-blurred btn-blurred--contact-action contact-form-popup__actions-list-btn">
+				<span class="ico ico--list ico--size-24 btn-blurred__ico"></span>
+				<span class="btn-blurred__title">Actions list</span>
+				<span class="btn-blurred__text">See below</span>
+			</button>
+		</div>
+		<div class="voice-control contact-form-popup__voice-control">
+			<div class="voice-control__header">
+				<h3 class="voice-control__title">Voice Control</h3>
+				<button type="button" class="voice-control__close-btn">
+					
+				</button>
+			</div>
+		</div> -->
 	</div>
 
 	<?php if ($contact_form_buttons) : ?>
@@ -151,6 +176,45 @@ $contact_form_buttons = get_field('contact_form_buttons', 'option');
 	</div>
 </footer><!-- #colophon -->
 </div><!-- #page -->
+
+<template id="success-form-message">
+	<div class="form-message form-message--success contact-form-popup__form-success-message">
+		<div class="form-message__img-wrapper">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/form_success_icon_2x.webp" alt="Request Received" class="form-message__img">
+		</div>
+		<h3 class="form-message__title">
+			Request Received
+		</h3>
+		<div class="form-message__text">
+			<p>Thank you, <span class="form-message__your-name"></span>. Our specialist will contact you at <span class="form-message__your-email"></span> within 24 hours.</p>
+		</div>
+		<div class="form-message__actions">
+
+		</div>
+		<div class="form-message__actions">
+			<button type="button" class="btn-lightgrey" data-fancybox-close>Close</button>
+			<button class="form-message__contact-repeat-btn btn-mintgreen" type="button">Repeat</button>
+		</div>
+	</div>
+</template>
+	
+<template id="error-form-message">
+	<div class="form-message form-message--error contact-form-popup__form-error-message">
+		<div class="form-message__img-wrapper">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/form_error_icon_2x.webp" alt="Error Occurred" class="form-message__img">
+		</div>
+		<h3 class="form-message__title">
+			Error Occurred
+		</h3>
+		<div class="form-message__text">
+			<p>Text: Unfortunately, your request could not be sent. Please try again or contact us directly.</p>
+		</div>
+		<div class="form-message__actions">
+			<button type="button" class="btn-lightgrey" data-fancybox-close>Close</button>
+			<button class="form-message__contact-repeat-btn btn-mintgreen" type="button">Repeat</button>
+		</div>
+	</div>
+</template>
 
 <?php wp_footer(); ?>
 

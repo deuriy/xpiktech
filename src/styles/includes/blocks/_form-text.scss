@@ -19,7 +19,11 @@
 
   &:focus {
     border-color: var(--mintgreen);
-    background: rgba(0, 0, 0, 0.03);
     box-shadow: 0 0 0 3px rgba(45, 193, 167, 0.16);
+  }
+
+  &.wpcf7-not-valid {
+    border-color: #FB1B31;
+    box-shadow: 0 0 0 3px rgba(251, 27, 49, 0.16);
   }
 }

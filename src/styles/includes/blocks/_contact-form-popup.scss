@@ -62,22 +62,45 @@
   }
 
   &__img-wrapper {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "wrapper";
     height: 342px;
     // height: 51.701%;
     padding: 22px 40px 0;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='342' fill='none'%3E%3Cmask id='a' width='400' height='342' x='0' y='0' maskUnits='userSpaceOnUse' style='mask-type:alpha'%3E%3Crect width='400' height='342' fill='%23D6F3ED' rx='24'/%3E%3C/mask%3E%3Cg fill='%23fff' fill-opacity='.24' mask='url(%23a)'%3E%3Crect width='103.827' height='103.827' x='300.852' y='-.906' rx='3.677' transform='rotate(15 300.852 -.906)'/%3E%3Cpath d='M281.009 450.568 122.115-41.224a3.676 3.676 0 0 0-2.547-2.421L27.74-68.251c-2.815-.754-5.347 1.91-4.451 4.683l78.716 243.632-189.986 171.633c-2.163 1.954-1.302 5.527 1.513 6.281l91.716 24.575a3.68 3.68 0 0 0 3.545-.944l119.826-119.171 53.564 165.786a3.676 3.676 0 0 0 2.548 2.421l91.827 24.606c2.815.754 5.347-1.91 4.451-4.683Z'/%3E%3C/g%3E%3C/svg%3E") center top / auto 100% no-repeat, linear-gradient(121deg, #93DCC5 0%, #C2ECCF 100%), #FFFFFF;
     border-radius: 24px;
     text-align: center;
+    overflow: hidden;
 
     @media (max-width: 767px) {
       border-radius: 20px;
     }
   }
 
+  &__img,
+  &__action-btns {
+    grid-area: wrapper;
+  }
+
   &__img {
     width: auto;
-    max-height: 100%;
+    // max-height: 100%;
+    max-height: 342px;
     object-fit: cover;
+  }
+
+  &__action-btns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    align-self: end;
+    margin: 0 -20px 42px;
+  }
+
+  &__form-message-wrapper:not(:empty) {
+    display: grid;
+    height: 100%;
   }
 
   .f-button[data-fancybox-close] {
@@ -90,5 +113,10 @@
     svg {
       display: none;
     }
+  }
+
+  .wpcf7-spinner,
+  .wpcf7-response-output {
+    display: none;
   }
 }
