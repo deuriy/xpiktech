@@ -53,8 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let messageTemplate;
     const contactFormWrapperInner = e.target.closest('.contact-form-popup').querySelector('.contact-form-popup__form-wrapper-inner');
     const contactFormMessageWrapper = e.target.closest('.contact-form-popup').querySelector('.contact-form-popup__form-message-wrapper');
-
-    // console.log(e.detail);
     
     if (e.detail.status === 'mail_sent') {
       messageTemplate = document.getElementById('success-form-message');
@@ -81,5 +79,78 @@ document.addEventListener('DOMContentLoaded', function () {
 
     contactFormMessageWrapper.replaceChildren();
     contactFormWrapperInner.style.display = '';
+  });
+
+  document.addEventListener('click', function (e) {
+    const voiceControlOpenBtn = e.target.closest('[data-voice-control-open]');
+
+    if (!voiceControlOpenBtn) return;
+
+    const voiceControlOpen = voiceControlOpenBtn.dataset.voiceControlOpen;
+    const voiceControl = document.getElementById(voiceControlOpen);
+
+    if (!voiceControl) return;
+
+    voiceControl.classList.remove('invisible');
+
+    e.preventDefault();
+  });
+
+  document.addEventListener('click', function (e) {
+    const voiceControlCloseBtn = e.target.closest('[data-voice-control-close]');
+
+    if (!voiceControlCloseBtn) return;
+
+    const voiceControl = voiceControlCloseBtn.closest('.voice-control');
+
+    if (!voiceControl) return;
+
+    voiceControl.classList.add('invisible');
+
+    e.preventDefault();
+  });
+
+  document.addEventListener('click', function (e) {
+    const voiceControlMicroBtn = e.target.closest('.voice-control__micro-btn');
+
+    if (!voiceControlMicroBtn) return;
+
+    const voiceControl = voiceControlMicroBtn.closest('.voice-control');
+
+    if (!voiceControl) return;
+
+    const voiceControlText = voiceControl.querySelector('.voice-control__text');
+    const recognizedMessages = voiceControl.querySelector('.voice-control__recognized-messages');
+
+    if (voiceControlMicroBtn.classList.contains('btn-white-transparent--active')) {
+      voiceControlMicroBtn.classList.replace('btn-white-transparent--active', 'btn-white-transparent--selected');
+      voiceControlText.classList.remove('invisible');
+      recognizedMessages.classList.add('invisible');
+    } else if (voiceControlMicroBtn.classList.contains('btn-white-transparent--selected')) {
+      voiceControlMicroBtn.classList.replace('btn-white-transparent--selected', 'btn-white-transparent--active');
+      voiceControlText.classList.add('invisible');
+      recognizedMessages.classList.remove('invisible');
+    }
+  });
+
+  document.addEventListener('click', function (e) {
+    const voiceControlActionsLink = e.target.closest('.voice-control__actions-link');
+
+    if (!voiceControlActionsLink) return;
+
+    const voiceControlActionsList = voiceControlActionsLink.closest('.voice-control__actions-list');
+
+    if (!voiceControlActionsList) return;
+
+    const actionDescriptionsList = voiceControlActionsList.nextElementSibling;
+    console.log(actionDescriptionsList);
+
+    if (!actionDescriptionsList.classList.contains('voice-control__action-descriptions-list')) return;
+
+    voiceControlActionsList.classList.add('invisible');
+    actionDescriptionsList.classList.remove('invisible');
+    actionDescriptionsList.querySelector(`.voice-control__action-description[data-index="0"]`).classList.remove('invisible');
+
+    e.preventDefault();
   });
 });

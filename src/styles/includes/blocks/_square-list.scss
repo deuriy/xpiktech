@@ -1,0 +1,21 @@
+.square-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 12px;
+
+  &__item {
+    position: relative;
+    padding-left: 15px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      background: #fff;
+    }
+  }
+}

@@ -118,6 +118,12 @@
     }
   }
 
+  &--close2 {
+    &::before {
+      mask-image: url("images/icons/close2.svg");
+    }
+  }
+
   &--microphone {
     &::before {
       mask-image: url("images/icons/microphone.svg");

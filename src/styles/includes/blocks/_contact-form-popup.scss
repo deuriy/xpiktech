@@ -74,12 +74,14 @@
     overflow: hidden;
 
     @media (max-width: 767px) {
+      order: -1;
       border-radius: 20px;
     }
   }
 
   &__img,
-  &__action-btns {
+  &__action-btns,
+  &__voice-control {
     grid-area: wrapper;
   }
 
@@ -88,6 +90,10 @@
     // max-height: 100%;
     max-height: 342px;
     object-fit: cover;
+
+    @media (max-width: 767px) {
+      justify-self: center;
+    }
   }
 
   &__action-btns {
@@ -96,6 +102,10 @@
     gap: 12px;
     align-self: end;
     margin: 0 -20px 42px;
+  }
+
+  &__voice-control {
+    margin: -22px -40px 22px;
   }
 
   &__form-message-wrapper:not(:empty) {
@@ -118,5 +128,11 @@
   .wpcf7-spinner,
   .wpcf7-response-output {
     display: none;
+  }
+
+  &:has(.voice-control:not(.invisible)) {
+    .f-button[data-fancybox-close] {
+      display: none;
+    }
   }
 }

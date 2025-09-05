@@ -49,26 +49,126 @@ $contact_form_buttons = get_field('contact_form_buttons', 'option');
 			<?php echo wp_get_attachment_image($contact_form_image_id, 'full', '', array('class' => 'contact-form-popup__img')); ?>
 		<?php endif; ?>
 		
-		<!-- <div class="contact-form-popup__action-btns">
-			<button type="button" class="btn-blurred btn-blurred--contact-action contact-form-popup__voice-control-btn">
+		<div class="contact-form-popup__action-btns">
+			<button type="button" class="btn-blurred btn-blurred--contact-action contact-form-popup__voice-control-btn" data-voice-control-open="voice-control">
 				<span class="ico ico--microphone ico--size-24 btn-blurred__ico"></span>
 				<span class="btn-blurred__title">Voice control</span>
 				<span class="btn-blurred__text">Activate</span>
 			</button>
-			<button type="button" class="btn-blurred btn-blurred--contact-action contact-form-popup__actions-list-btn">
+			<button type="button" class="btn-blurred btn-blurred--contact-action contact-form-popup__actions-list-btn" data-voice-control-open="actions-list">
 				<span class="ico ico--list ico--size-24 btn-blurred__ico"></span>
 				<span class="btn-blurred__title">Actions list</span>
 				<span class="btn-blurred__text">See below</span>
 			</button>
 		</div>
-		<div class="voice-control contact-form-popup__voice-control">
+
+		<div class="voice-control invisible contact-form-popup__voice-control" id="voice-control">
 			<div class="voice-control__header">
 				<h3 class="voice-control__title">Voice Control</h3>
-				<button type="button" class="voice-control__close-btn">
-					
+				<button type="button" class="voice-control__header-close-btn" data-voice-control-close>
+					<span class="ico ico--close ico--size-24"></span>
 				</button>
 			</div>
-		</div> -->
+			<div class="voice-control__body">
+				<div class="voice-control__text">Tap the mic to dictate your details or a command..</div>
+				<div class="voice-control__recognized-messages invisible">
+					<div class="voice-control__recognized-message voice-control__recognized-message--your">What can you do?</div>
+					<div class="voice-control__recognized-message voice-control__recognized-message--chatbot">Say: your name, email, message, or command (for example: <span class="lightgreen">go to Telegram</span>).</div>
+					<div class="voice-control__recognized-message voice-control__recognized-message--your">My First Name Sar..</div>
+					<div class="voice-control__recognized-message voice-control__recognized-message--your">What can you do?</div>
+					<div class="voice-control__recognized-message voice-control__recognized-message--chatbot">Say: your name, email, message, or command (for example: <span class="lightgreen">go to Telegram</span>).</div>
+					<div class="voice-control__recognized-message voice-control__recognized-message--your">My First Name Sar..</div>
+					<div class="voice-control__recognized-message voice-control__recognized-message--your">What can you do?</div>
+					<div class="voice-control__recognized-message voice-control__recognized-message--chatbot">Say: your name, email, message, or command (for example: <span class="lightgreen">go to Telegram</span>).</div>
+					<div class="voice-control__recognized-message voice-control__recognized-message--your">My First Name Sar..</div>
+					<div class="voice-control__recognized-message voice-control__recognized-message--your">What can you do?</div>
+					<div class="voice-control__recognized-message voice-control__recognized-message--chatbot">Say: your name, email, message, or command (for example: <span class="lightgreen">go to Telegram</span>).</div>
+					<div class="voice-control__recognized-message voice-control__recognized-message--your">My First Name Sar..</div>
+					<div class="voice-control__recognized-message voice-control__recognized-message--your">What can you do?</div>
+					<div class="voice-control__recognized-message voice-control__recognized-message--chatbot">Say: your name, email, message, or command (for example: <span class="lightgreen">go to Telegram</span>).</div>
+					<div class="voice-control__recognized-message voice-control__recognized-message--your">My First Name Sar..</div>
+				</div>
+			</div>
+			<div class="voice-control__btns">
+				<button type="button" class="btn-white-transparent voice-control__actions-list-btn">
+					<span class="ico ico--list ico--size-24"></span>
+				</button>
+				<button type="button" class="btn-white-transparent btn-white-transparent--selected voice-control__micro-btn">
+					<span class="ico ico--microphone ico--size-24"></span>
+				</button>
+				<button type="button" class="btn-white-transparent voice-control__close-btn" data-voice-control-close>
+					<span class="ico ico--close2 ico--size-24"></span>
+				</button>
+			</div>
+		</div>
+
+		<div class="voice-control invisible contact-form-popup__voice-control contact-form-popup__voice-control--actions-list" id="actions-list">
+			<div class="voice-control__header">
+				<h3 class="voice-control__title">Actions list</h3>
+				<button type="button" class="voice-control__header-close-btn" data-voice-control-close>
+					<span class="ico ico--close ico--size-24"></span>
+				</button>
+			</div>
+			<div class="voice-control__body">
+				<ul class="voice-control__actions-list">
+					<li class="voice-control__actions-item"><a href="#" class="voice-control__actions-link" data-index="0">What voice commands are available</a></li>
+					<li class="voice-control__actions-item"><a href="#" class="voice-control__actions-link" data-index="1">How to fill in your details by just dictating them</a></li>
+					<li class="voice-control__actions-item"><a href="#" class="voice-control__actions-link" data-index="2">How to send a request without using your hands</a></li>
+					<li class="voice-control__actions-item"><a href="#" class="voice-control__actions-link" data-index="3">How to correct mistakes in your voice input</a></li>
+					<li class="voice-control__actions-item"><a href="#" class="voice-control__actions-link" data-index="4">What voice commands are available</a></li>
+					<li class="voice-control__actions-item"><a href="#" class="voice-control__actions-link" data-index="5">How to fill in your details by just dictating them</a></li>
+					<li class="voice-control__actions-item"><a href="#" class="voice-control__actions-link" data-index="6">How to send a request without using your hands</a></li>
+					<li class="voice-control__actions-item"><a href="#" class="voice-control__actions-link" data-index="7">How to correct mistakes in your voice input</a></li>
+				</ul>
+				
+				<div class="voice-control__action-descriptions-list invisible">
+					<div class="voice-control__action-description invisible" data-index="0">
+						<p><span class="lightgreen">What voice commands are available</span></p>
+						<ul class="square-list">
+							<li class="square-list__item"><span class="lightgreen">“Help”</span> – to see available commands;</li>
+							<li class="square-list__item"><span class="lightgreen">“Back” / “Next”</span> – to navigate between steps;</li>
+							<li class="square-list__item"><span class="lightgreen">“Start new request”</span> – to begin filling in a form.</li>
+							<li class="square-list__item"><span class="lightgreen">“Help”</span> – to see available commands;</li>
+							<li class="square-list__item"><span class="lightgreen">“Back” / “Next”</span> – to navigate between steps;</li>
+							<li class="square-list__item"><span class="lightgreen">“Start new request”</span> – to begin filling in a form.</li>
+						</ul>
+					</div>
+					<div class="voice-control__action-description invisible" data-index="1">
+						<p><span class="lightgreen">How to fill in your details by just dictating them</span></p>
+						<ul class="square-list">
+							<li class="square-list__item"><span class="lightgreen">“Help”</span> – to see available commands;</li>
+							<li class="square-list__item"><span class="lightgreen">“Back” / “Next”</span> – to navigate between steps;</li>
+							<li class="square-list__item"><span class="lightgreen">“Start new request”</span> – to begin filling in a form.</li>
+							<li class="square-list__item"><span class="lightgreen">“Help”</span> – to see available commands;</li>
+							<li class="square-list__item"><span class="lightgreen">“Back” / “Next”</span> – to navigate between steps;</li>
+							<li class="square-list__item"><span class="lightgreen">“Start new request”</span> – to begin filling in a form.</li>
+						</ul>
+					</div>
+					<div class="voice-control__action-description invisible" data-index="2">
+						<p><span class="lightgreen">How to send a request without using your hands</span></p>
+						<ul class="square-list">
+							<li class="square-list__item"><span class="lightgreen">“Help”</span> – to see available commands;</li>
+							<li class="square-list__item"><span class="lightgreen">“Back” / “Next”</span> – to navigate between steps;</li>
+							<li class="square-list__item"><span class="lightgreen">“Start new request”</span> – to begin filling in a form.</li>
+							<li class="square-list__item"><span class="lightgreen">“Help”</span> – to see available commands;</li>
+							<li class="square-list__item"><span class="lightgreen">“Back” / “Next”</span> – to navigate between steps;</li>
+							<li class="square-list__item"><span class="lightgreen">“Start new request”</span> – to begin filling in a form.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="voice-control__btns">
+				<button type="button" class="btn-white-transparent voice-control__micro-btn">
+					<span class="ico ico--microphone ico--size-24"></span>
+				</button>
+				<button type="button" class="btn-white-transparent btn-white-transparent--selected voice-control__actions-list-btn">
+					<span class="ico ico--list ico--size-24"></span>
+				</button>
+				<button type="button" class="btn-white-transparent voice-control__close-btn" data-voice-control-close>
+					<span class="ico ico--close2 ico--size-24"></span>
+				</button>
+			</div>
+		</div>
 	</div>
 
 	<?php if ($contact_form_buttons) : ?>
@@ -187,9 +287,6 @@ $contact_form_buttons = get_field('contact_form_buttons', 'option');
 		</h3>
 		<div class="form-message__text">
 			<p>Thank you, <span class="form-message__your-name"></span>. Our specialist will contact you at <span class="form-message__your-email"></span> within 24 hours.</p>
-		</div>
-		<div class="form-message__actions">
-
 		</div>
 		<div class="form-message__actions">
 			<button type="button" class="btn-lightgrey" data-fancybox-close>Close</button>

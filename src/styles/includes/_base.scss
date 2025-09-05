@@ -27,6 +27,15 @@ body {
   transition: .3s;
 }
 
+.lightgreen {
+  color: var(--lightgreen);
+}
+
+.invisible {
+  opacity: 0;
+  visibility: hidden;
+}
+
 @media (min-width: 1024px) {
   .hidden-md-plus {
     display: none !important;
