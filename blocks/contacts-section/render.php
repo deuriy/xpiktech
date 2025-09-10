@@ -68,14 +68,25 @@ if (! empty($block['className'])) {
                         <?php if ($contact_block['button']['url'] || $contact_block['button']['text'] || $contact_block['username']): ?>
                             <div class="contact-block__btn-wrapper<?php echo $contact_type === 'telegram' ? ' contact-block__btn-wrapper--two-col' : '' ?>">
                                 <?php if ($contact_block['button']['url'] || $contact_block['button']['text']): ?>
-                                    <a href="<?php echo esc_url($contact_block['button']['url']) ?>" class="<?php echo $btn_class ?>">
-                                        <?php echo esc_html($contact_block['button']['text']) ?>
-                                    </a>
+                                    <?php if ($contact_block['contact_type'] === 'telegram'): ?>
+                                        <a href="<?php echo esc_url('https://t.me/' . $contact_block['username']) ?>" class="<?php echo $btn_class ?>" target="_blank">
+                                            <?php echo esc_html($contact_block['button']['text']) ?>
+                                        </a>
+                                    <?php elseif ($contact_block['contact_type'] === 'email'): ?>
+                                        <a href="<?php echo esc_url('mailto:' . $contact_block['email']) ?>" class="<?php echo $btn_class ?>" target="_blank">
+                                            <?php echo esc_html($contact_block['button']['text']) ?>
+                                        </a>
+                                    <?php else: ?>
+                                        <a href="<?php echo esc_url($contact_block['button']['url']) ?>" class="<?php echo $btn_class ?>" target="_blank">
+                                            <?php echo esc_html($contact_block['button']['text']) ?>
+                                        </a>
+                                    <?php endif ?>
+                                    
                                 <?php endif; ?>
 
                                 <?php if ($contact_block['username']): ?>
                                     <div class="contact-block__username">
-                                        <?php echo wp_kses_post($contact_block['username']) ?>
+                                        @<?php echo wp_kses_post($contact_block['username']) ?>
                                     </div>
                                 <?php endif; ?>
                             </div>

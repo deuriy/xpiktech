@@ -248,7 +248,7 @@ $contact_form_buttons = get_field('contact_form_buttons', 'option');
 									<span class="ico ico--phone"></span>
 								</a>
 							<?php else: ?>
-								<a href="<?php echo esc_html($social_btn['value']) ?>" class="btn-white btn-white--social">
+								<a href="<?php echo esc_html($social_btn['value']) ?>" class="btn-white btn-white--social" target="_blank">
 									<span class="ico ico--<?php echo $social_btn['social_networks'] ?>"></span>
 								</a>
 							<?php endif; ?>

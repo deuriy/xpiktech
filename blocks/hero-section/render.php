@@ -361,7 +361,7 @@ if (! empty($block['className'])) {
                                             </svg> -->
 
                                             <?php if ($service_block_slide['title']): ?>
-                                                <h3 class="service-block__title service-block__title--grad-style">
+                                                <h3 class="service-block__title">
                                                     <?php echo esc_html($service_block_slide['title']) ?>
                                                 </h3>
                                             <?php endif; ?>
