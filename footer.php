@@ -198,7 +198,7 @@ $contact_form_buttons = get_field('contact_form_buttons', 'option');
 					?>
 
 					<li class="contact-buttons__item">
-						<a href="<?php echo $contact_link ?>" class="contact-btn contact-btn--<?php echo $contact_form_btn['network'] ?>" target="_blank">
+						<a href="<?php echo $contact_link ?>" class="contact-btn contact-btn--<?php echo $contact_form_btn['network'] ?>" target="_blank" rel="nofollow">
 							<?php if ($contact_form_btn['title']): ?>
 								<h4 class="contact-btn__title">
 									<?php echo $contact_form_btn['title'] ?>
@@ -248,7 +248,7 @@ $contact_form_buttons = get_field('contact_form_buttons', 'option');
 									<span class="ico ico--phone"></span>
 								</a>
 							<?php else: ?>
-								<a href="<?php echo esc_html($social_btn['value']) ?>" class="btn-white btn-white--social" target="_blank">
+								<a href="<?php echo esc_html($social_btn['value']) ?>" class="btn-white btn-white--social" target="_blank" rel="nofollow">
 									<span class="ico ico--<?php echo $social_btn['social_networks'] ?>"></span>
 								</a>
 							<?php endif; ?>
