@@ -1,0 +1,29 @@
+.hero-about-section {
+  padding: 38px 0 96px;
+
+  @media (max-width: 1199px) {
+    padding: 32px 0 80px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 0 0 64px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 2.05fr 1fr;
+    gap: 18px;
+
+    @media (max-width: 1199px) {
+      max-width: 785px;
+      grid-template-columns: 100%;
+      justify-content: center;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &__achievement-blocks {
+    margin-top: 16px;
+  }
+}

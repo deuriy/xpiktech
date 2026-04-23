@@ -23,7 +23,7 @@ if (! empty($block['className'])) {
 }
 ?>
 
-<div <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
+<section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
   <div class="container">
     <div class="hero-section__container">
       <?php if ($hero_slides): ?>
@@ -271,4 +271,4 @@ if (! empty($block['className'])) {
       <?php endif; ?>
     </div>
   </div>
-</div>
+</section>

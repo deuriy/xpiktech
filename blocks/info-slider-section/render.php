@@ -21,7 +21,7 @@ if (! empty($block['className'])) {
 ?>
 
 <?php if ($info_slides): ?>
-    <div <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
+    <section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
         <div class="container container--no-padding-xs">
             <div class="info-slider-section__container">
                 <div class="swiper info-slider hidden-xs">
@@ -105,5 +105,5 @@ if (! empty($block['className'])) {
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 <?php endif; ?>

@@ -21,7 +21,7 @@ if (! empty($block['className'])) {
 ?>
 
 <?php if ($advantages_blocks): ?>
-    <div <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
+    <section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
         <div class="container">
             <div class="advantages-section__container">
                 <div class="advantage-blocks">
@@ -63,5 +63,5 @@ if (! empty($block['className'])) {
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 <?php endif; ?>

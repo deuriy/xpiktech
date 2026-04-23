@@ -1,0 +1,20 @@
+{
+  "name": "acf/proven-result-section",
+  "title": "Proven Result Section",
+  "description": "Proven Result Section block that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "proven",
+    "result",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

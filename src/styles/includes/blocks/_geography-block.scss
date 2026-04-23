@@ -1,0 +1,41 @@
+.geography-block {
+  display: grid;
+  background: url('images/planet@2x.webp') center / cover no-repeat, linear-gradient(220.43deg, #C1ECD0 0.34%, #2DC1A7 100%);
+  border-radius: 28px;
+
+  &__text-wrapper {
+    align-self: end;
+    margin: 12px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.36);
+    border: 1px solid rgba(255, 255, 255, 0.29);
+    backdrop-filter: blur(25px);
+    border-radius: 24px;
+  }
+
+  &__text {
+    margin-bottom: -2px;
+  }
+
+  &__number-wrapper {
+    margin-bottom: 8px;
+  }
+
+  &__number {
+    display: inline-flex;
+
+    background: linear-gradient(87.58deg, #005E59 38.15%, #2DC1A7 128.36%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    font-weight: 500;
+    font-size: 38px;
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 16px 20px;
+  }
+}

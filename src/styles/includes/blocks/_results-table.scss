@@ -1,0 +1,96 @@
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 21px;
+  background: #fff;
+  overflow: hidden;
+
+  &__logo {
+    max-height: 19px;
+    vertical-align: middle;
+  }
+
+  &__head-cell,
+  &__cell {
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    color: #282828;
+    // font-size: 19px;
+    // line-height: 1.225;
+    // color: #fff;
+    // text-align: left;
+
+    &:first-child {
+      color: rgba(40, 40, 40, 0.8);
+    }
+  }
+
+  &__head-cell {
+    padding: 22px 54px;
+    border-top: none;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: left;
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &--logo {
+      text-align: center;
+    }
+
+    &--with-xpiktech {
+      color: var(--darkgreen);
+    }
+
+    &--improvement {
+      color: var(--mintgreen);
+    }
+  }
+
+  &__cell {
+    padding: 29px 54px;
+
+    &:first-child {
+      width: 24%;
+      border-left: none;
+    }
+
+    &:nth-child(2) {
+      width: 25.7%;
+    }
+
+    &:nth-child(3) {
+      width: 26%;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &--characteristic {
+      text-align: center;
+    }
+
+    &--before-xpiktech {
+      color: rgba(232, 42, 42, 0.8);
+    }
+
+    &--improvement {
+      background: linear-gradient(90deg, rgba(45, 193, 167, 0.12) -6.67%, rgba(45, 193, 167, 0) 27.17%, rgba(45, 193, 167, 0) 67.18%, rgba(45, 193, 167, 0.12) 100%);
+      border-left: 2px solid #2DC1A7;
+    }
+  }
+
+  &__row {
+    &:last-child {
+      & .results-table__cell {
+        border-bottom: none;
+      }
+    }
+  }
+}

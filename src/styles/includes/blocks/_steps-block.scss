@@ -1,0 +1,5 @@
+.steps-block {
+  &__item + .steps-block__item {
+    margin-top: 20px;
+  }
+}

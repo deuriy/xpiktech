@@ -157,6 +157,10 @@ function xpiktech_scripts()
 	if (is_front_page()) {
 		wp_enqueue_script('index', get_template_directory_uri() . '/js/index.js');
 	}
+
+	if (is_page()) {
+		wp_enqueue_script('page', get_template_directory_uri() . '/js/page.js');
+	}
 }
 add_action('wp_enqueue_scripts', 'xpiktech_scripts');
 
@@ -217,6 +221,12 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/statistics-section');
 	register_block_type(get_template_directory() . '/blocks/advantages-section');
 	register_block_type(get_template_directory() . '/blocks/contacts-section');
+	register_block_type(get_template_directory() . '/blocks/hero-about-section');
+	register_block_type(get_template_directory() . '/blocks/intro-section');
+	register_block_type(get_template_directory() . '/blocks/steps-section');
+	register_block_type(get_template_directory() . '/blocks/automation-solution-section');
+	register_block_type(get_template_directory() . '/blocks/proven-result-section');
+	register_block_type(get_template_directory() . '/blocks/text-blocks-section');
 }
 add_action('init', 'xpiktech_register_blocks');
 

@@ -1,0 +1,119 @@
+.hero-about-block {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  // grid-template-areas: "title image"
+  //   "text image";
+  // grid-template-rows: auto 1fr;
+  gap: 12px;
+  // height: 428px;
+  padding: 92px 38px 0 46px;
+  border-radius: 28px;
+  color: #fff;
+  background: linear-gradient(254.48deg, #038464 -1.08%, #005E59 111.06%);
+
+  @media (max-width: 1023px) {
+    padding: 40px 32px;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: 100%;
+    grid-template-areas: none;
+    gap: 0;
+    height: auto;
+    padding: 40px 24px;
+    text-align: center;
+    background: none;
+  }
+
+  // &__title,
+  // &__text {
+  //   @media (min-width: 768px) {
+  //     margin-right: -40px;
+  //   }
+  // }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 19px;
+    font-weight: 500;
+    font-size: 45px;
+    line-height: 1.07;
+    text-transform: capitalize;
+    @extend .transition;
+
+    @media (max-width: 1023px) {
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 16px;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 1.142857;
+    }
+  }
+
+  &__text {
+    position: relative;
+    max-width: 460px;
+    z-index: 1;
+    font-size: 16px;
+    // line-height: 1.44;
+
+    @media (min-width: 768px) {
+      margin-bottom: 27px;
+    }
+
+    @media (max-width: 767px) {
+      // margin-bottom: 32px;
+      // font-size: 16px;
+      // line-height: 1.3125;
+    }
+  }
+
+  &__img-wrapper {
+    position: relative;
+    z-index: 1;
+    align-self: end;
+    margin-top: -35px;
+
+    // grid-area: image;
+    // margin-bottom: 10px;
+
+    // @media (max-width: 767px) {
+    //   // grid-area: auto;
+    //   // margin-bottom: 10px;
+    // }
+  }
+
+  &__img {
+    grid-area: wrapper;
+    width: auto;
+    vertical-align: middle;
+    @extend .transition;
+
+    @media (min-width: 1200px) {
+      max-height: 22.2223vw;
+    }
+
+    @media (min-width: 1365px) {
+      // max-height: 384px;
+      max-height: 430px;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1199px) {
+      max-height: 384px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      max-height: 40vw;
+    }
+
+    @media (max-width: 767px) {
+      max-height: 338px;
+    }
+  }
+}

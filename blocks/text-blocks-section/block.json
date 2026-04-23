@@ -1,0 +1,20 @@
+{
+  "name": "acf/text-blocks-section",
+  "title": "Text Blocks Section",
+  "description": "Text Blocks Section block that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "text",
+    "blocks",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

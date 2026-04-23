@@ -1,0 +1,19 @@
+.video-preview {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas: "wrapper";
+
+  &__img,
+  &__play-btn {
+    grid-area: wrapper;
+  }
+
+  &__img {
+    height: auto;
+  }
+
+  &__play-btn {
+    justify-self: center;
+    align-self: center;
+  }
+}

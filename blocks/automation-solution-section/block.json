@@ -1,0 +1,20 @@
+{
+  "name": "acf/automation-solution-section",
+  "title": "Automation Solution Section",
+  "description": "Automation Solution Section block that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "automation",
+    "solution",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

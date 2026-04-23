@@ -1,0 +1,10 @@
+.play-btn {
+  display: inline-flex;
+  width: 64px;
+  height: 64px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' fill='none'%3E%3Ccircle cx='40' cy='40' r='40' fill='%232dc1a7'/%3E%3Cpath fill='%23fff' d='M51 38.268c1.333.77 1.333 2.694 0 3.464l-15 8.66c-1.333.77-3-.192-3-1.732V31.34c0-1.54 1.667-2.502 3-1.732z'/%3E%3C/svg%3E") center no-repeat;
+  cursor: pointer;
+}

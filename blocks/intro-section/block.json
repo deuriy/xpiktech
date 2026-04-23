@@ -1,0 +1,19 @@
+{
+  "name": "acf/intro-section",
+  "title": "Intro Section",
+  "description": "Intro Section block that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "intro",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

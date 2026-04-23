@@ -1,0 +1,31 @@
+.achievement-blocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  // gap: 40px;
+  padding: 39px 40px;
+  border-radius: 32px;
+  background: #fff;
+
+  // &__item + .achievement-blocks__item {
+  //   padding-left: 40px;
+  //   border-left: 1px solid rgba(0, 0, 0, 0.2);
+  // }
+
+  &__item:not(:last-child) {
+    position: relative;
+    margin-right: 40px;
+    padding-right: 40px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   bottom: 0;
+    //   left: -56px;
+    //   width: 1px;
+    //   // height: 20px;
+    //   background: rgba(0, 0, 0, 0.2);
+    // }
+  }
+}
