@@ -1,0 +1,9 @@
+.grad-text-light {
+  display: inline-grid;
+  background: linear-gradient(90deg, var(--darkgreen) 0%, var(--mintgreen) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  @extend .transition;
+}
