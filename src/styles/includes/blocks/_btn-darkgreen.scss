@@ -63,6 +63,17 @@
     }
   }
 
+  &--arrow-rect-banner {
+    gap: 12px;
+    padding: 3px 3px 3px 21px;
+    border-radius: 16px;
+    
+    &::after {
+      width: 51px;
+      height: 51px;
+    }
+  }
+
   &--tariff-block {
     position: relative;
     padding-top: 15px;

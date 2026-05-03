@@ -16,4 +16,13 @@
     margin-top: -32px;
     background: #fff;
   }
+
+  &--style-2 {
+    padding: 92px 0 130px;
+    background: #fff;
+
+    &::before {
+      display: none;
+    }
+  }
 }
