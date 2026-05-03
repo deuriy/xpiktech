@@ -25,5 +25,9 @@
 
   &__achievement-blocks {
     margin-top: 16px;
+
+    @media (max-width: 767px) {
+      margin-right: -24px;
+    }
   }
 }

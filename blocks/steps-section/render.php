@@ -28,7 +28,7 @@ if (! empty($block['className'])) {
             <div class="section__container">
                 <?php if ($title): ?>
                     <h2 class="section-title section__title">
-                        <?php echo esc_html($title) ?>
+                        <?php echo wp_kses_post($title) ?>
                     </h2>
                 <?php endif; ?>
 
@@ -41,27 +41,29 @@ if (! empty($block['className'])) {
                 <div class="section__steps-wrapper">
                     <div class="steps-block">
                         <?php foreach ($steps as $key => $step): ?>
-                            <button type="button" class="step-block steps-block__item">
-                                <div class="step-block__number">
-                                    <?php echo $key + 1 ?>
-                                </div>
-
-                                <?php if ($step['title']): ?>
-                                    <h3 class="step-block__title">
-                                        <?php echo esc_html($step['title']) ?>
-                                    </h3>
-                                <?php endif; ?>
-
-                                <?php if ($step['text']): ?>
-                                    <div class="step-block__text">
-                                        <?php echo wp_kses_post($step['text']) ?>
+                            <div class="steps-block__item">
+                                <button type="button" class="step-block">
+                                    <div class="step-block__number">
+                                        <?php echo $key + 1 ?>
                                     </div>
-                                <?php endif; ?>
-                            </button>
+
+                                    <?php if ($step['title']): ?>
+                                        <h3 class="step-block__title">
+                                            <?php echo esc_html($step['title']) ?>
+                                        </h3>
+                                    <?php endif; ?>
+
+                                    <?php if ($step['text']): ?>
+                                        <div class="step-block__text">
+                                            <?php echo wp_kses_post($step['text']) ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </button>
+                            </div>
                         <?php endforeach; ?>
                     </div>
 
-                    <div class="section__step-imgs">
+                    <div class="section__step-imgs hidden-sm-minus">
                         <?php foreach ($steps as $key => $step): ?>
                             <?php if ($step['image']): ?>
                                 <?php echo wp_get_attachment_image($step['image'], 'full', '', array('class' => 'section__step-img')); ?>

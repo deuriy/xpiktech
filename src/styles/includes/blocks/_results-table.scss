@@ -1,5 +1,6 @@
 .results-table {
   width: 100%;
+  min-width: 540px;
   border-collapse: collapse;
   border-radius: 21px;
   background: #fff;
@@ -31,6 +32,20 @@
     font-size: 18px;
     text-align: left;
 
+    @media (max-width: 1199px) {
+      padding: 22px 40px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 1023px) {
+      padding: 22px 30px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 22px 8px;
+    }
+
     &:first-child {
       border-left: none;
     }
@@ -40,7 +55,9 @@
     }
 
     &--logo {
-      text-align: center;
+      @media (min-width: 768px) {
+        text-align: center;
+      }
     }
 
     &--with-xpiktech {
@@ -55,17 +72,43 @@
   &__cell {
     padding: 29px 54px;
 
+    @media (max-width: 1199px) {
+      padding: 29px 40px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1023px) {
+      padding: 29px 30px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 22px 8px;
+    }
+
     &:first-child {
       width: 24%;
       border-left: none;
+
+      @media (max-width: 767px) {
+        width: 108px;
+      }
     }
 
     &:nth-child(2) {
       width: 25.7%;
+
+      @media (max-width: 767px) {
+        width: 108px;
+      }
     }
 
     &:nth-child(3) {
       width: 26%;
+
+      @media (max-width: 767px) {
+        width: 108px;
+      }
     }
 
     &:last-child {
@@ -73,7 +116,9 @@
     }
 
     &--characteristic {
-      text-align: center;
+      @media (min-width: 768px) {
+        text-align: center;
+      }
     }
 
     &--before-xpiktech {

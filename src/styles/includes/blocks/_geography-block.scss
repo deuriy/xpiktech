@@ -1,7 +1,20 @@
 .geography-block {
   display: grid;
+  min-height: 477px;
   background: url('images/planet@2x.webp') center / cover no-repeat, linear-gradient(220.43deg, #C1ECD0 0.34%, #2DC1A7 100%);
   border-radius: 28px;
+
+  @media (max-width: 1199px) {
+    border-radius: 24px;
+  }
+
+  @media (max-width: 1023px) {
+    border-radius: 20px;
+  }
+
+  @media (max-width: 767px) {
+    border-radius: 18px;
+  }
 
   &__text-wrapper {
     align-self: end;
@@ -11,6 +24,20 @@
     border: 1px solid rgba(255, 255, 255, 0.29);
     backdrop-filter: blur(25px);
     border-radius: 24px;
+
+    @media (max-width: 1199px) {
+      border-radius: 22px;
+    }
+
+    @media (max-width: 1023px) {
+      border-radius: 20px;
+    }
+
+    @media (max-width: 767px) {
+      margin: 16px;
+      padding: 12px;
+      border-radius: 16px;
+    }
   }
 
   &__text {
@@ -37,5 +64,9 @@
   &__btn {
     width: 100%;
     padding: 16px 20px;
+
+    @media (max-width: 767px) {
+      padding: 19px 20px;
+    }
   }
 }

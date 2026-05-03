@@ -36,7 +36,7 @@ if (! empty($block['className'])) {
     <?php endif; ?>
 
     <?php if( have_rows('tariff') ): ?>
-      <div class="tariff-blocks">        
+      <div class="tariff-blocks section__tariff-blocks">        
         <?php while( have_rows('tariff') ): the_row();
           // vars
           $block_style = get_sub_field('block_style');

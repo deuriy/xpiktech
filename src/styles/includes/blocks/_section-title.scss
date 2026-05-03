@@ -1,6 +1,7 @@
 .section-title {
   font-weight: 500;
-  font-size: 51px;
+  // font-size: 51px;
+  font-size: clamp(24px, 3.6vw, 51px);
   line-height: 1.09375;
   text-align: center;
   text-transform: capitalize;

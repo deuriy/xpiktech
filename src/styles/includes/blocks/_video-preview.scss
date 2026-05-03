@@ -3,6 +3,10 @@
   grid-template-columns: 100%;
   grid-template-areas: "wrapper";
 
+  @media (max-width: 767px) {
+    min-height: 229px;
+  }
+
   &__img,
   &__play-btn {
     grid-area: wrapper;

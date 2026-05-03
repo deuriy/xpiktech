@@ -2,4 +2,22 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
+  overflow: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 1199px) {
+    gap: 12px;
+  }
+
+  @media (max-width: 1023px) {
+    grid-auto-flow: column;
+    grid-auto-columns: 330px;
+    grid-template-columns: none;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
 }

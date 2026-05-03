@@ -3,6 +3,20 @@
   background: rgba(243, 243, 243, 0.69);
   border-radius: 35px;
 
+  @media (max-width: 1199px) {
+    padding: 28px 120px 32px 30px;
+    border-radius: 28px;
+  }
+
+  @media (max-width: 1023px) {
+    padding: 24px 54px 28px 24px;
+    border-radius: 22px;
+  }
+
+  @media (max-width: 767px) {
+    border-radius: 18px;
+  }
+
   &__title-wrapper {
     display: grid;
     max-width: 360px;
@@ -23,6 +37,14 @@
     text-fill-color: transparent;
 
     opacity: 0.6;
+
+    @media (max-width: 1199px) {
+      font-size: 28px;
+    }
+
+    @media (max-width: 1023px) {
+      font-size: 24px;
+    }
   }
 
   &__list {

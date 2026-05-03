@@ -38,7 +38,7 @@ if (! empty($block['className'])) {
             <?php endif; ?>
             
             <?php if ($results_table): ?>
-                <div class="results-table-wrapper">
+                <div class="results-table-wrapper section__results-table-wrapper">
                     <table class="results-table">
                         <thead class="results-table__head">
                             <tr class="results-table__head-row">
