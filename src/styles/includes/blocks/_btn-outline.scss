@@ -1,0 +1,24 @@
+.btn-outline {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 40px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--dark);
+  border: 1px solid var(--darkgreen);
+  border-radius: 10px;
+  font-family: var(--base-font);
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  @extend .transition;
+
+  &:hover {
+    background: var(--darkgreen);
+    color: #fff;
+  }
+}

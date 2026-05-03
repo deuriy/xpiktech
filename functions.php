@@ -228,6 +228,7 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/proven-result-section');
 	register_block_type(get_template_directory() . '/blocks/text-blocks-section');
 	register_block_type(get_template_directory() . '/blocks/timeline-section');
+	register_block_type(get_template_directory() . '/blocks/tariff-section');
 }
 add_action('init', 'xpiktech_register_blocks');
 

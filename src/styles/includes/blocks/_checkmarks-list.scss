@@ -11,4 +11,17 @@
       margin-top: 21px;
     }
   }
+
+  &--small {
+    .checkmarks-list__item {
+      padding-left: 19px;
+      background-position: left top;
+      background-size: 16px auto;
+      font-size: 14px;
+
+      & + .checkmarks-list__item {
+        margin-top: 12px;
+      }
+    }
+  }
 }

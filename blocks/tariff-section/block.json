@@ -1,0 +1,19 @@
+{
+  "name": "acf/tariff-section",
+  "title": "Tariff Section",
+  "description": "Tariff Section block that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "tariff",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}
