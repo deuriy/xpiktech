@@ -131,6 +131,7 @@
     }
 
     &--improvement {
+      padding: 20px 34px;
       background: linear-gradient(90deg, rgba(45, 193, 167, 0.12) -6.67%, rgba(45, 193, 167, 0) 27.17%, rgba(45, 193, 167, 0) 67.18%, rgba(45, 193, 167, 0.12) 100%);
       border-left: 2px solid #2DC1A7;
     }
@@ -142,5 +143,21 @@
         border-bottom: none;
       }
     }
+  }
+
+  &__improvement {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__improvement-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    flex-shrink: 0;
   }
 }

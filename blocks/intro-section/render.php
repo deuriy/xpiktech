@@ -36,16 +36,15 @@ if (! empty($block['className'])) {
                     <?php echo wp_kses_post($description) ?>
                 </div>
             <?php endif; ?>
-
-            <div class="video-block">
-                <a href="#" class="video-preview video-block__preview">
-                    <?php if ($video_block['preview']): ?>
+            
+            <?php if ($video_block['preview'] && $video_block['video_url']): ?>
+                <div class="video-block">
+                    <a href="<?php echo $video_block['video_url'] ?>" class="video-preview video-block__preview">
                         <?php echo wp_get_attachment_image($video_block['preview'], 'full', '', array('class' => 'video-preview__img')); ?>
-                    <?php endif; ?>
-
-                    <button type="button" class="play-btn video-preview__play-btn"></button>
-                </a>
-            </div>
+                        <button type="button" class="play-btn video-preview__play-btn"></button>
+                    </a>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>

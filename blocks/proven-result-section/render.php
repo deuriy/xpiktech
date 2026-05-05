@@ -56,7 +56,22 @@ if (! empty($block['className'])) {
                                 <td class="results-table__cell results-table__cell--characteristic"><?php echo $row['characteristic'] ?></td>
                                 <td class="results-table__cell results-table__cell--before-xpiktech"><?php echo $row['before_xpiktech'] ?></td>
                                 <td class="results-table__cell results-table__cell--with-xpiktech"><?php echo $row['with_xpiktech'] ?></td>
-                                <td class="results-table__cell results-table__cell--improvement"><?php echo $row['improvement'] ?></td>
+                                <td class="results-table__cell results-table__cell--improvement">
+                                    <?php
+                                        $icon_id = $row['improvement_icon'];
+                                        $icon = wp_get_attachment_image($icon_id, 'full', false, ['class' => 'results-table__improvement-icon']);
+                                    ?>
+
+                                    <div class="results-table__improvement">
+                                        <?php if ($icon): ?>
+                                            <div class="results-table__improvement-icon-wrapper">
+                                                <?php echo $icon; ?>
+                                            </div>
+                                        <?php endif; ?>
+
+                                        <?php echo $row['improvement']; ?>
+                                    </div>
+                                </td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>

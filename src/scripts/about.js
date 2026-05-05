@@ -1,7 +1,17 @@
+import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
+
 document.addEventListener('DOMContentLoaded', function () {
   initSteps();
   initTimeline();
+  initFancybox();
 });
+
+const initFancybox = () => {
+  Fancybox.bind('.video-block__preview', {
+    dragToClose: false,
+    // closeButton: false
+  });
+};
 
 const initSteps = () => {
   const steps = document.querySelectorAll('.step-block');
