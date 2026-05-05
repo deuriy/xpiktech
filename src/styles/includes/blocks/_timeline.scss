@@ -249,7 +249,8 @@
     scrollbar-width: none;
 
     &__inner {
-      width: max-content;
+      // width: max-content;
+      width: 1895px;
       min-width: 100%;
       display: flex;
       // align-items: flex-start;
