@@ -9,6 +9,11 @@
     overflow: auto;
     scrollbar-width: none;
 
+    @media (max-width: 767px) {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+
     &::-webkit-scrollbar {
       display: none;
     }
@@ -18,5 +23,16 @@
     @media (min-width: 1024px) {
       margin-top: 20px;
     }
+  }
+
+  &__item {
+    display: grid;
+    grid-template: 1fr auto / 100%;
+    gap: 24px;
+  }
+
+  &__item-img {
+    height: auto;
+    border-radius: 20px;
   }
 }

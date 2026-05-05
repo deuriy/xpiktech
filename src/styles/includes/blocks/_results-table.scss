@@ -9,6 +9,10 @@
   &__logo {
     max-height: 19px;
     vertical-align: middle;
+
+    @media (max-width: 767px) {
+      max-height: 16px;
+    }
   }
 
   &__head-cell,
@@ -43,7 +47,7 @@
     }
 
     @media (max-width: 767px) {
-      padding: 22px 8px;
+      padding: 22px 11px;
     }
 
     &:first-child {
@@ -83,6 +87,7 @@
     }
 
     @media (max-width: 767px) {
+      height: 78px;
       padding: 22px 8px;
     }
 
@@ -91,7 +96,7 @@
       border-left: none;
 
       @media (max-width: 767px) {
-        width: 108px;
+        width: 109px;
       }
     }
 
@@ -99,7 +104,7 @@
       width: 25.7%;
 
       @media (max-width: 767px) {
-        width: 108px;
+        width: 109px;
       }
     }
 
@@ -107,7 +112,7 @@
       width: 26%;
 
       @media (max-width: 767px) {
-        width: 108px;
+        width: 109px;
       }
     }
 

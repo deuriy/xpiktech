@@ -5,6 +5,18 @@
     "icon text";
   gap: 6px 12px;
 
+  @media (max-width: 1199px) {
+    gap: 4px 10px;
+  }
+
+  @media (max-width: 1023px) {
+    gap: 4px 8px;
+  }
+
+  @media (max-width: 767px) {
+    gap: 0 8px;
+  }
+
   &__icon-wrapper {
     grid-area: icon;
     display: grid;
@@ -14,6 +26,23 @@
     padding: 15px;
     background: rgba(45, 193, 167, 0.11);
     border-radius: 17px;
+
+    @media (max-width: 1199px) {
+      width: 64px;
+      height: 64px;
+    }
+
+    @media (max-width: 1023px) {
+      width: 56px;
+      height: 56px;
+      padding: 12px;
+    }
+
+    @media (max-width: 767px) {
+      width: 48px;
+      height: 48px;
+      padding: 8px;
+    }
   }
 
   &__icon {
@@ -23,11 +52,31 @@
   &__title {
     font-size: 19px;
     color: rgba(40, 40, 40, 0.8);
+
+    @media (max-width: 1199px) {
+      font-size: 17px;
+    }
+
+    @media (max-width: 1023px) {
+      font-size: 14px;
+    }
   }
 
   &__text {
     color: var(--darkgreen);
     font-weight: 500;
     font-size: 37px;
+
+    @media (max-width: 1199px) {
+      font-size: 30px;
+    }
+
+    @media (max-width: 1023px) {
+      font-size: 25px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 20px;
+    }
   }
 }

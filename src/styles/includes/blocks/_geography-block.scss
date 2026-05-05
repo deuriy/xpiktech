@@ -13,7 +13,10 @@
   }
 
   @media (max-width: 767px) {
-    border-radius: 18px;
+    min-height: 395px;
+    // border-radius: 18px;
+    border-radius: 28px;
+    background: url('images/planet@2x.webp') center top / 310px auto no-repeat, linear-gradient(220.43deg, #C1ECD0 0.34%, #2DC1A7 100%);
   }
 
   &__text-wrapper {
@@ -42,6 +45,11 @@
 
   &__text {
     margin-bottom: -2px;
+
+    @media (max-width: 767px) {
+      max-width: 220px;
+      margin-bottom: 0;
+    }
   }
 
   &__number-wrapper {
@@ -59,6 +67,10 @@
 
     font-weight: 500;
     font-size: 38px;
+
+    @media (max-width: 767px) {
+      font-size: 28px;
+    }
   }
 
   &__btn {
@@ -66,7 +78,8 @@
     padding: 16px 20px;
 
     @media (max-width: 767px) {
-      padding: 19px 20px;
+      padding: 17px 20px;
+      font-size: 18px;
     }
   }
 }

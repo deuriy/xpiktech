@@ -87,28 +87,30 @@ if (! empty($block['className'])) {
     </div>
 
     <?php if ($achievement_blocks): ?>
-      <div class="achievement-blocks hero-about-section__achievement-blocks">
-        <?php foreach ($achievement_blocks as $achievement_block): ?>
-          <div class="achievement-block achievement-blocks__item">
-            <?php if ($achievement_block['image']) : ?>
-              <div class="achievement-block__icon-wrapper">
-                <?php echo wp_get_attachment_image($achievement_block['image'], 'full', false, array('class' => 'achievement-block__icon')); ?>
-              </div>
-            <?php endif; ?>
+      <div class="achievement-blocks-wrapper hero-about-section__achievement-blocks-wrapper">
+        <div class="achievement-blocks">
+          <?php foreach ($achievement_blocks as $achievement_block): ?>
+            <div class="achievement-block achievement-blocks__item">
+              <?php if ($achievement_block['image']) : ?>
+                <div class="achievement-block__icon-wrapper">
+                  <?php echo wp_get_attachment_image($achievement_block['image'], 'full', false, array('class' => 'achievement-block__icon')); ?>
+                </div>
+              <?php endif; ?>
 
-            <?php if ($achievement_block['title']): ?>
-              <div class="achievement-block__title">
-                <?php echo esc_html($achievement_block['title']) ?>
-              </div>
-            <?php endif; ?>
+              <?php if ($achievement_block['title']): ?>
+                <div class="achievement-block__title">
+                  <?php echo esc_html($achievement_block['title']) ?>
+                </div>
+              <?php endif; ?>
 
-            <?php if ($achievement_block['text']): ?>
-              <div class="achievement-block__text">
-                <?php echo esc_html($achievement_block['text']) ?>
-              </div>
-            <?php endif; ?>
-          </div>
-        <?php endforeach; ?>
+              <?php if ($achievement_block['text']): ?>
+                <div class="achievement-block__text">
+                  <?php echo esc_html($achievement_block['text']) ?>
+                </div>
+              <?php endif; ?>
+            </div>
+          <?php endforeach; ?>
+        </div>
       </div>
     <?php endif; ?>
   </div>

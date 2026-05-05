@@ -16,7 +16,7 @@ if (! empty($block['anchor'])) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'section';
+$class_name = 'section section--proven-result-section';
 if (! empty($block['className'])) {
     $class_name .= ' ' . $block['className'];
 }
@@ -24,21 +24,21 @@ if (! empty($block['className'])) {
 
 <section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
     <div class="container">
-        <div class="section__container">
-            <?php if ($title): ?>
-                <h2 class="section-title section__title">
-                    <?php echo esc_html($title) ?>
-                </h2>
-            <?php endif; ?>
+        <?php if ($title): ?>
+            <h2 class="section-title section__title">
+                <?php echo esc_html($title) ?>
+            </h2>
+        <?php endif; ?>
 
-            <?php if ($description): ?>
-                <div class="section-description section__description">
-                    <?php echo wp_kses_post($description) ?>
-                </div>
-            <?php endif; ?>
-            
-            <?php if ($results_table): ?>
-                <div class="results-table-wrapper section__results-table-wrapper">
+        <?php if ($description): ?>
+            <div class="section-description section__description">
+                <?php echo wp_kses_post($description) ?>
+            </div>
+        <?php endif; ?>
+        
+        <?php if ($results_table): ?>
+            <div class="results-table-wrapper section__results-table-wrapper">
+                <div class="results-table-wrapper__inner">
                     <table class="results-table">
                         <thead class="results-table__head">
                             <tr class="results-table__head-row">
@@ -62,7 +62,7 @@ if (! empty($block['className'])) {
                         </tbody>
                     </table>
                 </div>
-            <?php endif; ?>
-        </div>
+            </div>
+        <?php endif; ?>
     </div>
 </section>

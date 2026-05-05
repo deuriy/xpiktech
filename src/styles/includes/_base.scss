@@ -31,9 +31,17 @@ body {
   color: var(--lightgreen);
 }
 
+.mintgreen {
+  color: var(--mintgreen);
+}
+
 .invisible {
   opacity: 0;
   visibility: hidden;
+}
+
+.font-medium {
+  font-weight: 500;
 }
 
 @media (min-width: 1024px) {

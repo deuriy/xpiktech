@@ -49,6 +49,11 @@
       margin-right: -24px;
       margin-left: -24px;
     }
+
+    @media (max-width: 767px) {
+      margin-right: -16px;
+      margin-left: -16px;
+    }
   }
 
   &__step-imgs {
@@ -60,6 +65,7 @@
   &__step-img {
     grid-area: wrapper;
     height: auto;
+    border-radius: 32px;
     opacity: 0;
     visibility: hidden;
     @extend .transition;
@@ -73,6 +79,10 @@
   &__mail-clients {
     margin-bottom: 45px;
     text-align: center;
+
+    @media (max-width: 767px) {
+      margin-bottom: 32px;
+    }
   }
 
   &__mail-clients-img {
@@ -82,6 +92,10 @@
   &__demo-btn-wrapper {
     margin-bottom: 58px;
     text-align: center;
+
+    @media (max-width: 767px) {
+      margin-bottom: 42px;
+    }
   }
 
   &__solution-blocks {
@@ -135,6 +149,11 @@
       margin-right: -24px;
       margin-left: -24px;
     }
+
+    @media (max-width: 767px) {
+      margin-right: -16px;
+      margin-left: -16px;
+    }
   }
 
   &__timeline {
@@ -145,12 +164,22 @@
       margin-right: -24px;
       margin-left: -24px;
     }
+
+    @media (max-width: 767px) {
+      margin-right: -16px;
+      margin-left: -16px;
+    }
   }
 
   &__tariff-blocks {
     @media (max-width: 1023px) {
       margin-right: -24px;
       margin-left: -24px;
+    }
+
+    @media (max-width: 767px) {
+      margin-right: -16px;
+      margin-left: -16px;
     }
   }
 
@@ -175,12 +204,18 @@
 
       @media (max-width: 767px) {
         grid-template-columns: 100%;
+        gap: 21px;
       }
     }
 
     .section__title {
       max-width: 440px;
       margin: 0 0 20px;
+
+      @media (max-width: 767px) {
+        max-width: 240px;
+        margin: 0 0 10px;
+      }
     }
 
     .section__description {
@@ -212,6 +247,7 @@
 
       @media (max-width: 767px) {
         grid-template-columns: 100%;
+        gap: 21px;
       }
     }
     
@@ -229,21 +265,55 @@
   &--steps {
     .section__title {
       max-width: 580px;
+
+      @media (max-width: 767px) {
+        max-width: 320px;
+      }
     }
 
     .section__description {
       max-width: 420px;
+
+      @media (max-width: 767px) {
+        max-width: 280px;
+        margin-bottom: 26px;
+      }
     }
   }
 
   &--automation-solution {
     .section__title {
       max-width: 620px;
+
+      @media (max-width: 767px) {
+        max-width: 300px;
+      }
     }
 
     .section__description {
       max-width: 820px;
       margin-bottom: 28px;
+
+      @media (max-width: 767px) {
+        margin-bottom: 22px;
+      }
+    }
+  }
+
+  &--proven-result-section {
+    .section__title {
+      @media (max-width: 767px) {
+        max-width: 311px;
+      }
+    }
+
+    .section__description {
+      text-transform: capitalize;
+
+      @media (max-width: 767px) {
+        max-width: 350px;
+        margin-bottom: 23px;
+      }
     }
   }
 
@@ -267,12 +337,26 @@
       @media (max-width: 1023px) {
         margin-bottom: 30px;
       }
+
+      @media (max-width: 767px) {
+        margin-bottom: 18px;
+      }
     }
   }
 
   &--tariff {
     .section__title {
       max-width: 613px;
+
+      @media (max-width: 767px) {
+        max-width: 280px;
+      }
+    }
+
+    .section__description {
+      @media (max-width: 767px) {
+        margin-bottom: 24px;
+      }
     }
   }
 }

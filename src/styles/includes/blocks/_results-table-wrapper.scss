@@ -1,13 +1,26 @@
 .results-table-wrapper {
-  padding: 13px;
-  background: rgba(255, 255, 255, 0.37);
-  border-radius: 34px;
-  overflow: auto;
-  scrollbar-width: none;
+  &__inner {
+    padding: 13px;
+    background: rgba(255, 255, 255, 0.37);
+    border-radius: 34px;
+    overflow: auto;
+    scrollbar-width: none;
+
+    @media (max-width: 767px) {
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.37);
+      border-radius: 18px;
+    }
+  }
 
   @media (max-width: 1023px) {
     padding-right: 24px;
     padding-left: 24px;
+  }
+
+  @media (max-width: 767px) {
+    padding-right: 16px;
+    padding-left: 16px;
   }
 
   &::-webkit-scrollbar {

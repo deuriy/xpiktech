@@ -12,10 +12,17 @@
     }
 
     @media (max-width: 1023px) {
+      padding-left: 26px;
+      background-position: left top 3px;
+      background-size: 16px auto;
       font-size: 15px;
     }
 
     @media (max-width: 767px) {
+      padding-bottom: 2px;
+      padding-left: 27px;
+      background-position: left top;
+      background-size: 18px auto;
       font-size: 12px;
     }
 
@@ -24,6 +31,10 @@
 
       @media (max-width: 1199px) {
         margin-top: 18px;
+      }
+
+      @media (max-width: 767px) {
+        margin-top: 19px;
       }
     }
   }
@@ -35,8 +46,19 @@
       background-size: 16px auto;
       font-size: 14px;
 
+      @media (max-width: 767px) {
+        padding-top: 2px;
+        padding-left: 24px;
+        background-size: 18px auto;
+        font-size: 12px;
+      }
+
       & + .checkmarks-list__item {
         margin-top: 12px;
+
+        @media (max-width: 767px) {
+          margin-top: 10px;
+        }
       }
     }
   }

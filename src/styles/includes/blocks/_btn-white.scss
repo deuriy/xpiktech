@@ -42,12 +42,23 @@
     border-radius: 10px;
     font-weight: 500;
 
+    @media (max-width: 767px) {
+      gap: 21px;
+      padding: 4px 4px 4px 20px;
+      border-radius: 12px;
+    }
+
     &::after {
       content: '';
       width: 45px;
       height: 45px;
       border-radius: 10px;
       background: var(--darkgreen) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill='%23fff' d='M15.85 1a1 1 0 0 0-1-1h-9a1 1 0 1 0 0 2h8v8a1 1 0 1 0 2 0zM.706 15.143l.707.707L15.556 1.708 14.85 1l-.707-.707L0 14.436z'/%3E%3C/svg%3E") center / 16px auto no-repeat;
+
+      @media (max-width: 767px) {
+        width: 40px;
+        height: 40px;
+      }
     }
 
     &:hover {
