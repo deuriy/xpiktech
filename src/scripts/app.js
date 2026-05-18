@@ -153,4 +153,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
     e.preventDefault();
   });
+
+  const header = document.querySelector('.header');
+
+  const SCROLL_THRESHOLD = 40;
+
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  function updateHeader() {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > SCROLL_THRESHOLD) {
+      header.classList.add('header--is-scrolled');
+    } else {
+      header.classList.remove('header--is-scrolled');
+    }
+
+    lastScrollY = currentScrollY;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  });
 });

@@ -77,7 +77,7 @@ if (! empty($block['className'])) {
 
             <?php if ($button['url'] && $button['text']): ?>
               <div class="tariff-block__btn-wrapper">
-                <a href="<?php echo esc_url($button['url']) ?>" class="tariff-block__btn <?php echo esc_attr($button_classes); ?>">
+                <a href="<?php echo esc_url($button['url']) ?>" class="tariff-block__btn <?php echo esc_attr($button_classes); ?>" data-fancybox>
                   <?php echo esc_html($button['text']) ?>
                 </a>
               </div>

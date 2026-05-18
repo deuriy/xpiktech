@@ -13,6 +13,19 @@
     padding-top: 12px;
   }
 
+  @media (min-width: 768px) {
+    position: sticky;
+    z-index: 1000;
+    top: -14px;
+    transition: .3s;
+
+    &--is-scrolled {
+      .header__container {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
   &__container {
     position: relative;
     display: grid;
@@ -24,6 +37,7 @@
     background: #FFF;
     box-shadow: var(--shadow);
     border-radius: 20px;
+    @extend .transition;
 
     @media (max-width: 1023px) {
       grid-template-columns: repeat(2, auto);
@@ -42,5 +56,13 @@
     grid-template-columns: repeat(2, auto);
     align-items: center;
     gap: 8px;
+  }
+}
+
+body.admin-bar {
+  .header--is-scrolled {
+    @media (min-width: 768px) {
+      top: 18px;
+    }
   }
 }

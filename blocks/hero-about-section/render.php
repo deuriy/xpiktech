@@ -47,7 +47,7 @@ if (! empty($block['className'])) {
             <?php endif; ?>
 
             <?php if ($hero_about_button['url'] && $hero_about_button['text']): ?>
-              <a href="<?php echo esc_url($hero_about_button['url']) ?>" class="btn-white btn-white--arrow-rect hero-about-block__btn">
+              <a href="<?php echo esc_url($hero_about_button['url']) ?>" class="btn-white btn-white--arrow-rect hero-about-block__btn" data-fancybox>
                 <?php echo esc_html($hero_about_button['text']) ?>
               </a>
             <?php endif; ?>

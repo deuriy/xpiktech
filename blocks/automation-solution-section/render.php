@@ -48,7 +48,7 @@ if (! empty($block['className'])) {
 
             <?php if ($button['url'] && $button['text']): ?>
                 <div class="section__demo-btn-wrapper">
-                    <a href="<?php echo esc_url($button['url']) ?>" class="btn-darkgreen btn-darkgreen--arrow-rect section__demo-btn">
+                    <a href="<?php echo esc_url($button['url']) ?>" class="btn-darkgreen btn-darkgreen--arrow-rect section__demo-btn" data-fancybox>
                         <?php echo esc_html($button['text']) ?>
                     </a>
                 </div>

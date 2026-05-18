@@ -8,9 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 const initFancybox = () => {
-  Fancybox.bind('[data-src="#contact-form-popup"], [href="#contact-form-popup"]', {
-    dragToClose: false,
-    // closeButton: false
+  Fancybox.bind('[data-fancybox]', {
+    dragToClose: false
   });
 };
 

@@ -59,15 +59,11 @@ if (! empty($block['className'])) {
                                         </div>
                                     <?php endif; ?>
                                 </button>
-                                    
-                                <?php if ($step['image']): ?>
-                                    <?php echo wp_get_attachment_image($step['image'], 'full', '', array('class' => 'steps-block__item-img hidden-md-plus')); ?>
-                                <?php endif; ?>
                             </div>
                         <?php endforeach; ?>
                     </div>
-
-                    <div class="section__step-imgs hidden-sm-minus">
+                    
+                    <div class="section__step-imgs">
                         <?php foreach ($steps as $key => $step): ?>
                             <?php if ($step['image']): ?>
                                 <?php echo wp_get_attachment_image($step['image'], 'full', '', array('class' => 'section__step-img')); ?>

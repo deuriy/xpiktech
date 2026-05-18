@@ -7,9 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 const initFancybox = () => {
-  Fancybox.bind('.video-block__preview', {
-    dragToClose: false,
-    // closeButton: false
+  Fancybox.bind('[data-fancybox]', {
+    dragToClose: false
   });
 };
 
