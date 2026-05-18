@@ -156,7 +156,7 @@ function xpiktech_scripts()
 
 	if (is_front_page()) {
 		wp_enqueue_script('index', get_template_directory_uri() . '/js/index.js');
-	} elseif (is_page('about-us')) {
+	} elseif (is_page()) {
 		wp_enqueue_script('page', get_template_directory_uri() . '/js/about.js');
 	}
 }
