@@ -14,7 +14,7 @@ $service_block_slides = get_field('service_block_slides');
 
 $anchor = '';
 if (! empty($block['anchor'])) {
-  $anchor = 'id="' . esc_attr($block['anchor']) . '" ';
+  $anchor = 'id=' . esc_attr($block['anchor']) . ' ';
 }
 
 $class_name = 'hero-section';

@@ -51,10 +51,10 @@
 
 				<div class="offcanvas__footer">
 					<div class="buttons-list buttons-list--offcanvas offcanvas__buttons-list">
-						<a href="#" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 banner__btn">
+						<a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 banner__btn" data-fancybox>
 							<span class="ico ico--arrow-right2"></span>
 						</a>
-						<a href="#" class="btn-darkgreen btn-darkgreen--radius-16 banner__btn">Request a Free Demo</a>
+						<a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 banner__btn" data-fancybox>Request a Free Demo</a>
 					</div>
 				</div>
 			</div>

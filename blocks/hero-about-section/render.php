@@ -19,7 +19,7 @@ $achievement_blocks = get_field('achievement_blocks');
 
 $anchor = '';
 if (! empty($block['anchor'])) {
-  $anchor = 'id="' . esc_attr($block['anchor']) . '" ';
+  $anchor = 'id=' . esc_attr($block['anchor']) . ' ';
 }
 
 $class_name = 'hero-about-section';

@@ -10,7 +10,7 @@ $info_slides = get_field('info_slides');
 
 $anchor = '';
 if (! empty($block['anchor'])) {
-    $anchor = 'id="' . esc_attr($block['anchor']) . '" ';
+    $anchor = 'id=' . esc_attr($block['anchor']) . ' ';
 }
 
 // Create class attribute allowing for custom "className" and "align" values.

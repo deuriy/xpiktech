@@ -15,7 +15,7 @@ $results_block = get_field('results_block');
 
 $anchor = '';
 if (! empty($block['anchor'])) {
-    $anchor = 'id="' . esc_attr($block['anchor']) . '" ';
+    $anchor = 'id=' . esc_attr($block['anchor']) . ' ';
 }
 
 // Create class attribute allowing for custom "className" and "align" values.

@@ -10,7 +10,7 @@ $contact_blocks = get_field('contact_blocks');
 
 $anchor = '';
 if (! empty($block['anchor'])) {
-  $anchor = 'id="' . esc_attr($block['anchor']) . '" ';
+  $anchor = 'id=' . esc_attr($block['anchor']) . ' ';
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
