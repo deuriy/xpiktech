@@ -8,6 +8,9 @@
     padding-left: 24px;
     overflow: auto;
     scrollbar-width: none;
+    scroll-snap-type: x mandatory; /* Фиксируем скролл по оси X */
+    -webkit-overflow-scrolling: touch; /* Плавный скролл для iOS */
+    scroll-padding: 13px;
 
     @media (max-width: 767px) {
       padding-right: 16px;
@@ -29,6 +32,11 @@
     display: grid;
     grid-template: 1fr auto / 100%;
     gap: 24px;
+
+    @media (max-width: 1023px) {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
   }
 
   &__item-img {

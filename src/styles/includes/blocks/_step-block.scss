@@ -118,14 +118,21 @@
     }
 
     @media (max-width: 767px) {
-      top: 16px;
-      right: 16px;
+      display: none;
+      // top: 16px;
+      // right: 16px;
     }
   }
 
   &:hover,
   &--active {
     background: #fff;
+  }
+
+  &:hover {
+    @media (max-width: 767px) {
+      background: rgba(255, 255, 255, 0.4);
+    }
   }
 
   &--active {

@@ -13,10 +13,18 @@ const initFancybox = () => {
 };
 
 const initSteps = () => {
+  const stepsBlock = document.querySelector('.steps-block');
+  const stepItems = document.querySelectorAll('.steps-block__item');
   const steps = document.querySelectorAll('.step-block');
   const images = document.querySelectorAll('.section__step-img');
 
   if (!steps.length || !images.length) return;
+
+  const desktopMedia = window.matchMedia('(min-width: 768px)');
+  const clickHandlers = [];
+  let isDesktopInitialized = false;
+  let isMobileInitialized = false;
+  let scrollFrame = null;
 
   function setActive(index) {
     steps.forEach((step, i) => {
@@ -28,15 +36,104 @@ const initSteps = () => {
     });
   }
 
-  // 👉 начальное состояние (первый активный)
-  setActive(0);
+  function updateActiveByScroll() {
+    if (!stepsBlock || !stepItems.length) return;
 
-  // 👉 клики
-  steps.forEach((step, index) => {
-    step.addEventListener('click', () => {
-      setActive(index);
+    const stepsBlockRect = stepsBlock.getBoundingClientRect();
+    const stepsBlockCenter = stepsBlockRect.left + stepsBlockRect.width / 2;
+    let activeIndex = 0;
+    let minDistance = Infinity;
+
+    stepItems.forEach((item, index) => {
+      const itemRect = item.getBoundingClientRect();
+      const itemCenter = itemRect.left + itemRect.width / 2;
+      const distance = Math.abs(stepsBlockCenter - itemCenter);
+
+      if (distance < minDistance) {
+        minDistance = distance;
+        activeIndex = index;
+      }
     });
-  });
+
+    setActive(activeIndex);
+  }
+
+  function handleStepsScroll() {
+    if (scrollFrame) return;
+
+    scrollFrame = requestAnimationFrame(() => {
+      updateActiveByScroll();
+      scrollFrame = null;
+    });
+  }
+
+  function enableDesktopSteps() {
+    if (isDesktopInitialized) return;
+
+    steps.forEach((step, index) => {
+      const handleStepClick = () => {
+        setActive(index);
+      };
+
+      clickHandlers[index] = handleStepClick;
+      step.addEventListener('click', handleStepClick);
+    });
+
+    isDesktopInitialized = true;
+  }
+
+  function disableDesktopSteps() {
+    if (!isDesktopInitialized) return;
+
+    steps.forEach((step, index) => {
+      step.removeEventListener('click', clickHandlers[index]);
+    });
+
+    isDesktopInitialized = false;
+  }
+
+  function enableMobileSteps() {
+    if (isMobileInitialized || !stepsBlock || !stepItems.length) return;
+
+    stepsBlock.addEventListener('scroll', handleStepsScroll, { passive: true });
+    window.addEventListener('resize', updateActiveByScroll);
+    updateActiveByScroll();
+
+    isMobileInitialized = true;
+  }
+
+  function disableMobileSteps() {
+    if (!isMobileInitialized || !stepsBlock) return;
+
+    stepsBlock.removeEventListener('scroll', handleStepsScroll);
+    window.removeEventListener('resize', updateActiveByScroll);
+
+    if (scrollFrame) {
+      cancelAnimationFrame(scrollFrame);
+      scrollFrame = null;
+    }
+
+    isMobileInitialized = false;
+  }
+
+  function updateStepsMode() {
+    if (desktopMedia.matches) {
+      disableMobileSteps();
+      enableDesktopSteps();
+      setActive(0);
+    } else {
+      disableDesktopSteps();
+      enableMobileSteps();
+    }
+  }
+
+  if (desktopMedia.addEventListener) {
+    desktopMedia.addEventListener('change', updateStepsMode);
+  } else {
+    desktopMedia.addListener(updateStepsMode);
+  }
+
+  updateStepsMode();
 };
 
 const initTimeline = () => {
