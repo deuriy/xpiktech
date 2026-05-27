@@ -3,6 +3,7 @@
   // grid-template-columns: repeat(3, 1fr);
   display: flex;
   width: max-content;
+  min-width: 100%;
 
   // gap: 40px;
   padding: 39px 40px 28px;
