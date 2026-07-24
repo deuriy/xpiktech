@@ -9,6 +9,7 @@
 $title = get_field('title');
 $description = get_field('description');
 $video_block = get_field('video_block');
+$video_files = $video_block['video_files'];
 
 $anchor = '';
 if (! empty($block['anchor'])) {
@@ -37,12 +38,18 @@ if (! empty($block['className'])) {
                 </div>
             <?php endif; ?>
             
-            <?php if ($video_block['preview'] && $video_block['video_url']): ?>
+            <?php if ($video_block['preview'] && $video_files): ?>
                 <div class="video-block">
-                    <a href="<?php echo $video_block['video_url'] ?>" class="video-preview video-block__preview">
-                        <?php echo wp_get_attachment_image($video_block['preview'], 'full', '', array('class' => 'video-preview__img')); ?>
-                        <button type="button" class="play-btn video-preview__play-btn"></button>
-                    </a>
+                    <?php echo wp_get_attachment_image($video_block['preview'], 'full', '', array('class' => 'video-block__preview-img')); ?>
+                    <button type="button" class="play-btn video-block__play-btn"></button>
+
+                    <?php if ($video_files): ?>
+                        <video class="video-block__video" controls autoplay playsinline>
+                            <?php foreach ($video_files as $video_file): ?>
+                                <source src="<?php echo $video_file['video_file']['url'] ?>" type="<?php echo $video_file['video_file']['mime_type'] ?>">
+                            <?php endforeach; ?>
+                        </video>
+                    <?php endif ?>
                 </div>
             <?php endif; ?>
         </div>

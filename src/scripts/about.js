@@ -4,11 +4,31 @@ document.addEventListener('DOMContentLoaded', function () {
   initSteps();
   initTimeline();
   initFancybox();
+  initVideoBlock();
 });
 
 const initFancybox = () => {
   Fancybox.bind('[data-fancybox]', {
     dragToClose: false
+  });
+};
+
+const initVideoBlock = () => {
+  const videoBlocks = document.querySelectorAll('.video-block');
+
+  if (!videoBlocks.length) return;
+
+  videoBlocks.forEach((block) => {
+    const video = block.querySelector('.video-block__video');
+
+    if (!video) return;
+
+    block.addEventListener('click', () => {
+      if (block.classList.contains('is-playing')) return;
+
+      block.classList.add('is-playing');
+      video.play();
+    });
   });
 };
 
