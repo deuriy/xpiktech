@@ -29,6 +29,11 @@ const initVideoBlock = () => {
       block.classList.add('is-playing');
       video.play();
     });
+
+    video.addEventListener('ended', () => {
+      block.classList.remove('is-playing');
+      video.currentTime = 0;
+    });
   });
 };
 

@@ -44,7 +44,7 @@ if (! empty($block['className'])) {
                     <button type="button" class="play-btn video-block__play-btn"></button>
 
                     <?php if ($video_files): ?>
-                        <video class="video-block__video" controls autoplay playsinline>
+                        <video class="video-block__video" controls playsinline>
                             <?php foreach ($video_files as $video_file): ?>
                                 <source src="<?php echo $video_file['video_file']['url'] ?>" type="<?php echo $video_file['video_file']['mime_type'] ?>">
                             <?php endforeach; ?>
