@@ -231,3 +231,18 @@ function xpiktech_register_blocks()
 add_action('init', 'xpiktech_register_blocks');
 
 add_filter('wpcf7_autop_or_not', '__return_false');
+
+add_filter('walker_nav_menu_start_el', function ($item_output, $item) {
+
+    if (in_array('js-fancybox', $item->classes, true)) {
+        $item_output = preg_replace(
+            '/<a\b/',
+            '<a data-fancybox',
+            $item_output,
+            1
+        );
+    }
+
+    return $item_output;
+
+}, 10, 2);
