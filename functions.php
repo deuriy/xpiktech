@@ -156,8 +156,10 @@ function xpiktech_scripts()
 
 	if (is_front_page()) {
 		wp_enqueue_script('index', get_template_directory_uri() . '/js/index.js');
-	} elseif (is_page()) {
+	} elseif (is_page('about-us')) {
 		wp_enqueue_script('page', get_template_directory_uri() . '/js/about.js');
+	} elseif (is_page('why-xpiktech')) {
+		wp_enqueue_script('page', get_template_directory_uri() . '/js/why-xpiktech.js');
 	}
 }
 add_action('wp_enqueue_scripts', 'xpiktech_scripts');
@@ -228,6 +230,7 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/timeline-section');
 	register_block_type(get_template_directory() . '/blocks/tariff-section');
 	register_block_type(get_template_directory() . '/blocks/hero-banner');
+	register_block_type(get_template_directory() . '/blocks/faq-section');
 }
 add_action('init', 'xpiktech_register_blocks');
 

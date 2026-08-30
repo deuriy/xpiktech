@@ -1,0 +1,28 @@
+.accordion-section {
+  &__container {
+    padding: 96px 40px 92px;
+    border-radius: 32px;
+    background: #fff;
+  }
+
+  &__title-wrapper {
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 38px;
+  }
+
+  &__items {
+    width: 1047px;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__item {
+    &+& {
+      margin-top: 15px;
+    }
+  }
+}
