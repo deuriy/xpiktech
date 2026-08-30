@@ -1,0 +1,18 @@
+.hero-banner-section {
+  padding: 25px 0;
+
+  &__container {
+    display: grid;
+    grid-template-areas: "wrapper";
+  }
+
+  &__banner,
+  &__buttons {
+    grid-area: wrapper;
+  }
+
+  &__buttons {
+    z-index: 1;
+    align-self: end;
+  }
+}

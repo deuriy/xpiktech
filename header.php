@@ -70,6 +70,7 @@
 						wp_nav_menu(
 							array(
 								'theme_location' => 'menu-1',
+								'container'        => 'nav',
 								'menu_id'        => 'primary-menu',
 								'menu_class'      => 'main-navigation__list',
 							)

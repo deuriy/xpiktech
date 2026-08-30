@@ -1,0 +1,19 @@
+{
+  "name": "acf/hero-banner",
+  "title": "Hero Banner",
+  "description": "Hero Banner block that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "hero",
+    "banner"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

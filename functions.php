@@ -227,6 +227,7 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/text-blocks-section');
 	register_block_type(get_template_directory() . '/blocks/timeline-section');
 	register_block_type(get_template_directory() . '/blocks/tariff-section');
+	register_block_type(get_template_directory() . '/blocks/hero-banner');
 }
 add_action('init', 'xpiktech_register_blocks');
 
