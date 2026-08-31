@@ -10,6 +10,7 @@ $block_style = get_field('block_style');
 $stats_tiles = get_field('stats_tiles');
 $image_block = get_field('image_block');
 $title = get_field('title');
+$text = get_field('text');
 $list_items = get_field('list_items');
 
 $anchor = '';
@@ -23,7 +24,7 @@ if (! empty($block['className'])) {
 }
 ?>
 
-<section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
+<section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?><?php echo ' stats-tile-section--' . str_replace('_', '-', $block_style) ?>">
   <div class="container">
     <div class="stats-tile-section__container">
       <?php if ($stats_tiles || $image_block['image'] || $image_block['text']): ?>
@@ -67,9 +68,15 @@ if (! empty($block['className'])) {
       <?php if ($title || $list_items): ?>
         <div class="stats-tile-section__text-wrapper">
            <?php if ($title): ?>
-            <h2 class="section-title section-title--smaller grad-text stats-tile-section__title">
+            <h2 class="section-title section-title--left section-title--smaller grad-text stats-tile-section__title">
               <?php echo $title ?>
             </h2>
+          <?php endif; ?>
+
+          <?php if ($text): ?>
+            <div class="stats-tile-section__text">
+              <?php echo $text ?>
+            </div>
           <?php endif; ?>
 
           <?php if ($list_items): ?>
