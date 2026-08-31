@@ -230,6 +230,7 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/timeline-section');
 	register_block_type(get_template_directory() . '/blocks/tariff-section');
 	register_block_type(get_template_directory() . '/blocks/hero-banner');
+	register_block_type(get_template_directory() . '/blocks/what-we-build');
 	register_block_type(get_template_directory() . '/blocks/how-we-work');
 	register_block_type(get_template_directory() . '/blocks/faq-section');
 }

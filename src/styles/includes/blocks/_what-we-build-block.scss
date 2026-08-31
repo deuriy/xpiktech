@@ -1,0 +1,42 @@
+.what-we-build-block {
+  padding: 32px;
+  border: 2px solid transparent;
+  border-radius: 24px;
+  background: #fff;
+  @extend .transition;
+
+  &__icon-wrapper {
+    display: grid;
+    place-content: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 48px;
+    padding: 5px;
+    border-radius: 12px;
+    background: var(--lightgrey);
+  }
+
+  &__icon {
+    height: auto;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    font-size: 24px;
+    @extend .transition;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #525252;
+  }
+
+  &:hover {
+    border-color: var(--mintgreen);
+
+    .what-we-build-block__title {
+      color: var(--mintgreen);
+    }
+  }
+}
