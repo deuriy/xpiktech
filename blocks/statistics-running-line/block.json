@@ -1,0 +1,20 @@
+{
+  "name": "acf/statistics-running-line",
+  "title": "Statistics running line section",
+  "description": "Statistics running line section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "statistics",
+    "running",
+    "line"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}
