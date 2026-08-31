@@ -107,7 +107,7 @@
 
     .stats-tile-section__tiles-wrapper {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.25302fr 1fr;
       gap: 20px;
     }
 
@@ -118,10 +118,21 @@
 
     .stats-tile-section__image-block {
       order: -1;
+
+      // &::after {
+      //   background: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 12.33%, rgba(0, 0, 0, 0) 100%);
+      //   border-radius: 0 0 20px 20px;
+      //   transform: matrix(1, 0, 0, -1, 0, 0);
+      // }
     }
 
     .stats-tile-section__image {
-      max-height: 469px;
+      // max-height: 469px;
+      max-height: 100%;
+    }
+
+    .stats-tile-section__image-caption {
+      align-self: start;
     }
 
     .stats-tile-section__text-wrapper {
