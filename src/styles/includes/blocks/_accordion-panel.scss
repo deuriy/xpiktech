@@ -6,6 +6,8 @@
   &__title-wrapper {
     display: grid;
     grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 16px;
     cursor: pointer;
     // padding-bottom: 22px;
 
@@ -19,11 +21,13 @@
   }
 
   &__text {
-    max-height: 0;
+    display: none;
+    // max-height: 0;
     // padding-top: 25px;
+    margin-top: 25px;
     font-size: 16px;
     line-height: 1.5;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
   &--expanded {
@@ -32,7 +36,8 @@
     }
 
     .accordion-panel__text {
-      max-height: none;
+      // max-height: none;
+      display: block;
     }
   }
 }

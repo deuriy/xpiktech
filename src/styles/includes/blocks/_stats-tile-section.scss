@@ -1,0 +1,92 @@
+.stats-tile-section {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 86px;
+    padding: 95px 56px 86px;
+  }
+
+  &__tiles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 22px;
+  }
+
+  &__image-block {
+    display: grid;
+    grid-template-areas: "wrapper";
+    grid-template-columns: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      align-self: end;
+      grid-area: wrapper;
+      height: 213px;
+      background: linear-gradient(360deg, rgba(0, 0, 0, 0.8) 14.32%, rgba(0, 0, 0, 0) 100%);
+    }
+  }
+
+  &__image,
+  &__image-caption {
+    grid-area: wrapper;
+  }
+
+  &__image {
+    height: auto;
+    max-height: 280px;
+    object-fit: cover;
+  }
+
+  &__image-caption {
+    z-index: 1;
+    align-self: end;
+    max-width: 458px;
+    margin: 19px 25px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #fff;
+  }
+
+  &__title {
+    // margin-bottom: 34px;
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 11px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #525252;
+
+    &::before {
+      content: '';
+      width: 48px;
+      height: 48px;
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 14 9'%3E%3Cpath stroke='%23005e59' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M1 3.832 5.8 8 13 1'/%3E%3C/svg%3E") center / 14px no-repeat;
+    }
+
+    &:hover {
+      &::before {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 14 9'%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M1 3.832 5.8 8 13 1'/%3E%3C/svg%3E") center / 14px no-repeat, linear-gradient(0deg, #005E59 0%, #209E6D 140.41%), ;
+      }
+    }
+
+    &+& {
+      margin-top: 20px;
+    }
+  }
+}

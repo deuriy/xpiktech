@@ -11,8 +11,12 @@ $text = get_field('text');
 $list_block = get_field('list_block');
 
 $anchor = '';
+$anchor_title = '';
+$anchor_title_value = '';
 if (! empty($block['anchor'])) {
   $anchor = 'id=' . esc_attr($block['anchor']) . ' ';
+  $anchor_title_value = esc_attr($block['anchor']) . '-title';
+  $anchor_title = 'id=' . $anchor_title_value;
 }
 
 $class_name = 'expertise-section';
@@ -21,13 +25,13 @@ if (! empty($block['className'])) {
 }
 ?>
 
-<section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
+<section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>" aria-labelledby="<?php echo $anchor_title_value ?>">
   <div class="container">
     <div class="expertise-section__container">
       <?php if ($title || $text): ?>
         <div class="expertise-section__text-wrapper">
           <?php if ($title): ?>
-            <h2 class="section-title section-title--smaller grad-text expertise-section__title">
+            <h2 class="section-title section-title--smaller grad-text expertise-section__title" <?php echo esc_attr($anchor_title); ?>>
               <?php echo $title ?>
             </h2>
           <?php endif; ?>

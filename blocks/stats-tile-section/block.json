@@ -1,0 +1,20 @@
+{
+  "name": "acf/stats-tile-section",
+  "title": "Stats tile section",
+  "description": "Stats tile section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "stats",
+    "tile",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}
