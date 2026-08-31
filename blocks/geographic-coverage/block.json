@@ -1,0 +1,19 @@
+{
+  "name": "acf/geographic-coverage",
+  "title": "Geographic coverage section",
+  "description": "Geographic coverage section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "geographic",
+    "coverage"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}
