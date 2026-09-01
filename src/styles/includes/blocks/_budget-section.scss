@@ -1,0 +1,10 @@
+.budget-section {
+  padding: 74px 0;
+  background: #fff;
+
+  &__blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}

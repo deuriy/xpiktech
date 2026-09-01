@@ -1,5 +1,6 @@
 .grad-text {
-  display: inline-grid;
+  // display: inline-grid;
+  display: inline-block;
   background: linear-gradient(90deg, var(--dark) 0%, #008B69 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

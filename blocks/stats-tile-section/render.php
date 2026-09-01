@@ -12,6 +12,7 @@ $image_block = get_field('image_block');
 $title = get_field('title');
 $text = get_field('text');
 $list_items = get_field('list_items');
+$additional_stats_tile_class = $block_style === 'three_tiles_right' ? ' stats-tile--small-padding-y' : '';
 
 $anchor = '';
 if (! empty($block['anchor'])) {
@@ -32,7 +33,7 @@ if (! empty($block['className'])) {
           <?php if ($stats_tiles): ?>
             <dl class="stats-tile-section__tiles">
               <?php foreach ($stats_tiles as $key => $stats_tile): ?>
-                <div class="stats-tile stats-tile--<?php echo str_replace('_', '-', $stats_tile['block_style']) ?>-style">
+                <div class="stats-tile stats-tile--<?php echo str_replace('_', '-', $stats_tile['block_style']) ?>-style<?php echo $additional_stats_tile_class; ?>">
                   <?php if ($stats_tile['number']): ?>
                     <dt class="stats-tile__number<?php echo $stats_tile['block_style'] !== 'darkgreen_bg' ? ' grad-text' : '' ?>">
                       <?php echo $stats_tile['number'] ?>

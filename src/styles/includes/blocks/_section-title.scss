@@ -15,5 +15,7 @@
 
   &--smaller {
     font-size: clamp(26px, 2.8vw, 36px);
+    line-height: 1.27778;
+    text-transform: none;
   }
 }

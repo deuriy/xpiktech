@@ -1,4 +1,7 @@
 .quality-section {
+  // padding: 74px 0;
+  padding: 0 0 74px;
+
   &__container {
     display: grid;
     // grid-template-columns: repeat(2, 1fr);
@@ -12,14 +15,14 @@
   }
 
   &__text-wrapper {
-    max-width: 510px;
+    max-width: 540px;
+    margin-bottom: 24px;
     color: #fff;
   }
 
   &__title {
     max-width: 408px;
     margin-bottom: 12px;
-    line-height: 1.278;
   }
 
   &__text {

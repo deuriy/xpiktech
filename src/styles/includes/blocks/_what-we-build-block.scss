@@ -1,5 +1,5 @@
 .what-we-build-block {
-  padding: 32px;
+  padding: 32px 32px 23px;
   border: 2px solid transparent;
   border-radius: 24px;
   background: #fff;
@@ -21,6 +21,7 @@
   }
 
   &__title {
+    max-width: 272px;
     margin-bottom: 16px;
     font-size: 24px;
     @extend .transition;
