@@ -23,23 +23,27 @@ if (! empty($block['className'])) {
   <div class="container">
     <div class="statistics-running-line-section__container">      
       <?php if ($items): ?>
-        <ul class="statistics-running-line-section__items">
-          <?php foreach ($items as $key => $item): ?>
-            <li class="statistics-running-line-section__item">
-              <?php if ($item['name']): ?>
-                <span class="statistics-running-line-section__item-name">
-                  <?php echo $item['name'] ?>
-                </span>
-              <?php endif; ?>
+        <div class="statistics-running-line-section__track">
+          <?php for ($i = 0; $i < 2; $i++): ?>
+            <ul class="statistics-running-line-section__items">
+              <?php foreach ($items as $key => $item): ?>
+                <li class="statistics-running-line-section__item">
+                  <?php if ($item['name']): ?>
+                    <span class="statistics-running-line-section__item-name">
+                      <?php echo $item['name'] ?>
+                    </span>
+                  <?php endif; ?>
 
-              <?php if ($item['value']): ?>
-                <span class="statistics-running-line-section__item-value">
-                  <?php echo $item['value'] ?>
-                </span>
-              <?php endif; ?>
-            </li>
-          <?php endforeach;?>
-        </ul>
+                  <?php if ($item['value']): ?>
+                    <span class="statistics-running-line-section__item-value">
+                      <?php echo $item['value'] ?>
+                    </span>
+                  <?php endif; ?>
+                </li>
+              <?php endforeach;?>
+            </ul>
+          <?php endfor; ?>
+        </div>
       <?php endif; ?>
     </div>
   </div>
