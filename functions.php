@@ -235,6 +235,7 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/expertise-section');
 	register_block_type(get_template_directory() . '/blocks/what-we-build');
 	register_block_type(get_template_directory() . '/blocks/stats-tile-section');
+	register_block_type(get_template_directory() . '/blocks/quality-section');
 	register_block_type(get_template_directory() . '/blocks/how-we-work');
 	register_block_type(get_template_directory() . '/blocks/faq-section');
 }

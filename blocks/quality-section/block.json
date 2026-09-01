@@ -1,0 +1,19 @@
+{
+  "name": "acf/quality-section",
+  "title": "Quality section",
+  "description": "Quality section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "quality",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

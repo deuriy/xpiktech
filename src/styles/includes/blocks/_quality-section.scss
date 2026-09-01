@@ -1,0 +1,59 @@
+.quality-section {
+  &__container {
+    display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1.138fr 1fr;
+    align-items: center;
+    gap: 80px;
+    padding: 35px 40px 35px 56px;
+    background: linear-gradient(0deg, #005E59 0%, #209E6D 140.41%);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 32px;
+  }
+
+  &__text-wrapper {
+    max-width: 510px;
+    color: #fff;
+  }
+
+  &__title {
+    max-width: 408px;
+    margin-bottom: 12px;
+    line-height: 1.278;
+  }
+
+  &__text {
+    margin-bottom: 25px;
+    font-size: 18px;
+    line-height: 1.556;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 11px;
+    font-size: 16px;
+    line-height: 1.75;
+
+    &::before {
+      content: '';
+      box-sizing: border-box;
+      width: 48px;
+      height: 48px;
+      border: 2px solid rgba(255, 255, 255, 0.44);
+      border-bottom: none;
+      background: rgba(255, 255, 255, 0.32) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 14 9'%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M1 3.832 5.8 8 13 1'/%3E%3C/svg%3E") center / 14px no-repeat;
+      backdrop-filter: blur(20px);
+      border-radius: 15px;
+    }
+
+    &+& {
+      margin-top: 20px;
+    }
+  }
+}

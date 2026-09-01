@@ -1,0 +1,10 @@
+.responsibility-note {
+  padding: 14px 19px;
+  background: #EBF7F4;
+  border: 2px solid rgba(45, 193, 167, 0.2);
+  border-radius: 15px;
+
+  &>p {
+    max-width: 400px;
+  }
+}
