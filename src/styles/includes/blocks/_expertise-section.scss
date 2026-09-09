@@ -2,12 +2,25 @@
   // padding: 74px 0;
   padding: 60px 0 73px;
 
+  @media (max-width: 767px) {
+    padding: 43px 0 60px;
+  }
+
   &__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     // gap: 99px;
     gap: 74px;
+
+    @media (max-width: 1023px) {
+      gap: 60px;
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 100%;
+      gap: 49px;
+    }
   }
 
   &__text-wrapper {
@@ -16,6 +29,12 @@
     max-width: 566px;
     margin-bottom: 50px;
     margin-left: 30px;
+
+    @media (max-width: 767px) {
+      max-width: 100%;
+      margin-bottom: 0;
+      margin-left: 0;
+    }
 
     &::after {
       content: '';
@@ -30,11 +49,24 @@
       // height: 50px;
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 63 38'%3E%3Cpath fill='%23005e59' d='M.728 1.947c.245 1.742 2.936 4.08 4.087 5.314 2.112 2.206 4.385 4.252 6.887 6.01 4.2 3.026 8.89 5.251 13.743 6.993 10.127 3.455 20.922 3.692 31.5 2.607A369 369 0 0 1 46 16.574c-.963-.651-.552-4-1.323-4.392 5.62 2.779 11.141 5.911 16.5 9.204.385.196 1.581 4.2 1.322 4.392-5.544 4.698-11.25 9.557-18.132 12.118 0 0-.696-1.81-.63-1.938 3.952-3.001 8.033-5.937 11.729-9.07-12.836 1.393-26.294-.442-37.624-6.935C10.748 15.939 1.034 8.813 0 .04c.002-.322.667 1.39.728 1.907'/%3E%3C/svg%3E") center no-repeat;
       // transform: rotate(-18.03deg);
+
+      @media (max-width: 767px) {
+        // right: 20px;
+        right: 44px;
+        // bottom: -20px;
+        // bottom: -30px;
+        bottom: -23px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 28 35'%3E%3Cpath fill='%23005e59' d='M26.975 1.275c.395 1.021-.357 3.109-.609 4.128-.477 1.84-1.092 3.641-1.918 5.356-1.364 2.919-3.238 5.55-5.347 7.97-4.454 4.95-10.248 8.354-16.326 10.974a230 230 0 0 0 4.037-6.743c.325-.646-.914-2.341-.614-2.788-2.21 3.215-4.26 6.593-6.173 10.008-.15.223.415 2.763.614 2.788 4.438.871 9.013 1.78 13.53 1.084 0 0-.17-1.195-.245-1.245-3.059-.432-6.168-.789-9.126-1.37 7.397-3.138 14.154-8.218 18.34-15.184 2.638-4.334 5.754-11.154 3.654-16.235-.099-.174.06.958.183 1.257'/%3E%3C/svg%3E");
+      }
     }
   }
 
   &__title {
     margin-bottom: 21px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 10px;
+    }
   }
 
   &__text {
@@ -42,8 +74,17 @@
     line-height: 1.33;
     color: #525252;
 
+    @media (max-width: 767px) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
     &>p+p {
       margin-top: 25px;
+
+      @media (max-width: 767px) {
+        margin-top: 22px;
+      }
     }
   }
 }

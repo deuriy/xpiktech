@@ -32,6 +32,13 @@
     border-radius: 16px;
   }
 
+  &--dark-bg-hover {
+    &:hover {
+      background: #292828;
+      color: #E4F03C;
+    }
+  }
+
   // &--bordered {
   //   box-shadow: 0 0 0 6px #fff;
   // }

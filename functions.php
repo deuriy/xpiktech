@@ -258,3 +258,120 @@ add_filter('walker_nav_menu_start_el', function ($item_output, $item) {
     return $item_output;
 
 }, 10, 2);
+
+add_action('wp_head', function() {
+	if ( is_page('why-xpiktech') ) {
+		?>
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "XPikTech",
+			"url": "https://xpiktech.com/",
+			"logo": "https://xpiktech.com/logo.png",
+			"description": "AI Automation for eCommerce. Custom software, eCommerce and business process automation for small and medium businesses.",
+			"slogan": "AI that grows with your business.",
+			"email": "contact@xpiktech.com",
+			"telephone": "+1-786-796-14-15",
+			"areaServed": ["US", "CA", "Europe"],
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"telephone": "+1-786-796-14-15",
+				"email": "contact@xpiktech.com",
+				"contactType": "sales",
+				"availableLanguage": ["en"]
+			},
+			"sameAs": [
+				"https://www.linkedin.com/company/xpiktech",
+				"https://t.me/xpiktech"
+			]
+		}
+		</script>
+
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": [
+				{
+					"@type": "Question",
+					"name": "What does XPikTech build?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Quite a range, so it's a fair thing to ask. We're a custom software and eCommerce development company working with small and medium businesses across Europe, the US, and Canada. That covers custom software, online stores and store features, CRM and ERP integrations, and business process automation, plus AI tools like our Smart AI Catalog and AI Email Automation where they add real value. We've worked across eCommerce, logistics, retail, real estate, education, hospitality, and health and beauty."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Do you do everyday development, or only AI projects?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Both, and fairly evenly. A large part of what we do is everyday custom software and eCommerce development, CRM and ERP work, and automation. AI comes in when it makes the result better, so you're never paying for it just to have it on the page."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "How do you keep a project on budget?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "We agree an estimate up front, then track every billable hour with activity-based time tracking linked to Jira. You get access to the same tracker, so you can see exactly what's been worked on and what it cost whenever you like. If a task starts running long, a manager hears about it early and we talk it through with you rather than letting it drift."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Will the work affect my live website or systems?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "We're careful here, since most of our clients are running active businesses. We build and test in separate environments before anything touches your live setup, and we keep watch around the clock so anything unexpected is caught quickly. Ideally your customers notice the improvements and nothing else."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Can you work with the tools and platform I already use?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Almost certainly. We connect to your existing setup, your CRM, ERP, eCommerce platform, marketplaces, or custom databases, through secure connections that leave what you've already got intact. You end up with something new and capable that still feels part of the system you know."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Are you a good fit for a smaller business?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Very much so, and plenty of our clients are exactly that. We work just as happily with a team of ten as with a large, established company, and we scope each project to suit your goals and budget. Whatever the size, you get the same direct access and the same care."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "How do we get started?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "A free consultation is the easiest first step. Tell us a little about your business and what you'd like to build or improve, and we'll come back with some practical ideas and a sense of how we'd approach it. There's no obligation, and you'll come away with something useful either way."
+					}
+				}
+			]
+		}
+		</script>
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{
+					"@type": "ListItem",
+					"position": 1,
+					"name": "Home",
+					"item": "https://xpiktech.com/"
+				},
+				{
+					"@type": "ListItem",
+					"position": 2,
+					"name": "Why XPikTech",
+					"item": "https://xpiktech.com/why-xpiktech"
+				}
+			]
+		}
+		</script>
+		<?php
+	}
+});

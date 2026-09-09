@@ -5,6 +5,17 @@
   background: #fff;
   @extend .transition;
 
+  @media (max-width: 1199px) {
+    padding: 28px 28px 20px;
+    border-radius: 20px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 290px;
+    padding: 22px;
+    border-radius: 16px;
+  }
+
   &__icon-wrapper {
     display: grid;
     place-content: center;
@@ -14,6 +25,19 @@
     padding: 5px;
     border-radius: 12px;
     background: var(--lightgrey);
+
+    @media (max-width: 1199px) {
+      width: 54px;
+      height: 54px;
+      margin-bottom: 40px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 767px) {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 33px;
+    }
   }
 
   &__icon {
@@ -25,12 +49,26 @@
     margin-bottom: 16px;
     font-size: 24px;
     @extend .transition;
+
+    @media (max-width: 1199px) {
+      font-size: 22px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 11px;
+      font-size: 20px;
+    }
   }
 
   &__text {
     font-size: 16px;
     line-height: 1.5;
     color: #525252;
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 1.42857143;
+    }
   }
 
   &:hover {
@@ -39,5 +77,10 @@
     .what-we-build-block__title {
       color: var(--mintgreen);
     }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
   }
 }

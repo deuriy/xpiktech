@@ -4,6 +4,12 @@
   border: 2px solid rgba(45, 193, 167, 0.2);
   border-radius: 15px;
 
+  @media (max-width: 767px) {
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.43;
+  }
+
   &>p {
     max-width: 400px;
   }

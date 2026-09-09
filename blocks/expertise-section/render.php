@@ -31,7 +31,7 @@ if (! empty($block['className'])) {
       <?php if ($title || $text): ?>
         <div class="expertise-section__text-wrapper">
           <?php if ($title): ?>
-            <h2 class="section-title section-title--smaller grad-text expertise-section__title" <?php echo esc_attr($anchor_title); ?>>
+            <h2 class="section-title section-title--smaller section-title--left grad-text expertise-section__title" <?php echo esc_attr($anchor_title); ?>>
               <?php echo $title ?>
             </h2>
           <?php endif; ?>

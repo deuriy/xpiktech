@@ -1,14 +1,27 @@
 .hero-banner-section {
   padding: 25px 0;
 
+  @media (max-width: 767px) {
+    padding: 25px 0 20px;
+  }
+
   &__container {
     display: grid;
-    grid-template-areas: "wrapper";
+
+    @media (min-width: 992px) {
+      grid-template-areas: "wrapper";
+    }
+
+    @media (max-width: 991px) {
+      gap: 20px;
+    }
   }
 
   &__banner,
   &__buttons {
-    grid-area: wrapper;
+    @media (min-width: 992px) {
+      grid-area: wrapper;
+    }
   }
 
   &__buttons {

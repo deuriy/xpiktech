@@ -9,6 +9,7 @@
 $title = get_field('title');
 $text = strip_tags(get_field('text'), ['br']);
 $image_id = get_field('image');
+$image_mob_id = get_field('image_mob');
 
 $anchor = '';
 if (! empty($block['anchor'])) {
@@ -26,7 +27,7 @@ if (! empty($block['className'])) {
     <div class="hero-banner hero-banner-section__banner">
       <?php if ($title || $text): ?>
         <div class="hero-banner__text-wrapper">
-          <nav class="breadcrumbs hero-banner__breadcrumbs" aria-label="breadcrumb">
+          <nav class="breadcrumbs hero-banner__breadcrumbs hidden-xs" aria-label="breadcrumb">
             <ul class="breadcrumbs__list">
               <li class="breadcrumbs__item">
                 <a href="#" class="breadcrumbs__link">Home</a>
@@ -50,19 +51,27 @@ if (! empty($block['className'])) {
           <?php endif; ?>
         </div>
       <?php endif; ?>
-
-      <?php if ($image_id): ?>
-        <div class="hero-banner__img-wrapper">
-          <?php echo wp_get_attachment_image($image_id, 'full', false, ['class' => 'hero-banner__img']) ?>
-        </div>
+      
+      <?php if (wp_is_mobile()): ?>
+        <?php if ($image_mob_id): ?>
+          <div class="hero-banner__img-wrapper">
+            <?php echo wp_get_attachment_image($image_mob_id, 'full', false, ['class' => 'hero-banner__img']) ?>
+          </div>
+        <?php endif; ?>
+      <?php else: ?>
+        <?php if ($image_id): ?>
+          <div class="hero-banner__img-wrapper">
+            <?php echo wp_get_attachment_image($image_id, 'full', false, ['class' => 'hero-banner__img']) ?>
+          </div>
+        <?php endif; ?>
       <?php endif; ?>
     </div>
 
     <div class="buttons-list hero-banner-section__buttons">
-      <a href="#contact-form-popup" class="btn-mintgreen btn-mintgreen--radius-16 btn-mintgreen--padding-10 hero-banner-section__btn" data-fancybox>
+      <a href="#contact-form-popup" class="btn-mintgreen btn-mintgreen--dark-bg-hover btn-mintgreen--radius-16 btn-mintgreen--padding-10 hero-banner-section__btn" data-fancybox>
         <span class="ico ico--arrow-right2"></span>
       </a>
-      <a href="#contact-form-popup" class="btn-mintgreen hero-banner-section__btn" data-fancybox>Book a Free Consultation</a>
+      <a href="#contact-form-popup" class="btn-mintgreen btn-mintgreen--dark-bg-hover hero-banner-section__btn" data-fancybox>Book a Free Consultation</a>
     </div>
   </div>
 </section>

@@ -12,6 +12,17 @@
     width: 16px;
     --swiper-pagination-bullet-border-radius: 3px;
   }
+
+  &--circle-style {
+    --swiper-pagination-bullet-inactive-color: #E0E8B6;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-horizontal-gap: 2.5px;
+    --swiper-pagination-bullet-border-radius: 50%;
+
+    .swiper-pagination-bullet-active {
+      width: 6px;
+    }
+  }
 }
 
 .swiper-thumbs-pagination {
