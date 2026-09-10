@@ -34,9 +34,9 @@ if (! empty($block['className'])) {
       <?php if ($items): ?>
         <?php if (wp_is_mobile()): ?>
           <div class="swiper how-we-work-swiper">
-            <ol class="swiper-wrapper how-we-work-section__items">
+            <ol class="swiper-wrapper how-we-work-swiper__slides">
               <?php foreach ($items as $key => $item): ?>
-                <li class="swiper-slide how-we-work-block how-we-work-section__item">
+                <li class="swiper-slide how-we-work-block how-we-work-swiper__slide">
                   <?php if ($item['icon']): ?>
                     <div class="how-we-work-block__icon-wrapper">
                       <?php echo wp_get_attachment_image($item['icon'], 'full', false, ['class' => 'how-we-work-block__icon']) ?>
@@ -61,6 +61,8 @@ if (! empty($block['className'])) {
                 </li>
               <?php endforeach;?>
             </ol>
+
+            <div class="swiper-pagination swiper-pagination--circle-style how-we-work-swiper__pagination"></div>
           </div>
         <?php else: ?>
           <ol class="how-we-work-section__items">

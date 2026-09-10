@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     spaceBetween: 24,
 
     pagination: {
-      el: '.how-we-work__pagination',
+      el: '.how-we-work-swiper__pagination',
       type: 'bullets',
     },
   });
