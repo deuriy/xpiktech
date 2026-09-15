@@ -1,7 +1,14 @@
 import Swiper from 'swiper';
 import { Pagination } from 'swiper/modules';
+import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
 
-document.addEventListener('DOMContentLoaded', function () {
+const initFancybox = () => {
+  Fancybox.bind('[data-fancybox]', {
+    dragToClose: false
+  });
+};
+
+const initSwipers = () => {
   new Swiper('.what-we-build-swiper', {
     modules: [Pagination],
     loop: true,
@@ -25,4 +32,10 @@ document.addEventListener('DOMContentLoaded', function () {
       type: 'bullets',
     },
   });
+};
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  initFancybox();
+  initSwipers();
 });
