@@ -1,0 +1,38 @@
+.cooperation-options-section {
+  padding: 106px 0 65px;
+
+  &__header {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 45px;
+    padding: 0 30px 0 70px;
+  }
+
+  &__title-wrapper {
+    max-width: 500px;
+  }
+
+  &__description {
+    max-width: 506px;
+    font-size: 18px;
+    line-height: 1.44;
+    color: #696969;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 239px 1fr;
+    gap: 24px;
+    width: 1280px;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__conditions-block {
+    margin: 65px auto 0;
+  }
+}

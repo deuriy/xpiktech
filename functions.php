@@ -244,8 +244,10 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/what-we-build-v2');
 	register_block_type(get_template_directory() . '/blocks/team-statistics-section');
 	register_block_type(get_template_directory() . '/blocks/technologies-section');
+	register_block_type(get_template_directory() . '/blocks/industries-we-know-section');
 	register_block_type(get_template_directory() . '/blocks/why-clients-stay-section');
 	register_block_type(get_template_directory() . '/blocks/running-systems-section');
+	register_block_type(get_template_directory() . '/blocks/cooperation-options-section');
 	register_block_type(get_template_directory() . '/blocks/contact-form-section');
 }
 add_action('init', 'xpiktech_register_blocks');

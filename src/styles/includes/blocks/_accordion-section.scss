@@ -58,7 +58,10 @@
   }
 
   &--transparent-style {
+    padding: 43px 0 97px;
+    
     .accordion-section__container {
+      padding: 0 40px;
       background: transparent;
     }
   }

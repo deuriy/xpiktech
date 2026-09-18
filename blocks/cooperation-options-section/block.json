@@ -1,0 +1,20 @@
+{
+  "name": "acf/cooperation-options-section",
+  "title": "Cooperation options section",
+  "description": "Cooperation options section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "what",
+    "we",
+    "build"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

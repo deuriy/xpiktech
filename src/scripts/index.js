@@ -211,7 +211,7 @@ document.addEventListener('mouseover', function (e) {
   if (!serviceBlock) return;
 
   serviceBlock.classList.remove('service-block--animation-paused');
-  console.log('hover');
+  // console.log('hover');
 
   serviceTimer = setTimeout(() => {
     serviceBlock.classList.add('service-block--animation-paused');

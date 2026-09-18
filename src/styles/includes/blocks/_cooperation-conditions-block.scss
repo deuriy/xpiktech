@@ -1,0 +1,42 @@
+.cooperation-conditions-block {
+  display: grid;
+  grid-template-columns: 1fr 2.45fr;
+  align-items: center;
+  width: 1280px;
+  max-width: 100%;
+  padding: 17px 35px;
+  background: linear-gradient(0deg, #005E59 0%, #209E6D 140.41%);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  color: #fff;
+
+  &__title {
+    margin-bottom: 13px;
+    font-size: 24px;
+  }
+
+  &__list {
+    // list-style: none;
+    display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 0.95fr 0.93fr 1fr auto;
+  }
+
+  &__item {
+    padding: 28px 0 28px 25px;
+    border-left: 1px solid rgba(255, 255, 255, .15);
+  }
+
+  &__item-value {
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.36;
+  }
+
+  &__item-name {
+    font-size: 14px;
+    line-height: 1.85;
+    text-transform: uppercase;
+  }
+}

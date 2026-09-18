@@ -1,7 +1,8 @@
 .technologies-section {
   padding: 81px 0 96px;
   background: linear-gradient(0deg, #005E59 0%, #209E6D 140.41%);
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-top: 2px solid rgba(255, 255, 255, 0.8);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
   color: #fff;
 
   &__text-wrapper {

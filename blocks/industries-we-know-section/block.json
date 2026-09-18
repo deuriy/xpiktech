@@ -1,0 +1,20 @@
+{
+  "name": "acf/industries-we-know-section",
+  "title": "Industries we know section",
+  "description": "Industries we know section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "what",
+    "we",
+    "build"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

@@ -130,6 +130,21 @@
       font-size: 23px;
     }
   }
+
+  &--style2 {
+    .timeline__inner {
+      &::before {
+        width: 2px;
+      }
+    }
+
+    .timeline__point {
+      width: 18px;
+      height: 18px;
+      outline: 6px solid rgba(121, 204, 61, 0.2);
+      background: #79CC3D;
+    }
+  }
 }
 
 .timeline-card {
@@ -231,6 +246,41 @@
 
     @media (max-width: 767px) {
       font-size: 10px;
+    }
+  }
+
+  &--style2 {
+    min-height: 0;
+    border-radius: 20px;
+    background: transparent;
+
+    .timeline-card__content {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-areas: "number title" "text text";
+      gap: 19px 17px;
+      margin: 0;
+      padding: 34px 31px;
+      border-radius: inherit;
+      background: #fff;
+    }
+
+    .timeline-card__number {
+      grid-area: number;
+      color: #2DC1A7;
+      font-size: 24px;
+    }
+
+    .timeline-card__title {
+      grid-area: title;
+      font-size: 24px;
+      color: inherit;
+    }
+
+    .timeline-card__text {
+      grid-area: text;
+      color: #696969;
+      font-size: 18px;
     }
   }
 }
