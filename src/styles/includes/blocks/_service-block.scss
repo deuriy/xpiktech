@@ -160,6 +160,17 @@
     }
   }
 
+  &--style-2 {
+    min-height: 186px;
+    gap: 4px;
+    padding: 10px 22px;
+
+    .service-block__title {
+      max-width: 185px;
+      font-weight: 600;
+    }
+  }
+
   // &--animation-paused {
   //   .service-block__glow {
   //     animation-play-state: paused !important;

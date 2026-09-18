@@ -117,4 +117,51 @@
       color: var(--mintgreen);
     }
   }
+
+  &--v2 {
+    .how-we-work-block__icon-wrapper {
+      width: 130px;
+      height: 130px;
+      margin-bottom: -65px;
+      background: transparent;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .how-we-work-block__icon {
+      width: auto;
+    }
+
+    .how-we-work-block__text-wrapper {
+      display: grid;
+      grid-template-columns: 100%;
+      // grid-template-rows: auto 1fr;
+      // align-items: end;
+      align-content: center;
+      justify-items: center;
+      // place-items: center;
+      min-height: 316px;
+      padding: 69px 30px 35px;
+      mask: none;
+      border-radius: 32px;
+    }
+
+    .how-we-work-block__title {
+      max-width: 270px;
+      font-size: 24px;
+    }
+
+    .how-we-work-block__text {
+      line-height: 1.5;
+      color: #525252;
+    }
+
+    &:hover {
+      .how-we-work-block__text-wrapper {
+        mask: none;
+      }
+    }
+  }
 }

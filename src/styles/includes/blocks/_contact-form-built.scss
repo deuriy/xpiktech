@@ -1,0 +1,80 @@
+.contact-form-built {
+  &__item {
+    & + & {
+      margin-top: 15px;
+    }
+  }
+
+  &__form-label {
+    display: block;
+    font-size: 16px;
+    line-height: 1.625;
+    color: #525252;
+    cursor: pointer;
+  }
+
+  &__form-text,
+  &__form-textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding-right: 26px;
+    padding-left: 26px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: var(---base-font);
+    background: var(--lightgrey);
+    color: #525252;
+
+    &.wpcf7-not-valid {
+      background: rgba(255, 0, 0, 0.1);
+      border: 1px solid #FF0000;
+    }
+  }
+
+  &__form-text {
+    height: 64px;
+  }
+
+  &__form-textarea {
+    height: 147px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    resize: none;
+  }
+
+  &__form-actions {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: start;
+    gap: 12px;
+    margin-top: 23px;
+  }
+
+  &__form-submit-label {
+    display: flex;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: #292828 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath stroke='%23e4f03c' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 10h16m-6-6 6 6-6 6'/%3E%3C/svg%3E") center / 20px auto no-repeat;
+    cursor: pointer;
+  }
+
+  &__form-submit {
+    padding: 17px 53px;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+    background: #292828;
+    color: #E4F03C;
+    font-size: 16px;
+    font-family: var(---base-font);
+    cursor: pointer;
+  }
+
+  .wpcf7-not-valid-tip {
+    font-size: 14px;
+    line-height: 1.85714286;
+  }
+}

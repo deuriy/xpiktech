@@ -56,4 +56,10 @@
       }
     }
   }
+
+  &--transparent-style {
+    .accordion-section__container {
+      background: transparent;
+    }
+  }
 }

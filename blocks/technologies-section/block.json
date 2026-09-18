@@ -1,0 +1,19 @@
+{
+  "name": "acf/technologies-section",
+  "title": "Technologies section",
+  "description": "Technologies section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "technologies",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

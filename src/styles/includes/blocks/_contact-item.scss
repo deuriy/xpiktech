@@ -1,0 +1,26 @@
+.contact-item {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #525252;
+  @extend .transition;
+
+  &__icon {
+    height: auto;
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: 1.44;
+  }
+
+  &:hover {
+    border-color: #43C8AB;
+    background: rgba(88, 206, 174, 0.05);
+  }
+}

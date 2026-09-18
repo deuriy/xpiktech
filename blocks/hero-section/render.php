@@ -6,7 +6,7 @@
  * @param array $block The block settings and attributes.
  */
 
-$hero_slides = get_field('hero_slide');
+$block_style = get_field('block_style') ?? 'default';
 $text_block = get_field('text_block');
 $companies_slider = get_field('companies_slider');
 $service_blocks = get_field('service_blocks');
@@ -21,74 +21,116 @@ $class_name = 'hero-section';
 if (! empty($block['className'])) {
   $class_name .= ' ' . $block['className'];
 }
+
+$block_style = str_replace('_', '-', $block_style);
+$class_name .= ' hero-section--' . esc_attr($block_style);
 ?>
 
 <section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
   <div class="container">
     <div class="hero-section__container">
-      <?php if ($hero_slides): ?>
-        <div class="hero-slider-block hero-section__slider-block">
-          <div class="hero-slider-block__slider-wrapper">
-            <div class="swiper hero-slider hero-slider-block__slider">
-              <div class="swiper-wrapper hero-slider__slides">
-                <?php foreach ($hero_slides as $hero_slide_key => $hero_slide): ?>
-                  <div class="swiper-slide hero-slider__slide">
-                    <div class="hero-block">
-                      <?php if ($hero_slide['title'] || $hero_slide['text']): ?>
-                        <div class="hero-block__text-wrapper">
-                          <?php if ($hero_slide['title']): ?>
-                            <?php
-                            $title_tag = !$hero_slide_key ? 'h1' : 'h2';
-                            ?>
-                            <<?php echo $title_tag; ?> class="hero-block__title">
-                              <?php echo esc_html($hero_slide['title']) ?>
-                            </<?php echo $title_tag; ?>>
-                          <?php endif; ?>
+      <?php if ($block_style === 'default'): ?>
+        <?php $hero_slides = get_field('hero_slides'); ?>
+        <?php if ($hero_slides): ?>
+          <div class="hero-slider-block hero-section__slider-block">
+            <div class="hero-slider-block__slider-wrapper">
+              <div class="swiper hero-slider hero-slider-block__slider">
+                <div class="swiper-wrapper hero-slider__slides">
+                  <?php foreach ($hero_slides as $hero_slide_key => $hero_slide): ?>
+                    <div class="swiper-slide hero-slider__slide">
+                      <div class="hero-block">
+                        <?php if ($hero_slide['title'] || $hero_slide['text']): ?>
+                          <div class="hero-block__text-wrapper">
+                            <?php if ($hero_slide['title']): ?>
+                              <?php
+                              $title_tag = !$hero_slide_key ? 'h1' : 'h2';
+                              ?>
+                              <<?php echo $title_tag; ?> class="hero-block__title">
+                                <?php echo esc_html($hero_slide['title']) ?>
+                              </<?php echo $title_tag; ?>>
+                            <?php endif; ?>
 
-                          <?php if ($hero_slide['text']): ?>
-                            <div class="hero-block__text">
-                              <?php echo wp_kses_post($hero_slide['text']) ?>
-                            </div>
-                          <?php endif; ?>
-                        </div>
-                      <?php endif; ?>
+                            <?php if ($hero_slide['text']): ?>
+                              <div class="hero-block__text">
+                                <?php echo wp_kses_post($hero_slide['text']) ?>
+                              </div>
+                            <?php endif; ?>
+                          </div>
+                        <?php endif; ?>
 
-                      <?php if ($hero_slide['image']) : ?>
-                        <div class="hero-block__img-wrapper">
-                          <?php echo wp_get_attachment_image($hero_slide['image'], 'full', false, array('class' => 'hero-block__img')); ?>
-                          <?php echo wp_get_attachment_image($hero_slide['hover_image'], 'full', false, array('class' => 'hero-block__hover-img')); ?>
-                        </div>
-                      <?php endif; ?>
+                        <?php if ($hero_slide['image']) : ?>
+                          <div class="hero-block__img-wrapper">
+                            <?php echo wp_get_attachment_image($hero_slide['image'], 'full', false, array('class' => 'hero-block__img')); ?>
+                            <?php echo wp_get_attachment_image($hero_slide['hover_image'], 'full', false, array('class' => 'hero-block__hover-img')); ?>
+                          </div>
+                        <?php endif; ?>
+                      </div>
                     </div>
-                  </div>
-                <?php endforeach; ?>
+                  <?php endforeach; ?>
+                </div>
               </div>
+
+              <!-- <div class="swiper-thumbs-pagination hero-slider-block__swiper-thumbs-pagination"></div> -->
             </div>
 
-            <!-- <div class="swiper-thumbs-pagination hero-slider-block__swiper-thumbs-pagination"></div> -->
+            <div class="buttons-list hero-slider-block__buttons">
+              <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 hero-slider-block__btn" data-fancybox>
+                <span class="ico ico--arrow-right2"></span>
+              </a>
+              <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 hero-slider-block__btn" data-fancybox>Request a Free Demo</a>
+            </div>
+
+            <div class="hero-slider-block__thumbs-slider-wrapper">
+              <div class="swiper hero-thumbs-slider">
+                <div class="swiper-wrapper hero-thumbs-slider__slides">
+                  <?php foreach ($hero_slides as $hero_slide_key => $hero_slide): ?>
+                    <div class="swiper-slide hero-thumbs-slider__slide">
+                      <div class="hero-thumbs-slider__img-wrapper">
+                        <?php if ($hero_slide['thumb_image']) : ?>
+                          <?php echo wp_get_attachment_image($hero_slide['thumb_image'], 'full', false, array('class' => 'hero-thumbs-slider__img')); ?>
+                        <?php endif; ?>
+                      </div>
+                    </div>
+                  <?php endforeach; ?>
+                </div>
+              </div>
+            </div>
+          </div>
+        <?php endif; ?>
+      <?php else: ?>
+        <?php $hero_block = get_field('hero_block'); ?>
+        
+        <div class="hero-block-wrapper hero-section__hero-block-wrapper">
+          <div class="hero-block hero-block--<?php echo esc_attr($block_style); ?> hero-block-wrapper__block">
+            <?php if ($hero_block['title'] || $hero_block['text']): ?>
+              <div class="hero-block__text-wrapper">
+                <?php if ($hero_block['title']): ?>
+                  <h1 class="hero-block__title">
+                    <?php echo wp_kses_post($hero_block['title']) ?>
+                  </h1>
+                <?php endif; ?>
+
+                <?php if ($hero_block['text']): ?>
+                  <div class="hero-block__text">
+                    <?php echo wp_kses_post($hero_block['text']) ?>
+                  </div>
+                <?php endif; ?>
+              </div>
+            <?php endif; ?>
+
+            <?php if ($hero_block['image']) : ?>
+              <div class="hero-block__img-wrapper">
+                <?php echo wp_get_attachment_image($hero_block['image'], 'full', false, array('class' => 'hero-block__img')); ?>
+                <?php echo wp_get_attachment_image($hero_block['hover_image'], 'full', false, array('class' => 'hero-block__hover-img')); ?>
+              </div>
+            <?php endif; ?>
           </div>
 
-          <div class="buttons-list hero-slider-block__buttons">
+          <div class="buttons-list hero-block-wrapper__buttons-list">
             <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 hero-slider-block__btn" data-fancybox>
               <span class="ico ico--arrow-right2"></span>
             </a>
             <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 hero-slider-block__btn" data-fancybox>Request a Free Demo</a>
-          </div>
-
-          <div class="hero-slider-block__thumbs-slider-wrapper">
-            <div class="swiper hero-thumbs-slider">
-              <div class="swiper-wrapper hero-thumbs-slider__slides">
-                <?php foreach ($hero_slides as $hero_slide_key => $hero_slide): ?>
-                  <div class="swiper-slide hero-thumbs-slider__slide">
-                    <div class="hero-thumbs-slider__img-wrapper">
-                      <?php if ($hero_slide['thumb_image']) : ?>
-                        <?php echo wp_get_attachment_image($hero_slide['thumb_image'], 'full', false, array('class' => 'hero-thumbs-slider__img')); ?>
-                      <?php endif; ?>
-                    </div>
-                  </div>
-                <?php endforeach; ?>
-              </div>
-            </div>
           </div>
         </div>
       <?php endif; ?>
@@ -182,16 +224,16 @@ if (! empty($block['className'])) {
       <?php endif; ?>
 
       <?php if ($service_blocks): ?>
-        <div class="service-blocks hero-section__service-blocks">
+        <div class="service-blocks hero-section__service-blocks service-blocks--<?php echo esc_attr($block_style); ?>">
           <?php foreach ($service_blocks as $service_block): ?>
-            <div class="service-block service-blocks__item">
+            <div class="service-block service-blocks__item service-block--<?php echo esc_attr($block_style); ?>">
               <?php if ($service_block['image']) : ?>
                 <?php echo wp_get_attachment_image($service_block['image'], 'full', false, array('class' => 'service-block__img')); ?>
               <?php endif; ?>
 
               <?php if ($service_block['title']): ?>
-                <h3 class="service-block__title">
-                  <?php echo esc_html($service_block['title']) ?>
+                <h3 class="service-block__title grad-text">
+                  <?php echo wp_kses_post($service_block['title']) ?>
                 </h3>
               <?php endif; ?>
             </div>

@@ -1,0 +1,51 @@
+.running-systems-block {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  background: #fff;
+  backdrop-filter: blur(21.3598px);
+  border-radius: 20px;
+  overflow: hidden;
+
+  &__text-wrapper {
+    display: grid;
+    grid-template-columns: 100%;
+    place-content: center;
+    padding: 47px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: normal;
+  }
+
+  &__description {
+    max-width: 398px;
+    margin-bottom: 24px;
+    line-height: 1.5;
+    color: #525252;
+  }
+
+  &__technologies-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__technologies-item {
+    padding: 5px 15px;
+    background: rgba(121, 204, 61, 0.1);
+    border-radius: 100px;
+    color: #79CC3D;
+  }
+
+  &__img-wrapper {
+    padding: 63px 47px;
+    background: var(--lightgrey);
+  }
+
+  &__img {
+    height: auto;
+  }
+}

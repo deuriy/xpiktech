@@ -6,6 +6,7 @@
  * @param array $block The block settings and attributes.
  */
 
+$block_style = get_field('block_style') ?? 'default';
 $title = get_field('title');
 $items = get_field('items');
 
@@ -18,6 +19,8 @@ $class_name = 'accordion-section';
 if (! empty($block['className'])) {
   $class_name .= ' ' . $block['className'];
 }
+
+$class_name .= ' accordion-section--' . esc_attr($block_style) . '-style';
 ?>
 
 <section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">

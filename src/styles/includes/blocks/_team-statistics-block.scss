@@ -1,0 +1,25 @@
+.team-statistics-block {
+  display: grid;
+  grid-template: 1fr auto auto / 100%;
+  min-height: 213px;
+  padding: 28px 31px 19px;
+  border: 2px solid #E6E6E6;
+  border-radius: 20px;
+  color: #696969;
+  @extend .transition;
+
+  &__number {
+    margin-bottom: 9px;
+    font-size: 42px;
+    line-height: 1.22619048;
+  }
+
+  &__text {
+    font-size: 21px;
+  }
+
+  &:hover {
+    border-color: #43C8AB;
+    background: rgba(88, 206, 174, 0.05);
+  }
+}

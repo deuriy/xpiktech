@@ -1,0 +1,20 @@
+{
+  "name": "acf/why-clients-stay-section",
+  "title": "Why clients stay section",
+  "description": "Why clients stay section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "why",
+    "clients",
+    "stay"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

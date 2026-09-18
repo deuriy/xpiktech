@@ -1,0 +1,50 @@
+.technology-categories {
+  &__category {
+    padding: 13px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  &__category-inner {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    align-items: center;
+    width: 1220px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  &__category-name {
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  &__technology-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    // gap: 7px;
+    gap: 15px;
+    min-height: 73px;
+    padding-left: 81px;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  &__technology {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 10px;
+    min-height: 40px;
+    // padding: 6px 20px 6px 9px;
+    padding: 6px 20px 6px 17px;
+    border: 1px solid rgba(255, 255, 255, 0.44);
+    border-bottom-width: 0.6px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(21.3598px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "acf/team-statistics-section",
+  "title": "Team statistics section",
+  "description": "Team statistics section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "team",
+    "statistics",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

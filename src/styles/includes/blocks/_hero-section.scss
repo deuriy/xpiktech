@@ -54,4 +54,20 @@
       margin-left: -15px;
     }
   }
+
+  &__hero-block-wrapper {
+    grid-row: span 2;
+  }
+
+  &--style-2 {
+    padding: 24px 0 100px;
+
+    .hero-section__container {
+      grid-template-columns: 2.04fr 1fr;
+    }
+
+    .hero-section__service-blocks {
+      grid-column: span 2;
+    }
+  }
 }

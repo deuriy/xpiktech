@@ -1,0 +1,14 @@
+.hero-block-wrapper {
+  display: grid;
+  grid-template-areas: "wrapper";
+
+  &__block,
+  &__buttons-list {
+    grid-area: wrapper;
+  }
+
+  &__buttons-list {
+    z-index: 1;
+    align-self: end;
+  }
+}

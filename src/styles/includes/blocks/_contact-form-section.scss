@@ -1,0 +1,40 @@
+.contact-form-section {
+  padding: 24px 0 87px;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    // grid-template-columns: 422px 1fr;
+    gap: 40px;
+    padding: 52px 72px 66px;
+    background: #fff;
+    border-radius: 20px;
+  }
+
+  &__text-wrapper {
+    max-width: 422px;
+  }
+
+  &__title-wrapper {
+    margin-bottom: 15px;
+  }
+
+  &__description {
+    margin-bottom: 33px;
+    font-size: 18px;
+    line-height: 1.44;
+    color: #525252;
+  }
+
+  &__items {
+    font-style: normal;
+    margin-left: -8px;
+  }
+
+  &__item {
+    & + & {
+      margin-top: 2px;
+    }
+  }
+}

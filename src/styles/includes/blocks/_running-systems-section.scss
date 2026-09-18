@@ -1,0 +1,38 @@
+.running-systems-section {
+  &__container {
+    padding: 89px 72px 71px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 689 775' fill='none'%3E%3Cpath fill='%23fff' fill-opacity='.05' d='m345.708 260.534.894-1.534 82.978 130.026-.768 1.236L675.901 775H497.509L330.196 514.441 178.393 775H3.324l243.769-390.283L0 1.085h178.393zM668.896 0c11.046 0 20 8.954 20 20v152.067c0 11.046-8.954 20-20 20H516.955c-11.045 0-20-8.954-20-20V20c0-11.046 8.954-20 20-20z'/%3E%3C/svg%3E") right 21px top 1px no-repeat, linear-gradient(0deg, #005E59 0%, #209E6D 140.41%);
+    border-radius: 32px;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 43px;
+  }
+
+  &__buttons {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  &__title,
+  &__description {
+    color: #fff;
+  }
+
+  &__title {
+    max-width: 660px;
+    margin-bottom: 18px;
+  }
+
+  &__description {
+    max-width: 567px;
+    font-size: 18px;
+    line-height: 1.44;
+  }
+}

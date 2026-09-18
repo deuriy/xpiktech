@@ -160,6 +160,8 @@ function xpiktech_scripts()
 		wp_enqueue_script('page', get_template_directory_uri() . '/js/about.js');
 	} elseif (is_page('why-xpiktech')) {
 		wp_enqueue_script('page', get_template_directory_uri() . '/js/why-xpiktech.js');
+	} elseif (is_page('homepage-2')) {
+		wp_enqueue_script('page', get_template_directory_uri() . '/js/homepage-2.js');
 	}
 }
 add_action('wp_enqueue_scripts', 'xpiktech_scripts');
@@ -239,6 +241,12 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/budget-section');
 	register_block_type(get_template_directory() . '/blocks/how-we-work');
 	register_block_type(get_template_directory() . '/blocks/faq-section');
+	register_block_type(get_template_directory() . '/blocks/what-we-build-v2');
+	register_block_type(get_template_directory() . '/blocks/team-statistics-section');
+	register_block_type(get_template_directory() . '/blocks/technologies-section');
+	register_block_type(get_template_directory() . '/blocks/why-clients-stay-section');
+	register_block_type(get_template_directory() . '/blocks/running-systems-section');
+	register_block_type(get_template_directory() . '/blocks/contact-form-section');
 }
 add_action('init', 'xpiktech_register_blocks');
 

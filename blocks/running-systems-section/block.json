@@ -1,0 +1,20 @@
+{
+  "name": "acf/running-systems-section",
+  "title": "Running systems section",
+  "description": "Running systems section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "what",
+    "we",
+    "build"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

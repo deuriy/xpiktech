@@ -23,6 +23,19 @@
       width: 6px;
     }
   }
+
+  &--thin-lines-style {
+    --swiper-pagination-bullet-horizontal-gap: 1px;
+    --swiper-pagination-bullet-width: 17px;
+    --swiper-pagination-bullet-height: 2px;
+    --swiper-pagination-color: #79CC3D;
+    --swiper-pagination-bullet-inactive-color: #fff;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+
+    .swiper-pagination-bullet-active {
+      width: 35px;
+    }
+  }
 }
 
 .swiper-thumbs-pagination {

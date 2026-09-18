@@ -48,6 +48,24 @@ body {
   font-weight: 600;
 }
 
+.green-highlighted {
+  padding: 3px 9px;
+  border-radius: 8px;
+  background: #015E59;
+  color: #fff;
+}
+
+.grad-text .green-highlighted {
+  -webkit-text-fill-color: #fff;
+}
+
+.white-highlighted {
+  padding: 1px 8px;
+  border-radius: 8px;
+  background: #fff;
+  color: #015E59;
+}
+
 @media (min-width: 1024px) {
   .hidden-md-plus {
     display: none !important;

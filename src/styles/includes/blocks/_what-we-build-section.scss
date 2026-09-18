@@ -71,4 +71,35 @@
   &__item {
     display: grid;
   }
+
+  &--v2 {
+    padding: 102px 0;
+    background: var(--lightgrey);
+
+    .what-we-build-section__container {
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .what-we-build-section__title-wrapper {
+      margin-bottom: 19px;
+      text-align: center;
+    }
+
+    .what-we-build-section__title {
+      margin-bottom: 0;
+    }
+
+    .what-we-build-section__description {
+      margin: 0 auto 18px;
+      text-align: center;
+    }
+
+    .what-we-build-section__items {
+      max-width: 1280px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
 }

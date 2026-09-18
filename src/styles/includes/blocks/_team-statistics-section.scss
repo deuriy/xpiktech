@@ -1,0 +1,35 @@
+.team-statistics-section {
+  padding: 85px 0 92px;
+  background: #fff;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1.54fr;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__text-wrapper {
+    width: 407px;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__title-wrapper {
+    margin-bottom: 26px;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 1.44;
+    color: #696969;
+  }
+
+  &__items {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
