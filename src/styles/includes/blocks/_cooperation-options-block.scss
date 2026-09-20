@@ -14,7 +14,10 @@
     mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 497 637' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20C0 8.95429 8.95431 0 20 0H477C488.046 0 497 8.9543 497 20V616.5C497 627.546 488.046 636.5 477 636.5H380C368.954 636.5 360 627.546 360 616.5V588.5C360 577.454 351.046 568.5 340 568.5H20C8.95432 568.5 0 559.546 0 548.5V20Z' fill='white'/%3E%3C/svg%3E%0A");
     mask-repeat: no-repeat;
     mask-size: cover;
+    border: 1px solid transparent;
+    border-radius: 20px;
     background: #fff;
+    @extend .transition;
   }
 
   &__buttons-list {
@@ -50,5 +53,11 @@
   &__characteristics-item {
     padding: 23px 35px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  &:hover {
+    .cooperation-options-block__wrapper {
+      border-color: #43C8AB;
+    }
   }
 }

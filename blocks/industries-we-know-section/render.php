@@ -31,7 +31,7 @@ if (! empty($block['className'])) {
           </h2>
         </div>
       <?php endif; ?>
-
+      
       <?php if ($description): ?>
         <div class="industries-we-know-section__description">
           <?php echo $description ?>

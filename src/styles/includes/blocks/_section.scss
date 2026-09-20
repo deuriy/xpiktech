@@ -358,12 +358,17 @@
     padding: 64px 0;
 
     .section__container {
-      padding: 110px 0;
+      // padding: 110px 0;
+      padding: 110px 0 0;
       background: url("images/how_we_work_bg@2x.webp") -40px -80px/calc(100% + 80px) calc(100% + 180px) no-repeat;
     }
 
     .section__title-wrapper {
       text-align: center;
+    }
+
+    .section__title {
+      margin: 0 auto 60px;
     }
   }
 

@@ -30,7 +30,7 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
   <div class="container">
     <div class="hero-section__container">
       <?php if ($block_style === 'default'): ?>
-        <?php $hero_slides = get_field('hero_slides'); ?>
+        <?php $hero_slides = get_field('hero_slide'); ?>
         <?php if ($hero_slides): ?>
           <div class="hero-slider-block hero-section__slider-block">
             <div class="hero-slider-block__slider-wrapper">
