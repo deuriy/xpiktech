@@ -1,3 +1,39 @@
 .industries-we-know-section {
   padding: 105px 0;
+
+  &__container {
+    width: 1215px;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__title-wrapper {
+    margin-bottom: 18px;
+  }
+
+  &__description {
+    max-width: 567px;
+    margin-bottom: 50px;
+    font-size: 18px;
+    line-height: 1.44;
+    color: #696969;
+  }
+
+  &__tabs {
+    display: grid;
+    grid-template-columns: 383px 1fr;
+    align-items: start;
+    gap: 32px;
+  }
+
+  &__tab-list {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 10px;
+  }
+
+  &__tab-panel {
+    display: none;
+  }
 }

@@ -1,0 +1,15 @@
+.what-we-deliver-block {
+  padding: 37px 37px 41px 19px;
+  border: 1px solid rgba(255, 255, 255, .44);
+  border-bottom-width: 0.6px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(21.3598px);
+  border-radius: 20px;
+
+  &__title {
+    margin-bottom: 29px;
+    margin-left: 4px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+}

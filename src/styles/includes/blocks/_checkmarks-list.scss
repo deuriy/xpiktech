@@ -62,4 +62,19 @@
       }
     }
   }
+
+  &--what-we-deliver-block {
+    .checkmarks-list__item {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28' fill='none'%3E%3Cg filter='url(%23a)'%3E%3Crect width='20' height='20' x='4' y='4' fill='%2379cc3d' rx='10' shape-rendering='crispEdges'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m10.25 13.57 3 2.68 4.5-4.5'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='a' width='28' height='28' x='0' y='0' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' result='hardAlpha' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0'/%3E%3CfeBlend in2='BackgroundImageFix' result='effect1_dropShadow_2641_818'/%3E%3CfeBlend in='SourceGraphic' in2='effect1_dropShadow_2641_818' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+      background-size: 27px;
+      background-position: 0 -1px;
+      font-size: 16px;
+      line-height: 1.625;
+      color: #fff;
+
+      & + .checkmarks-list__item {
+        margin-top: 15px;
+      }
+    }
+  }
 }

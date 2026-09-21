@@ -1,0 +1,25 @@
+.tab-button {
+  padding: 18px 36px;
+  border: 2px solid transparent;
+  outline: none;
+  background: #fff;
+  border-radius: 15px;
+  font-family: var(--base-font);
+  text-align: left;
+  cursor: pointer;
+  @extend .transition;
+
+  &:hover:not(.active) {
+    border-color: #43C8AB;
+    background: rgba(88, 206, 174, 0.05);
+  }
+
+  &.active {
+    background: #84C7A7;
+
+    .grad-text {
+      -webkit-text-fill-color: #fff;
+      text-fill-color: #fff;
+    }
+  }
+}

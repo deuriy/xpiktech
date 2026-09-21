@@ -66,6 +66,10 @@ body {
   color: #015E59;
 }
 
+.show {
+  display: block !important;
+}
+
 @media (min-width: 1024px) {
   .hidden-md-plus {
     display: none !important;
