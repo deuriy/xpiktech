@@ -37,36 +37,74 @@ if (! empty($block['className'])) {
   </div>
   
   <?php if ($categories): ?>
-    <div class="technology-categories">
-      <?php foreach ($categories as $category_key => $category): ?>
-        <div class="technology-categories__category">
-          <div class="technology-categories__category-inner">
-            <?php if ($category['category_name']): ?>
-              <h3 class="technology-categories__category-name">
-                <?php echo $category['category_name'] ?>
-              </h3>
-            <?php endif; ?>
+    <?php if (!wp_is_mobile()): ?>
+      <div class="technology-categories">
+        <?php foreach ($categories as $category_key => $category): ?>
+          <div class="technology-categories__category">
+            <div class="technology-categories__category-inner">
+              <?php if ($category['category_name']): ?>
+                <h3 class="technology-categories__category-name">
+                  <?php echo $category['category_name'] ?>
+                </h3>
+              <?php endif; ?>
 
-            <?php if ($category['technologies']): ?>
-              <ul class="technology-categories__technology-list">
-                <?php foreach ($category['technologies'] as $technology_key => $technology): ?>
-                  <li class="technology-categories__technology">
-                    <?php if ($technology['icon']): ?>
-                      <?php echo wp_get_attachment_image($technology['icon'], 'full', false, ['class' => 'technology-categories__technology-icon']) ?>
-                    <?php endif; ?>
+              <?php if ($category['technologies']): ?>
+                <ul class="technology-categories__technology-list">
+                  <?php foreach ($category['technologies'] as $technology_key => $technology): ?>
+                    <li class="technology-categories__technology">
+                      <?php if ($technology['icon']): ?>
+                        <?php echo wp_get_attachment_image($technology['icon'], 'full', false, ['class' => 'technology-categories__technology-icon']) ?>
+                      <?php endif; ?>
 
-                    <?php if ($technology['technology_name']): ?>
-                      <span class="technology-categories__technology-name">
-                        <?php echo $technology['technology_name'] ?>
-                      </span>
-                    <?php endif; ?>
-                  </li>
-                <?php endforeach;?>
-              </ul>
-            <?php endif; ?>
+                      <?php if ($technology['technology_name']): ?>
+                        <span class="technology-categories__technology-name">
+                          <?php echo $technology['technology_name'] ?>
+                        </span>
+                      <?php endif; ?>
+                    </li>
+                  <?php endforeach;?>
+                </ul>
+              <?php endif; ?>
+            </div>
           </div>
+        <?php endforeach;?>
+      </div>
+    <?php else: ?>
+      <div class="swiper technology-slider">
+        <div class="swiper-wrapper technology-slider__slides">
+          <?php foreach ($categories as $category_key => $category): ?>
+            <div class="swiper-slide technology-slider__slide">
+              <div class="technology-slider__slide-wrapper">
+                <?php if ($category['category_name']): ?>
+                  <h3 class="technology-slider__category-name">
+                    <?php echo $category['category_name'] ?>
+                  </h3>
+                <?php endif; ?>
+
+                <?php if ($category['technologies']): ?>
+                  <ul class="technology-categories__technology-list">
+                    <?php foreach ($category['technologies'] as $technology_key => $technology): ?>
+                      <li class="technology-categories__technology">
+                        <?php if ($technology['icon']): ?>
+                          <?php echo wp_get_attachment_image($technology['icon'], 'full', false, ['class' => 'technology-categories__technology-icon']) ?>
+                        <?php endif; ?>
+
+                        <?php if ($technology['technology_name']): ?>
+                          <span class="technology-categories__technology-name">
+                            <?php echo $technology['technology_name'] ?>
+                          </span>
+                        <?php endif; ?>
+                      </li>
+                    <?php endforeach;?>
+                  </ul>
+                <?php endif; ?>
+              </div>
+            </div>
+          <?php endforeach;?>
         </div>
-      <?php endforeach;?>
-    </div>
+
+        <div class="swiper-pagination swiper-pagination--technology-slider technology-slider__pagination"></div>
+      </div>
+    <?php endif; ?>
   <?php endif; ?>
 </section>

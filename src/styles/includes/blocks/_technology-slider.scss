@@ -1,0 +1,14 @@
+.technology-slider {
+  &__slide-wrapper {
+    text-align: center;
+  }
+
+  &__category-name {
+    margin-bottom: 20px;
+  }
+
+  &__pagination {
+    position: static;
+    margin-top: 20px;
+  }
+}

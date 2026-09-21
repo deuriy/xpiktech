@@ -1,16 +1,29 @@
 .industries-we-know-block-wrapper {
   display: grid;
-  grid-template-areas: "wrapper";
   grid-template-columns: 100%;
 
-  &__block,
-  &__buttons-list {
-    grid-area: wrapper;
+  @media (min-width: 1024px) {
+    grid-template-areas: "wrapper";
+
+    &__block,
+    &__buttons-list {
+      grid-area: wrapper;
+    }
+
+    &__buttons-list {
+      z-index: 1;
+      justify-self: end;
+      align-self: end;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    gap: 10px;
   }
 
   &__buttons-list {
-    z-index: 1;
-    justify-self: end;
-    align-self: end;
+    @media (max-width: 1023px) {
+      grid-template-columns: 56px 1fr;
+    }
   }
 }

@@ -42,7 +42,7 @@ if (! empty($block['className'])) {
       </div>
       
       <?php if ($cooperation_options): ?>
-        <div class="cooperation-options-section__items">
+        <div class="cooperation-options-section__items hidden-xs">
           <?php foreach ($cooperation_options as $key => $cooperation_option): ?>
             <div class="cooperation-options-block">
               <div class="cooperation-options-block__wrapper">

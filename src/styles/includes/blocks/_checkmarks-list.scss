@@ -72,6 +72,15 @@
       line-height: 1.625;
       color: #fff;
 
+      @media (max-width: 1023px) {
+        padding-left: 32px;
+        font-size: 15px;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 14px;
+      }
+
       & + .checkmarks-list__item {
         margin-top: 15px;
       }

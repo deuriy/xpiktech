@@ -165,9 +165,32 @@
     gap: 4px;
     padding: 10px 22px;
 
+    @media (max-width: 767px) {
+      min-height: 154px;
+    }
+
     .service-block__title {
       max-width: 185px;
       font-weight: 600;
+
+      @media (max-width: 1023px) {
+        font-size: 15px;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 14px;
+        line-height: 1.42857143;
+      }
+    }
+
+    .service-block__img {
+      @media (max-width: 1023px) {
+        height: 89px;
+      }
+      
+      @media (max-width: 767px) {
+        height: 77px;
+      }
     }
   }
 

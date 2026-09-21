@@ -9,6 +9,7 @@
 $block_style = get_field('block_style') ?? 'default';
 $title = get_field('title');
 $description = get_field('description');
+$enable_mobile_timeline = get_field('enable_mobile_timeline') ?? false;
 
 $anchor = '';
 if (! empty($block['anchor'])) {
@@ -43,7 +44,7 @@ $class_name .= ' section--timeline-' . esc_attr($block_style);
       <?php endif; ?>
 
       <?php if( have_rows('card') ): ?>
-        <div class="timeline section__timeline timeline--<?php echo $block_style ?>">
+        <div class="timeline section__timeline timeline--<?php echo $block_style ?>"<?php echo !$enable_mobile_timeline ? ' data-desktop-only' : '' ?>>
           <div class="timeline__inner">
 
             <div class="timeline__progress"></div>

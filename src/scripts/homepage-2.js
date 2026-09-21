@@ -14,7 +14,7 @@ const initSwipers = () => {
     slidesPerView: 1,
     spaceBetween: 24,
     loop: true,
-    direction: 'vertical',
+    // direction: 'vertical',
 
     navigation: {
       nextEl: '.company-review-slider-block__next-btn'
@@ -25,6 +25,18 @@ const initSwipers = () => {
         direction: 'horizontal'
       }
     }
+  });
+
+  new Swiper('.technology-slider', {
+    modules: [Pagination],
+    slidesPerView: 1,
+    spaceBetween: 24,
+    loop: true,
+
+    pagination: {
+      el: '.technology-slider__pagination',
+      type: 'bullets',
+    },
   });
   
   new Swiper('.running-systems-slider', {
@@ -67,7 +79,7 @@ const initTabs = () => {
       return;
     }
 
-    const tabs = tab.closest('.industries-we-know-section__tabs');
+    const tabs = tab.closest('[data-tabs-container]');
 
     if (!tabs) {
       return;
@@ -82,6 +94,7 @@ const initTabs = () => {
 
 const initTimeline = () => {
   const timeline = document.querySelector('.timeline');
+  const desktopOnly = timeline.dataset.desktopOnly !== undefined;
   const inner = document.querySelector('.timeline__inner');
   const progress = document.querySelector('.timeline__progress');
   const items = document.querySelectorAll('.timeline__item');
@@ -238,7 +251,7 @@ const initTimeline = () => {
   }
 
   function updateTimeline() {
-    if (isMobile()) {
+    if (isMobile() && !desktopOnly) {
       updateMobileProgress();
       updateMobileActiveItems();
     } else {

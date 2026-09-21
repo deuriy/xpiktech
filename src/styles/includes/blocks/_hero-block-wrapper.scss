@@ -1,14 +1,28 @@
 .hero-block-wrapper {
   display: grid;
-  grid-template-areas: "wrapper";
+  grid-template-columns: 100%;
 
-  &__block,
-  &__buttons-list {
-    grid-area: wrapper;
+  @media (min-width: 768px) {
+    grid-template-areas: "wrapper";
+
+    &__block,
+    &__buttons-list {
+      grid-area: wrapper;
+    }
+
+    &__buttons-list {
+      z-index: 1;
+      align-self: end;
+    }
+  }
+
+  @media (max-width: 767px) {
+    gap: 20px;
   }
 
   &__buttons-list {
-    z-index: 1;
-    align-self: end;
+    @media (max-width: 767px) {
+      grid-template-columns: 56px 1fr;
+    }
   }
 }

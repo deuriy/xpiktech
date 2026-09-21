@@ -23,6 +23,10 @@
   &__buttons-list {
     align-self: end;
     z-index: 1;
+
+    @media (max-width: 1199px) {
+      grid-template-columns: 56px 1fr;
+    }
   }
 
   &__header {

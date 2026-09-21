@@ -41,7 +41,7 @@ if (! empty($block['className'])) {
           <?php endif; ?>
         </div>
 
-        <div class="running-systems-section__buttons">
+        <div class="running-systems-section__buttons hidden-xs">
           <button type="button" class="swiper-btn swiper-btn--prev running-systems-section__prev-btn hidden-xs"></button>
           <button type="button" class="swiper-btn swiper-btn--next running-systems-section__next-btn hidden-xs"></button>
         </div>

@@ -1,6 +1,10 @@
 .contact-form-section {
   padding: 24px 0 87px;
 
+  @media (max-width: 767px) {
+    padding: 10px 0 50px;
+  }
+
   &__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -10,6 +14,21 @@
     padding: 52px 72px 66px;
     background: #fff;
     border-radius: 20px;
+
+    @media (max-width: 1199px) {
+      gap: 24px;
+      padding: 36px 48px 56px;
+    }
+
+    @media (max-width: 991px) {
+      grid-template-columns: 100%;
+      padding: 36px 32px 46px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 27px;
+      border-radius: 15px;
+    }
   }
 
   &__text-wrapper {
@@ -25,6 +44,15 @@
     font-size: 18px;
     line-height: 1.44;
     color: #525252;
+
+    @media (max-width: 1199px) {
+      margin-bottom: 24px;
+      font-size: 17px;
+    }
+
+    @media (max-width: 1023px) {
+      font-size: 16px;
+    }
   }
 
   &__items {

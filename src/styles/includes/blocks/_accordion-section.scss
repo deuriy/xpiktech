@@ -59,10 +59,16 @@
 
   &--transparent-style {
     padding: 43px 0 97px;
-    
+
+    @media (max-width: 1199px) {
+      padding: 20px 0 60px;
+    }
+
     .accordion-section__container {
-      padding: 0 40px;
-      background: transparent;
+      @media (min-width: 768px) {
+        padding: 0 40px;
+        background: transparent;
+      }
     }
   }
 }

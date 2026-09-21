@@ -360,7 +360,24 @@
     .section__container {
       // padding: 110px 0;
       padding: 110px 0 0;
-      background: url("images/how_we_work_bg@2x.webp") -40px -80px/calc(100% + 80px) calc(100% + 180px) no-repeat;
+      border-radius: 32px;
+      background: url("images/how_we_work_bg@2x.webp") -40px -100px/calc(100% + 80px) calc(100% + 220px) no-repeat;
+
+      @media (max-width: 1199px) {
+        padding: 90px 0 0;
+        border-radius: 28px;
+      }
+
+      @media (max-width: 1023px) {
+        padding: 70px 0 0;
+        border-radius: 24px;
+      }
+
+      @media (max-width: 767px) {
+        padding: 38px 0 0;
+        border-radius: 15px;
+        background: url("images/how_we_work_bg@2x.webp") -40px -120px/calc(100% + 80px) calc(100% + 250px) no-repeat;
+      }
     }
 
     .section__title-wrapper {
@@ -369,6 +386,18 @@
 
     .section__title {
       margin: 0 auto 60px;
+
+      @media (max-width: 1199px) {
+        margin: 0 auto 50px;
+      }
+
+      @media (max-width: 1023px) {
+        margin: 0 auto 40px;
+      }
+
+      @media (max-width: 767px) {
+        margin: 0 auto 16px;
+      }
     }
   }
 

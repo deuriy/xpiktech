@@ -132,26 +132,105 @@
   }
 
   &--style2 {
-    max-width: 1280px;
+    max-width: 1344px;
+    padding: 0 32px;
+
+    @media (max-width: 767px) {
+      overflow: hidden;
+    }
 
     .timeline__inner {
       &::before {
         left: calc(50%);
         width: 2px;
       }
+
+      @media (max-width: 1023px) {
+        width: auto;
+        display: block;
+        padding: 0 10px;
+        overflow: hidden;
+
+        &::before {
+          top: 0;
+          bottom: 43px;
+          height: auto;
+        }
+      }
+
+      @media (max-width: 767px) {
+        padding: 0;
+      }
+
+      @media (max-width: 767px) {
+        padding-bottom: 43px;
+      }
     }
 
     .timeline__item {
+      padding-top: 0;
+
+      &:nth-child(2) {
+        @media (max-width: 767px) {
+          padding-top: 16px;
+
+          .timeline__point {
+            top: 8px;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        @media (min-width: 768px) {
+          margin-bottom: -80px;
+        }
+      }
+
+      @media (max-width: 1023px) {
+        padding: 0;
+      }
+
+      @media (max-width: 767px) {
+        grid-template-columns: 100%;
+        z-index: 2;
+        padding: 44px 0 0;
+      }
+
       &--left {
         padding-right: calc(50% + 54px);
+
+        @media (max-width: 1023px) {
+          padding-right: calc(50% + 36px);
+        }
+
+        @media (max-width: 767px) {
+          padding-right: 0;
+        }
       }
 
       &--right {
         padding-left: calc(50% + 54px);
+
+        @media (max-width: 1023px) {
+          padding-left: calc(50% + 36px);
+        }
+
+        @media (max-width: 767px) {
+          padding-left: 0;
+        }
       }
 
       &:last-child {
+        margin-bottom: 0;
         padding-bottom: 80px;
+        
+        .timeline__point {
+          top: calc(50% - 70px);
+        }
+
+        @media (max-width: 767px) {
+          padding-bottom: 0;
+        }
       }
     }
 
@@ -179,17 +258,28 @@
     }
 
     .timeline__point {
+      top: calc(50% - 10px);
       left: 50%;
       width: 18px;
       height: 18px;
       outline: 6px solid #DCE4E033;
       background: #DCE4E0;
+
+      @media (max-width: 767px) {
+        top: 35px;
+        width: 16px;
+        height: 16px;
+      }
     }
 
     .timeline__progress {
       left: 50%;
       width: 2px;
       background: linear-gradient(180deg, #F3F3F3 0%, #79CC3D 100%);
+
+      @media (max-width: 767px) {
+        left: calc(50% - 1px);
+      }
     }
   }
 }
@@ -305,30 +395,65 @@
       display: grid;
       grid-template-columns: auto 1fr;
       grid-template-areas: "number title" "text text";
-      gap: 19px 17px;
+      gap: 17px 18px;
       margin: 0;
       padding: 34px 31px;
       border-radius: inherit;
       background: #fff;
       @extend .transition;
+
+      @media (max-width: 1023px) {
+        gap: 15px 18px;
+        padding: 25px 20px;
+      }
     }
 
     .timeline-card__number {
       grid-area: number;
       color: #2DC1A7;
       font-size: 24px;
+
+      @media (max-width: 1023px) {
+        font-size: 22px;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 20px;
+      }
     }
 
     .timeline-card__title {
       grid-area: title;
+      align-self: center;
+      margin-bottom: 0;
       font-size: 24px;
       color: inherit;
+
+      @media (max-width: 1023px) {
+        font-size: 22px;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 20px;
+      }
     }
 
     .timeline-card__text {
       grid-area: text;
+      max-width: 415px;
       color: #696969;
       font-size: 18px;
+
+      @media (max-width: 1023px) {
+        font-size: 17px;
+      }
+
+      @media (max-width: 767px) {
+        padding-right: 20px;
+        padding-left: 3px;
+        font-size: 16px;
+        line-height: 1.625;
+      }
     }
   }
 }
