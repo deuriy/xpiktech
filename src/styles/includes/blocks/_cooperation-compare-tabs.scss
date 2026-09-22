@@ -1,0 +1,56 @@
+.cooperation-compare-tabs {
+  // width: 343px;
+  width: 540px;
+  max-width: 100%;
+
+  &__header {
+    min-height: 166px;
+    padding: 25px 19px 37px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 347 170' fill='none'%3E%3Cmask id='a' width='347' height='170' x='0' y='0' maskUnits='userSpaceOnUse' style='mask-type:alpha'%3E%3Crect width='166' height='343' x='345' y='2' fill='%23005e59' rx='20' transform='rotate(90 345 2)'/%3E%3Crect width='168' height='345' x='346' y='1' stroke='%23fff' stroke-opacity='.8' stroke-width='2' rx='21' transform='rotate(90 346 1)'/%3E%3C/mask%3E%3Cg mask='url(%23a)'%3E%3Cmask id='b' width='912' height='1629' x='-559' y='-674' maskUnits='userSpaceOnUse' style='mask-type:alpha'%3E%3Cpath fill='%23d9d9d9' d='M-558.911 88.349v845.792c0 11.045 8.954 20 20 20h891.037l.001-1607.217c0-11.046-8.955-20-20-20h-754.866c-11.045 0-20 8.954-20 20V48.349c0 11.046-8.954 20-20 20h-76.172c-11.046 0-20 8.954-20 20'/%3E%3C/mask%3E%3Cg mask='url(%23b)'%3E%3Cmask id='c' width='914' height='1622' x='-560' y='-675' maskUnits='userSpaceOnUse' style='mask-type:alpha'%3E%3Cpath fill='%23f3f3f3' d='M323.873-674.107h-736.612c-16.568 0-30 13.431-30 30V39.38c0 16.569-13.431 30-30 30h-57.046c-16.569 0-30 13.432-30 30v817.542c0 16.569 13.431 30 30 30h853.658c16.569 0 30-13.431 30-30V-644.107c0-16.569-13.431-30-30-30'/%3E%3C/mask%3E%3Cg mask='url(%23c)'%3E%3Cg filter='url(%23d)'%3E%3Ccircle cx='-192.169' cy='198.112' r='995.962' fill='%232dc1a7' transform='rotate(90 -192.169 198.112)'/%3E%3C/g%3E%3Cg filter='url(%23e)'%3E%3Ccircle cx='552.235' cy='-259.425' r='398.636' fill='%23abe5b8' transform='rotate(90 552.235 -259.425)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='d' width='2591.92' height='2591.92' x='-1488.13' y='-1097.85' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur result='effect1_foregroundBlur_2695_16' stdDeviation='150'/%3E%3CfeTurbulence baseFrequency='5 5' numOctaves='3' result='noise' seed='266' stitchTiles='stitch' type='fractalNoise'/%3E%3CfeColorMatrix in='noise' result='alphaNoise' type='luminanceToAlpha'/%3E%3CfeComponentTransfer in='alphaNoise' result='coloredNoise1'%3E%3CfeFuncA tableValues='0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0' type='discrete'/%3E%3C/feComponentTransfer%3E%3CfeComposite in='coloredNoise1' in2='effect1_foregroundBlur_2695_16' operator='in' result='noise1Clipped'/%3E%3CfeFlood flood-color='rgba(255, 255, 255, 0.06)' result='color1Flood'/%3E%3CfeComposite in='color1Flood' in2='noise1Clipped' operator='in' result='color1'/%3E%3CfeMerge result='effect2_noise_2695_16'%3E%3CfeMergeNode in='effect1_foregroundBlur_2695_16'/%3E%3CfeMergeNode in='color1'/%3E%3C/feMerge%3E%3C/filter%3E%3Cfilter id='e' width='1317.27' height='1317.27' x='-106.4' y='-918.061' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur result='effect1_foregroundBlur_2695_16' stdDeviation='130'/%3E%3CfeTurbulence baseFrequency='1 1' numOctaves='3' result='noise' seed='266' stitchTiles='stitch' type='fractalNoise'/%3E%3CfeColorMatrix in='noise' result='alphaNoise' type='luminanceToAlpha'/%3E%3CfeComponentTransfer in='alphaNoise' result='coloredNoise1'%3E%3CfeFuncA tableValues='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0' type='discrete'/%3E%3C/feComponentTransfer%3E%3CfeComposite in='coloredNoise1' in2='effect1_foregroundBlur_2695_16' operator='in' result='noise1Clipped'/%3E%3CfeFlood flood-color='rgba(255, 255, 255, 0.16)' result='color1Flood'/%3E%3CfeComposite in='color1Flood' in2='noise1Clipped' operator='in' result='color1'/%3E%3CfeMerge result='effect2_noise_2695_16'%3E%3CfeMergeNode in='effect1_foregroundBlur_2695_16'/%3E%3CfeMergeNode in='color1'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E") center top /cover no-repeat;
+    text-align: center;
+    color: #fff;
+  }
+
+  &__label {
+    margin-bottom: 2px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: normal;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 47px;
+    background: rgba(255, 255, 255, .2);
+  }
+
+  &__btn {
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    border-radius: 47px;
+    // background: rgba(255, 255, 255, .2);
+    background: transparent;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.8571428571;
+    font-family: var(--base-font);
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &.active {
+      background: #fff;
+      color: #282929;
+    }
+  }
+
+  &__panel {
+    display: none;
+  }
+}

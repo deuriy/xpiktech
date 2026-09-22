@@ -5,6 +5,8 @@
   backdrop-filter: blur(21.3598px);
   border-radius: 20px;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
 
   @media (max-width: 767px) {
     grid-template-columns: 100%;

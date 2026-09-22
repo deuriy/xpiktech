@@ -42,83 +42,156 @@ if (! empty($block['className'])) {
       </div>
       
       <?php if ($cooperation_options): ?>
-        <div class="cooperation-options-section__items hidden-xs">
-          <?php foreach ($cooperation_options as $key => $cooperation_option): ?>
-            <div class="cooperation-options-block">
-              <div class="cooperation-options-block__wrapper">
-                <div class="cooperation-options-block__header">
-                  <?php if ($cooperation_option['label']): ?>
-                    <div class="cooperation-options-block__label">
-                      <?php echo $cooperation_option['label'] ?>
-                    </div>
-                  <?php endif; ?>
-
-                  <?php if ($cooperation_option['title']): ?>
-                    <h3 class="cooperation-options-block__title grad-text">
-                      <?php echo $cooperation_option['title'] ?>
-                    </h3>
-                  <?php endif; ?>
-
-                  <?php if ($cooperation_option['description']): ?>
-                    <div class="cooperation-options-block__description">
-                      <?php echo $cooperation_option['description'] ?>
-                    </div>
-                  <?php endif; ?>
-                </div>
-
-                <?php if ($cooperation_option['characteristics']): ?>
-                  <ul class="cooperation-options-block__characteristics-list">
-                    <?php foreach ($cooperation_option['characteristics'] as $characteristic): ?>
-                      <li class="cooperation-options-block__characteristics-item">
-                        <?php echo $characteristic['characteristic_name'] ?>
-                      </li>
-                    <?php endforeach;?>
-                  </ul>
-                <?php endif; ?>
-              </div>
-
-              <div class="buttons-list cooperation-options-block__buttons-list">
-                <a href="#contact-form-popup" class="<?php echo !$key ? ' btn-darkgreen' : ' btn-mintgreen' ?> btn-white--padding-10" data-fancybox>
-                  <span class="ico ico--arrow-right2"></span>
-                </a>
-                <a href="<?php echo $cooperation_option['button']['url'] ?>" class="<?php echo !$key ? ' btn-darkgreen' : ' btn-mintgreen' ?>" data-fancybox>
-                  <?php echo $cooperation_option['button']['text'] ?>
-                </a>
-              </div>
-            </div>
-
-            <?php if (!$key): ?>
-              <?php $compare_block = get_field('compare_block') ?>
-              <div class="cooperation-compare-block">
-                <?php if ($compare_block['label'] || $compare_block['title']): ?>
-                  <div class="cooperation-compare-block__header">
-                    <?php if ($compare_block['label']): ?>
-                      <div class="cooperation-compare-block__label">
-                        <?php echo $compare_block['label'] ?>
+        <?php if (!wp_is_mobile()): ?>
+          <div class="cooperation-options-section__items">
+            <?php foreach ($cooperation_options as $key => $cooperation_option): ?>
+              <div class="cooperation-options-block">
+                <div class="cooperation-options-block__wrapper">
+                  <div class="cooperation-options-block__header">
+                    <?php if ($cooperation_option['label']): ?>
+                      <div class="cooperation-options-block__label">
+                        <?php echo $cooperation_option['label'] ?>
                       </div>
                     <?php endif; ?>
 
-                    <?php if ($compare_block['title']): ?>
-                      <h3 class="cooperation-compare-block__title">
-                        <?php echo $compare_block['title'] ?>
+                    <?php if ($cooperation_option['title']): ?>
+                      <h3 class="cooperation-options-block__title grad-text">
+                        <?php echo $cooperation_option['title'] ?>
                       </h3>
                     <?php endif; ?>
-                  </div>
-                <?php endif; ?>
 
-                <?php if ($compare_block['characteristics']): ?>
-                  <ul class="cooperation-compare-block__characteristics-list">
-                    <?php foreach ($compare_block['characteristics'] as $characteristic): ?>
-                      <li class="cooperation-compare-block__characteristics-item">
-                        <?php echo $characteristic['characteristic_name'] ?>
-                      </li>
-                    <?php endforeach;?>
-                  </ul>
-                <?php endif; ?>
+                    <?php if ($cooperation_option['description']): ?>
+                      <div class="cooperation-options-block__description">
+                        <?php echo $cooperation_option['description'] ?>
+                      </div>
+                    <?php endif; ?>
+                  </div>
+
+                  <?php if ($cooperation_option['characteristics']): ?>
+                    <ul class="cooperation-options-block__characteristics-list">
+                      <?php foreach ($cooperation_option['characteristics'] as $characteristic): ?>
+                        <li class="cooperation-options-block__characteristics-item">
+                          <?php echo $characteristic['characteristic_name'] ?>
+                        </li>
+                      <?php endforeach;?>
+                    </ul>
+                  <?php endif; ?>
+                </div>
+
+                <div class="buttons-list cooperation-options-block__buttons-list">
+                  <a href="#contact-form-popup" class="<?php echo !$key ? ' btn-darkgreen' : ' btn-mintgreen' ?> btn-white--padding-10" data-fancybox>
+                    <span class="ico ico--arrow-right2"></span>
+                  </a>
+                  <a href="<?php echo $cooperation_option['button']['url'] ?>" class="<?php echo !$key ? ' btn-darkgreen' : ' btn-mintgreen' ?>" data-fancybox>
+                    <?php echo $cooperation_option['button']['text'] ?>
+                  </a>
+                </div>
               </div>
-            <?php endif; ?>
-          <?php endforeach;?>
-        </div>
+
+              <?php if (!$key): ?>
+                <?php $compare_block = get_field('compare_block') ?>
+                <div class="cooperation-compare-block">
+                  <?php if ($compare_block['label'] || $compare_block['title']): ?>
+                    <div class="cooperation-compare-block__header">
+                      <?php if ($compare_block['label']): ?>
+                        <div class="cooperation-compare-block__label">
+                          <?php echo $compare_block['label'] ?>
+                        </div>
+                      <?php endif; ?>
+
+                      <?php if ($compare_block['title']): ?>
+                        <h3 class="cooperation-compare-block__title">
+                          <?php echo $compare_block['title'] ?>
+                        </h3>
+                      <?php endif; ?>
+                    </div>
+                  <?php endif; ?>
+
+                  <?php if ($compare_block['characteristics']): ?>
+                    <ul class="cooperation-compare-block__characteristics-list">
+                      <?php foreach ($compare_block['characteristics'] as $characteristic): ?>
+                        <li class="cooperation-compare-block__characteristics-item">
+                          <?php echo $characteristic['characteristic_name'] ?>
+                        </li>
+                      <?php endforeach;?>
+                    </ul>
+                  <?php endif; ?>
+                </div>
+              <?php endif; ?>
+            <?php endforeach;?>
+          </div>
+        <?php else: ?>
+          <?php $compare_block = get_field('compare_block') ?>
+
+          <div class="cooperation-compare-tabs cooperation-options-section__compare-tabs" data-tabs-container>
+            <div class="cooperation-compare-tabs__header">
+              <div class="cooperation-compare-tabs__label">
+                <?php echo $compare_block['label'] ?>
+              </div>
+
+              <h3 class="cooperation-compare-tabs__title">
+                <?php echo $compare_block['title'] ?>
+              </h3>
+
+              <div class="cooperation-compare-tabs__list">
+                <?php foreach ($cooperation_options as $key => $cooperation_option): ?>
+                  <button class="cooperation-compare-tabs__btn<?php echo !$key ? ' active' : '' ?>" data-tab-id="tab-<?php echo $key ?>">
+                    <?php echo $cooperation_option['label'] ?>
+                  </button>
+                <?php endforeach;?>
+              </div>
+            </div>
+
+            <div class="cooperation-compare-tabs__panels">
+              <?php foreach ($cooperation_options as $key => $cooperation_option): ?>
+                <div class="cooperation-compare-tabs__panel<?php echo !$key ? ' show' : '' ?>" data-panel-id="tab-<?php echo $key ?>">
+                  <div class="cooperation-options-block">
+                    <div class="cooperation-options-block__wrapper">
+                      <div class="cooperation-options-block__header">
+                        <?php if ($cooperation_option['title']): ?>
+                          <h3 class="cooperation-options-block__title grad-text">
+                            <?php echo $cooperation_option['title'] ?>
+                          </h3>
+                        <?php endif; ?>
+
+                        <?php if ($cooperation_option['description']): ?>
+                          <div class="cooperation-options-block__description">
+                            <?php echo $cooperation_option['description'] ?>
+                          </div>
+                        <?php endif; ?>
+                      </div>
+
+                      <?php if ($cooperation_option['characteristics']): ?>
+                        <ul class="cooperation-options-block__characteristics-list">
+                          <?php for ($i = 0; $i < count($cooperation_option['characteristics']); $i++): ?>
+                            <li class="cooperation-options-block__characteristics-item">
+                              <span class="cooperation-options-block__characteristics-name">
+                                <?php echo $compare_block['characteristics'][$i]['characteristic_name'] ?>
+                              </span>
+                              
+                              <span class="cooperation-options-block__characteristics-value">
+                                <?php echo $cooperation_option['characteristics'][$i]['characteristic_name'] ?>
+                              </span>
+                            </li>
+                          <?php endfor;?>
+                        </ul>
+                      <?php endif; ?>
+                    </div>
+
+                    <div class="buttons-list cooperation-options-block__buttons-list">
+                      <a href="#contact-form-popup" class="<?php echo !$key ? ' btn-darkgreen' : ' btn-mintgreen' ?> btn-white--padding-10" data-fancybox>
+                        <span class="ico ico--arrow-right2"></span>
+                      </a>
+                      <a href="<?php echo $cooperation_option['button']['url'] ?>" class="<?php echo !$key ? ' btn-darkgreen' : ' btn-mintgreen' ?>" data-fancybox>
+                        <?php echo $cooperation_option['button']['text'] ?>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              <?php endforeach;?>
+            </div>
+          </div>
+        <?php endif; ?>
       <?php endif; ?>
       
       <?php if ($conditions_block): ?>

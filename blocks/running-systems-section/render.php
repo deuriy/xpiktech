@@ -52,7 +52,7 @@ if (! empty($block['className'])) {
           <div class="swiper-wrapper running-systems-slider__slides">
             <?php foreach ($systems_slides as $systems_slide): ?>
               <div class="swiper-slide running-systems-slider__slide">
-                <div class="running-systems-block">
+                <a href="<?php echo $systems_slide['url'] ?>" class="running-systems-block">
                   <div class="running-systems-block__text-wrapper">
                     <?php if ($systems_slide['title']): ?>
                       <h3 class="running-systems-block__title grad-text">
@@ -82,7 +82,7 @@ if (! empty($block['className'])) {
                       <?php echo wp_get_attachment_image($systems_slide['image'], 'full', false, ['class' => 'running-systems-block__img']) ?>
                     </div>
                   <?php endif; ?>
-                </div>
+                </a>
               </div>
             <?php endforeach;?>
           </div>

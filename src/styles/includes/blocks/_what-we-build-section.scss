@@ -117,5 +117,31 @@
         justify-items: center;
       }
     }
+
+    .what-we-build-section__buttons-list {
+      @media (max-width: 767px) {
+        justify-content: center;
+        margin-top: 35px;
+      }
+    }
+
+    .what-we-build-section__item {
+      @media (max-width: 767px) {
+        &:nth-child(n+5) {
+          display: none;
+        }
+      }
+    }
+
+
+    &.what-we-build-section--expanded {
+      .what-we-build-section__item {
+        @media (max-width: 767px) {
+          &:nth-child(n+5) {
+            display: grid;
+          }
+        }
+      }
+    }
   }
 }

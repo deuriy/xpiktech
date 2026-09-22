@@ -65,6 +65,15 @@ if (! empty($block['className'])) {
           <?php endforeach;?>
         </ul>
       <?php endif; ?>
+      
+      <?php if (wp_is_mobile()): ?>
+        <div class="buttons-list what-we-build-section__buttons-list">
+          <button class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 what-we-build-section__more-btn">
+            <span class="ico ico--arrow-right2"></span>
+          </button>
+          <button class="btn-darkgreen btn-darkgreen--radius-16 what-we-build-section__more-btn">View More</button>
+        </div>
+      <?php endif ?>
     </div>
   </div>
 </section>

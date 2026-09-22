@@ -231,6 +231,10 @@
     }
 
     &::after {
+      // opacity: 0;
+      // visibility: hidden;
+      // background-position: right bottom;
+      // background-size: cover;
       display: none;
     }
 
@@ -280,6 +284,13 @@
         line-height: 1.625;
       }
     }
+
+    // &:hover {
+    //   &::after {
+    //     opacity: 1;
+    //     visibility: visible;
+    //   }
+    // }
   }
 
   // &--animation-paused {

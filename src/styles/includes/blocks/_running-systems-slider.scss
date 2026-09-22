@@ -1,5 +1,9 @@
 .running-systems-slider {
   border-radius: 20px;
+  
+  &__slide {
+    border-radius: inherit;
+  }
 
   &__pagination {
     position: static;

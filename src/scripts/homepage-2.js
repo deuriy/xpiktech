@@ -267,9 +267,30 @@ const initTimeline = () => {
   updateTimeline();
 };
 
+const initWhatWeBuild = () => {
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('.what-we-build-section__more-btn');
+
+    if (!button) {
+      return;
+    }
+
+    const section = button.closest('.what-we-build-section');
+    const buttonsList = button.closest('.what-we-build-section__buttons-list');
+
+    if (!section || !buttonsList) {
+      return;
+    }
+
+    section.classList.add('what-we-build-section--expanded');
+    buttonsList.classList.add('hidden');
+  });
+};
+
 document.addEventListener('DOMContentLoaded', function () {
   initFancybox();
   initSwipers();
   initTabs();
   initTimeline();
+  initWhatWeBuild();
 });
