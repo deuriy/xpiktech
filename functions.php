@@ -249,6 +249,7 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/running-systems-section');
 	register_block_type(get_template_directory() . '/blocks/cooperation-options-section');
 	register_block_type(get_template_directory() . '/blocks/contact-form-section');
+	register_block_type(get_template_directory() . '/blocks/service-blocks-section');
 }
 add_action('init', 'xpiktech_register_blocks');
 

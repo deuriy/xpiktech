@@ -74,7 +74,7 @@ $class_name .= ' section--timeline-' . esc_attr($block_style);
                     <div class="timeline-card__content">
                       <?php if ($block_style === 'style2'): ?>
                         <h3 class="timeline-card__number">
-                          <?php echo str_pad($index + 1, 2, "0", STR_PAD_LEFT) ?>
+                          <?php echo str_pad($index, 2, "0", STR_PAD_LEFT) ?>
                         </h3>
                       <?php endif ?>
 

@@ -87,8 +87,18 @@ const initTabs = () => {
 
     event.preventDefault();
 
+    const rectBefore = tab.getBoundingClientRect().top;
+
     setActiveTab(tabs, tab);
     setActiveTabPanel(tabs, tab.dataset.tabId);
+
+    requestAnimationFrame(() => {
+      const rectAfter = tab.getBoundingClientRect().top;
+      const diff = rectAfter - rectBefore;
+      if (diff !== 0) {
+        window.scrollBy(0, diff);
+      }
+    });
   });
 };
 

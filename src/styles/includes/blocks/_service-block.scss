@@ -160,7 +160,8 @@
     }
   }
 
-  &--style-2 {
+  &--style-2,
+  &--style-3 {
     min-height: 186px;
     gap: 4px;
     padding: 10px 22px;
@@ -191,6 +192,17 @@
       @media (max-width: 767px) {
         height: 77px;
       }
+    }
+  }
+
+  &--style-3 {
+    gap: 22px;
+    padding: 23px 13px;
+
+    .service-block__img {
+      max-width: 81px;
+      max-height: 75px;
+      height: auto;
     }
   }
 

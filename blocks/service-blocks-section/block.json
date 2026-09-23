@@ -1,0 +1,20 @@
+{
+  "name": "acf/service-blocks-section",
+  "title": "Service Blocks Section",
+  "description": "Service Blocks Section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "service",
+    "blocks",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}
