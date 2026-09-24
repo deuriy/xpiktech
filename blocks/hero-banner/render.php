@@ -27,7 +27,7 @@ if (! empty($block['className'])) {
     <div class="hero-banner hero-banner-section__banner">
       <?php if ($title || $text): ?>
         <div class="hero-banner__text-wrapper">
-          <nav class="breadcrumbs hero-banner__breadcrumbs hidden-xs" aria-label="breadcrumb">
+          <nav class="breadcrumbs hero-banner__breadcrumbs" aria-label="breadcrumb">
             <ul class="breadcrumbs__list">
               <li class="breadcrumbs__item">
                 <a href="#" class="breadcrumbs__link">Home</a>

@@ -9,14 +9,15 @@ const initFancybox = () => {
 };
 
 const initSwipers = () => {
-  new Swiper('.company-review-slider', {
-    modules: [Navigation],
+  new Swiper('.models-slider', {
+    modules: [Pagination],
     slidesPerView: 1,
     spaceBetween: 24,
     loop: true,
 
-    navigation: {
-      nextEl: '.company-review-slider-block__next-btn'
+    pagination: {
+      el: '.models-slider__pagination',
+      type: 'bullets',
     },
 
     breakpoints: {
@@ -26,32 +27,15 @@ const initSwipers = () => {
     }
   });
 
-  new Swiper('.technology-slider', {
+  new Swiper('.cooperation-options-slider', {
     modules: [Pagination],
     slidesPerView: 1,
     spaceBetween: 24,
     loop: true,
 
     pagination: {
-      el: '.technology-slider__pagination',
+      el: '.cooperation-options-slider__pagination',
       type: 'bullets',
-    },
-  });
-  
-  new Swiper('.running-systems-slider', {
-    modules: [Pagination, Navigation],
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 24,
-
-    pagination: {
-      el: '.running-systems-slider__pagination',
-      type: 'bullets',
-    },
-
-    navigation: {
-      nextEl: '.running-systems-section__next-btn',
-      prevEl: '.running-systems-section__prev-btn',
     },
   });
 };
@@ -59,7 +43,4 @@ const initSwipers = () => {
 document.addEventListener('DOMContentLoaded', function () {
   initFancybox();
   initSwipers();
-  // initTabs();
-  // initTimeline();
-  // initWhatWeBuild();
 });

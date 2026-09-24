@@ -81,6 +81,10 @@
   &--green-gradient-style {
     padding: 67px 0;
     background: #fff;
+
+    @media (max-width: 1199px) {
+      padding: 53px 0;
+    }
     
     .accordion-section__container {
       display: grid;
@@ -90,19 +94,80 @@
       gap: 32px;
       padding: 72px 72px 87px;
       background: url("images/how_we_work_bg@2x.webp") -40px -67px / calc(100% + 80px) calc(100% + 134px) no-repeat;
+
+      @media (max-width: 1199px) {
+        padding: 56px 50px 66px;
+      }
+
+      @media (max-width: 1023px) {
+        gap: 28px;
+        padding: 42px 32px;
+      }
+
+      @media (max-width: 767px) {
+        grid-template-columns: 100%;
+        padding: 42px 16px 45px;
+      }
     }
 
     .accordion-section__text-wrapper {
       max-width: 413px;
+
+      @media (max-width: 767px) {
+        max-width: 100%;
+        padding: 0 13px;
+      }
+    }
+
+    .accordion-section__title-wrapper {
+      @media (max-width: 767px) {
+        text-align: left;
+      }
     }
 
     .accordion-section__title {
       margin-bottom: 16px;
       text-align: left;
+
+      @media (max-width: 767px) {
+        margin-bottom: 10px;
+        line-height: 1.3846;
+      }
+    }
+
+    .accordion-section__description {
+      @media (max-width: 1199px) {
+        font-size: 17px;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 16px;
+        line-height: 1.625;
+      }
     }
 
     .accordion-section__items {
       max-width: 592px;
+
+      @media (max-width: 1199px) {
+        max-width: 520px;
+      }
+
+      @media (max-width: 1023px) {
+        max-width: 420px;
+      }
+
+      @media (max-width: 767px) {
+        max-width: 100%;
+      }
+    }
+
+    .accordion-section__item {
+      @media (max-width: 767px) {
+        & + .accordion-section__item {
+          margin-top: 10px;
+        }
+      }
     }
   }
 }

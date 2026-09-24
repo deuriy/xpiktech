@@ -1,0 +1,11 @@
+.models-slider {
+  &__block {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__pagination {
+    position: static;
+    margin-top: 20px;
+  }
+}

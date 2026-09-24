@@ -39,5 +39,19 @@
 
   &--style-3 {
     grid-template-columns: repeat(6, 1fr);
+
+    @media (max-width: 1199px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      padding: 15px 0 0;
+
+      .service-blocks__item:nth-child(1) {
+        grid-column: auto;
+      }
+    }
   }
 }

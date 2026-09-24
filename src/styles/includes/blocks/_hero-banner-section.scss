@@ -27,5 +27,9 @@
   &__buttons {
     z-index: 1;
     align-self: end;
+
+    @media (max-width: 767px) {
+      grid-template-columns: 56px 1fr;
+    }
   }
 }

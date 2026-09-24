@@ -1,3 +1,7 @@
 .service-blocks-section {
   padding-bottom: 41px;
+
+  @media (max-width: 767px) {
+    padding-bottom: 50px;
+  }
 }
