@@ -1,0 +1,57 @@
+.ai-compatibility-block {
+  padding: 25px 48px 18px 45px;
+  border-radius: 15px;
+  color: #fff;
+
+  &__header {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 1.625;
+    text-transform: uppercase;
+  }
+
+  &__code-example {
+    font-size: 14px;
+    line-height: 1.85714286;
+  }
+
+  &__example-label {
+    padding: 4px 17px;
+    border-radius: 5px;
+    background: #fff;
+    color: #005E59;
+    font-size: 14px;
+    line-height: 1.85714286;
+  }
+
+  &--white-style {
+    background: #fff;
+
+    .ai-compatibility-block__header {
+      border-bottom-color: rgba(0, 94, 89, 0.15);
+    }
+
+    .ai-compatibility-block__title {
+      color: #005E59;
+    }
+
+    .ai-compatibility-block__code-example {
+      color: #696969;
+    }
+
+    .ai-compatibility-block__example-label {
+      background: #84C7A7;
+      color: #fff;
+    }
+  }
+}

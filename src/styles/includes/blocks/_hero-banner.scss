@@ -3,12 +3,14 @@
   // grid-template-areas: "wrapper";
   grid-template-columns: 1fr 1fr;
   align-items: end;
+  min-height: 472px;
   padding: 0 32px 0 40px;
   border-radius: 20px;
   // background: #005E59;
   background: linear-gradient(90deg, #011E20 -0.1%, #014245 99.9%);
   color: #fff;
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 1362 425'%3E%3Cpath fill='%23005e59' d='M0 338.5V20C0 8.954 8.954 0 20 0h1322c11.05 0 20 8.954 20 20v385c0 11.046-8.95 20-20 20H380.5c-11.046 0-20-8.954-20-20v-26.5c0-11.046-8.954-20-20-20H20c-11.046 0-20-8.954-20-20'/%3E%3C/svg%3E");
+  // mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 1362 425'%3E%3Cpath fill='%23005e59' d='M0 338.5V20C0 8.954 8.954 0 20 0h1322c11.05 0 20 8.954 20 20v385c0 11.046-8.95 20-20 20H380.5c-11.046 0-20-8.954-20-20v-26.5c0-11.046-8.954-20-20-20H20c-11.046 0-20-8.954-20-20'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1362 472' fill='none'%3E%3Cpath fill='url(%23a)' d='M0 20C0 8.954 8.954 0 20 0h1322c11.05 0 20 8.954 20 20v432c0 11.046-8.95 20-20 20H381.343c-10.786 0-19.629-8.552-19.989-19.332l-1.048-31.336c-.36-10.78-9.203-19.332-19.988-19.332H20c-11.046 0-20-8.954-20-20z'/%3E%3Cdefs%3E%3ClinearGradient id='a' x1='-1.34' x2='1360.66' y1='254.718' y2='254.718' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23011e20'/%3E%3Cstop offset='1' stop-color='%23014245'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
   mask-repeat: no-repeat;
   mask-size: cover;
   // mask-size: auto 100%;
@@ -32,10 +34,11 @@
 
   &__text-wrapper {
     max-width: 660px;
-    min-height: 425px;
+    // min-height: 425px;
+    min-height: 100%;
     z-index: 1;
-    // padding: 30px 40px 37px;
     padding: 30px 0 37px;
+    // padding: 0 0 37px;
 
     @media (max-width: 1199px) {
       max-width: 520px;
@@ -91,7 +94,8 @@
   }
 
   &__text {
-    max-width: 549px;
+    // max-width: 549px;
+    max-width: 514px;
     font-size: 18px;
     line-height: 1.44;
     text-shadow: var(--text-shadow);
@@ -104,8 +108,12 @@
   }
 
   &__img-wrapper {
+    max-height: 100%;
     margin-top: -48px;
-    margin-left: -171px;
+    // margin-left: -171px;
+    // margin-left: -101px; // Temp!
+    margin-left: -83px;
+    margin-right: -23px;
 
     @media (max-width: 991px) {
       // margin-left: -90px;

@@ -159,9 +159,11 @@ function xpiktech_scripts()
 	} elseif (is_page('about-us')) {
 		wp_enqueue_script('page', get_template_directory_uri() . '/js/about.js');
 	} elseif (is_page('why-xpiktech')) {
-		wp_enqueue_script('page', get_template_directory_uri() . '/js/why-xpiktech.js');
+		wp_enqueue_script('why-xpiktech', get_template_directory_uri() . '/js/why-xpiktech.js');
 	} elseif (is_page('homepage-2')) {
-		wp_enqueue_script('page', get_template_directory_uri() . '/js/homepage-2.js');
+		wp_enqueue_script('homepage-2', get_template_directory_uri() . '/js/homepage-2.js');
+	} elseif (is_page('zdr')) {
+		wp_enqueue_script('zdr', get_template_directory_uri() . '/js/zdr.js');
 	}
 }
 add_action('wp_enqueue_scripts', 'xpiktech_scripts');
@@ -250,6 +252,10 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/cooperation-options-section');
 	register_block_type(get_template_directory() . '/blocks/contact-form-section');
 	register_block_type(get_template_directory() . '/blocks/service-blocks-section');
+	register_block_type(get_template_directory() . '/blocks/our-api-section');
+	register_block_type(get_template_directory() . '/blocks/migration-section');
+	register_block_type(get_template_directory() . '/blocks/models-section');
+	register_block_type(get_template_directory() . '/blocks/deployment-section');
 }
 add_action('init', 'xpiktech_register_blocks');
 

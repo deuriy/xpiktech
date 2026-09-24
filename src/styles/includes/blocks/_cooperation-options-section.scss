@@ -96,4 +96,104 @@
     margin-right: auto;
     margin-left: auto;
   }
+
+  &__recommend-block {
+    align-self: center;
+    text-align: center;
+    margin-bottom: 66px;
+  }
+
+  &__recommend-block-icon-wrapper {
+    position: relative;
+    
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #005E59;
+    }
+
+    &::before {
+      top: -4px;
+      left: -4px;
+    }
+
+    &::after {
+      bottom: 4px;
+      right: -4px;
+    }
+  }
+
+  &__recommend-block-icon {
+    height: auto;
+    vertical-align: middle;
+  }
+
+  &__recommend-block-title {
+    padding: 0 38px;
+    font-size: 18px;
+    line-height: normal;
+  }
+
+  &--model-comparison-style {
+    padding: 67px 0 72px;
+    background: #fff;
+
+    .cooperation-options-section__container {
+      padding: 98px 40px 80px 40px;
+      border-radius: 32px;
+      background: url("images/how_we_work_bg@2x.webp") -40px -90px / calc(100% + 80px) calc(100% + 180px) no-repeat;
+    }
+
+    .cooperation-options-section__header {
+      grid-template-columns: 100%;
+      gap: 9px;
+      margin-bottom: 25px;
+    }
+
+    .cooperation-options-section__title-wrapper {
+      max-width: 670px;
+      margin: 0 auto;
+    }
+
+    .cooperation-options-section__description {
+      max-width: 515px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cooperation-options-section__items {
+      grid-template-columns: 1fr 286px 1fr;
+      // align-items: center;
+      gap: 0;
+    }
+  }
+
+  &--ways-to-run-style {
+    padding: 40px 0 72px;
+
+    .cooperation-options-section__header {
+      grid-template-columns: 100%;
+      gap: 13px;
+      margin-bottom: 44px;
+    }
+
+    .cooperation-options-section__title-wrapper {
+      max-width: 670px;
+      margin: 0 auto;
+    }
+
+    .cooperation-options-section__description {
+      max-width: 515px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cooperation-options-section__items {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }

@@ -6,6 +6,7 @@
  * @param array $block The block settings and attributes.
  */
 
+$block_style = get_field('block_style') ?? 'default';
 $title = get_field('title');
 $description = get_field('description');
 $cooperation_options = get_field('cooperation_options');
@@ -20,6 +21,9 @@ $class_name = 'cooperation-options-section';
 if (! empty($block['className'])) {
   $class_name .= ' ' . $block['className'];
 }
+
+$block_style = str_replace('_', '-', $block_style);
+$class_name .= ' cooperation-options-section--' . esc_attr($block_style) . '-style';
 ?>
 
 <section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
@@ -45,7 +49,7 @@ if (! empty($block['className'])) {
         <?php if (!wp_is_mobile()): ?>
           <div class="cooperation-options-section__items">
             <?php foreach ($cooperation_options as $key => $cooperation_option): ?>
-              <div class="cooperation-options-block">
+              <div class="cooperation-options-block cooperation-options-block--<?php echo esc_attr($block_style) . '-style' ?>">
                 <div class="cooperation-options-block__wrapper">
                   <div class="cooperation-options-block__header">
                     <?php if ($cooperation_option['label']): ?>
@@ -54,69 +58,120 @@ if (! empty($block['className'])) {
                       </div>
                     <?php endif; ?>
 
-                    <?php if ($cooperation_option['title']): ?>
-                      <h3 class="cooperation-options-block__title grad-text">
-                        <?php echo $cooperation_option['title'] ?>
-                      </h3>
-                    <?php endif; ?>
+                    <div class="cooperation-options-block__main-info">
+                      <?php if ($cooperation_option['title']): ?>
+                        <h3 class="cooperation-options-block__title<?php echo $block_style !== 'ways-to-run' ? ' grad-text' : '' ?>">
+                          <?php echo $cooperation_option['title'] ?>
+                        </h3>
+                      <?php endif; ?>
 
-                    <?php if ($cooperation_option['description']): ?>
-                      <div class="cooperation-options-block__description">
-                        <?php echo $cooperation_option['description'] ?>
-                      </div>
-                    <?php endif; ?>
-                  </div>
+                      <?php if ($block_style === 'ways-to-run' && $cooperation_option['price_from']): ?>
+                        <div class="cooperation-options-block__price-from">
+                          <span class="cooperation-options-block__price-from-prefix">From</span>
 
-                  <?php if ($cooperation_option['characteristics']): ?>
-                    <ul class="cooperation-options-block__characteristics-list">
-                      <?php foreach ($cooperation_option['characteristics'] as $characteristic): ?>
-                        <li class="cooperation-options-block__characteristics-item">
-                          <?php echo $characteristic['characteristic_name'] ?>
-                        </li>
-                      <?php endforeach;?>
-                    </ul>
-                  <?php endif; ?>
-                </div>
+                          <span class="cooperation-options-block__price-from-value grad-text">
+                            <?php echo $cooperation_option['price_from'] ?>
+                          </span>
 
-                <div class="buttons-list cooperation-options-block__buttons-list">
-                  <a href="#contact-form-popup" class="<?php echo !$key ? ' btn-darkgreen' : ' btn-mintgreen' ?> btn-white--padding-10" data-fancybox>
-                    <span class="ico ico--arrow-right2"></span>
-                  </a>
-                  <a href="<?php echo $cooperation_option['button']['url'] ?>" class="<?php echo !$key ? ' btn-darkgreen' : ' btn-mintgreen' ?>" data-fancybox>
-                    <?php echo $cooperation_option['button']['text'] ?>
-                  </a>
-                </div>
-              </div>
-
-              <?php if (!$key): ?>
-                <?php $compare_block = get_field('compare_block') ?>
-                <div class="cooperation-compare-block">
-                  <?php if ($compare_block['label'] || $compare_block['title']): ?>
-                    <div class="cooperation-compare-block__header">
-                      <?php if ($compare_block['label']): ?>
-                        <div class="cooperation-compare-block__label">
-                          <?php echo $compare_block['label'] ?>
+                          <?php if ($cooperation_option['price_from_suffix']): ?>
+                            <span class="cooperation-options-block__price-from-suffix">
+                              <?php echo $cooperation_option['price_from_suffix'] ?>
+                            </span>
+                          <?php endif; ?>
                         </div>
                       <?php endif; ?>
 
-                      <?php if ($compare_block['title']): ?>
-                        <h3 class="cooperation-compare-block__title">
-                          <?php echo $compare_block['title'] ?>
-                        </h3>
+                      <?php if ($cooperation_option['description']): ?>
+                        <div class="cooperation-options-block__description">
+                          <?php echo $cooperation_option['description'] ?>
+                        </div>
+                      <?php endif; ?>
+
+                      <?php if ($block_style === 'model-comparison' && $cooperation_option['icon']): ?>
+                        <?php echo wp_get_attachment_image($cooperation_option['icon'], 'full', false, ['class' => 'cooperation-options-block__icon']) ?>
+                      <?php endif; ?>
+                    </div>
+                  </div>
+                  
+                  <?php if (($block_style === 'ways-to-run' && $cooperation_option['icon']) || $cooperation_option['characteristics']): ?>
+                    <div class="cooperation-options-block__characteristics-wrapper">
+                      <?php if ($block_style === 'ways-to-run' && $cooperation_option['icon']): ?>
+                        <div class="cooperation-options-block__icon-wrapper">
+                          <?php echo wp_get_attachment_image($cooperation_option['icon'], 'full', false, ['class' => 'cooperation-options-block__icon']) ?>
+                        </div>
+                      <?php endif; ?>
+
+                      <?php if ($cooperation_option['characteristics']): ?>
+                        <ul class="cooperation-options-block__characteristics-list">
+                          <?php foreach ($cooperation_option['characteristics'] as $characteristic): ?>
+                            <li class="cooperation-options-block__characteristics-item">
+                              <?php echo $characteristic['characteristic_name'] ?>
+                            </li>
+                          <?php endforeach;?>
+                        </ul>
                       <?php endif; ?>
                     </div>
                   <?php endif; ?>
-
-                  <?php if ($compare_block['characteristics']): ?>
-                    <ul class="cooperation-compare-block__characteristics-list">
-                      <?php foreach ($compare_block['characteristics'] as $characteristic): ?>
-                        <li class="cooperation-compare-block__characteristics-item">
-                          <?php echo $characteristic['characteristic_name'] ?>
-                        </li>
-                      <?php endforeach;?>
-                    </ul>
-                  <?php endif; ?>
                 </div>
+                
+                <?php if ($block_style === 'default' || $block_style === 'ways-to-run'): ?>
+                  <div class="buttons-list cooperation-options-block__buttons-list">
+                    <a href="#contact-form-popup" class="<?php echo !$key || $block_style === 'ways-to-run' ? ' btn-darkgreen' : ' btn-mintgreen' ?> btn-white--padding-10" data-fancybox>
+                      <span class="ico ico--arrow-right2"></span>
+                    </a>
+                    <a href="<?php echo $cooperation_option['button']['url'] ?>" class="<?php echo !$key || $block_style === 'ways-to-run' ? ' btn-darkgreen' : ' btn-mintgreen' ?>" data-fancybox>
+                      <?php echo $cooperation_option['button']['text'] ?>
+                    </a>
+                  </div>
+                <?php endif; ?>
+              </div>
+
+              <?php if (!$key): ?>
+                <?php if ($block_style === 'default'): ?>
+                  <?php $compare_block = get_field('compare_block') ?>
+                  <div class="cooperation-compare-block">
+                    <?php if ($compare_block['label'] || $compare_block['title']): ?>
+                      <div class="cooperation-compare-block__header">
+                        <?php if ($compare_block['label']): ?>
+                          <div class="cooperation-compare-block__label">
+                            <?php echo $compare_block['label'] ?>
+                          </div>
+                        <?php endif; ?>
+
+                        <?php if ($compare_block['title']): ?>
+                          <h3 class="cooperation-compare-block__title">
+                            <?php echo $compare_block['title'] ?>
+                          </h3>
+                        <?php endif; ?>
+                      </div>
+                    <?php endif; ?>
+
+                    <?php if ($compare_block['characteristics']): ?>
+                      <ul class="cooperation-compare-block__characteristics-list">
+                        <?php foreach ($compare_block['characteristics'] as $characteristic): ?>
+                          <li class="cooperation-compare-block__characteristics-item">
+                            <?php echo $characteristic['characteristic_name'] ?>
+                          </li>
+                        <?php endforeach;?>
+                      </ul>
+                    <?php endif; ?>
+                  </div>
+                <?php elseif ($block_style === 'model-comparison'): ?>
+                  <?php $recommend_block = get_field('recommend_block') ?>
+                  <div class="cooperation-options-section__recommend-block">
+                    <?php if ($recommend_block['icon']): ?>
+                      <div class="cooperation-options-section__recommend-block-icon-wrapper">
+                        <?php echo wp_get_attachment_image($recommend_block['icon'], 'full', false, ['class' => 'cooperation-options-section__recommend-block-icon']) ?>
+                      </div>
+                    <?php endif; ?>
+
+                    <?php if ($recommend_block['title']): ?>
+                      <div class="cooperation-options-section__recommend-block-title grad-text">
+                        <?php echo $recommend_block['title'] ?>
+                      </div>
+                    <?php endif; ?>
+                  </div>
+                <?php endif; ?>
               <?php endif; ?>
             <?php endforeach;?>
           </div>

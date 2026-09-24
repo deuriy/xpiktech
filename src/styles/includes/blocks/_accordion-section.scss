@@ -40,6 +40,12 @@
     }
   }
 
+  &__description {
+    font-size: 18px;
+    line-height: 1.44;
+    color: #696969;
+  }
+
   &__items {
     width: 1047px;
     max-width: 100%;
@@ -69,6 +75,34 @@
         padding: 0 40px;
         background: transparent;
       }
+    }
+  }
+
+  &--green-gradient-style {
+    padding: 67px 0;
+    background: #fff;
+    
+    .accordion-section__container {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      padding: 72px 72px 87px;
+      background: url("images/how_we_work_bg@2x.webp") -40px -67px / calc(100% + 80px) calc(100% + 134px) no-repeat;
+    }
+
+    .accordion-section__text-wrapper {
+      max-width: 413px;
+    }
+
+    .accordion-section__title {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .accordion-section__items {
+      max-width: 592px;
     }
   }
 }

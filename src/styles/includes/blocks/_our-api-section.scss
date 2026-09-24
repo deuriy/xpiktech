@@ -1,0 +1,88 @@
+.our-api-section {
+  padding: 92px 0 65px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 532 688' fill='none'%3E%3Cpath fill='%23fff' fill-opacity='.1' d='m306.9 231.287.793-1.362 73.662 115.429-.681 1.097L600.026 688H441.659l-148.53-231.31L158.366 688H2.951l216.403-346.472L0 .963h158.366zM591.562 0c11.046 0 20 8.954 20 20v130.506c0 11.046-8.954 20-20 20H461.168c-11.046 0-20-8.954-20-20V20c0-11.046 8.954-20 20-20z'/%3E%3C/svg%3E") right top no-repeat, linear-gradient(0deg, #005E59 0%, #209E6D 140.41%);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+  color: #fff;
+
+  &__text-wrapper {
+    max-width: 640px;
+    margin: 0 auto 23px;
+  }
+
+  &__title {
+    margin-bottom: 21px;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 1.44;
+    text-align: center;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    max-width: 1282px;
+    margin-right: auto;
+    margin-left: auto;
+    // padding: 23px 64px 48px 48px;
+    padding: 23px 30px 48px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.44);
+    border-bottom: none;
+    background: rgba(255, 255, 255, 0.32);
+    border-radius: 20px;
+  }
+
+  &__item {
+    position: relative;
+    padding: 0 30px;
+    text-align: center;
+    
+    &:not(:first-child)::before {
+      content: '';
+      position: absolute;
+      top: 22px;
+      bottom: -12px;
+      left: -20px;
+      width: 1px;
+      background: rgba(255, 255, 255, .2);
+    }
+  }
+
+  &__item-icon {
+    width: auto;
+    max-height: 116px;
+    vertical-align: middle;
+  }
+
+  &__item-title {
+    margin-bottom: 18px;
+    font-size: 24px;
+  }
+
+  &__item-text {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &__item-note {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    gap: 10px;
+    color: #B7E7C3;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    &::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      background: #B7E7C3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath stroke='%2354968f' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2.25 5.57 3 2.68 4.5-4.5'/%3E%3C/svg%3E") center / 12px auto no-repeat;
+    }
+  }
+}

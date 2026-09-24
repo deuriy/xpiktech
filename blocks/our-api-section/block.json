@@ -1,0 +1,20 @@
+{
+  "name": "acf/our-api-section",
+  "title": "Our API Section",
+  "description": "Our API Section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "our",
+    "api",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

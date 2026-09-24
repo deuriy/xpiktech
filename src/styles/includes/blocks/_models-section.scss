@@ -1,0 +1,30 @@
+.models-section {
+  padding: 60px 0 86px;
+
+  &__text-wrapper {
+    width: 584px;
+    max-width: 100%;
+    margin: 0 auto 48px;
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 19px;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 1.44;
+    color: #696969;
+  }
+
+  &__items {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "acf/migration-section",
+  "title": "Migration section",
+  "description": "Migration section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "migration",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

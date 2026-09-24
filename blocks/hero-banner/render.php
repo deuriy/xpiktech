@@ -33,7 +33,9 @@ if (! empty($block['className'])) {
                 <a href="#" class="breadcrumbs__link">Home</a>
               </li>
               <li class="breadcrumbs__item">
-                <span class="breadcrumbs__text">Why XPikTech</span>
+                <span class="breadcrumbs__text">
+                  <?php the_title() ?>
+                </span>
               </li>
             </ul>
           </nav>
