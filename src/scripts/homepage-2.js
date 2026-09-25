@@ -297,10 +297,50 @@ const initWhatWeBuild = () => {
   });
 };
 
+const initSuccessfulFormMessage = () => {
+  document.addEventListener('wpcf7submit', function (e) {
+    const formWrapper = e.target.closest('.contact-form-section__form-wrapper');
+
+    if (!formWrapper) return;
+
+    const form = formWrapper.querySelector('form');
+    const successfulMessage = formWrapper.querySelector('.contact-form-section__successful-message');
+    
+    if (!form || !successfulMessage) return;
+
+    if (e.detail.status === 'mail_sent') {
+      form.classList.add('hidden');
+      successfulMessage.classList.remove('hidden');
+    }
+  });
+};
+
+const initSuccessfulMessageButtons = () => {
+  document.addEventListener('click', function (e) {
+    const showFormBtn = e.target.closest('.successful-message__show-form-btn');
+
+    if (!showFormBtn) return;
+
+    const message = showFormBtn.closest('.successful-message');
+    const formWrapper = showFormBtn.closest('.contact-form-section__form-wrapper');
+
+    if (!message || !formWrapper) return;
+
+    const form = formWrapper.querySelector('form');
+
+    if (!form) return;
+
+    message.classList.add('hidden');
+    form.classList.remove('hidden');
+  });
+};
+
 document.addEventListener('DOMContentLoaded', function () {
   initFancybox();
   initSwipers();
   initTabs();
   initTimeline();
   initWhatWeBuild();
+  initSuccessfulFormMessage();
+  initSuccessfulMessageButtons();
 });

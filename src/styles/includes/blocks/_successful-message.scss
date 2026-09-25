@@ -1,0 +1,102 @@
+.successful-message {
+  display: grid;
+  grid-template-columns: 100%;
+
+  @media (min-width: 768px) {
+    grid-template-areas: "wrapper";
+  }
+
+  @media (max-width: 767px) {
+    gap: 20px;
+  }
+
+  &__wrapper,
+  &__buttons-list {
+    @media (min-width: 768px) {
+      grid-area: wrapper;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    align-content: start;
+    justify-items: center;
+    min-height: 485px;
+    padding: 45px;
+    background: rgba(0, 174, 67, 0.1);
+    border-radius: 20px;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 590 485' fill='none'%3E%3Cpath fill='%2300ae43' d='M0 20C0 8.954 8.954 0 20 0h550c11.046 0 20 8.954 20 20v445c0 11.046-8.954 20-20 20H383c-11.046 0-20-8.954-20-20v-32c0-11.046-8.954-20-20-20H20c-11.046 0-20-8.954-20-20z'/%3E%3C/svg%3E");
+      mask-repeat: no-repeat;
+      mask-position: left bottom;
+      mask-size: cover;
+    }
+
+    @media (max-width: 767px) {
+      min-height: 0;
+      padding: 32px;
+      border-radius: 15px;
+    }
+  }
+
+  &__icon {
+    max-height: 166px;
+    margin-bottom: 15px;
+
+    @media (max-width: 767px) {
+      max-height: 140px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 24px;
+
+    @media (max-width: 1199px) {
+      font-size: 22px;
+    }
+
+    @media (max-width: 1023px) {
+      font-size: 21px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 20px;
+    }
+  }
+
+  &__text {
+    max-width: 435px;
+    margin-right: auto;
+    margin-left: auto;
+    color: #525252;
+    font-size: 18px;
+    line-height: 1.44;
+
+    @media (max-width: 1199px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 1023px) {
+      font-size: 15px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
+  }
+
+  &__buttons-list {
+    @media (min-width: 768px) {
+      z-index: 1;
+      align-self: end;
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 56px 1fr;
+    }
+  }
+}

@@ -59,6 +59,23 @@ if (! empty($block['className'])) {
       <?php if ($cf7_shortcode): ?>
         <div class="contact-form-section__form-wrapper">
           <?php echo do_shortcode($cf7_shortcode) ?>
+
+          <div class="successful-message contact-form-section__successful-message hidden">
+            <div class="successful-message__wrapper">
+              <img src="<?php echo get_stylesheet_directory_uri() ?>/images/paper_airplane@2x.webp" alt="Message sent successfully" class="successful-message__icon">
+              <h3 class="successful-message__title grad-text">Message sent successfully</h3>
+              <div class="successful-message__text">
+                <p>Thanks! We’ve received your request and will get back to you within one business day.</p>
+              </div>
+            </div>
+
+            <div class="buttons-list successful-message__buttons-list">
+              <button class="btn-dark btn-dark--radius-16 btn-dark--padding-10 successful-message__show-form-btn">
+                <span class="ico ico--arrow-right2"></span>
+              </button>
+              <button class="btn-dark btn-dark--radius-16 successful-message__show-form-btn">Send Another Message</button>
+            </div>
+          </div>
         </div>
       <?php endif; ?>
     </div>
