@@ -1,5 +1,14 @@
 .models-slider {
+  &__slides {
+    align-items: stretch;
+  }
+
+  &__slide {
+    height: auto;
+  }
+
   &__block {
+    height: 100%;
     margin-right: auto;
     margin-left: auto;
   }

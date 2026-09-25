@@ -11,9 +11,9 @@ const initFancybox = () => {
 const initSwipers = () => {
   new Swiper('.models-slider', {
     modules: [Pagination],
-    slidesPerView: 1,
-    spaceBetween: 24,
-    loop: true,
+    slidesPerView: 1.08,
+    spaceBetween: 16,
+    // loop: true,
 
     pagination: {
       el: '.models-slider__pagination',
@@ -21,8 +21,12 @@ const initSwipers = () => {
     },
 
     breakpoints: {
-      768: {
-        direction: 'horizontal'
+      481: {
+        slidesPerView: 1.3,
+      },
+
+      576: {
+        slidesPerView: 1.5,
       }
     }
   });

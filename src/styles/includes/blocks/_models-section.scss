@@ -67,4 +67,13 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
+
+  &__slider {
+    @media (max-width: 767px) {
+      margin-right: -16px;
+      margin-left: -16px;
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+  }
 }

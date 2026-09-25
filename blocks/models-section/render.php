@@ -78,7 +78,7 @@ if (! empty($block['className'])) {
             <?php endforeach;?>
           </ul>
         <?php else: ?>
-          <div class="swiper models-slider">
+          <div class="swiper models-slider models-section__slider">
             <ul class="swiper-wrapper models-slider__slides">
               <?php foreach ($models as $key => $model): ?>
                 <li class="swiper-slide models-slider__slide">
