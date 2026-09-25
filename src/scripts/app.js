@@ -51,8 +51,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.addEventListener('wpcf7submit', function (e) {
     let messageTemplate;
-    const contactFormWrapperInner = e.target.closest('.contact-form-popup').querySelector('.contact-form-popup__form-wrapper-inner');
-    const contactFormMessageWrapper = e.target.closest('.contact-form-popup').querySelector('.contact-form-popup__form-message-wrapper');
+
+    const contactFormPopup = e.target.closest('.contact-form-popup');
+
+    if (!contactFormPopup) return;
+
+    const contactFormWrapperInner = contactFormPopup.querySelector('.contact-form-popup__form-wrapper-inner');
+    const contactFormMessageWrapper = contactFormPopup.querySelector('.contact-form-popup__form-message-wrapper');
 
     if (e.detail.status === 'mail_sent') {
       messageTemplate = document.getElementById('success-form-message');

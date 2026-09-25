@@ -53,6 +53,7 @@ body {
   border-radius: 8px;
   background: #015E59;
   color: #fff;
+  @extend .transition;
 }
 
 .grad-text .green-highlighted,
