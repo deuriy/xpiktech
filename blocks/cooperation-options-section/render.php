@@ -104,7 +104,7 @@ $class_name .= ' cooperation-options-section--' . esc_attr($block_style) . '-sty
                       <?php if ($cooperation_option['characteristics']): ?>
                         <ul class="cooperation-options-block__characteristics-list">
                           <?php foreach ($cooperation_option['characteristics'] as $characteristic): ?>
-                            <li class="cooperation-options-block__characteristics-item">
+                            <li class="cooperation-options-block__characteristics-item cooperation-options-block__characteristics-item--<?php echo $characteristic['icon'] ?>-icon">
                               <?php echo $characteristic['characteristic_name'] ?>
                             </li>
                           <?php endforeach;?>
@@ -158,15 +158,21 @@ $class_name .= ' cooperation-options-section--' . esc_attr($block_style) . '-sty
                   </div>
                 <?php elseif ($block_style === 'model-comparison'): ?>
                   <?php $recommend_block = get_field('recommend_block') ?>
-                  <div class="cooperation-options-section__recommend-block">
-                    <?php if ($recommend_block['icon']): ?>
-                      <div class="cooperation-options-section__recommend-block-icon-wrapper">
-                        <?php echo wp_get_attachment_image($recommend_block['icon'], 'full', false, ['class' => 'cooperation-options-section__recommend-block-icon']) ?>
-                      </div>
-                    <?php endif; ?>
+                  <div class="recommended-model-block cooperation-options-section__recommended-model-block">
+                    <div class="recommended-model-block__icon-block">
+                      <span class="recommended-model-block__dotted-line recommended-model-block__dotted-line--left"></span>
+
+                      <?php if ($recommend_block['icon']): ?>
+                        <div class="recommended-model-block__icon-wrapper">
+                          <?php echo wp_get_attachment_image($recommend_block['icon'], 'full', false, ['class' => 'recommended-model-block__icon']) ?>
+                        </div>
+                      <?php endif; ?>
+
+                      <span class="recommended-model-block__dotted-line recommended-model-block__dotted-line--right"></span>
+                    </div>
 
                     <?php if ($recommend_block['title']): ?>
-                      <div class="cooperation-options-section__recommend-block-title grad-text">
+                      <div class="recommended-model-block__title grad-text">
                         <?php echo $recommend_block['title'] ?>
                       </div>
                     <?php endif; ?>
@@ -299,7 +305,7 @@ $class_name .= ' cooperation-options-section--' . esc_attr($block_style) . '-sty
                         <?php if ($cooperation_option['characteristics']): ?>
                           <ul class="cooperation-options-block__characteristics-list">
                             <?php foreach ($cooperation_option['characteristics'] as $characteristic): ?>
-                              <li class="cooperation-options-block__characteristics-item">
+                              <li class="cooperation-options-block__characteristics-item cooperation-options-block__characteristics-item--<?php echo $characteristic['icon'] ?>-icon">
                                 <?php echo $characteristic['characteristic_name'] ?>
                               </li>
                             <?php endforeach;?>
@@ -342,29 +348,29 @@ $class_name .= ' cooperation-options-section--' . esc_attr($block_style) . '-sty
                     </div>
                   <?php elseif ($block_style === 'model-comparison'): ?>
                     <?php $recommend_block = get_field('recommend_block') ?>
-                    <div class="cooperation-options-section__recommend-block">
-                      <?php if ($recommend_block['icon']): ?>
-                        <div class="cooperation-options-section__recommend-block-icon-wrapper">
-                          <?php echo wp_get_attachment_image($recommend_block['icon'], 'full', false, ['class' => 'cooperation-options-section__recommend-block-icon']) ?>
-                        </div>
-                      <?php endif; ?>
+                    <div class="recommended-model-block cooperation-options-section__recommended-model-block">
+                      <div class="recommended-model-block__icon-block">
+                        <span class="recommended-model-block__dotted-line recommended-model-block__dotted-line--left"></span>
 
-                      <?php if ($recommend_block['title']): ?>
-                        <div class="cooperation-options-section__recommend-block-title grad-text hidden-xs">
-                          <?php echo $recommend_block['title'] ?>
-                        </div>
-                      <?php endif; ?>
+                        <?php if ($recommend_block['icon']): ?>
+                          <div class="recommended-model-block__icon-wrapper">
+                            <?php echo wp_get_attachment_image($recommend_block['icon'], 'full', false, ['class' => 'recommended-model-block__icon']) ?>
+                          </div>
+                        <?php endif; ?>
+
+                        <span class="recommended-model-block__dotted-line recommended-model-block__dotted-line--right"></span>
+                      </div>
                     </div>
                   <?php endif; ?>
                 <?php endif; ?>
               <?php endforeach;?>
             </div>
           <?php else: ?>
-            <div class="swiper cooperation-options-slider">
+            <div class="swiper cooperation-options-slider cooperation-options-section__slider">
               <div class="swiper-wrapper cooperation-options-slider__slides">
                 <?php foreach ($cooperation_options as $key => $cooperation_option): ?>
                   <div class="swiper-slide cooperation-options-slider__slide">
-                    <div class="cooperation-options-block cooperation-options-block--<?php echo esc_attr($block_style) . '-style' ?>">
+                    <div class="cooperation-options-block cooperation-options-block--<?php echo esc_attr($block_style) . '-style' ?> cooperation-options-slider__block">
                       <div class="cooperation-options-block__wrapper">
                         <div class="cooperation-options-block__header">
                           <?php if ($cooperation_option['label']): ?>

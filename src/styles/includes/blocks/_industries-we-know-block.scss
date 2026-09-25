@@ -31,6 +31,8 @@
   }
 
   &__icon-wrapper {
+    display: grid;
+    place-content: center;
     width: 69px;
     height: 69px;
     margin-bottom: 25px;

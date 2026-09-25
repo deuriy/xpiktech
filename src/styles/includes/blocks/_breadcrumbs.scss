@@ -11,15 +11,18 @@
     &:not(:last-child)::after {
       content: '/';
       margin: 0 3px;
+      opacity: 0.3;
     }
   }
 
   &__link {
     color: #fff;
     text-decoration: none;
+    opacity: 0.3;
   }
 
   &__text {
-    font-weight: 600;
+    // font-weight: 600;
+    opacity: 0.7;
   }
 }

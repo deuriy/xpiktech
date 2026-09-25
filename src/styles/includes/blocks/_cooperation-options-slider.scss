@@ -1,4 +1,17 @@
 .cooperation-options-slider {
+  &__slides {
+    align-items: stretch;
+  }
+
+  &__slide {
+    height: auto;
+  }
+
+  &__block {
+    grid-template-rows: 1fr auto;
+    height: 100%;
+  }
+
   &__pagination {
     position: static;
     margin-top: 8px;
