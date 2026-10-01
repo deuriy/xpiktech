@@ -152,6 +152,7 @@
     }
 
     .how-we-work-block__text-wrapper {
+      position: relative;
       display: grid;
       grid-template-columns: 100%;
       // grid-template-rows: auto 1fr;
@@ -162,15 +163,43 @@
       min-height: 316px;
       padding: 69px 30px 35px;
       mask: none;
+      border: none;
       border-radius: 32px;
+      // @extend .transition;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        visibility: hidden;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 411 314' fill='none'%3E%3Cmask id='b' fill='%23fff'%3E%3Cpath d='M379 0c17.673 0 32 14.327 32 32v250c0 17.673-14.327 32-32 32H32c-17.673 0-32-14.327-32-32V32C0 14.327 14.327 0 32 0h119v34c0 11.046 8.954 20 20 20h69c11.046 0 20-8.954 20-20V0z'/%3E%3C/mask%3E%3Cpath fill='%23fff' d='M379 0c17.673 0 32 14.327 32 32v250c0 17.673-14.327 32-32 32H32c-17.673 0-32-14.327-32-32V32C0 14.327 14.327 0 32 0h119v34c0 11.046 8.954 20 20 20h69c11.046 0 20-8.954 20-20V0z'/%3E%3Cpath fill='url(%23a)' d='M411 32h2zm0 250h2zM0 282h-2zM0 32h-2zM151 0h2v-2h-2zm109 0v-2h-2v2zm119 0v2c16.569 0 30 13.432 30 30h4c0-18.778-15.222-34-34-34zm32 32h-2v250h4V32zm0 250h-2c0 16.569-13.431 30-30 30v4c18.778 0 34-15.222 34-34zm-32 32v-2H32v4h347zm-347 0v-2c-16.568 0-30-13.431-30-30h-4c0 18.778 15.222 34 34 34zM0 282h2V32h-4v250zM0 32h2C2 15.432 15.432 2 32 2v-4C13.222-2-2 13.222-2 32zM32 0v2h119v-4H32zm119 0h-2v34h4V0zm0 34h-2c0 12.15 9.85 22 22 22v-4c-9.941 0-18-8.059-18-18zm20 20v2h69v-4h-69zm69 0v2c12.15 0 22-9.85 22-22h-4c0 9.941-8.059 18-18 18zm20-20h2V0h-4v34zm0-34v2h119v-4H260z' mask='url(%23b)'/%3E%3Cdefs%3E%3ClinearGradient id='a' x1='205.5' x2='205.5' y1='0' y2='314' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23abe5b8'/%3E%3Cstop offset='1' stop-color='%2343c8ab'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") center no-repeat;
+        @extend .transition;
+      }
 
       @media (max-width: 1023px) {
         min-height: 240px;
         padding: 45px 30px 30px;
       }
+
+      @media (min-width: 1024px) {
+        &:hover {
+          background-color: transparent;
+
+          .how-we-work-block__title {
+            text-decoration: underline;
+          }
+
+          &::before {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
     }
 
     .how-we-work-block__title {
+      position: relative;
       max-width: 270px;
       font-size: 24px;
 
@@ -184,6 +213,7 @@
     }
 
     .how-we-work-block__text {
+      position: relative;
       line-height: 1.5;
       color: #525252;
 
