@@ -54,4 +54,21 @@
       }
     }
   }
+
+  &--services-page {
+    @media (min-width: 1024px) {
+      gap: 24px;
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 100%;
+      gap: 8px;
+    }
+
+    .service-blocks__item:nth-child(1) {
+      @media (max-width: 767px) {
+        grid-column: auto;
+      }
+    }
+  }
 }

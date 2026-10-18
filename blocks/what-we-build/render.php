@@ -6,6 +6,7 @@
  * @param array $block The block settings and attributes.
  */
 
+$block_style = get_field('block_style');
 $title = get_field('title');
 $description = get_field('description');
 $items = get_field('items');
@@ -19,6 +20,9 @@ $class_name = 'what-we-build-section';
 if (! empty($block['className'])) {
   $class_name .= ' ' . $block['className'];
 }
+
+$block_style = str_replace('_', '-', $block_style);
+$class_name .= ' what-we-build-section--' . esc_attr($block_style) . '-style';
 ?>
 
 <section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
@@ -37,7 +41,7 @@ if (! empty($block['className'])) {
       <?php endif; ?>
       
       <?php if ($items): ?>
-        <?php if (wp_is_mobile()): ?>
+        <?php if (wp_is_mobile() && $block_style !== 'services-page'): ?>
           <div class="swiper what-we-build-swiper">
             <ul class="swiper-wrapper what-we-build-swiper__slides">
               <?php foreach ($items as $key => $item): ?>
@@ -87,8 +91,8 @@ if (! empty($block['className'])) {
             <?php foreach ($items as $key => $item): ?>
               <?php if ($item['block_type'] === 'default_block'): ?>
                 <li class="what-we-build-section__item">
-                  <article class="what-we-build-block">
-                    <?php if ($item['block_url']): ?>
+                  <article class="what-we-build-block<?php echo $block_style !== 'default' ? ' what-we-build-block--' . $block_style : '' ?>">
+                    <?php if ($item['block_url'] && $block_style !== 'services-page'): ?>
                       <a href="<?php echo $item['block_url'] ?>" class="what-we-build-block__link">
                     <?php endif; ?>
 
@@ -97,32 +101,74 @@ if (! empty($block['className'])) {
                         <?php echo wp_get_attachment_image($item['icon'], 'full', false, ['class' => 'what-we-build-block__icon']) ?>
                       </div>
                     <?php endif; ?>
-
-                    <?php if ($item['title']): ?>
-                      <h3 class="what-we-build-block__title">
-                        <?php echo $item['title'] ?>
-                      </h3>
-                    <?php endif; ?>
-
-                    <?php if ($item['text']): ?>
-                      <div class="what-we-build-block__text">
-                        <?php echo $item['text'] ?>
-                      </div>
-                    <?php endif; ?>
                     
-                    <?php if ($item['block_url']): ?>
+                    <div class="what-we-build-block__text-wrapper">
+                      <?php if ($item['title']): ?>
+                        <h3 class="what-we-build-block__title<?php echo $block_style === 'services-page' ? ' grad-text' : '' ?>">
+                          <?php echo $item['title'] ?>
+                        </h3>
+                      <?php endif; ?>
+
+                      <?php if ($item['text']): ?>
+                        <div class="what-we-build-block__text">
+                          <?php echo $item['text'] ?>
+                        </div>
+                      <?php endif; ?>
+
+                      <?php if ($block_style === 'services-page'): ?>
+                        <a href="<?php echo $item['block_url'] ?>" class="arrow-link what-we-build-block__arrow-link">Explore Service</a>
+                      <?php endif; ?>
+                    </div>
+                    
+                    <?php if ($item['block_url'] && $block_style !== 'services-page'): ?>
                       </a>
                     <?php endif; ?>
                   </article>
                 </li>
-              <?php else: ?>
+              <?php elseif ($item['block_type'] === 'button'): ?>
                 <li class="what-we-build-section__item">
                   <a href="<?php echo $item['button']['url'] ?>" class="btn-block">
                     <?php echo $item['button']['text'] ?>
                   </a>
                 </li>
+              <?php elseif ($item['block_type'] === 'block_with_button'): ?>
+                <li class="what-we-build-section__item what-we-build-section__item--cutout-block">
+                  <div class="cutout-block">
+                    <div class="cutout-block__text-wrapper">
+                      <?php if ($item['title']): ?>
+                        <h3 class="cutout-block__title">
+                          <?php echo $item['title'] ?>
+                        </h3>
+                      <?php endif; ?>
+
+                      <?php if ($item['text']): ?>
+                        <div class="cutout-block__text">
+                          <?php echo $item['text'] ?>
+                        </div>
+                      <?php endif; ?>
+                    </div>
+
+                    <div class="buttons-list cutout-block__buttons-list">
+                      <a href="#contact-form-popup" class="btn-mintgreen btn-mintgreen--radius-16 btn-mintgreen--padding-10 btn-mintgreen--dark-bg-hover cutout-block__btn" data-fancybox>
+                        <span class="ico ico--arrow-right2"></span>
+                      </a>
+                      <a href="#contact-form-popup" class="btn-mintgreen btn-mintgreen--radius-16 btn-mintgreen--dark-bg-hover cutout-block__btn" data-fancybox>Get a Project Estimate</a>
+                    </div>
+                  </div>
+                </li>
               <?php endif ?>
             <?php endforeach;?>
+
+            <?php if (wp_is_mobile() && $block_style === 'services-page'): ?>
+              <li class="what-we-build-section__item what-we-build-section__item--view-more-btn">
+                <div class="buttons-list what-we-build-section__buttons-list">
+                  <button class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 what-we-build-section__more-btn">
+                    <span class="ico ico--arrow-right2"></span>
+                  </button>
+                  <button class="btn-darkgreen btn-darkgreen--radius-16 what-we-build-section__more-btn">View More</button>
+                </div>
+              </li>
+            <?php endif ?>
           </ul>
         <?php endif; ?>
         

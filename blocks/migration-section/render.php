@@ -8,7 +8,7 @@
 
 $title = get_field('title');
 $description = get_field('description');
-$button_text = get_field('button_text');
+// $button_text = get_field('button_text');
 $ai_compatibility_blocks = get_field('ai_compatibility_blocks');
 
 $anchor = '';

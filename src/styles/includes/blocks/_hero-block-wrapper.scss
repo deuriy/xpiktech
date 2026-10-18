@@ -25,4 +25,18 @@
       grid-template-columns: 56px 1fr;
     }
   }
+
+  &--services-page {
+    @media (max-width: 767px) {
+      display: contents;
+
+      .hero-block-wrapper__block {
+        order: -1;
+      }
+
+      .hero-block-wrapper__buttons-list {
+        margin-top: 16px;
+      }
+    }
+  }
 }

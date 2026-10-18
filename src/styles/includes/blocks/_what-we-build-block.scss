@@ -90,4 +90,121 @@
       padding: 22px;
     }
   }
+
+  &--services-page {
+    max-width: 410px;
+    border: none;
+    background: none;
+
+    @media (max-width: 767px) {
+      max-width: 303px;
+    }
+
+    .what-we-build-block__icon-wrapper {
+      position: relative;
+      width: 87px;
+      height: 87px;
+      border: 2px solid rgba(255, 255, 255, .8);
+      border-radius: 15px;
+      margin-bottom: -43px;
+      margin-left: 43px;
+      background: #fff;
+
+      @media (max-width: 767px) {
+        width: 72px;
+        height: 72px;
+        margin-bottom: -40px;
+        margin-left: 23px;
+      }
+
+      &::before {
+        position: absolute;
+        z-index: 0;
+        inset: 2px;
+        border-radius: 12px;
+        background: linear-gradient(0deg, #005E59 0%, #209E6D 140.41%);
+        content: "";
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+    }
+
+    .what-we-build-block__icon {
+      position: relative;
+      z-index: 1;
+      width: auto;
+      height: 47px;
+    }
+
+    .what-we-build-block__text-wrapper {
+      position: relative;
+      display: grid;
+      grid-template: auto auto 1fr / 100%;
+      min-height: 316px;
+      padding: 86px 21px 30px 29px;
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 410 316' fill='none'%3E%3Cpath fill='%23fff' d='M390 0c11.046 0 20 8.954 20 20v276c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20V20C0 8.954 8.954 0 20 0h9v36c0 11.046 8.954 20 20 20h69c11.046 0 20-8.954 20-20V0z'/%3E%3C/svg%3E");
+      mask-size: 100% 100%;
+      mask-position: left top;
+      mask-repeat: no-repeat;
+      background: #fff;
+
+      @media (max-width: 1023px) {
+        padding: 84px 21px 40px 22px;
+      }
+
+      @media (max-width: 767px) {
+        min-height: 304px;
+        padding: 80px 24px 24px 24px;
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 303 304' fill='none'%3E%3Cuse xlink:href='%23a' fill='%23fff'/%3E%3Cmask id='b' fill='%23fff'%3E%3Cuse xlink:href='%23a'/%3E%3C/mask%3E%3Cpath stroke='%239fe1bb' stroke-width='3' d='M283 0c11.046 0 20 8.954 20 20v264c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20V20C0 13.457 3.142 7.648 8 3.999V26c0 12.15 9.85 22 22 22h56c12.15 0 22-9.85 22-22V0z' mask='url(%23b)'/%3E%3Cdefs%3E%3Cpath id='a' d='M283 0c11.046 0 20 8.954 20 20v264c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20V20C0 13.457 3.142 7.648 8 3.999V26c0 12.15 9.85 22 22 22h56c12.15 0 22-9.85 22-22V0z'/%3E%3C/defs%3E%3C/svg%3E");
+      }
+
+      &::after {
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 410 316' fill='none'%3E%3Cpath d='M390 0c11.046 0 20 8.954 20 20v276c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20V20C0 8.954 8.954 0 20 0h9v36c0 11.046 8.954 20 20 20h69c11.046 0 20-8.954 20-20V0z' stroke='url(%23b)' stroke-width='4'/%3E%3Cdefs%3E%3ClinearGradient id='b' x1='0' x2='410' y1='0' y2='285' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23abe5b8'/%3E%3Cstop offset='1' stop-color='%2343c8ab'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") left top / 100% 100% no-repeat;
+        content: "";
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+
+        @media (max-width: 767px) {
+          opacity: 1;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 303 304' fill='none'%3E%3Cuse xlink:href='%23a' /%3E%3Cmask id='b' fill='%23fff'%3E%3Cuse xlink:href='%23a'/%3E%3C/mask%3E%3Cpath stroke='%239fe1bb' stroke-width='3' d='M283 0c11.046 0 20 8.954 20 20v264c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20V20C0 13.457 3.142 7.648 8 3.999V26c0 12.15 9.85 22 22 22h56c12.15 0 22-9.85 22-22V0z' mask='url(%23b)'/%3E%3Cdefs%3E%3Cpath id='a' d='M283 0c11.046 0 20 8.954 20 20v264c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20V20C0 13.457 3.142 7.648 8 3.999V26c0 12.15 9.85 22 22 22h56c12.15 0 22-9.85 22-22V0z'/%3E%3C/defs%3E%3C/svg%3E");
+        }
+      }
+    }
+
+    .what-we-build-block__title {
+      line-height: normal;
+
+      @media (max-width: 767px) {
+        margin-bottom: 14px;
+      }
+    }
+
+    .what-we-build-block__text {
+      margin-bottom: 25px;
+
+      @media (max-width: 1023px) {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+    }
+
+    .what-we-build-block__arrow-link {
+      margin-top: auto;
+    }
+
+    &:hover {
+      .what-we-build-block__text-wrapper::after,
+      .what-we-build-block__icon-wrapper::before {
+        opacity: 1;
+      }
+
+      .what-we-build-block__title {
+        text-decoration: underline;
+      }
+    }
+  }
 }

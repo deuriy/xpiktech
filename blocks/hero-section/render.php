@@ -100,10 +100,25 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
       <?php else: ?>
         <?php $hero_block = get_field('hero_block'); ?>
         
-        <div class="hero-block-wrapper hero-section__hero-block-wrapper">
+        <div class="hero-block-wrapper hero-block-wrapper--<?php echo esc_attr($block_style); ?> hero-section__hero-block-wrapper">
           <div class="hero-block hero-block--<?php echo esc_attr($block_style); ?> hero-block-wrapper__block">
             <?php if ($hero_block['title'] || $hero_block['text']): ?>
               <div class="hero-block__text-wrapper">
+                <?php if ($block_style === 'services-page'): ?>
+                  <nav class="breadcrumbs breadcrumbs--hero-block hero-block__breadcrumbs" aria-label="breadcrumb">
+                    <ul class="breadcrumbs__list">
+                      <li class="breadcrumbs__item">
+                        <a href="#" class="breadcrumbs__link">Home</a>
+                      </li>
+                      <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__text">
+                          <?php the_title() ?>
+                        </span>
+                      </li>
+                    </ul>
+                  </nav>
+                <?php endif; ?>
+
                 <?php if ($hero_block['title']): ?>
                   <h1 class="hero-block__title">
                     <?php echo wp_kses_post($hero_block['title']) ?>
@@ -133,94 +148,163 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
             <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 hero-slider-block__btn" data-fancybox>Request a Free Demo</a>
           </div>
         </div>
-      <?php endif; ?>
 
-      <?php if ($text_block['title'] || $text_block['text']): ?>
-        <div class="text-block hero-section__text-block">
-          <?php if ($text_block['title']) : ?>
-            <div class="text-block__header">
-              <h3 class="grad-text text-block__title">
-                <?php echo esc_html($text_block['title']); ?>
-              </h3>
-              <a href="#" class="green-link text-block__more-link">more</a>
-            </div>
-          <?php endif; ?>
+        <?php if ($block_style === 'services-page'): ?>
+          <?php
+            $software_ecosystem_block = get_field('software_ecosystem');
+            $characteristics = get_field('characteristics');
+          ?>
 
-          <?php if (($text_block['text'])) : ?>
-            <div class="text-block__text">
-              <?php echo wp_kses_post($text_block['text']); ?>
-            </div>
-          <?php endif; ?>
-        </div>
-      <?php endif; ?>
+          <div class="hero-section__blocks">
+            <?php if ($software_ecosystem_block['subtitle'] || $software_ecosystem_block['title'] || $software_ecosystem_block['description'] || $software_ecosystem_block['items']): ?>
+              <div class="software-ecosystem-block">
+                <?php if ($software_ecosystem_block['subtitle']) : ?>
+                  <p class="software-ecosystem-block__subtitle">
+                    <?php echo esc_html($software_ecosystem_block['subtitle']); ?>
+                  </p>
+                <?php endif; ?>
 
-      <?php if ($companies_slider['slides']): ?>
-        <div class="company-review-slider-block hero-section__company-review-slider-block">
-          <?php if ($companies_slider['title']) : ?>
-            <div class="company-review-slider-block__header">
-              <h3 class="grad-text company-review-slider-block__title">
-                <?php echo esc_html($companies_slider['title']); ?>
-              </h3>
-              <a href="#" class="green-link company-review-slider-block__more-link">more</a>
-            </div>
-          <?php endif; ?>
+                <?php if ($software_ecosystem_block['title']) : ?>
+                  <p class="software-ecosystem-block__title">
+                    <?php echo esc_html($software_ecosystem_block['title']); ?>
+                  </p>
+                <?php endif; ?>
 
-          <div class="swiper company-review-slider">
-            <div class="swiper-wrapper company-review-slider__slides">
-              <?php foreach ($companies_slider['slides'] as $company_slide): ?>
-                <div class="swiper-slide company-review-slider__slide">
-                  <div class="company-review-block">
-                    <div class="company-block">
-                      <?php if ($company_slide['logo']) : ?>
-                        <?php echo wp_get_attachment_image($company_slide['logo'], 'full', false, array('class' => 'company-block__logo-img')); ?>
-                      <?php endif; ?>
+                <?php if ($software_ecosystem_block['description']) : ?>
+                  <div class="software-ecosystem-block__description">
+                    <?php echo wp_kses_post($software_ecosystem_block['description']); ?>
+                  </div>
+                <?php endif; ?>
 
-                      <?php if ($company_slide['name']): ?>
-                        <h3 class="company-block__name">
-                          <?php echo esc_html($company_slide['name']) ?>
-                        </h3>
-                      <?php endif; ?>
+                <?php if ($software_ecosystem_block['image']) : ?>
+                  <?php echo wp_get_attachment_image($software_ecosystem_block['image'], 'full', false, array('class' => 'software-ecosystem-block__image')); ?>
+                <?php endif; ?>
+              </div>
+            <?php endif; ?>
+            
+            <?php if ($characteristics) : ?>
+              <div class="characteristics-block">
+                <?php foreach ($characteristics as $characteristic): ?>
+                  <div class="characteristics-block__item">
+                    <?php if ($characteristic['icon']) : ?>
+                      <div class="characteristics-block__icon-wrapper">
+                        <?php echo wp_get_attachment_image($characteristic['icon'], 'full', false, array('class' => 'characteristics-block__icon')); ?>
+                      </div>
+                    <?php endif; ?>
 
-                      <?php if ($company_slide['rating_mark'] || $company_slide['reviews_number']): ?>
-                        <div class="rating-block company-block__rating-block">
-                          <div class="rating-block">
-                            <?php if ($company_slide['rating_mark']): ?>
-                              <div class="rating">
-                                <?php for ($i = 1; $i <= 5; $i++): ?>
-                                  <span class="rating__star ico ico--star ico--size-16<?php echo $i <= $company_slide['rating_mark'] ? ' ico--yellow' : ' ico--grey' ?>"></span>
-                                <?php endfor; ?>
-                              </div>
-                            <?php endif; ?>
+                    <?php if ($characteristic['subtitle']) : ?>
+                      <p class="characteristics-block__subtitle">
+                        <?php echo esc_html($characteristic['subtitle']); ?>
+                      </p>
+                    <?php endif; ?>
 
-                            <?php if ($company_slide['reviews_number']): ?>
-                              <div class="rating-block__reviews-number">
-                                (<?php echo esc_html($company_slide['reviews_number']) ?>)
-                              </div>
-                            <?php endif; ?>
-                          </div>
-                        </div>
-                      <?php endif; ?>
-                    </div>
+                    <?php if ($characteristic['title']) : ?>
+                      <p class="characteristics-block__title">
+                        <?php echo esc_html($characteristic['title']); ?>
+                      </p>
+                    <?php endif; ?>
 
-                    <?php if ($company_slide['review_text']): ?>
-                      <div class="company-review-block__review-text">
-                        <?php echo wp_kses_post($company_slide['review_text']) ?>
+                    <?php if ($characteristic['description']) : ?>
+                      <div class="characteristics-block__description">
+                        <?php echo wp_kses_post($characteristic['description']); ?>
                       </div>
                     <?php endif; ?>
                   </div>
-                </div>
-              <?php endforeach; ?>
-            </div>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
           </div>
+        <?php endif; ?>
+      <?php endif; ?>
+      
+      <?php if ($block_style !== 'services-page'): ?>
+        <?php if ($text_block['title'] || $text_block['text']): ?>
+          <div class="text-block hero-section__text-block">
+            <?php if ($text_block['title']) : ?>
+              <div class="text-block__header">
+                <h3 class="grad-text text-block__title">
+                  <?php echo esc_html($text_block['title']); ?>
+                </h3>
+                <a href="#" class="green-link text-block__more-link">more</a>
+              </div>
+            <?php endif; ?>
 
-          <button type="button" class="btn-darkgreen btn-darkgreen--padding-10 btn-darkgreen--bordered-lightgrey company-review-slider-block__next-btn hidden-xs">
-            <span class="ico ico--arrow-right"></span>
-          </button>
+            <?php if (($text_block['text'])) : ?>
+              <div class="text-block__text">
+                <?php echo wp_kses_post($text_block['text']); ?>
+              </div>
+            <?php endif; ?>
+          </div>
+        <?php endif; ?>
 
-          <button type="button" class="btn-darkgreen btn-darkgreen--padding-6 btn-darkgreen--bordered-lightgrey company-review-slider-block__next-btn hidden-sm-plus">
-            <span class="ico ico--arrow-bottom"></span>
-          </button>
-        </div>
+        <?php if ($companies_slider['slides']): ?>
+          <div class="company-review-slider-block hero-section__company-review-slider-block">
+            <?php if ($companies_slider['title']) : ?>
+              <div class="company-review-slider-block__header">
+                <h3 class="grad-text company-review-slider-block__title">
+                  <?php echo esc_html($companies_slider['title']); ?>
+                </h3>
+                <a href="#" class="green-link company-review-slider-block__more-link">more</a>
+              </div>
+            <?php endif; ?>
+
+            <div class="swiper company-review-slider">
+              <div class="swiper-wrapper company-review-slider__slides">
+                <?php foreach ($companies_slider['slides'] as $company_slide): ?>
+                  <div class="swiper-slide company-review-slider__slide">
+                    <div class="company-review-block">
+                      <div class="company-block">
+                        <?php if ($company_slide['logo']) : ?>
+                          <?php echo wp_get_attachment_image($company_slide['logo'], 'full', false, array('class' => 'company-block__logo-img')); ?>
+                        <?php endif; ?>
+
+                        <?php if ($company_slide['name']): ?>
+                          <h3 class="company-block__name">
+                            <?php echo esc_html($company_slide['name']) ?>
+                          </h3>
+                        <?php endif; ?>
+
+                        <?php if ($company_slide['rating_mark'] || $company_slide['reviews_number']): ?>
+                          <div class="rating-block company-block__rating-block">
+                            <div class="rating-block">
+                              <?php if ($company_slide['rating_mark']): ?>
+                                <div class="rating">
+                                  <?php for ($i = 1; $i <= 5; $i++): ?>
+                                    <span class="rating__star ico ico--star ico--size-16<?php echo $i <= $company_slide['rating_mark'] ? ' ico--yellow' : ' ico--grey' ?>"></span>
+                                  <?php endfor; ?>
+                                </div>
+                              <?php endif; ?>
+
+                              <?php if ($company_slide['reviews_number']): ?>
+                                <div class="rating-block__reviews-number">
+                                  (<?php echo esc_html($company_slide['reviews_number']) ?>)
+                                </div>
+                              <?php endif; ?>
+                            </div>
+                          </div>
+                        <?php endif; ?>
+                      </div>
+
+                      <?php if ($company_slide['review_text']): ?>
+                        <div class="company-review-block__review-text">
+                          <?php echo wp_kses_post($company_slide['review_text']) ?>
+                        </div>
+                      <?php endif; ?>
+                    </div>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+            </div>
+
+            <button type="button" class="btn-darkgreen btn-darkgreen--padding-10 btn-darkgreen--bordered-lightgrey company-review-slider-block__next-btn hidden-xs">
+              <span class="ico ico--arrow-right"></span>
+            </button>
+
+            <button type="button" class="btn-darkgreen btn-darkgreen--padding-6 btn-darkgreen--bordered-lightgrey company-review-slider-block__next-btn hidden-sm-plus">
+              <span class="ico ico--arrow-bottom"></span>
+            </button>
+          </div>
+        <?php endif; ?>
       <?php endif; ?>
 
       <?php if ($service_blocks): ?>

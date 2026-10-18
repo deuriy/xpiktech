@@ -164,6 +164,8 @@ function xpiktech_scripts()
 		wp_enqueue_script('homepage-2', get_template_directory_uri() . '/js/homepage-2.js');
 	} elseif (is_page('zdr')) {
 		wp_enqueue_script('zdr', get_template_directory_uri() . '/js/zdr.js');
+	} elseif (is_page('services-page')) {
+		wp_enqueue_script('services-page', get_template_directory_uri() . '/js/services-page.js');
 	}
 }
 add_action('wp_enqueue_scripts', 'xpiktech_scripts');
@@ -256,6 +258,7 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/migration-section');
 	register_block_type(get_template_directory() . '/blocks/models-section');
 	register_block_type(get_template_directory() . '/blocks/deployment-section');
+	register_block_type(get_template_directory() . '/blocks/working-formats-section');
 }
 add_action('init', 'xpiktech_register_blocks');
 

@@ -1,0 +1,84 @@
+.characteristics-block {
+  padding: 43px 40px 25px 26px;
+  border-radius: 20px;
+  background: #015E59;
+  color: #fff;
+
+  @media (max-width: 767px) {
+    padding: 24px;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-areas: "icon subtitle" "icon title" "icon description";
+    grid-template-columns: auto 1fr;
+    column-gap: 11px;
+
+    @media (max-width: 767px) {
+      column-gap: 14px;
+    }
+
+    & + & {
+      margin-top: 50px;
+
+      @media (max-width: 1023px) {
+        margin-top: 34px;
+      }
+
+      @media (max-width: 767px) {
+        margin-top: 19px;
+      }
+    }
+  }
+
+  &__icon-wrapper {
+    grid-area: icon;
+    display: grid;
+    place-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255, 255, 255, .8);
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  &__icon {
+    width: 22px;
+    height: auto;
+  }
+
+  &__subtitle {
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, .5);
+    font-size: 10px;
+    text-transform: uppercase;
+
+    @media (max-width: 767px) {
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 1.125;
+
+    @media (max-width: 767px) {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__description {
+    max-width: 177px;
+    font-size: 12px;
+    line-height: 1.333;
+
+    @media (max-width: 767px) {
+      max-width: 210px;
+      font-size: 13px;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, .75);
+    }
+  }
+}

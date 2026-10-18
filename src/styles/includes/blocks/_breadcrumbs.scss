@@ -25,4 +25,11 @@
     // font-weight: 600;
     opacity: 0.7;
   }
+
+  &--hero-block {
+    .breadcrumbs__item {
+      font-size: 12px;
+      line-height: 2.1667;
+    }
+  }
 }

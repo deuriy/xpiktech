@@ -1,0 +1,40 @@
+.check-list {
+  &__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 16px;
+    font-weight: 600;
+
+    @media (max-width: 1199px) {
+      gap: 13px;
+      font-size: 15px;
+    }
+
+    @media (max-width: 767px) {
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    &::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 7' fill='none'%3E%3Cpath stroke='%23005e59' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M1 2.82 4 5.5 8.5 1'/%3E%3C/svg%3E") center / 10px auto no-repeat;
+    }
+
+    & + & {
+      margin-top: 16px;
+
+      @media (max-width: 1199px) {
+        margin-top: 13px;
+      }
+
+      @media (max-width: 767px) {
+        margin-top: 10px;
+      }
+    }
+  }
+}

@@ -59,6 +59,18 @@
     grid-row: span 2;
   }
 
+  &__blocks {
+    display: grid;
+    grid-template-columns: 1fr 1.08fr;
+    gap: 22px;
+
+    @media (max-width: 767px) {
+      order: -1;
+      grid-template-columns: 100%;
+      gap: 18px;
+    }
+  }
+
   &--style-2 {
     padding: 24px 0 100px;
 
@@ -96,6 +108,37 @@
     .hero-section__company-review-slider-block {
       @media (max-width: 767px) {
         order: 1;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &--services-page {
+    @media (min-width: 1200px) {
+      padding: 24px 0 81px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 0 0 53px;
+    }
+
+    .hero-section__container {
+      @media (min-width: 1200px) {
+        grid-template-columns: 1fr 1.04fr;
+        gap: 22px 27px;
+      }
+
+      @media (max-width: 1199px) {
+        max-width: 652px;
+      }
+
+      @media (max-width: 767px) {
+        gap: 16px;
+      }
+    }
+    
+    .hero-section__service-blocks {
+      @media (max-width: 767px) {
         margin-top: 0;
       }
     }

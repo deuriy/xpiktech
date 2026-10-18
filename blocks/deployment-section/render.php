@@ -6,6 +6,7 @@
  * @param array $block The block settings and attributes.
  */
 
+$block_style = get_field('block_style');
 $title = get_field('title');
 $description = get_field('description');
 $steps = get_field('steps');
@@ -20,6 +21,9 @@ $class_name = 'deployment-section';
 if (! empty($block['className'])) {
   $class_name .= ' ' . $block['className'];
 }
+
+$block_style = str_replace('_', '-', $block_style);
+$class_name .= ' deployment-section--' . esc_attr($block_style) . '-style';
 ?>
 
 <section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
@@ -63,11 +67,29 @@ if (! empty($block['className'])) {
             <?php endforeach;?>
           </ul>
         <?php endif; ?>
+        
+        <?php if ($block_style === 'services-page'): ?>
+          <div class="buttons-list deployment-section__buttons-list hidden-xs">
+            <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 btn-darkgreen--dark-bg-hover deployment-section__btn" data-fancybox>
+              <span class="ico ico--arrow-right2"></span>
+            </a>
+            <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 deployment-section__btn" data-fancybox>Start With an Estimate</a>
+          </div>
+        <?php endif; ?>
       </div>
 
       <?php if ($image): ?>
         <div class="deployment-section__img-wrapper">
           <?php echo wp_get_attachment_image($image, 'full', false, ['class' => 'deployment-section__img']) ?>
+        </div>
+      <?php endif; ?>
+
+      <?php if ($block_style === 'services-page'): ?>
+        <div class="buttons-list deployment-section__buttons-list hidden-sm-plus">
+          <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 btn-darkgreen--dark-bg-hover deployment-section__btn" data-fancybox>
+            <span class="ico ico--arrow-right2"></span>
+          </a>
+          <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 deployment-section__btn" data-fancybox>Start With an Estimate</a>
         </div>
       <?php endif; ?>
     </div>

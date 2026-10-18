@@ -144,4 +144,81 @@
     height: auto;
     vertical-align: middle;
   }
+
+  &--services-page-style {
+    @media (min-width: 768px) {
+      padding: 94px 0 90px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 40px 0;
+    }
+
+    @media (min-width: 1024px) {
+      .deployment-section__container {
+        grid-template-columns: 1fr 1.17fr;
+        gap: 26px;
+      }
+    }
+
+    .deployment-section__text-wrapper {
+      position: relative;
+      border-radius: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 615 544' fill='none'%3E%3Cmask id='a' width='615' height='544' x='0' y='0' maskUnits='userSpaceOnUse' style='mask-type:alpha'%3E%3Cpath fill='%23d9d9d9' d='M.821 455.044.036 20.49C.016 9.436 8.967.462 20.021.454L594.159.015c11.039-.008 19.998 8.93 20.015 19.969l.794 503.985c.018 11.057-8.942 20.031-20 20.031H380c-11.046 0-20-8.954-20-20v-28.992c0-11.045-8.954-20-20-20H20.821c-11.031 0-19.98-8.932-20-19.964'/%3E%3C/mask%3E%3Cg mask='url(%23a)'%3E%3Cg filter='url(%23b)'%3E%3Ccircle cx='613.75' cy='420.615' r='259.156' fill='%2395ccc7'/%3E%3C/g%3E%3Cg filter='url(%23c)'%3E%3Ccircle cx='387.668' cy='80.725' r='443.988' fill='%232dc1a7'/%3E%3C/g%3E%3Cg filter='url(%23d)'%3E%3Ccircle cx='1074.3' cy='-66.176' r='487.636' fill='%23abe5b8'/%3E%3C/g%3E%3Cg filter='url(%23e)'%3E%3Ccircle cx='646.331' cy='361.38' r='131.799' fill='%23abe5b8'/%3E%3C/g%3E%3Cg filter='url(%23f)'%3E%3Ccircle cx='205.023' cy='473.928' r='259.156' fill='%23abe5b8' fill-opacity='.7'/%3E%3C/g%3E%3Cg filter='url(%23g)'%3E%3Ccircle cx='188.738' cy='-244.305' r='177.707' fill='%23abe5b8'/%3E%3C/g%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='b' width='918.312' height='918.312' x='154.594' y='-38.541' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur result='effect1_foregroundBlur_3161_38' stdDeviation='100'/%3E%3CfeTurbulence baseFrequency='1 1' numOctaves='3' result='noise' seed='266' stitchTiles='stitch' type='fractalNoise'/%3E%3CfeColorMatrix in='noise' result='alphaNoise' type='luminanceToAlpha'/%3E%3CfeComponentTransfer in='alphaNoise' result='coloredNoise1'%3E%3CfeFuncA tableValues='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0' type='discrete'/%3E%3C/feComponentTransfer%3E%3CfeComposite in='coloredNoise1' in2='effect1_foregroundBlur_3161_38' operator='in' result='noise1Clipped'/%3E%3CfeFlood flood-color='rgba(255, 255, 255, 0.16)' result='color1Flood'/%3E%3CfeComposite in='color1Flood' in2='noise1Clipped' operator='in' result='color1'/%3E%3CfeMerge result='effect2_noise_3161_38'%3E%3CfeMergeNode in='effect1_foregroundBlur_3161_38'/%3E%3CfeMergeNode in='color1'/%3E%3C/feMerge%3E%3C/filter%3E%3Cfilter id='c' width='1487.98' height='1487.98' x='-356.32' y='-663.263' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur result='effect1_foregroundBlur_3161_38' stdDeviation='150'/%3E%3CfeTurbulence baseFrequency='5 5' numOctaves='3' result='noise' seed='266' stitchTiles='stitch' type='fractalNoise'/%3E%3CfeColorMatrix in='noise' result='alphaNoise' type='luminanceToAlpha'/%3E%3CfeComponentTransfer in='alphaNoise' result='coloredNoise1'%3E%3CfeFuncA tableValues='0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0' type='discrete'/%3E%3C/feComponentTransfer%3E%3CfeComposite in='coloredNoise1' in2='effect1_foregroundBlur_3161_38' operator='in' result='noise1Clipped'/%3E%3CfeFlood flood-color='rgba(255, 255, 255, 0.06)' result='color1Flood'/%3E%3CfeComposite in='color1Flood' in2='noise1Clipped' operator='in' result='color1'/%3E%3CfeMerge result='effect2_noise_3161_38'%3E%3CfeMergeNode in='effect1_foregroundBlur_3161_38'/%3E%3CfeMergeNode in='color1'/%3E%3C/feMerge%3E%3C/filter%3E%3Cfilter id='d' width='1615.27' height='1615.27' x='266.664' y='-873.812' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur result='effect1_foregroundBlur_3161_38' stdDeviation='160'/%3E%3CfeTurbulence baseFrequency='1 1' numOctaves='3' result='noise' seed='266' stitchTiles='stitch' type='fractalNoise'/%3E%3CfeColorMatrix in='noise' result='alphaNoise' type='luminanceToAlpha'/%3E%3CfeComponentTransfer in='alphaNoise' result='coloredNoise1'%3E%3CfeFuncA tableValues='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0' type='discrete'/%3E%3C/feComponentTransfer%3E%3CfeComposite in='coloredNoise1' in2='effect1_foregroundBlur_3161_38' operator='in' result='noise1Clipped'/%3E%3CfeFlood flood-color='rgba(255, 255, 255, 0.16)' result='color1Flood'/%3E%3CfeComposite in='color1Flood' in2='noise1Clipped' operator='in' result='color1'/%3E%3CfeMerge result='effect2_noise_3161_38'%3E%3CfeMergeNode in='effect1_foregroundBlur_3161_38'/%3E%3CfeMergeNode in='color1'/%3E%3C/feMerge%3E%3C/filter%3E%3Cfilter id='e' width='663.598' height='663.599' x='314.531' y='29.581' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur result='effect1_foregroundBlur_3161_38' stdDeviation='100'/%3E%3CfeTurbulence baseFrequency='1 1' numOctaves='3' result='noise' seed='266' stitchTiles='stitch' type='fractalNoise'/%3E%3CfeColorMatrix in='noise' result='alphaNoise' type='luminanceToAlpha'/%3E%3CfeComponentTransfer in='alphaNoise' result='coloredNoise1'%3E%3CfeFuncA tableValues='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0' type='discrete'/%3E%3C/feComponentTransfer%3E%3CfeComposite in='coloredNoise1' in2='effect1_foregroundBlur_3161_38' operator='in' result='noise1Clipped'/%3E%3CfeFlood flood-color='rgba(255, 255, 255, 0.16)' result='color1Flood'/%3E%3CfeComposite in='color1Flood' in2='noise1Clipped' operator='in' result='color1'/%3E%3CfeMerge result='effect2_noise_3161_38'%3E%3CfeMergeNode in='effect1_foregroundBlur_3161_38'/%3E%3CfeMergeNode in='color1'/%3E%3C/feMerge%3E%3C/filter%3E%3Cfilter id='f' width='918.312' height='918.312' x='-254.133' y='14.771' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur result='effect1_foregroundBlur_3161_38' stdDeviation='100'/%3E%3CfeTurbulence baseFrequency='1 1' numOctaves='3' result='noise' seed='266' stitchTiles='stitch' type='fractalNoise'/%3E%3CfeColorMatrix in='noise' result='alphaNoise' type='luminanceToAlpha'/%3E%3CfeComponentTransfer in='alphaNoise' result='coloredNoise1'%3E%3CfeFuncA tableValues='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0' type='discrete'/%3E%3C/feComponentTransfer%3E%3CfeComposite in='coloredNoise1' in2='effect1_foregroundBlur_3161_38' operator='in' result='noise1Clipped'/%3E%3CfeFlood flood-color='rgba(255, 255, 255, 0.16)' result='color1Flood'/%3E%3CfeComposite in='color1Flood' in2='noise1Clipped' operator='in' result='color1'/%3E%3CfeMerge result='effect2_noise_3161_38'%3E%3CfeMergeNode in='effect1_foregroundBlur_3161_38'/%3E%3CfeMergeNode in='color1'/%3E%3C/feMerge%3E%3C/filter%3E%3Cfilter id='g' width='875.414' height='875.414' x='-248.969' y='-682.012' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur result='effect1_foregroundBlur_3161_38' stdDeviation='130'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+
+      @media (min-width: 1024px) {
+        padding: 104px 71px;
+      }
+
+      @media (max-width: 767px) {
+        padding: 34px 22px 32px;
+        background: linear-gradient(126.87deg, #33BD9E 0%, #9EE0BA 71.43%);
+      }
+    }
+
+    .deployment-section__title {
+      max-width: 433px;
+      margin-bottom: 20px;
+
+      @media (max-width: 767px) {
+        margin-bottom: 14px;
+      }
+    }
+
+    .deployment-section__description {
+      font-size: 18px;
+      line-height: 1.44;
+
+      @media (max-width: 1199px) {
+        font-size: 17px;
+      }
+
+      @media (max-width: 1023px) {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      
+      @media (max-width: 767px) {
+        margin-bottom: 0;
+        font-size: 15px;
+      }
+    }
+
+    .deployment-section__buttons-list {
+      @media (min-width: 768px) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      @media (max-width: 767px) {
+        grid-template-columns: 56px 1fr;
+      }
+    }
+
+    .deployment-section__img-wrapper {
+      padding: 0;
+      background: #fff;
+    }
+  }
 }
