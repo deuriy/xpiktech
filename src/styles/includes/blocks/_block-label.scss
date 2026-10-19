@@ -1,0 +1,41 @@
+.block-label {
+  display: inline-flex;
+  padding: 4px 18px;
+  border-radius: 100px;
+  background: rgba(88, 206, 174, 0.2);
+  color: #58CEAE;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-transform: uppercase;
+
+  @media (max-width: 767px) {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+
+  &--pink-style {
+    background: rgba(232, 77, 186, 0.1);
+    color: #E84DBA;
+  }
+
+  &--violet-style {
+    background: #E5DDFB;
+    color: #7657B5;
+  }
+
+  &--dark-pink-style {
+    background: rgba(206, 71, 204, 0.1);
+    color: #CE47CC;
+  }
+
+  &--orange-style {
+    background: rgba(255, 187, 0, 0.1);
+    color: #FFBB00;
+  }
+
+  &--blue-style {
+    background: rgba(77, 181, 255, 0.1);
+    color: #4DB5FF;
+  }
+}

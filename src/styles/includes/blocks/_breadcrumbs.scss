@@ -24,12 +24,25 @@
   &__text {
     // font-weight: 600;
     opacity: 0.7;
+    color: #fff;
   }
 
   &--hero-block {
     .breadcrumbs__item {
       font-size: 12px;
       line-height: 2.1667;
+    }
+  }
+
+  &--solutions-page {
+    .breadcrumbs__link {
+      color: #525252;
+      opacity: 0.5;
+    }
+
+    .breadcrumbs__text {
+      opacity: 1;
+      color: #525252;
     }
   }
 }

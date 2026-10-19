@@ -7,10 +7,13 @@
  */
 
 $block_style = get_field('block_style');
+$section_title = get_field('section_title');
+$section_description = get_field('section_description');
 $title = get_field('title');
 $description = get_field('description');
 $steps = get_field('steps');
 $image = get_field('image');
+$items = get_field('items');
 
 $anchor = '';
 if (! empty($block['anchor'])) {
@@ -29,12 +32,31 @@ $class_name .= ' deployment-section--' . esc_attr($block_style) . '-style';
 <section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
   <div class="container">
     <div class="deployment-section__container">
+      <?php if ($block_style === 'solutions-page' && ($section_title || $section_description)): ?>
+        <div class="deployment-section__header">
+          <?php if ($section_title): ?>
+            <div class="deployment-section__title-wrapper">
+              <h2 class="grad-text section-title section-title--smaller section-title--left deployment-section__section-title">
+                <?php echo $section_title ?>
+              </h2>
+            </div>
+          <?php endif; ?>
+
+          <?php if ($section_description): ?>
+            <div class="deployment-section__section-description">
+              <?php echo $section_description ?>
+            </div>
+          <?php endif; ?>
+        </div>
+      <?php endif; ?>
+
       <div class="deployment-section__text-wrapper">
         <?php if ($title): ?>
           <div class="deployment-section__title-wrapper">
-            <h2 class="section-title section-title--smaller section-title--left deployment-section__title">
+            <?php $title_tag = $block_style === 'solutions-page' ? 'h3' : 'h2' ?>
+            <<?php echo $title_tag ?> class="deployment-section__title<?php echo $block_style !== 'solutions-page' ? ' section-title section-title--smaller section-title--left' : '' ?> ">
               <?php echo $title ?>
-            </h2>
+            </<?php echo $title_tag ?>>
           </div>
         <?php endif; ?>
 
@@ -44,7 +66,7 @@ $class_name .= ' deployment-section--' . esc_attr($block_style) . '-style';
           </div>
         <?php endif; ?>
 
-        <?php if ($steps): ?>
+        <?php if ($block_style === 'default' && $steps): ?>
           <ul class="deployment-section__steps">
             <?php foreach ($steps as $key => $step): ?>
               <li class="deployment-section__step">
@@ -75,6 +97,18 @@ $class_name .= ' deployment-section--' . esc_attr($block_style) . '-style';
             </a>
             <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 deployment-section__btn" data-fancybox>Start With an Estimate</a>
           </div>
+        <?php endif; ?>
+
+        <?php if ($block_style === 'solutions-page' && $items): ?>
+          <ul class="check-list check-list--white-bg-item deployment-section__list">
+            <?php foreach ($items as $key => $item): ?>
+              <li class="check-list__item">
+                <span class="grad-text check-list__item-inner">
+                  <?php echo $item['name'] ?>
+                </span>
+              </li>
+            <?php endforeach;?>
+          </ul>
         <?php endif; ?>
       </div>
 

@@ -28,20 +28,22 @@ $class_name .= ' what-we-build-section--' . esc_attr($block_style) . '-style';
 <section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
   <div class="container">
     <div class="what-we-build-section__container">
-      <?php if ($title): ?>
-        <h2 class="section-title section-title--smaller grad-text what-we-build-section__title">
-          <?php echo $title ?>
-        </h2>
-      <?php endif; ?>
+      <div class="what-we-build-section__text-wrapper">
+        <?php if ($title): ?>
+          <h2 class="section-title section-title--smaller what-we-build-section__title<?php echo $block_style !== 'solutions-page' ? ' grad-text' : ' section-title--left' ?>">
+            <?php echo $title ?>
+          </h2>
+        <?php endif; ?>
 
-      <?php if ($description): ?>
-        <div class="what-we-build-section__description">
-          <?php echo $description ?>
-        </div>
-      <?php endif; ?>
+        <?php if ($description): ?>
+          <div class="what-we-build-section__description">
+            <?php echo $description ?>
+          </div>
+        <?php endif; ?>
+      </div>
       
       <?php if ($items): ?>
-        <?php if (wp_is_mobile() && $block_style !== 'services-page'): ?>
+        <?php if (wp_is_mobile() && $block_style !== 'services-page' && $block_style !== 'solutions-page'): ?>
           <div class="swiper what-we-build-swiper">
             <ul class="swiper-wrapper what-we-build-swiper__slides">
               <?php foreach ($items as $key => $item): ?>
@@ -92,7 +94,7 @@ $class_name .= ' what-we-build-section--' . esc_attr($block_style) . '-style';
               <?php if ($item['block_type'] === 'default_block'): ?>
                 <li class="what-we-build-section__item">
                   <article class="what-we-build-block<?php echo $block_style !== 'default' ? ' what-we-build-block--' . $block_style : '' ?>">
-                    <?php if ($item['block_url'] && $block_style !== 'services-page'): ?>
+                    <?php if ($item['block_url'] && $block_style !== 'services-page' && $block_style !== 'solutions-page'): ?>
                       <a href="<?php echo $item['block_url'] ?>" class="what-we-build-block__link">
                     <?php endif; ?>
 
@@ -101,10 +103,16 @@ $class_name .= ' what-we-build-section--' . esc_attr($block_style) . '-style';
                         <?php echo wp_get_attachment_image($item['icon'], 'full', false, ['class' => 'what-we-build-block__icon']) ?>
                       </div>
                     <?php endif; ?>
+
+                    <?php if ($item['label']['text']): ?>
+                      <div class="block-label block-label--<?php echo str_replace('_', '-', $item['label']['style']) ?>-style what-we-build-block__label">
+                        <?php echo $item['label']['text'] ?>
+                      </div>
+                    <?php endif; ?>
                     
                     <div class="what-we-build-block__text-wrapper">
                       <?php if ($item['title']): ?>
-                        <h3 class="what-we-build-block__title<?php echo $block_style === 'services-page' ? ' grad-text' : '' ?>">
+                        <h3 class="what-we-build-block__title<?php echo $block_style === 'services-page' || $block_style === 'solutions-page' ? ' grad-text' : '' ?>">
                           <?php echo $item['title'] ?>
                         </h3>
                       <?php endif; ?>
@@ -115,8 +123,8 @@ $class_name .= ' what-we-build-section--' . esc_attr($block_style) . '-style';
                         </div>
                       <?php endif; ?>
 
-                      <?php if ($block_style === 'services-page'): ?>
-                        <a href="<?php echo $item['block_url'] ?>" class="arrow-link what-we-build-block__arrow-link">Explore Service</a>
+                      <?php if ($block_style === 'services-page' || $block_style === 'solutions-page'): ?>
+                        <a href="<?php echo $item['block_url'] ?>" class="arrow-link what-we-build-block__arrow-link"><?php echo $block_style === 'services-page' ? 'Explore Service' : 'Explore Solution' ?></a>
                       <?php endif; ?>
                     </div>
                     
@@ -147,13 +155,17 @@ $class_name .= ' what-we-build-section--' . esc_attr($block_style) . '-style';
                         </div>
                       <?php endif; ?>
                     </div>
-
-                    <div class="buttons-list cutout-block__buttons-list">
-                      <a href="#contact-form-popup" class="btn-mintgreen btn-mintgreen--radius-16 btn-mintgreen--padding-10 btn-mintgreen--dark-bg-hover cutout-block__btn" data-fancybox>
-                        <span class="ico ico--arrow-right2"></span>
-                      </a>
-                      <a href="#contact-form-popup" class="btn-mintgreen btn-mintgreen--radius-16 btn-mintgreen--dark-bg-hover cutout-block__btn" data-fancybox>Get a Project Estimate</a>
-                    </div>
+                    
+                    <?php if ($item['button']['text'] || $item['button']['url']): ?>
+                      <div class="buttons-list cutout-block__buttons-list">
+                        <a href="#contact-form-popup" class="btn-mintgreen btn-mintgreen--radius-16 btn-mintgreen--padding-10 btn-mintgreen--dark-bg-hover cutout-block__btn" data-fancybox>
+                          <span class="ico ico--arrow-right2"></span>
+                        </a>
+                        <a href="#contact-form-popup" class="btn-mintgreen btn-mintgreen--radius-16 btn-mintgreen--dark-bg-hover cutout-block__btn" data-fancybox>
+                          <?php echo $item['button']['text'] ?>
+                        </a>
+                      </div>
+                    <?php endif; ?>
                   </div>
                 </li>
               <?php endif ?>

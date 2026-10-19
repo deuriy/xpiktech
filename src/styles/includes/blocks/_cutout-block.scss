@@ -1,12 +1,12 @@
 .cutout-block {
   display: grid;
   grid-template-areas: "wrapper";
-  max-width: 410px;
+  // max-width: 410px;
   color: #fff;
 
   @media (max-width: 767px) {
     gap: 12px;
-    max-width: 303px;
+    // max-width: 303px;
   }
 
   &__text-wrapper,
@@ -64,7 +64,7 @@
   &__buttons-list {
     align-self: end;
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1199px) {
       grid-template-columns: 56px 1fr;
     }
   }

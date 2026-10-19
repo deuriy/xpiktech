@@ -104,8 +104,8 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
           <div class="hero-block hero-block--<?php echo esc_attr($block_style); ?> hero-block-wrapper__block">
             <?php if ($hero_block['title'] || $hero_block['text']): ?>
               <div class="hero-block__text-wrapper">
-                <?php if ($block_style === 'services-page'): ?>
-                  <nav class="breadcrumbs breadcrumbs--hero-block hero-block__breadcrumbs" aria-label="breadcrumb">
+                <?php if ($block_style === 'services-page' || $block_style === 'solutions-page'): ?>
+                  <nav class="breadcrumbs breadcrumbs--<?php echo $block_style ?> breadcrumbs--hero-block hero-block__breadcrumbs" aria-label="breadcrumb">
                     <ul class="breadcrumbs__list">
                       <li class="breadcrumbs__item">
                         <a href="#" class="breadcrumbs__link">Home</a>
@@ -120,7 +120,7 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
                 <?php endif; ?>
 
                 <?php if ($hero_block['title']): ?>
-                  <h1 class="hero-block__title">
+                  <h1 class="hero-block__title<?php echo $block_style === 'solutions-page' ? ' grad-text' : '' ?>">
                     <?php echo wp_kses_post($hero_block['title']) ?>
                   </h1>
                 <?php endif; ?>
@@ -133,7 +133,7 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
               </div>
             <?php endif; ?>
 
-            <?php if ($hero_block['image']) : ?>
+            <?php if ($block_style !== 'services-page' && $block_style !== 'solutions-page' && $hero_block['image']) : ?>
               <div class="hero-block__img-wrapper">
                 <?php echo wp_get_attachment_image($hero_block['image'], 'full', false, array('class' => 'hero-block__img')); ?>
                 <?php echo wp_get_attachment_image($hero_block['hover_image'], 'full', false, array('class' => 'hero-block__hover-img')); ?>
@@ -141,11 +141,15 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
             <?php endif; ?>
           </div>
 
+          <?php
+            $button_classes = $block_style === 'solutions-page' ? 'btn-mintgreen btn-mintgreen--radius-16 btn-mintgreen--padding-10 hero-slider-block__btn' : 'btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 hero-slider-block__btn';
+          ?>
+
           <div class="buttons-list hero-block-wrapper__buttons-list">
-            <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 hero-slider-block__btn" data-fancybox>
+            <a href="#contact-form-popup" class="<?php echo $button_classes ?>" data-fancybox>
               <span class="ico ico--arrow-right2"></span>
             </a>
-            <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 hero-slider-block__btn" data-fancybox>Request a Free Demo</a>
+            <a href="#contact-form-popup" class="<?php echo $button_classes ?>" data-fancybox>Request a Free Demo</a>
           </div>
         </div>
 
@@ -214,10 +218,16 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
               </div>
             <?php endif; ?>
           </div>
+        <?php elseif ($block_style === 'solutions-page'): ?>
+          <?php if ($hero_block['image']) : ?>
+            <div class="hero-section__img-wrapper">
+              <?php echo wp_get_attachment_image($hero_block['image'], 'full', false, array('class' => 'hero-section__img')); ?>
+            </div>
+          <?php endif; ?>
         <?php endif; ?>
       <?php endif; ?>
       
-      <?php if ($block_style !== 'services-page'): ?>
+      <?php if ($block_style !== 'services-page' && $block_style !== 'solutions-page'): ?>
         <?php if ($text_block['title'] || $text_block['text']): ?>
           <div class="text-block hero-section__text-block">
             <?php if ($text_block['title']) : ?>

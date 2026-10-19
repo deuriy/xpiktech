@@ -39,4 +39,18 @@
       }
     }
   }
+
+  &--solutions-page {
+    @media (max-width: 767px) {
+      display: contents;
+
+      // .hero-block-wrapper__block {
+      //   order: -1;
+      // }
+
+      .hero-block-wrapper__buttons-list {
+        order: 1;
+      }
+    }
+  }
 }

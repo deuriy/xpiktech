@@ -145,6 +145,26 @@
     vertical-align: middle;
   }
 
+  &__section-title {
+    max-width: 470px;
+  }
+
+  &__section-description {
+    max-width: 526px;
+    font-size: 18px;
+    line-height: 1.44;
+    color: #525252;
+
+    @media (max-width: 1199px) {
+      font-size: 17px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
   &--services-page-style {
     @media (min-width: 768px) {
       padding: 94px 0 90px;
@@ -219,6 +239,92 @@
     .deployment-section__img-wrapper {
       padding: 0;
       background: #fff;
+    }
+  }
+
+  &--solutions-page-style {
+    @media (min-width: 768px) {
+      padding: 91px 0 90px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 10px 0 40px;
+    }
+
+    @media (min-width: 1024px) {
+      .deployment-section__container {
+        grid-template-columns: 1fr 1.17fr;
+        gap: 60px 27px;
+      }
+    }
+
+    .deployment-section__header {
+      order: -1;
+      display: grid;
+
+      @media (min-width: 1024px) {
+        grid-template-columns: repeat(2, auto);
+        grid-column: span 2;
+        justify-content: space-between;
+        padding: 0 40px 0 72px;
+      }
+
+      @media (max-width: 1023px) {
+        grid-template-columns: 100%;
+        gap: 14px;
+      }
+    }
+
+    .deployment-section__img-wrapper {
+      display: grid;
+      grid-template-columns: 100%;
+      place-content: center;
+      order: -1;
+      padding: 103px 0;
+      background: #fff;
+
+      @media (max-width: 1199px) {
+        padding: 70px 0;
+        border-radius: 28px;
+      }
+
+      @media (max-width: 1023px) {
+        padding: 40px 0;
+        border-radius: 24px;
+      }
+
+      @media (max-width: 767px) {
+        padding: 10px 12px;
+        border-radius: 20px;
+      }
+    }
+
+    .deployment-section__text-wrapper {
+      @media (min-width: 1024px) {
+        padding: 65px 50px 51px 48px;
+      }
+
+      @media (max-width: 767px) {
+        padding: 28px 24px 24px;
+        border-radius: 20px;
+      }
+    }
+
+    .deployment-section__title {
+      max-width: 486px;
+      margin-bottom: 14px;
+      font-size: 24px;
+      line-height: normal;
+
+      @media (max-width: 767px) {
+        font-size: 22px;
+      }
+    }
+
+    .deployment-section__description {
+      max-width: 522px;
+      margin-bottom: 24px;
+      line-height: 1.5;
     }
   }
 }
