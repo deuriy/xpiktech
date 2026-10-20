@@ -164,9 +164,9 @@ function xpiktech_scripts()
 		wp_enqueue_script('homepage-2', get_template_directory_uri() . '/js/homepage-2.js');
 	} elseif (is_page('zdr')) {
 		wp_enqueue_script('zdr', get_template_directory_uri() . '/js/zdr.js');
-	} elseif (is_page('services')) {
+	} elseif (is_page('services') || is_category('services')) {
 		wp_enqueue_script('services-page', get_template_directory_uri() . '/js/services-page.js');
-	} elseif (is_page('solutions')) {
+	} elseif (is_page('solutions') || is_category('solutions')) {
 		wp_enqueue_script('solutions-page', get_template_directory_uri() . '/js/solutions-page.js');
 	}
 }
@@ -282,7 +282,7 @@ add_filter('walker_nav_menu_start_el', function ($item_output, $item) {
 
 }, 10, 2);
 
-add_action('wp_head', function() {	
+add_action('wp_head', function() {
 	$json_ld_scripts = get_field('json_ld');
 
 	if ($json_ld_scripts) {
@@ -293,3 +293,12 @@ add_action('wp_head', function() {
 		}
 	}
 });
+
+add_action( 'init', 'add_tags_to_pages' );
+function add_tags_to_pages() {
+	// Привязываем стандартные метки (post_tag) к страницам (page)
+	// register_taxonomy_for_object_type( 'post_tag', 'page' );
+	
+	// Если нужно привязать стандартные рубрики (category) к страницам:
+	register_taxonomy_for_object_type( 'category', 'page' );
+}
