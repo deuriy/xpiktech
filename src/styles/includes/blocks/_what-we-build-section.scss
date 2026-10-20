@@ -224,6 +224,10 @@
           display: none;
         }
       }
+
+      @media (max-width: 767px) {
+        width: 303px;
+      }
     }
 
     .what-we-build-section__buttons-list {

@@ -113,7 +113,15 @@ $class_name .= ' what-we-build-section--' . esc_attr($block_style) . '-style';
                     <div class="what-we-build-block__text-wrapper">
                       <?php if ($item['title']): ?>
                         <h3 class="what-we-build-block__title<?php echo $block_style === 'services-page' || $block_style === 'solutions-page' ? ' grad-text' : '' ?>">
+                          <?php if ($item['block_url']): ?>
+                            <a href="<?php echo $item['block_url'] ?>" class="what-we-build-block__title-link">
+                          <?php endif; ?>
+
                           <?php echo $item['title'] ?>
+                          
+                          <?php if ($item['block_url']): ?>
+                            </a>
+                          <?php endif; ?>
                         </h3>
                       <?php endif; ?>
 
@@ -124,11 +132,17 @@ $class_name .= ' what-we-build-section--' . esc_attr($block_style) . '-style';
                       <?php endif; ?>
 
                       <?php if ($block_style === 'services-page' || $block_style === 'solutions-page'): ?>
+                        <?php if (false): ?>
                         <a href="<?php echo $item['block_url'] ?>" class="arrow-link what-we-build-block__arrow-link"><?php echo $block_style === 'services-page' ? 'Explore Service' : 'Explore Solution' ?></a>
+                        <?php endif ?>
+
+                        <div class="arrow-link what-we-build-block__arrow-link">
+                          <?php echo $block_style === 'services-page' ? 'Explore Service' : 'Explore Solution' ?>
+                        </div>
                       <?php endif; ?>
                     </div>
                     
-                    <?php if ($item['block_url'] && $block_style !== 'services-page'): ?>
+                    <?php if ($item['block_url'] && $block_style !== 'services-page' && $block_style !== 'solutions-page'): ?>
                       </a>
                     <?php endif; ?>
                   </article>

@@ -50,9 +50,17 @@ if (! empty($block['className'])) {
 
               <div class="how-we-work-block__text-wrapper">
                 <?php if ($item['title']): ?>
-                  <h3 class="how-we-work-block__title grad-text">
-                    <?php echo $item['title'] ?>
-                  </h3>
+                  <?php if ($item['block_url']): ?>
+                    <a href="<?php echo $item['block_url'] ?>" class="what-we-build-block__title-link">
+                  <?php endif; ?>
+                  
+                    <h3 class="how-we-work-block__title grad-text">
+                      <?php echo $item['title'] ?>
+                    </h3>
+                    
+                  <?php if ($item['block_url']): ?>
+                    </a>
+                  <?php endif; ?>
                 <?php endif; ?>
 
                 <?php if ($item['text']): ?>

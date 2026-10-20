@@ -231,6 +231,10 @@
       .how-we-work-block__text-wrapper {
         mask: none;
       }
+
+      .how-we-work-block__text {
+        pointer-events: none;
+      }
     }
   }
 }

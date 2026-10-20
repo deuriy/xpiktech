@@ -1,4 +1,5 @@
 .what-we-build-block {
+  position: relative;
   border: 2px solid transparent;
   border-radius: 24px;
   background: #fff;
@@ -54,6 +55,17 @@
     @media (max-width: 767px) {
       margin-bottom: 11px;
       font-size: 20px;
+    }
+  }
+
+  &__title-link {
+    text-decoration: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      // pointer-events: none;
     }
   }
 
