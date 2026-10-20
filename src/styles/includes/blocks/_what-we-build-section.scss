@@ -207,10 +207,13 @@
     }
 
     .what-we-build-section__item {
-      @media (max-width: 767px) {
+      @media (max-width: 1023px) {
+        width: 410px;
+        max-width: 100%;
+        
         &--view-more-btn {
           justify-self: stretch;
-          margin-bottom: 40px;
+          margin: 0 auto 40px;
         }
 
         &--cutout-block {
@@ -229,7 +232,7 @@
 
     &.what-we-build-section--expanded {
       .what-we-build-section__item {
-        @media (max-width: 767px) {
+        @media (max-width: 1023px) {
           &:nth-child(n+5):not(.what-we-build-section__item--cutout-block):not(.what-we-build-section__item--view-more-btn) {
             display: grid;
           }

@@ -359,6 +359,13 @@
         line-height: 1.5;
       }
     }
+
+    &:hover {
+      .green-highlighted {
+        background: #fff;
+        color: #015E59;
+      }
+    }
   }
 
   &--solutions-page {
