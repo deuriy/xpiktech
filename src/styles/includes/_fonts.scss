@@ -85,3 +85,27 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('fonts/subset-JetBrainsMono-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('fonts/subset-Outfit-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('fonts/subset-Outfit-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

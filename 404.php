@@ -45,13 +45,13 @@ get_header();
 							<?php esc_html_e( 'Go to Homepage', 'xpiktech' ); ?>
 						</a>
 					</div>
-
+				
 					<div class="buttons-list error-404__buttons-list error-404__buttons-list--other-pages">
-						<a href="<?php echo home_url('portfolio') ?>" class="btn-outline btn-outline--error-404 error-404__btn">
-							<?php esc_html_e( 'View Portfolio', 'xpiktech' ); ?>
+						<a href="<?php echo home_url('services') ?>" class="btn-outline btn-outline--error-404 error-404__btn">
+							<?php esc_html_e( 'Our Services', 'xpiktech' ); ?>
 						</a>
-						<a href="<?php echo home_url('blog') ?>" class="btn-outline btn-outline--error-404 error-404__btn">
-							<?php esc_html_e( 'Read the Blog', 'xpiktech' ); ?>
+						<a href="<?php echo home_url('solutions') ?>" class="btn-outline btn-outline--error-404 error-404__btn">
+							<?php esc_html_e( 'Our Solutions', 'xpiktech' ); ?>
 						</a>
 					</div>
 				</div>
