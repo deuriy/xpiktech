@@ -13,45 +13,49 @@ get_header();
 	<main id="primary" class="site-main">
 
 		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'xpiktech' ); ?></h1>
-			</header><!-- .page-header -->
+			<div class="container error-404__container">
+					
+				<div class="error-404__img-wrapper">
+					<img src="<?php echo get_stylesheet_directory_uri() ?>/images/404@2x.webp" alt="404" class="error-404__img">
+				</div>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'xpiktech' ); ?></p>
+				<div class="error-404__text-wrapper">
+					
+					<div class="error-404__subtitle">
+						<?php esc_html_e( 'ERROR 404', 'xpiktech' ); ?>
+					</div>
 
-					<?php
-					get_search_form();
+					<h1 class="error-404__title">
+						<?php esc_html_e( 'Something’s missing from this build.', 'xpiktech' ); ?>
+					</h1>
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+					<p class="error-404__description">
+						<?php esc_html_e( 'The page you’re looking for isn’t here. It may have moved, or it was never part of the spec. Head back and we’ll get you where you need to go.', 'xpiktech' ); ?>
+					</p>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'xpiktech' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
+					<p class="error-404__comment">
+						<?php esc_html_e( '// Missing pieces? Building them is what we do.', 'xpiktech' ); ?>
+					</p>
 
-					<?php
-					/* translators: %1$s: smiley */
-					$xpiktech_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'xpiktech' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$xpiktech_archive_content" );
+					<div class="buttons-list error-404__buttons-list">
+						<a href="<?php echo home_url() ?>" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 error-404__btn">
+							<span class="ico ico--arrow-right2"></span>
+						</a>
+						<a href="<?php echo home_url() ?>" class="btn-darkgreen btn-darkgreen--radius-16 error-404__btn">
+							<?php esc_html_e( 'Go to Homepage', 'xpiktech' ); ?>
+						</a>
+					</div>
 
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
+					<div class="buttons-list error-404__buttons-list error-404__buttons-list--other-pages">
+						<a href="<?php echo home_url('portfolio') ?>" class="btn-outline btn-outline--error-404 error-404__btn">
+							<?php esc_html_e( 'View Portfolio', 'xpiktech' ); ?>
+						</a>
+						<a href="<?php echo home_url('blog') ?>" class="btn-outline btn-outline--error-404 error-404__btn">
+							<?php esc_html_e( 'Read the Blog', 'xpiktech' ); ?>
+						</a>
+					</div>
+				</div>
+			</div>
 		</section><!-- .error-404 -->
 
 	</main><!-- #main -->
