@@ -112,7 +112,13 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
                       </li>
                       <li class="breadcrumbs__item">
                         <span class="breadcrumbs__text">
-                          <?php the_title() ?>
+                          <?php
+                          if (is_archive()) {
+                            single_term_title();
+                          } else {
+                            the_title();
+                          }
+                          ?>
                         </span>
                       </li>
                     </ul>

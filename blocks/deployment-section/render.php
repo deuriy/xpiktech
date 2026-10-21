@@ -66,7 +66,7 @@ $class_name .= ' deployment-section--' . esc_attr($block_style) . '-style';
           </div>
         <?php endif; ?>
 
-        <?php if ($block_style === 'default' && $steps): ?>
+        <?php if ($steps): ?>
           <ul class="deployment-section__steps">
             <?php foreach ($steps as $key => $step): ?>
               <li class="deployment-section__step">
