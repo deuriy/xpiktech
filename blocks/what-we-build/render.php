@@ -48,7 +48,7 @@ $class_name .= ' what-we-build-section--' . esc_attr($block_style) . '-style';
             <ul class="swiper-wrapper what-we-build-swiper__slides">
               <?php foreach ($items as $key => $item): ?>
                 <?php if ($item['block_type'] === 'default_block'): ?>
-                  <li class="swiper-slide what-we-build-swiper__slidewhat-we-build-section__item">
+                  <li class="swiper-slide what-we-build-swiper__slide">
                     <article class="what-we-build-block">
                       <?php if ($item['block_url']): ?>
                         <a href="<?php echo $item['block_url'] ?>" class="what-we-build-block__link">
@@ -71,9 +71,10 @@ $class_name .= ' what-we-build-section--' . esc_attr($block_style) . '-style';
                           <?php echo $item['text'] ?>
                         </div>
                       <?php endif; ?>
-                    <?php if ($item['block_url']): ?>
-                      </a>
-                    <?php endif; ?>
+                      
+                      <?php if ($item['block_url']): ?>
+                        </a>
+                      <?php endif; ?>
                     </article>
                   </li>
                 <?php else: ?>
@@ -93,9 +94,11 @@ $class_name .= ' what-we-build-section--' . esc_attr($block_style) . '-style';
             <?php foreach ($items as $key => $item): ?>
               <?php if ($item['block_type'] === 'default_block'): ?>
                 <li class="what-we-build-section__item">
-                  <article class="what-we-build-block<?php echo $block_style !== 'default' ? ' what-we-build-block--' . $block_style : '' ?>">
-                    <?php if ($item['block_url'] && $block_style !== 'services-page' && $block_style !== 'solutions-page'): ?>
-                      <a href="<?php echo $item['block_url'] ?>" class="what-we-build-block__link">
+                  <article class="what-we-build-block<?php echo ' what-we-build-block--' . $block_style; ?>">
+                    <?php if (false): ?>
+                      <?php if ($item['block_url'] && $block_style !== 'services-page' && $block_style !== 'solutions-page'): ?>
+                        <a href="<?php echo $item['block_url'] ?>" class="what-we-build-block__link">
+                      <?php endif; ?>
                     <?php endif; ?>
 
                     <?php if ($item['icon']): ?>
@@ -142,8 +145,10 @@ $class_name .= ' what-we-build-section--' . esc_attr($block_style) . '-style';
                       <?php endif; ?>
                     </div>
                     
-                    <?php if ($item['block_url'] && $block_style !== 'services-page' && $block_style !== 'solutions-page'): ?>
-                      </a>
+                    <?php if (false): ?>
+                      <?php if ($item['block_url'] && $block_style !== 'services-page' && $block_style !== 'solutions-page'): ?>
+                        </a>
+                      <?php endif; ?>
                     <?php endif; ?>
                   </article>
                 </li>
