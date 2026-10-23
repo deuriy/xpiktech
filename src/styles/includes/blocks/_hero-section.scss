@@ -94,6 +94,8 @@
     }
 
     .hero-section__container {
+      align-items: start;
+      
       @media (min-width: 1200px) {
         grid-template-columns: 2.04fr 1fr;
       }

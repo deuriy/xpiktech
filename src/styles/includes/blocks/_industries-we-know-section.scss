@@ -57,7 +57,7 @@
   &__tabs {
     display: grid;
     grid-template-columns: 383px 1fr;
-    align-items: start;
+    // align-items: start;
     gap: 32px;
 
     @media (max-width: 1199px) {
@@ -86,7 +86,12 @@
   }
 
   &__tab-panel {
+    min-height: 100%;
     display: none;
+
+    &.show {
+      display: grid !important;
+    }
 
     @media (max-width: 767px) {
       &.show {
