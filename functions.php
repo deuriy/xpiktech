@@ -156,17 +156,17 @@ function xpiktech_scripts()
 
 	if (is_front_page()) {
 		wp_enqueue_script('homepage-2', get_template_directory_uri() . '/js/homepage-2.js');
-	} elseif (is_page('about-us')) {
+	} elseif (is_page('ai-email-automation-order-entry-from-email')) {
 		wp_enqueue_script('page', get_template_directory_uri() . '/js/about.js');
 	} elseif (is_page('why-xpiktech')) {
 		wp_enqueue_script('why-xpiktech', get_template_directory_uri() . '/js/why-xpiktech.js');
 	} elseif (is_page('ai-business-process-automation')) {
 		wp_enqueue_script('index', get_template_directory_uri() . '/js/index.js');
-	} elseif (is_page('zdr')) {
+	} elseif (is_page('private-ai-solutions')) {
 		wp_enqueue_script('zdr', get_template_directory_uri() . '/js/zdr.js');
-	} elseif (is_page('services') || is_category('services')) {
+	} elseif (is_page('services')) {
 		wp_enqueue_script('services-page', get_template_directory_uri() . '/js/services-page.js');
-	} elseif (is_page('solutions') || is_category('solutions')) {
+	} elseif (is_page('solutions')) {
 		wp_enqueue_script('solutions-page', get_template_directory_uri() . '/js/solutions-page.js');
 	}
 }

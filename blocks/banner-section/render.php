@@ -49,7 +49,7 @@ if (! empty($block['className'])) {
                             <?php if ($block_style === 'style-2'): ?>
                                 <?php if ($button['url'] && $button['text']): ?>
                                     <div class="banner__btn-wrapper">
-                                        <a href="<?php echo esc_url($button['url']) ?>" class="btn-darkgreen btn-darkgreen--arrow-rect btn-darkgreen--arrow-rect-banner banner__btn">
+                                        <a href="<?php echo esc_url($button['url']) ?>" class="btn-darkgreen btn-darkgreen--arrow-rect btn-darkgreen--arrow-rect-banner banner__btn" data-fancybox>
                                             <?php echo esc_html($button['text']) ?>
                                         </a>
                                     </div>
