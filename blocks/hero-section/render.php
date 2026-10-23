@@ -241,7 +241,10 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
                 <h3 class="grad-text text-block__title">
                   <?php echo esc_html($text_block['title']); ?>
                 </h3>
-                <a href="#" class="green-link text-block__more-link">more</a>
+                
+                <?php if ($text_block['more_link_url']): ?>
+                  <a href="<?php echo $text_block['more_link_url'] ?>" class="green-link text-block__more-link">more</a>
+                <?php endif; ?>
               </div>
             <?php endif; ?>
 
@@ -260,7 +263,10 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
                 <h3 class="grad-text company-review-slider-block__title">
                   <?php echo esc_html($companies_slider['title']); ?>
                 </h3>
-                <a href="#" class="green-link company-review-slider-block__more-link">more</a>
+
+                <?php if ($companies_slider['more_link_url']): ?>
+                  <a href="<?php echo $companies_slider['more_link_url'] ?>" class="green-link company-review-slider-block__more-link">more</a>
+                <?php endif; ?>
               </div>
             <?php endif; ?>
 
