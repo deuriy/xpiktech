@@ -49,9 +49,9 @@ $class_name .= ' accordion-section--' . esc_attr($block_style) . '-style';
           <?php foreach ($items as $key => $item): ?>
             <div class="accordion-panel accordion-section__item<?php echo !$key ? ' accordion-panel--expanded' : '' ?><?php echo $block_style === 'green-gradient' ? ' accordion-panel--green-grad-style' : '' ?>">
               <dt class="accordion-panel__title-wrapper">
-                <div class="grad-text accordion-panel__title">
+                <h3 class="grad-text accordion-panel__title">
                   <?php echo $item['question'] ?>
-                </div>
+                </h3>
               </dt>
 
               <dd class="accordion-panel__text">
