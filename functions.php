@@ -294,11 +294,11 @@ add_action('wp_head', function() {
 	}
 });
 
-add_action( 'init', 'add_tags_to_pages' );
-function add_tags_to_pages() {
-	// Привязываем стандартные метки (post_tag) к страницам (page)
-	// register_taxonomy_for_object_type( 'post_tag', 'page' );
+// add_action( 'init', 'add_tags_to_pages' );
+// function add_tags_to_pages() {
+// 	// Привязываем стандартные метки (post_tag) к страницам (page)
+// 	// register_taxonomy_for_object_type( 'post_tag', 'page' );
 	
-	// Если нужно привязать стандартные рубрики (category) к страницам:
-	register_taxonomy_for_object_type( 'category', 'page' );
-}
+// 	// Если нужно привязать стандартные рубрики (category) к страницам:
+// 	register_taxonomy_for_object_type( 'category', 'page' );
+// }
