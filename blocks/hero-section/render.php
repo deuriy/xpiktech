@@ -136,6 +136,18 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
                     <?php echo wp_kses_post($hero_block['text']) ?>
                   </div>
                 <?php endif; ?>
+
+                <?php if ($hero_block['green_label']): ?>
+                  <div class="hero-block__green-label">
+                    <?php echo esc_html($hero_block['green_label']) ?>
+                  </div>
+                <?php endif; ?>
+
+                <?php if ($hero_block['white_label']): ?>
+                  <div class="hero-block__white-label">
+                    <?php echo esc_html($hero_block['white_label']) ?>
+                  </div>
+                <?php endif; ?>
               </div>
             <?php endif; ?>
 
@@ -230,10 +242,58 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
               <?php echo wp_get_attachment_image($hero_block['image'], 'full', false, array('class' => 'hero-section__img')); ?>
             </div>
           <?php endif; ?>
+        <?php elseif ($block_style === 'ai-software-development'): ?>
+          <?php
+            $engineer_block = get_field('engineer_block');
+          ?>
+
+          <div class="engineer-block">
+            <!-- <div class="engineer-block__title-wrapper"> -->
+              <?php if ($engineer_block['label']) : ?>
+                <p class="engineer-block__label">
+                  <?php echo esc_html($engineer_block['label']); ?>
+                </p>
+              <?php endif; ?>
+
+              <?php if ($engineer_block['title']) : ?>
+                <h3 class="engineer-block__title">
+                  <?php echo esc_html($engineer_block['title']); ?>
+                </h3>
+              <?php endif; ?>
+
+              <div class="engineer-block__term-wrapper">
+                <?php if ($engineer_block['term']) : ?>
+                  <p class="engineer-block__term">
+                    <span class="grad-text engineer-block__term-text">
+                      <?php echo esc_html($engineer_block['term']); ?>
+                    </span>
+                  </p>
+                <?php endif; ?>
+
+                <?php if ($engineer_block['engineers_review_image']) : ?>
+                  <!-- <div class="engineer-block__review-img-wrapper"> -->
+                    <?php echo wp_get_attachment_image($engineer_block['engineers_review_image'], 'full', false, array('class' => 'engineer-block__review-img')); ?>
+                  <!-- </div> -->
+                <?php endif; ?>
+              </div>
+
+              <?php if ($engineer_block['image']) : ?>
+                <!-- <div class="engineer-block__img-wrapper"> -->
+                  <?php echo wp_get_attachment_image($engineer_block['image'], 'full', false, array('class' => 'engineer-block__img')); ?>
+                <!-- </div> -->
+              <?php endif; ?>
+
+              <?php if ($engineer_block['guarantee_image']) : ?>
+                <!-- <div class="engineer-block__guarantee-img-wrapper"> -->
+                  <?php echo wp_get_attachment_image($engineer_block['guarantee_image'], 'full', false, array('class' => 'engineer-block__guarantee-img')); ?>
+                <!-- </div> -->
+              <?php endif; ?>
+            <!-- </div> -->
+          </div>
         <?php endif; ?>
       <?php endif; ?>
       
-      <?php if ($block_style !== 'services-page' && $block_style !== 'solutions-page'): ?>
+      <?php if ($block_style !== 'services-page' && $block_style !== 'solutions-page' && $block_style !== 'ai-software-development'): ?>
         <?php if ($text_block['title'] || $text_block['text']): ?>
           <div class="text-block hero-section__text-block">
             <?php if ($text_block['title']) : ?>
@@ -338,9 +398,15 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
               <?php endif; ?>
 
               <?php if ($service_block['title']): ?>
-                <h3 class="service-block__title grad-text">
+                <h3 class="service-block__title<?php echo $block_style !== 'ai-software-development' ? ' grad-text' : '' ?>">
                   <?php echo wp_kses_post($service_block['title']) ?>
                 </h3>
+              <?php endif; ?>
+
+              <?php if ($service_block['description']): ?>
+                <div class="service-block__description">
+                  <?php echo wp_kses_post($service_block['description']) ?>
+                </div>
               <?php endif; ?>
             </div>
           <?php endforeach; ?>

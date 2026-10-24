@@ -189,4 +189,27 @@
       }
     }
   }
+
+  &--ai-software-development {
+    @media (min-width: 1200px) {
+      padding: 24px 0 96px;
+    }
+
+    .hero-section__container {
+      @media (min-width: 1200px) {
+        grid-template-columns: 1fr 1.04133fr;
+        gap: 24px 27px;
+      }
+    }
+
+    .hero-section__hero-block-wrapper {
+      grid-row: auto;
+    }
+
+    .hero-section__service-blocks {
+      @media (min-width: 1200px) {
+        grid-column: span 2;
+      }
+    }
+  }
 }
