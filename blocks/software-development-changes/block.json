@@ -1,0 +1,21 @@
+{
+  "name": "acf/software-development-changes-section",
+  "title": "Software development changes section",
+  "description": "Software development changes section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "software",
+    "development",
+    "changes",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

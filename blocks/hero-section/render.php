@@ -252,47 +252,39 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
           ?>
 
           <div class="engineer-block">
-            <!-- <div class="engineer-block__title-wrapper"> -->
-              <?php if ($engineer_block['label']) : ?>
-                <p class="engineer-block__label">
-                  <?php echo esc_html($engineer_block['label']); ?>
+            <?php if ($engineer_block['label']) : ?>
+              <p class="engineer-block__label">
+                <?php echo esc_html($engineer_block['label']); ?>
+              </p>
+            <?php endif; ?>
+
+            <?php if ($engineer_block['title']) : ?>
+              <h3 class="engineer-block__title">
+                <?php echo esc_html($engineer_block['title']); ?>
+              </h3>
+            <?php endif; ?>
+
+            <div class="engineer-block__term-wrapper">
+              <?php if ($engineer_block['term']) : ?>
+                <p class="engineer-block__term">
+                  <span class="grad-text engineer-block__term-text">
+                    <?php echo esc_html($engineer_block['term']); ?>
+                  </span>
                 </p>
               <?php endif; ?>
 
-              <?php if ($engineer_block['title']) : ?>
-                <h3 class="engineer-block__title">
-                  <?php echo esc_html($engineer_block['title']); ?>
-                </h3>
+              <?php if ($engineer_block['engineers_review_image']) : ?>
+                <?php echo wp_get_attachment_image($engineer_block['engineers_review_image'], 'full', false, array('class' => 'engineer-block__review-img')); ?>
               <?php endif; ?>
+            </div>
 
-              <div class="engineer-block__term-wrapper">
-                <?php if ($engineer_block['term']) : ?>
-                  <p class="engineer-block__term">
-                    <span class="grad-text engineer-block__term-text">
-                      <?php echo esc_html($engineer_block['term']); ?>
-                    </span>
-                  </p>
-                <?php endif; ?>
+            <?php if ($engineer_block['image']) : ?>
+              <?php echo wp_get_attachment_image($engineer_block['image'], 'full', false, array('class' => 'engineer-block__img')); ?>
+            <?php endif; ?>
 
-                <?php if ($engineer_block['engineers_review_image']) : ?>
-                  <!-- <div class="engineer-block__review-img-wrapper"> -->
-                    <?php echo wp_get_attachment_image($engineer_block['engineers_review_image'], 'full', false, array('class' => 'engineer-block__review-img')); ?>
-                  <!-- </div> -->
-                <?php endif; ?>
-              </div>
-
-              <?php if ($engineer_block['image']) : ?>
-                <!-- <div class="engineer-block__img-wrapper"> -->
-                  <?php echo wp_get_attachment_image($engineer_block['image'], 'full', false, array('class' => 'engineer-block__img')); ?>
-                <!-- </div> -->
-              <?php endif; ?>
-
-              <?php if ($engineer_block['guarantee_image']) : ?>
-                <!-- <div class="engineer-block__guarantee-img-wrapper"> -->
-                  <?php echo wp_get_attachment_image($engineer_block['guarantee_image'], 'full', false, array('class' => 'engineer-block__guarantee-img')); ?>
-                <!-- </div> -->
-              <?php endif; ?>
-            <!-- </div> -->
+            <?php if ($engineer_block['guarantee_image']) : ?>
+              <?php echo wp_get_attachment_image($engineer_block['guarantee_image'], 'full', false, array('class' => 'engineer-block__guarantee-img')); ?>
+            <?php endif; ?>
           </div>
         <?php endif; ?>
       <?php endif; ?>

@@ -1,0 +1,161 @@
+.software-criteria-block {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template: auto auto 1fr / 100%;
+  padding: 31px 27px 29px;
+  background: rgba(88, 206, 174, 0.05);
+  border-radius: 20px;
+
+  @media (max-width: 1199px) {
+    padding: 26px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 22px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    padding: 2px;
+    border-radius: inherit;
+    background: linear-gradient(to top, #ABE5B8, #43C8AB);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "icon number" "icon title";
+    align-items: center;
+    gap: 2px 14px;
+    margin-bottom: 18px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__icon-wrapper {
+    grid-area: icon;
+    display: grid;
+    place-content: center;
+    width: 52px;
+    height: 52px;
+    background: rgba(159, 225, 187, 0.25);
+    border-radius: 14px;
+  }
+
+  &__icon {
+    width: 40px;
+    height: auto;
+  }
+
+  &__number {
+    color: #209E6D;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  &__title {
+    grid-area: title;
+    font-size: 24px;
+  }
+
+  &__description-label {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: #666E6E;
+
+    &::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Crect width='16' height='16' fill='%23e6ebeb' rx='8'/%3E%3Cpath fill='%23666e6e' d='M6.403 10.897 4.171 8.683l.747-.747 2.097 2.097-.486.009 3.915-4.383.756.756-4.104 4.482z'/%3E%3C/svg%3E") center no-repeat;
+    }
+  }
+
+  &__description {
+    margin-bottom: 20px;
+    line-height: 1.45;
+
+    @media (max-width: 767px) {
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+  }
+
+  &__changes-description-wrapper {
+    padding: 16px 18px 20px;
+    background: linear-gradient(135deg, #209E6D 7.14%, #005E59 78.57%);
+    border-radius: 15px;
+
+    @media (max-width: 767px) {
+      padding: 14px 16px 15px;
+    }
+  }
+
+  &__changes-description-label {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: #79CC3D;
+
+    @media (max-width: 767px) {
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+
+    &::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Crect width='16' height='16' fill='%2379cc3d' rx='8'/%3E%3Cpath fill='%23fff' d='M3.88 7.67c2.105.378 2.654.928 3.032 3.032.035.195.315.195.35 0 .378-2.104.927-2.654 3.03-3.032.196-.035.196-.314 0-.35-2.103-.377-2.652-.927-3.03-3.03-.035-.196-.315-.196-.35 0-.378 2.103-.927 2.653-3.031 3.03-.195.036-.195.315 0 .35M8.69 11.269c1.108.21 1.424.527 1.635 1.636.024.127.206.127.23 0 .21-1.11.527-1.425 1.636-1.636.127-.024.127-.206 0-.23-1.109-.211-1.425-.527-1.636-1.636-.024-.127-.206-.127-.23 0-.21 1.109-.527 1.425-1.636 1.636-.127.024-.127.206 0 .23M9.564 4.485c.84.16 1.08.4 1.24 1.24.018.096.155.096.174 0 .16-.84.399-1.08 1.239-1.24.096-.018.096-.155 0-.174-.84-.16-1.08-.399-1.24-1.239-.018-.096-.155-.096-.174 0-.16.84-.399 1.08-1.239 1.24-.096.018-.096.155 0 .173'/%3E%3C/svg%3E") center no-repeat;
+    }
+  }
+
+  &__changes-description {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.35;
+    font-family: var(--outfit-font);
+    color: rgba(255, 255, 255, .85);
+
+    @media (max-width: 767px) {
+      line-height: 1.4;
+    }
+  }
+
+  &--ownership {
+    .software-criteria-block__changes-description {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: normal;
+      font-family: var(--base-font);
+      color: #fff;
+
+      @media (max-width: 767px) {
+        font-size: 18px;
+        font-family: var(--outfit-font);
+      }
+    }
+  }
+}

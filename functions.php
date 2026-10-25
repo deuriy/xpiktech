@@ -265,6 +265,7 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/working-formats-section');
 	register_block_type(get_template_directory() . '/blocks/ai-solutions-section');
 	register_block_type(get_template_directory() . '/blocks/software-development-methods');
+	register_block_type(get_template_directory() . '/blocks/software-development-changes');
 }
 add_action('init', 'xpiktech_register_blocks');
 

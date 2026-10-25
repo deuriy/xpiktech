@@ -1,0 +1,70 @@
+.software-development-changes {
+  padding: 100px 0;
+  background: #fff;
+
+  @media (max-width: 767px) {
+    padding: 48px 0;
+  }
+
+  &__header {
+    margin-bottom: 40px;
+    text-align: center;
+
+    @media (max-width: 1199px) {
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 1023px) {
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__title-wrapper {
+    max-width: 472px;
+    margin: 0 auto 16px;
+  }
+  
+  &__description {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #525252;
+
+    @media (max-width: 1023px) {
+      font-size: 17px;
+    }
+    
+    @media (max-width: 767px) {
+      padding: 0 10px;
+      font-size: 16px;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    width: 1248px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+
+    @media (max-width: 1199px) {
+      gap: 24px;
+      padding: 0;
+    }
+
+    @media (max-width: 1023px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 100%;
+      gap: 16px;
+    }
+  }
+}
