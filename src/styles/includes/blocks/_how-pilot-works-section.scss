@@ -1,0 +1,99 @@
+.how-pilot-works-section {
+  padding: 50px 0;
+
+  @media (max-width: 767px) {
+    padding: 30px 0;
+  }
+
+  &__title-wrapper {
+    // max-width: 472px;
+    margin: 0 auto 32px;
+    text-align: center;
+
+    @media (max-width: 1023px) {
+      margin-bottom: 22px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 12px;
+    }
+  }
+  
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 1308px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+
+    @media (max-width: 1199px) {
+      // gap: 24px;
+      padding: 0;
+    }
+
+    // @media (max-width: 1023px) {
+    //   grid-template-columns: repeat(2, 1fr);
+    //   // gap: 20px;
+    // }
+
+    @media (max-width: 1023px) {
+      grid-template-columns: 100%;
+      gap: 68px;
+      width: 652px;
+    }
+  }
+
+  &__item {
+    & + & {
+      .how-pilot-works-block__img-wrapper {
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: -38px;
+          width: 56px;
+          height: 56px;
+          margin: auto;
+          background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 56' fill='none'%3E%3Crect width='50' height='50' x='3' y='3' fill='%23005e59' rx='25'/%3E%3Crect width='50' height='50' x='3' y='3' stroke='%23f3f3f3' stroke-width='6' rx='25'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M22.164 28h11.667M28 22.167 33.833 28 28 33.833'/%3E%3C/svg%3E") center no-repeat;
+
+          @media (max-width: 1023px) {
+            top: -56px;
+            right: 0;
+            bottom: auto;
+            left: 0;
+            width: 44px;
+            height: 44px;
+            // margin: 0;
+            border-radius: 50%;
+            background: #005E59 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M10 4.164v11.667M15.836 10l-5.833 5.833L4.169 10'/%3E%3C/svg%3E") center / 20px no-repeat;
+          }
+        }
+      }
+    }
+  }
+
+  &__buttons-list {
+    grid-template-columns: 56px 229px;
+    justify-content: center;
+    margin-top: 42px;
+
+    @media (max-width: 1199px) {
+      margin-top: 32px;
+    }
+
+    @media (max-width: 1023px) {
+      margin-top: 22px;
+    }
+
+    @media (max-width: 767px) {
+      margin-top: 12px;
+      grid-template-columns: 56px 1fr;
+      justify-content: start;
+    }
+  }
+}

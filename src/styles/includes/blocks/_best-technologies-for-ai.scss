@@ -1,6 +1,10 @@
 .best-technologies-for-ai {
   padding: 89px 0;
 
+  @media (max-width: 767px) {
+    padding: 25px 0;
+  }
+
   &__header {
     margin-bottom: 40px;
     text-align: center;

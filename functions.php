@@ -267,6 +267,7 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/software-development-methods');
 	register_block_type(get_template_directory() . '/blocks/software-development-changes');
 	register_block_type(get_template_directory() . '/blocks/best-technologies-for-ai');
+	register_block_type(get_template_directory() . '/blocks/how-pilot-works');
 }
 add_action('init', 'xpiktech_register_blocks');
 

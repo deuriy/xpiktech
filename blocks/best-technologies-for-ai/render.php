@@ -103,8 +103,6 @@ if (! empty($block['className'])) {
         </div>
       <?php endif; ?>
 
-      <?php //print_r($additional_technologies_block) ?>
-
       <?php if ($additional_technologies_block['title'] || $additional_technologies_block['technologies'] || $additional_technologies_block['text'] || $additional_technologies_block['button_text']): ?>
         <div class="technologies-block best-technologies-for-ai__technologies-block">
           <?php if ($additional_technologies_block['technologies'] || $additional_technologies_block['title']): ?>
