@@ -192,13 +192,22 @@
 
   &--ai-software-development {
     @media (min-width: 1200px) {
-      padding: 24px 0 96px;
+      // padding: 24px 0 96px;
+      padding: 24px 0 24px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 0 0 20px;
     }
 
     .hero-section__container {
       @media (min-width: 1200px) {
         grid-template-columns: 1fr 1.04133fr;
         gap: 24px 27px;
+      }
+
+      @media (max-width: 1199px) {
+        max-width: 652px;
       }
     }
 
@@ -209,6 +218,10 @@
     .hero-section__service-blocks {
       @media (min-width: 1200px) {
         grid-column: span 2;
+      }
+
+      @media (max-width: 1199px) {
+        order: 0;
       }
     }
   }

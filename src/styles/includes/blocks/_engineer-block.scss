@@ -8,6 +8,10 @@
   border-radius: 20px;
   container-type: inline-size;
 
+  @media (max-width: 767px) {
+    border-radius: 10px;
+  }
+
   &__label {
     margin-top: 12px;
     margin-bottom: 6px;
@@ -15,6 +19,11 @@
     font-size: 12px;
     line-height: 2.16667;
     // font-size: clamp(8px, );
+
+    @media (max-width: 767px) {
+      margin-top: 6px;
+      margin-bottom: 4px;
+    }
   }
 
   &__title {

@@ -265,14 +265,36 @@
       padding: 20px;
     }
 
+    @media (max-width: 767px) {
+      grid-template-columns: 52px 1fr;
+      grid-template-areas: "icon title" "icon description";
+      align-items: center;
+      justify-items: start;
+      gap: 2px 16px;
+      padding: 18px 20px;
+      text-align: left;
+    }
+
     .service-block__img {
       height: 64px;
+
+      @media (max-width: 767px) {
+        grid-area: icon;
+        margin-right: auto;
+        margin-left: auto;
+        height: 48px;
+      }
     }
 
     .service-block__title {
       max-width: 170px;
       margin-top: 2px;
       font-weight: 600;
+
+      @media (max-width: 767px) {
+        max-width: 100%;
+        margin: 0;
+      }
     }
   }
 

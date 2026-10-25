@@ -136,16 +136,20 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
                     <?php echo wp_kses_post($hero_block['text']) ?>
                   </div>
                 <?php endif; ?>
+                
+                <?php if ($hero_block['green_label'] || $hero_block['white_label']): ?>
+                  <div class="hero-block__labels">
+                    <?php if ($hero_block['green_label']): ?>
+                      <div class="hero-block__green-label">
+                        <?php echo esc_html($hero_block['green_label']) ?>
+                      </div>
+                    <?php endif; ?>
 
-                <?php if ($hero_block['green_label']): ?>
-                  <div class="hero-block__green-label">
-                    <?php echo esc_html($hero_block['green_label']) ?>
-                  </div>
-                <?php endif; ?>
-
-                <?php if ($hero_block['white_label']): ?>
-                  <div class="hero-block__white-label">
-                    <?php echo esc_html($hero_block['white_label']) ?>
+                    <?php if ($hero_block['white_label']): ?>
+                      <div class="hero-block__white-label">
+                        <?php echo esc_html($hero_block['white_label']) ?>
+                      </div>
+                    <?php endif; ?>
                   </div>
                 <?php endif; ?>
               </div>

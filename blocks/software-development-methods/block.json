@@ -1,0 +1,21 @@
+{
+  "name": "acf/software-development-methods-section",
+  "title": "Software development methods section",
+  "description": "Software development methods section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "software",
+    "development",
+    "methods",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

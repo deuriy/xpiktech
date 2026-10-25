@@ -168,6 +168,8 @@ function xpiktech_scripts()
 		wp_enqueue_script('services-page', get_template_directory_uri() . '/js/services-page.js');
 	} elseif (is_page('solutions')) {
 		wp_enqueue_script('solutions-page', get_template_directory_uri() . '/js/solutions-page.js');
+	} elseif (is_page('ai-assisted-software-development')) {
+		wp_enqueue_script('ai-software-development', get_template_directory_uri() . '/js/ai-software-development.js');
 	}
 }
 add_action('wp_enqueue_scripts', 'xpiktech_scripts');
@@ -262,6 +264,7 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/deployment-section');
 	register_block_type(get_template_directory() . '/blocks/working-formats-section');
 	register_block_type(get_template_directory() . '/blocks/ai-solutions-section');
+	register_block_type(get_template_directory() . '/blocks/software-development-methods');
 }
 add_action('init', 'xpiktech_register_blocks');
 
