@@ -1,0 +1,121 @@
+.technology-for-ai-block {
+  display: grid;
+  grid-template: auto 1fr / 100%;
+  border: 1px solid rgba(159, 225, 187, 0.6);
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+
+  @media (max-width: 767px) {
+    padding: 21px;
+  }
+  
+  &__header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 15px;
+    padding: 21px 23px;
+    background: linear-gradient(90deg, #33BD9E 0%, #9EE0BA 100%);
+
+    @media (max-width: 767px) {
+      padding: 21px;
+    }
+  }
+  
+  &__icon-wrapper {
+    display: grid;
+    place-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 5px;
+    background: #fff;
+  }
+
+  &__icon {
+    max-height: 24px;
+  }
+
+  &__title {
+    font-size: 24px;
+    color: #fff;
+  }
+
+  &__body {
+    display: grid;
+    grid-template: 1fr auto / 100%;
+    padding: 22px 22px 15px;
+
+    @media (max-width: 767px) {
+      padding: 12px 0 0;
+    }
+  }
+
+  &__website-types-label,
+  &__reason-label {
+    color: #209E6D;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  &__website-types-wrapper {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E5EBEB;
+  }
+
+  &__website-types-label {
+    margin-bottom: 12px;
+  }
+
+  &__website-types {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    @media (max-width: 767px) {
+      gap: 7px;
+    }
+  }
+
+  &__reason-wrapper {
+    margin-top: 26px;
+
+    @media (max-width: 767px) {
+      margin-top: 12px;
+    }
+  }
+
+  &__reason-label {
+    margin-bottom: 16px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 12px;
+    }
+  }
+  
+  &__reason {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 12px;
+    min-height: 55px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(31, 38, 38, 0.85);
+
+    @media (max-width: 767px) {
+      align-items: start;
+      min-height: 60px;
+      line-height: 1.45;
+    }
+
+    &::before {
+      content: '';
+      width: 30px;
+      height: 30px;
+      // margin-top: 3px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' fill='none'%3E%3Crect width='30' height='30' fill='%23005e59' rx='8'/%3E%3Cpath stroke='%2379cc3d' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m9.664 18.334 4-4-4-4M15 19.667h5.333'/%3E%3C/svg%3E") center no-repeat;
+    }
+  }
+}
