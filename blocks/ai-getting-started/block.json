@@ -1,0 +1,21 @@
+{
+  "name": "acf/ai-getting-started-section",
+  "title": "AI getting started section",
+  "description": "AI getting started section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "ai",
+    "getting",
+    "started",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}
