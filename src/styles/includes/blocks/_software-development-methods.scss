@@ -2,7 +2,7 @@
   padding: 98px 0;
 
   @media (max-width: 767px) {
-    padding: 20px 0;
+    padding: 20px 0 68px;
   }
 
   &__header {
@@ -208,13 +208,13 @@
     margin: 52px auto 0;
 
     @media (max-width: 1023px) {
-      // margin-top: 42px;
-      margin-top: 45px;
+      margin-top: 42px;
+      // margin-top: 45px;
     }
 
     @media (max-width: 767px) {
-      // margin-top: 31px;
-      margin-top: 39px;
+      margin-top: 31px;
+      // margin-top: 39px;
     }
   }
 }
