@@ -1,9 +1,23 @@
 .our-strengths-in-ai-block {
+  position: relative;
+  z-index: 1;
   padding: 24px 22px 15px 24px;
   background: #FFF;
   border: 1px solid #E6EBEB;
   border-radius: 16px;
   @extend .transition;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(0deg, rgba(88, 206, 174, 0.14), rgba(88, 206, 174, 0.14)), #FFFFFF;
+    opacity: 0;
+    visibility: inherit;
+    @extend .transition;
+  }
 
   @media (max-width: 1199px) {
     padding: 20px;
@@ -102,5 +116,10 @@
 
   &:hover {
     border-color: #58CEAE;
+
+    &::before {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }

@@ -4,6 +4,7 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 20px;
   color: #fff;
+  @extend .transition;
 
   @media (max-width: 767px) {
     padding: 22px;
@@ -69,5 +70,11 @@
       font-size: 14px;
       line-height: 1.45;
     }
+  }
+
+  &:hover {
+    background: #02504F;
+    border: 1px solid rgba(121, 204, 61, 0.6);
+    box-shadow: 0 12px 40px rgba(120, 204, 61, 0.25);
   }
 }
