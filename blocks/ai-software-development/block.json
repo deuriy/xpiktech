@@ -1,0 +1,21 @@
+{
+  "name": "acf/ai-software-development-section",
+  "title": "AI software development section",
+  "description": "AI software development section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "AI",
+    "software",
+    "development",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

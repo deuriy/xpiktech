@@ -201,6 +201,8 @@
     }
 
     .hero-section__container {
+      align-items: start;
+      
       @media (min-width: 1200px) {
         grid-template-columns: 1fr 1.04133fr;
         gap: 24px 27px;
@@ -209,10 +211,24 @@
       @media (max-width: 1199px) {
         max-width: 652px;
       }
+
+      @media (max-width: 767px) {
+        gap: 16px;
+      }
     }
 
     .hero-section__hero-block-wrapper {
       grid-row: auto;
+
+      @media (max-width: 767px) {
+        display: contents;
+      }
+    }
+
+    .hero-section__engineer-block {
+      @media (max-width: 767px) {
+        order: -1;
+      }
     }
 
     .hero-section__service-blocks {

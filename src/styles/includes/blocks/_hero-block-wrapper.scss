@@ -44,12 +44,16 @@
     @media (max-width: 767px) {
       display: contents;
 
-      // .hero-block-wrapper__block {
-      //   order: -1;
-      // }
-
       .hero-block-wrapper__buttons-list {
         order: 1;
+      }
+    }
+  }
+
+  &--ai-software-development {
+    @media (max-width: 767px) {
+      .hero-block-wrapper__block {
+        order: -1;
       }
     }
   }

@@ -251,7 +251,7 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
             $engineer_block = get_field('engineer_block');
           ?>
 
-          <div class="engineer-block">
+          <div class="engineer-block hero-section__engineer-block">
             <?php if ($engineer_block['label']) : ?>
               <p class="engineer-block__label">
                 <?php echo esc_html($engineer_block['label']); ?>

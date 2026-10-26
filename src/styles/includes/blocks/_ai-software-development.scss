@@ -1,0 +1,60 @@
+.ai-software-development {
+  padding: 94px 0 74px;
+  background: #02504F;
+
+  @media (max-width: 1199px) {
+    padding: 70px 0 60px;
+  }
+
+  @media (max-width: 1023px) {
+    padding: 55px 0;
+  }
+
+  &__container {
+    width: 1277px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    @media (max-width: 1023px) {
+      width: 652px;
+    }
+  }
+
+  &__title {
+    max-width: 472px;
+    margin: 0 auto 39px;
+    font-weight: 600;
+    color: #fff;
+
+    @media (max-width: 1199px) {
+      margin-bottom: 29px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 16px;
+      line-height: 1.45;
+    }
+  }
+
+  &__development-blocks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    @media (max-width: 1023px) {
+      grid-template-columns: 100%;
+    }
+
+    @media (max-width: 1023px) {
+      gap: 26px;
+    }
+  }
+
+  &__ai-software-development-note {
+    margin-top: 35px;
+
+    @media (max-width: 767px) {
+      margin-top: 16px;
+    }
+  }
+}
