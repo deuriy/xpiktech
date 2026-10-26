@@ -312,3 +312,43 @@ add_action('wp_head', function() {
 // 	// Если нужно привязать стандартные рубрики (category) к страницам:
 // 	register_taxonomy_for_object_type( 'category', 'page' );
 // }
+
+//заставляем RankMath SEO читать ACF внутри Gutenberg
+add_action('enqueue_block_editor_assets', function () {
+    global $post;
+
+    if (
+        ! $post instanceof WP_Post ||
+        ! current_user_can('edit_post', $post->ID) ||
+        ! wp_script_is('rank-math-analyzer', 'registered')
+    ) {
+        return;
+    }
+
+    $relative_path = '/js/rank-math-acf.js';
+    $file_path = get_stylesheet_directory() . $relative_path;
+
+    if (! file_exists($file_path)) {
+        return;
+    }
+
+    // Рендерим сохранённое содержимое, включая ACF-блоки.
+    $html = do_blocks($post->post_content);
+
+    wp_enqueue_script(
+        'xpiktech-rank-math-acf',
+        get_stylesheet_directory_uri() . $relative_path,
+        ['wp-hooks', 'rank-math-analyzer', 'wp-dom-ready'],
+        filemtime($file_path),
+        true
+    );
+
+    wp_add_inline_script(
+        'xpiktech-rank-math-acf',
+        'window.xpiktechRankMathContent = ' . wp_json_encode(
+            ['html' => $html],
+            JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT
+        ) . ';',
+        'before'
+    );
+});
