@@ -39,9 +39,7 @@ get_header();
 
 		else :
 
-			// get_template_part( 'template-parts/content', 'none' );
-
-			term_block_editor_the();
+			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
 		?>
