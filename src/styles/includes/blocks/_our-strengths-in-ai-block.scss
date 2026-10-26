@@ -1,0 +1,106 @@
+.our-strengths-in-ai-block {
+  padding: 24px 22px 15px 24px;
+  background: #FFF;
+  border: 1px solid #E6EBEB;
+  border-radius: 16px;
+  @extend .transition;
+
+  @media (max-width: 1199px) {
+    padding: 20px;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__icon-wrapper {
+    display: grid;
+    grid-template-columns: 100%;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: #005E59;
+  }
+
+  &__tag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(159, 225, 187, 0.35);
+    color: #005E59;
+    font-weight: 600;
+    font-size: 14px;
+
+    span {
+      font-size: 20px;
+    }
+
+    &--small {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+  }
+
+  &__img {
+    width: auto;
+    max-height: 36px;
+  }
+
+  &__label {
+    font-weight: 600;
+    font-size: 26px;
+    color: #005E59;
+
+    @media (max-width: 1199px) {
+      font-size: 24px;
+    }
+  }
+
+  &__tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    @media (min-width: 768px) {
+      margin-right: -6px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 9px;
+    font-size: 20px;
+    line-height: 1.25;
+    color: #1F2626;
+
+    @media (max-width: 1199px) {
+      font-size: 19px;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #525252;
+
+    @media (max-width: 767px) {
+      line-height: 1.45;
+    }
+  }
+
+  &:hover {
+    border-color: #58CEAE;
+  }
+}

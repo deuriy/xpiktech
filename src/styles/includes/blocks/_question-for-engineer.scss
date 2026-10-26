@@ -1,0 +1,60 @@
+.question-for-engineer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "image title" "image text";
+  gap: 12px 9px;
+  padding: 24px 24px 28px 26px;
+  border-radius: 15px;
+  background: #005E59;
+  color: #fff;
+
+  @media (max-width: 1199px) {
+    padding: 22px;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: 100%;
+    grid-template-areas: "image" "title" "text";
+  }
+
+  &__img {
+    grid-area: image;
+    width: auto;
+    max-height: 123px;
+
+    @media (max-width: 1199px) {
+      max-height: 110px;
+    }
+
+    @media (max-width: 767px) {
+      max-height: 100px;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    align-self: end;
+    font-weight: 600;
+    font-size: 24px;
+
+    @media (max-width: 1199px) {
+      font-size: 22px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 20px;
+      line-height: 1.25;
+    }
+  }
+
+  &__text {
+    align-self: start;
+    grid-area: text;
+    line-height: 1.5;
+
+    @media (max-width: 1199px) {
+      font-size: 15px;
+      line-height: 1.45;
+    }
+  }
+}

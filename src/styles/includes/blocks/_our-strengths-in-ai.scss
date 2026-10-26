@@ -1,0 +1,127 @@
+.our-strengths-in-ai {
+  padding: 115px 0;
+
+  @media (min-width: 768px) {
+    background: #fff;
+  }
+
+  @media (max-width: 1199px) {
+    padding: 90px 0;
+  }
+
+  @media (max-width: 1023px) {
+    padding: 70px 0;
+  }
+
+  @media (max-width: 767px) {
+    padding: 30px 0;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 483px 1fr;
+    grid-template-areas: "text-wrapper advantage-blocks" "text-wrapper engineer-block";
+    gap: 20px 24px;
+    width: 1276px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    @media (max-width: 1199px) {
+      grid-template-columns: 400px 1fr;
+      gap: 18px;
+    }
+
+    @media (max-width: 767px) {
+      gap: 14px;
+    }
+
+    @media (max-width: 1023px) {
+      grid-template-columns: 100%;
+      grid-template-areas: "text-wrapper" "advantage-blocks" "engineer-block";
+      justify-items: center;
+    }
+
+    @media (max-width: 575px) {
+      justify-items: start;
+    }
+  }
+
+  &__text-wrapper {
+    grid-area: text-wrapper;
+    display: grid;
+    grid-template-columns: 100%;
+    place-content: center;
+    padding: 37px;
+
+    @media (max-width: 1199px) {
+      padding: 30px;
+    }
+
+    @media (max-width: 1023px) {
+      max-width: 739px;
+    }
+
+    @media (min-width: 768px) {
+      border-radius: 20px;
+      background: var(--lightgrey);
+    }
+
+    @media (max-width: 767px) {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-family: var(--outfit-font);
+    line-height: normal;
+
+    @media (max-width: 575px) {
+      max-width: 250px;
+      // line-height: 1.5;
+      line-height: 1.4;
+      font-family: var(--base-font);
+    }
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 1.6111;
+    color: #525252;
+
+    @media (max-width: 1199px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 767px) {
+      line-height: 1.45;
+    }
+
+    @media (max-width: 575px) {
+      max-width: 295px;
+    }
+  }
+
+  &__advantage-blocks {
+    grid-area: advantage-blocks;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 25px;
+    max-width: 739px;
+    margin-top: 4px;
+
+    @media (max-width: 1199px) {
+      gap: 14px;
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 100%;
+    }
+  }
+
+  &__question-for-engineer {
+    grid-area: engineer-block;
+    max-width: 739px;
+  }
+}
