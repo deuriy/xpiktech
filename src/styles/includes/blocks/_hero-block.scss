@@ -593,6 +593,13 @@
     &::after {
       display: none;
     }
+
+    &:hover {
+      .green-highlighted {
+        background: #fff;
+        color: #015E59;
+      }
+    }
   }
 
   // &--animation-paused {
