@@ -272,6 +272,7 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/vibe-coding-safety');
 	register_block_type(get_template_directory() . '/blocks/our-strengths-in-ai');
 	register_block_type(get_template_directory() . '/blocks/ai-software-development');
+	register_block_type(get_template_directory() . '/blocks/benefits-section');
 }
 add_action('init', 'xpiktech_register_blocks');
 

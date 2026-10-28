@@ -1,0 +1,19 @@
+{
+  "name": "acf/benefits-section",
+  "title": "Benefits section",
+  "description": "Benefits section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "benefits",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}
