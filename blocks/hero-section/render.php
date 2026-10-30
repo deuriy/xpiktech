@@ -104,7 +104,7 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
           <div class="hero-block hero-block--<?php echo esc_attr($block_style); ?> hero-block-wrapper__block">
             <?php if ($hero_block['title'] || $hero_block['text']): ?>
               <div class="hero-block__text-wrapper">
-                <?php if ($block_style === 'services-page' || $block_style === 'solutions-page'): ?>
+                <?php if ($block_style === 'services-page' || $block_style === 'solutions-page'  || $block_style === 'smart-ai-catalog'): ?>
                   <nav class="breadcrumbs breadcrumbs--<?php echo $block_style ?> breadcrumbs--hero-block hero-block__breadcrumbs" aria-label="breadcrumb">
                     <ul class="breadcrumbs__list">
                       <li class="breadcrumbs__item">
@@ -155,7 +155,7 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
               </div>
             <?php endif; ?>
 
-            <?php if ($block_style !== 'services-page' && $block_style !== 'solutions-page' && $hero_block['image']) : ?>
+            <?php if ($block_style !== 'services-page' && $block_style !== 'solutions-page'  && $block_style !== 'smart-ai-catalog' && $hero_block['image']) : ?>
               <div class="hero-block__img-wrapper">
                 <?php echo wp_get_attachment_image($hero_block['image'], 'full', false, array('class' => 'hero-block__img')); ?>
                 <?php echo wp_get_attachment_image($hero_block['hover_image'], 'full', false, array('class' => 'hero-block__hover-img')); ?>
@@ -240,10 +240,14 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
               </div>
             <?php endif; ?>
           </div>
-        <?php elseif ($block_style === 'solutions-page'): ?>
-          <?php if ($hero_block['image']) : ?>
+        <?php elseif ($block_style === 'solutions-page' || $block_style === 'smart-ai-catalog'): ?>
+          <?php if ($hero_block['image'] && !(wp_is_mobile() && $block_style === 'smart-ai-catalog')) : ?>
             <div class="hero-section__img-wrapper">
               <?php echo wp_get_attachment_image($hero_block['image'], 'full', false, array('class' => 'hero-section__img')); ?>
+            </div>
+          <?php elseif ($hero_block['mobile_image'] && wp_is_mobile() && $block_style === 'smart-ai-catalog') : ?>
+            <div class="hero-section__img-wrapper">
+              <?php echo wp_get_attachment_image($hero_block['mobile_image'], 'full', false, array('class' => 'hero-section__img')); ?>
             </div>
           <?php endif; ?>
         <?php elseif ($block_style === 'ai-software-development'): ?>
@@ -289,7 +293,7 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
         <?php endif; ?>
       <?php endif; ?>
       
-      <?php if ($block_style !== 'services-page' && $block_style !== 'solutions-page' && $block_style !== 'ai-software-development'): ?>
+      <?php if ($block_style !== 'services-page' && $block_style !== 'solutions-page' && $block_style !== 'ai-software-development' && $block_style !== 'smart-ai-catalog'): ?>
         <?php if ($text_block['title'] || $text_block['text']): ?>
           <div class="text-block hero-section__text-block">
             <?php if ($text_block['title']) : ?>
