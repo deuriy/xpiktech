@@ -1,0 +1,207 @@
+.adaptation-for-customer-block {
+  padding: 35px 31px 21px;
+  background: var(--lightgrey);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+
+  @media (max-width: 1199px) {
+    padding: 25px 25px 20px;
+    border-radius: 15px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 25px 19px 11px;
+    border-radius: 10px;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    padding-bottom: 19px;
+    border-bottom: 1px solid #CACACA;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.22;
+
+    @media (max-width: 1199px) {
+      margin-bottom: 11px;
+      padding-bottom: 11px;
+      font-size: 17px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 16px;
+      line-height: 1.375;
+    }
+  }
+
+  &__description {
+    margin-bottom: 10px;
+    line-height: 1.625;
+    color: #696969;
+
+    @media (max-width: 1199px) {
+      font-size: 15px;
+    }
+
+    @media (max-width: 767px) {
+      max-width: 240px;
+      font-size: 14px;
+      line-height: 1.42857;
+    }
+  }
+
+  &__products {
+    list-style: none;
+  }
+
+  &__product {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 13px;
+
+    & + & {
+      margin-top: 10px;
+
+      @media (max-width: 767px) {
+        gap: 14px;
+        margin-top: 12px;
+      }
+    }
+  }
+
+  &__product-icon-wrapper {
+    display: grid;
+    grid-template-columns: 100%;
+    place-items: center;
+    width: 57px;
+    height: 57px;
+    padding: 16px 12px;
+    border-radius: 10px;
+    background: #fff;
+
+    @media (max-width: 1199px) {
+      width: 52px;
+      height: 52px;
+    }
+
+    @media (max-width: 767px) {
+      width: 48px;
+      height: 48px;
+      padding: 13px 10px;
+      border-radius: 8px;
+    }
+  }
+
+  &__product-icon {
+    height: auto;
+  }
+
+  &__product-name {
+    color: #696969;
+    line-height: 1.625;
+
+    @media (max-width: 1199px) {
+      font-size: 15px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 1.857;
+    }
+  }
+
+  &__visitors-percentage {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    // align-items: center;
+    align-items: start;
+    justify-content: space-between;
+    gap: 6px;
+    // margin-top: 55px;
+    margin-top: 53px;
+    margin-right: -9px;
+
+    @media (max-width: 1199px) {
+      margin-top: 36px;
+    }
+
+    @media (max-width: 767px) {
+      align-items: center;
+      margin-top: 25px;
+      margin-right: 6px;
+    }
+  }
+
+  &__visitors-percentage-value {
+    color: #C7C7C7;
+    font-weight: 600;
+    font-size: 42px;
+  }
+
+  &__visitors-percentage-text {
+    max-width: 190px;
+    line-height: 1.5;
+    text-align: right;
+    color: #696969;
+
+    @media (max-width: 1199px) {
+      font-size: 15px;
+    }
+
+    @media (max-width: 767px) {
+      max-width: 160px;
+      font-size: 14px;
+    }
+  }
+
+  &--green-bg-style {
+    background: linear-gradient(0deg, #005E59 0%, #209E6D 140.41%);
+    color: #fff;
+
+    .adaptation-for-customer-block__title {
+      border-color: rgba(202, 202, 202, 0.2);
+    }
+
+    .adaptation-for-customer-block__description {
+      color: #fff;
+    }
+
+    .adaptation-for-customer-block__product-icon-wrapper {
+      // border: 2px solid rgba(255, 255, 255, .44);
+      // border-bottom: none;
+      position: relative;
+      isolation: isolate;
+      background: rgba(255, 255, 255, 0.32);
+      border-radius: 15px;
+
+      @media (max-width: 767px) {
+        border-radius: 8px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        padding: 2px 2px 0;
+        border-radius: inherit;
+        background: linear-gradient(to left, rgba(255, 255, 255, .24), rgba(255, 255, 255, .64));
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+      }
+    }
+
+    .adaptation-for-customer-block__product-name,
+    .adaptation-for-customer-block__visitors-percentage-text {
+      color: #fff;
+    }
+
+    .adaptation-for-customer-block__visitors-percentage-value {
+      color: #79CC3D;
+    }
+  }
+}
