@@ -274,6 +274,7 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/ai-software-development');
 	register_block_type(get_template_directory() . '/blocks/benefits-section');
 	register_block_type(get_template_directory() . '/blocks/adaptation-for-customer');
+	register_block_type(get_template_directory() . '/blocks/how-ai-catalog-work');
 }
 add_action('init', 'xpiktech_register_blocks');
 

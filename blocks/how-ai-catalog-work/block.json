@@ -1,0 +1,22 @@
+{
+  "name": "acf/how-ai-catalog-work-section",
+  "title": "How AI catalog work section",
+  "description": "How AI catalog work section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "how",
+    "ai",
+    "catalog",
+    "work",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}
