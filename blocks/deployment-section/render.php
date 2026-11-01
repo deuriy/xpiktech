@@ -12,6 +12,8 @@ $section_description = get_field('section_description');
 $title = get_field('title');
 $description = get_field('description');
 $steps = get_field('steps');
+$advantages = get_field('advantages');
+$button = get_field('button');
 $image = get_field('image');
 $items = get_field('items');
 
@@ -35,11 +37,9 @@ $class_name .= ' deployment-section--' . esc_attr($block_style) . '-style';
       <?php if ($block_style === 'solutions-page' && ($section_title || $section_description)): ?>
         <div class="deployment-section__header">
           <?php if ($section_title): ?>
-            <div class="deployment-section__title-wrapper">
-              <h2 class="grad-text section-title section-title--smaller section-title--left deployment-section__section-title">
-                <?php echo $section_title ?>
-              </h2>
-            </div>
+            <h2 class="grad-text section-title section-title--smaller section-title--left deployment-section__section-title">
+              <?php echo $section_title ?>
+            </h2>
           <?php endif; ?>
 
           <?php if ($section_description): ?>
@@ -89,13 +89,35 @@ $class_name .= ' deployment-section--' . esc_attr($block_style) . '-style';
             <?php endforeach;?>
           </ul>
         <?php endif; ?>
+
+        <?php if ($advantages): ?>
+          <ul class="deployment-section__advantages">
+            <?php foreach ($advantages as $key => $advantage): ?>
+              <li class="deployment-section__advantage">
+                <?php if ($advantage['icon']): ?>
+                  <div class="deployment-section__advantage-icon-wrapper">
+                    <?php echo wp_get_attachment_image($advantage['icon'], 'full', false, ['class' => 'deployment-section__advantage-icon']) ?>
+                  </div>
+                <?php endif; ?>
+
+                <?php if ($advantage['text']): ?>
+                  <div class="deployment-section__advantage-text">
+                    <?php echo $advantage['text'] ?>
+                  </div>
+                <?php endif; ?>
+              </li>
+            <?php endforeach;?>
+          </ul>
+        <?php endif; ?>
         
-        <?php if ($block_style === 'services-page'): ?>
+        <?php if ($block_style === 'services-page' || $block_style === 'smart-ai-catalog' && $button['url'] && $button['text']): ?>
           <div class="buttons-list deployment-section__buttons-list hidden-xs">
             <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 btn-darkgreen--dark-bg-hover deployment-section__btn" data-fancybox>
               <span class="ico ico--arrow-right2"></span>
             </a>
-            <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 deployment-section__btn" data-fancybox>Start With an Estimate</a>
+            <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 deployment-section__btn" data-fancybox>
+              <?php echo $button['text'] ?>
+            </a>
           </div>
         <?php endif; ?>
 
@@ -118,12 +140,14 @@ $class_name .= ' deployment-section--' . esc_attr($block_style) . '-style';
         </div>
       <?php endif; ?>
 
-      <?php if ($block_style === 'services-page'): ?>
+      <?php if ($block_style === 'services-page' || $block_style === 'smart-ai-catalog' && $button['url'] && $button['text']): ?>
         <div class="buttons-list deployment-section__buttons-list hidden-sm-plus">
           <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 btn-darkgreen--padding-10 btn-darkgreen--dark-bg-hover deployment-section__btn" data-fancybox>
             <span class="ico ico--arrow-right2"></span>
           </a>
-          <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 deployment-section__btn" data-fancybox>Start With an Estimate</a>
+          <a href="#contact-form-popup" class="btn-darkgreen btn-darkgreen--radius-16 deployment-section__btn" data-fancybox>
+            <?php echo $button['text'] ?>
+          </a>
         </div>
       <?php endif; ?>
     </div>
