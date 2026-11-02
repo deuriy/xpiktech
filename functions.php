@@ -170,6 +170,8 @@ function xpiktech_scripts()
 		wp_enqueue_script('solutions-page', get_template_directory_uri() . '/js/solutions-page.js');
 	} elseif (is_page('ai-assisted-software-development')) {
 		wp_enqueue_script('ai-software-development', get_template_directory_uri() . '/js/ai-software-development.js');
+	} elseif (is_page('smart-ai-catalog')) {
+		wp_enqueue_script('smart-ai-catalog', get_template_directory_uri() . '/js/smart-ai-catalog.js');
 	}
 }
 add_action('wp_enqueue_scripts', 'xpiktech_scripts');

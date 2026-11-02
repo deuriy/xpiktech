@@ -20,4 +20,19 @@
     padding-right: 24px;
     padding-left: 24px;
   }
+
+  &--smart-ai-catalog {
+    overflow: visible;
+
+    @media (min-width: 1200px) {
+      gap: 25px;
+    }
+
+    @media (max-width: 1023px) {
+      // grid-template-columns: 100%;
+      grid-auto-flow: row;
+      grid-auto-columns: auto;
+      padding: 0;
+    }
+  }
 }
