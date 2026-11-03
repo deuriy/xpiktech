@@ -171,7 +171,8 @@ $class_name .= ' hero-section--' . esc_attr($block_style);
             <a href="#contact-form-popup" class="<?php echo $button_classes ?>" data-fancybox>
               <span class="ico ico--arrow-right2"></span>
             </a>
-            <a href="#contact-form-popup" class="<?php echo $button_classes ?>" data-fancybox>Request a Free Demo</a>
+            <!-- <a href="#contact-form-popup" class="<?php echo $button_classes ?>" data-fancybox>Request a Free Demo</a> -->
+            <a href="#contact-form-popup" class="<?php echo $button_classes ?>" data-fancybox>Book Demo</a>
           </div>
         </div>
 
