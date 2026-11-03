@@ -313,6 +313,18 @@ $contact_form_buttons = get_field('contact_form_buttons', 'option');
 	</div>
 </template>
 
+<script>
+document.addEventListener('wpcf7mailsent', function (event) {
+  if (String(event.detail.contactFormId) !== 'e348cfc') return;
+
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-879202880/vosOCIL-z6odEMCknqMD'
+    });
+  }
+});
+</script>
+
 <?php wp_footer(); ?>
 
 </body>
