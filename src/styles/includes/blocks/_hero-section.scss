@@ -275,10 +275,10 @@
     .hero-section__img {
       height: auto;
 
-      @media (min-width: 1200px) {
-        max-width: calc(100% + 40px);
-        margin-left: -28px;
-      }
+      // @media (min-width: 1200px) {
+      //   max-width: calc(100% + 40px);
+      //   margin-left: -28px;
+      // }
       
       @media (max-width: 1199px) {
         max-height: 494px;
