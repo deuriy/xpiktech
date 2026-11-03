@@ -76,7 +76,7 @@ if (! empty($block['className'])) {
           
           <?php if ($block_type === 'smart_ai_catalog'): ?>
             <?php if ($price['value'] || $price['suffix']): ?>
-              <div class="tariff-block__price">
+              <p class="tariff-block__price">
                 <?php if ($price['value']): ?>
                   <span class="tariff-block__price-value grad-text">
                     <?php echo esc_html($price['value']) ?>
@@ -88,7 +88,7 @@ if (! empty($block['className'])) {
                     <?php echo esc_html($price['suffix']) ?>
                   </span>
                 <?php endif ?>
-              </div>
+              </p>
             <?php endif ?>
           <?php endif ?>
 

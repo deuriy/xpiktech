@@ -278,6 +278,7 @@ function xpiktech_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/adaptation-for-customer');
 	register_block_type(get_template_directory() . '/blocks/how-ai-catalog-work');
 	register_block_type(get_template_directory() . '/blocks/catalog-personalization');
+	register_block_type(get_template_directory() . '/blocks/more-sales-section');
 }
 add_action('init', 'xpiktech_register_blocks');
 

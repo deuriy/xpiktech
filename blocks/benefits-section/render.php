@@ -21,10 +21,10 @@ if (! empty($block['className'])) {
 
 <section <?php echo esc_attr($anchor); ?>class="<?php echo esc_attr($class_name); ?>">
   <div class="container">
-    <div class="benefits-section__container">      
+    <ul class="benefits-section__container">      
       <?php if ($benefits): ?>
         <?php foreach ($benefits as $key => $benefit): ?>
-          <div class="benefits-block">
+          <li class="benefits-block">
             <?php if ($benefit['icon']) : ?>
               <div class="benefits-block__icon-wrapper">
                 <?php echo wp_get_attachment_image($benefit['icon'], 'full', false, array('class' => 'benefits-block__icon')); ?>
@@ -36,9 +36,9 @@ if (! empty($block['className'])) {
                 <?php echo $benefit['title'] ?>
               </h3>
             <?php endif; ?>
-          </div>
+          </li>
         <?php endforeach; ?>
       <?php endif; ?>
-    </div>
+    </ul>
   </div>
 </section>

@@ -1,0 +1,20 @@
+{
+  "name": "acf/more-sales-section",
+  "title": "More sales section",
+  "description": "More sales section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "more",
+    "sales",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}
