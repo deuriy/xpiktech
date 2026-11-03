@@ -1,0 +1,20 @@
+{
+  "name": "acf/catalog-personalization-section",
+  "title": "Catalog personalization section",
+  "description": "Catalog personalization section that uses ACF fields.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "catalog",
+    "personalization",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "validate": "false"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

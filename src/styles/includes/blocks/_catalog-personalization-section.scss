@@ -1,0 +1,81 @@
+.catalog-personalization-section {
+  padding: 74px 0;
+  background: #fff;
+
+  @media (max-width: 1023px) {
+    padding: 64px 0;
+  }
+
+  @media (max-width: 767px) {
+    padding: 54px 0;
+  }
+
+  &__container {
+    padding: 65px 80px 82px;
+    border-radius: 32px;
+    background: url("images/how_we_work_bg@2x.webp") -40px -70px / calc(100% + 80px) calc(100% + 140px) no-repeat;
+
+    @media (max-width: 1199px) {
+      padding: 45px 50px 60px;
+      border-radius: 28px;
+    }
+
+    @media (max-width: 1023px) {
+      padding: 45px 36px 60px;
+      border-radius: 24px;
+      background: url("images/how_we_work_bg@2x.webp") -40px -95px / calc(100% + 80px) calc(100% + 192px) no-repeat;
+    }
+
+    @media (max-width: 767px) {
+      padding: 32px 22px 48px;
+    }
+  }
+
+  &__text-wrapper {
+    max-width: 764px;
+    margin-bottom: 44px;
+
+    @media (max-width: 1199px) {
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 17px;
+    }
+  }
+
+  &__title-wrapper {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    @media (max-width: 767px) {
+      line-height: 1.38461538;
+    }
+  }
+
+  &__description {
+    color: #696969;
+    line-height: 1.5;
+  }
+
+  &__blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin: 0 -8px;
+
+    @media (max-width: 1199px) {
+      gap: 24px;
+    }
+
+    @media (max-width: 1023px) {
+      grid-template-columns: 100%;
+      margin: 0;
+    }
+
+    @media (max-width: 767px) {
+      gap: 13px;
+    }
+  }
+}

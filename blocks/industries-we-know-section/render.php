@@ -74,7 +74,7 @@ if (! empty($block['className'])) {
                         <div class="what-we-deliver-block__title">What we deliver</div>
 
                         <?php if ($industry['what_we_deliver']): ?>
-                          <ul class="checkmarks-list checkmarks-list--what-we-deliver-block what-we-deliver-block__list">
+                          <ul class="checkmarks-list checkmarks-list--lightgreen-bg-style what-we-deliver-block__list">
                             <?php foreach ($industry['what_we_deliver'] as $item): ?>
                               <li class="checkmarks-list__item">
                                 <?php echo $item['item'] ?>
@@ -139,7 +139,7 @@ if (! empty($block['className'])) {
                         <div class="what-we-deliver-block__title">What we deliver</div>
 
                         <?php if ($industry['what_we_deliver']): ?>
-                          <ul class="checkmarks-list checkmarks-list--what-we-deliver-block what-we-deliver-block__list">
+                          <ul class="checkmarks-list checkmarks-list--lightgreen-bg-style what-we-deliver-block__list">
                             <?php foreach ($industry['what_we_deliver'] as $item): ?>
                               <li class="checkmarks-list__item">
                                 <?php echo $item['item'] ?>

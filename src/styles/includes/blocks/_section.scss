@@ -436,6 +436,10 @@
   }
 
   &--tariff-smart-ai-catalog {
+    @media (min-width: 1200px) {
+      padding: 64px 0 92px;
+    }
+
     .section__title-wrapper {
       text-align: center;
     }

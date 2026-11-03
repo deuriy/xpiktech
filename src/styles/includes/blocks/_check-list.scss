@@ -71,6 +71,25 @@
     }
   }
 
+  &--cancel-icon {
+    .check-list__item {
+      &::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath fill='%23005e59' d='m7.131 6 2.635-2.634A.8.8 0 0 0 10 2.8a.8.8 0 0 0-.234-.566A.8.8 0 0 0 9.2 2a.8.8 0 0 0-.566.234L6 4.87 3.366 2.234A.8.8 0 0 0 2.8 2a.8.8 0 0 0-.566.234A.8.8 0 0 0 2 2.8c0 .214.083.415.234.566L4.87 6 2.234 8.634A.8.8 0 0 0 2 9.2a.795.795 0 0 0 .8.8.8.8 0 0 0 .566-.234L6 7.13l2.634 2.635a.795.795 0 0 0 1.132 0A.8.8 0 0 0 10 9.2a.8.8 0 0 0-.234-.566z'/%3E%3C/svg%3E");
+        background-size: 12px auto;
+      }
+    }
+  }
+
+  &--lightgreen-bg {
+    .check-list__item {
+      &::before {
+        background-color: #79CC3D;
+        // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath fill='%23005e59' d='m7.131 6 2.635-2.634A.8.8 0 0 0 10 2.8a.8.8 0 0 0-.234-.566A.8.8 0 0 0 9.2 2a.8.8 0 0 0-.566.234L6 4.87 3.366 2.234A.8.8 0 0 0 2.8 2a.8.8 0 0 0-.566.234A.8.8 0 0 0 2 2.8c0 .214.083.415.234.566L4.87 6 2.234 8.634A.8.8 0 0 0 2 9.2a.795.795 0 0 0 .8.8.8.8 0 0 0 .566-.234L6 7.13l2.634 2.635a.795.795 0 0 0 1.132 0A.8.8 0 0 0 10 9.2a.8.8 0 0 0-.234-.566z'/%3E%3C/svg%3E");
+        // background-size: 12px auto;
+      }
+    }
+  }
+
   &--tariff-block {
     .check-list__item {
       gap: 10px;
@@ -85,6 +104,35 @@
 
         @media (max-width: 1199px) {
           margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  &--catalog-personalization-block {
+    .check-list__item {
+      gap: 10px;
+      font-weight: 400;
+      font-size: 14px;
+
+      @media (max-width: 767px) {
+        gap: 5px;
+        line-height: 1.42857143;
+      }
+
+      & + .check-list__item {
+        margin-top: 20px;
+
+        @media (max-width: 767px) {
+          margin-top: 15px;
+        }
+      }
+
+      &::before {
+        @media (max-width: 767px) {
+          width: 15px;
+          height: 15px;
+          // background-size: 8px;
         }
       }
     }
