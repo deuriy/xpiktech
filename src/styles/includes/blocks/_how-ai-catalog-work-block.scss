@@ -30,7 +30,9 @@
     }
 
     @media (max-width: 767px) {
-      margin-bottom: 11px;
+      // margin-bottom: 11px;
+      margin-bottom: 8px;
+      font-size: 17px;
     }
 
     &::before {
@@ -146,6 +148,10 @@
     display: block;
     // margin: 31px 0;
     margin: 18px 0 31px;
+
+    @media (max-width: 767px) {
+      margin: 14px 0 28px;
+    }
   }
 
   &__tags {
@@ -157,7 +163,7 @@
     margin-bottom: 42px;
 
     @media (max-width: 767px) {
-      margin-bottom: 37px;
+      margin: 0 -5px 37px;
     }
   }
 
@@ -174,6 +180,7 @@
     @extend .transition;
 
     @media (max-width: 767px) {
+      padding: 1px 10px;
       font-size: 12px;
     }
 
@@ -196,6 +203,10 @@
     font-size: 14px;
     line-height: 2;
 
+    @media (max-width: 767px) {
+      font-size: 12px;
+    }
+
     &::before {
       content: '';
       width: 11px;
@@ -206,6 +217,10 @@
 
   &__search-results {
     margin-bottom: 35px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 30px;
+    }
   }
 
   &__search-results-list {
@@ -217,6 +232,10 @@
     border-radius: 5px;
     font-size: 14px;
     line-height: 2;
+
+    @media (max-width: 767px) {
+      font-size: 12px;
+    }
 
     &:nth-child(odd) {
       background: #84C7A7;
